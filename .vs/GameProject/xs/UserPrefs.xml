@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codes/HPBar.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codes/Player.cs">
     <Files>
-      <File FileName="Assets/Codes/Platform.cs" Line="10" Column="1" />
+      <File FileName="Assets/Codes/Player.cs" Line="50" Column="52" />
+      <File FileName="Assets/Codes/Platform.cs" />
       <File FileName="Assets/Codes/HPBar.cs" Line="10" Column="9" />
+      <File FileName="Assets/Codes/CoinsCounter.cs" Line="32" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="06e67523-76bd-467e-a1e7-a78ff44cca28" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="58448d8e-aa21-4813-b38e-b29dd33960a8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
