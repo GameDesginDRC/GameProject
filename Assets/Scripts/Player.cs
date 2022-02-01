@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     private int ClickCountD = 0;
     private int ClickCountA = 0;
 
+    public bool Invincible = false;
+    public int InvincibilityTime = 2;
+    public float TimeSinceInvStarted;
+
     public HPBar healthbar;
     public static int hp;
     // Start is called before the first frame update
@@ -34,6 +38,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Invincible)
+        {
+            StartCoroutine(Blink());
+            if (TimeSinceInvStarted + InvincibilityTime < Time.time)
+            {
+                Invincible = false;
+            }
+        }
+
         HandleInput();
         ProcessStatusEffects();
     }
@@ -97,7 +110,14 @@ public class Player : MonoBehaviour
         return inp && canJump;
     }
 
- 
+    // player sprite blinks when hit
+    IEnumerator Blink()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds((float)0.2);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds((float)0.2);
+    }
 
 
     private void DamageBlink() {
@@ -149,6 +169,21 @@ public class Player : MonoBehaviour
         hp -= dmg;
         healthbar.ChangeHealth(hp);
     }
+
+    // for detecting collision with enemies
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!Invincible)
+        {
+            if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyAttack")
+            {
+                Damage(10);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+            }
+        }
+    }
+
 
     private void OnCollisionStay2D(Collision2D col)
     {
