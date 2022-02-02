@@ -156,6 +156,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // for detecting collision w/ enemies
+        if (!Invincible)
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                Damage(10);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+            }
+        }
+
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
         {
             hasGun = true;
@@ -170,6 +181,7 @@ public class Player : MonoBehaviour
         healthbar.ChangeHealth(hp);
     }
 
+<<<<<<< Updated upstream
     // for detecting collision with enemies
     public void OnTriggerEnter2D(Collider2D col)
     {
@@ -183,6 +195,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+=======
+>>>>>>> Stashed changes
 
 
     private void OnCollisionStay2D(Collision2D col)
