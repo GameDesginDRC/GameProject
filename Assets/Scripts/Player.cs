@@ -181,7 +181,6 @@ public class Player : MonoBehaviour
         healthbar.ChangeHealth(hp);
     }
 
-<<<<<<< Updated upstream
     // for detecting collision with enemies
     public void OnTriggerEnter2D(Collider2D col)
     {
@@ -195,9 +194,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-=======
->>>>>>> Stashed changes
-
 
     private void OnCollisionStay2D(Collision2D col)
     {

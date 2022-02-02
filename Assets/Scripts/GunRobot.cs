@@ -65,20 +65,12 @@ public class GunRobot : MonoBehaviour
 
         if (movingRight)
         {
-<<<<<<< Updated upstream
             GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
-=======
-            GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right * .5f), bullet.transform.rotation);
->>>>>>> Stashed changes
             newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
         }
         else
         {
-<<<<<<< Updated upstream
             GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
-=======
-            GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right * .5f), bullet.transform.rotation);
->>>>>>> Stashed changes
             newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
         }
 

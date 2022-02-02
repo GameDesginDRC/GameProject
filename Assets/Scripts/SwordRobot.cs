@@ -5,18 +5,6 @@ using UnityEngine;
 public class SwordRobot : MonoBehaviour
 {
     // health
-<<<<<<< Updated upstream
-    public float health = 10;
-
-    // for movement
-    public float speed = .5f;
-
-    public float flipEveryXSecs = 1f;
-    public float nextFlip = 0f;
-
-    public bool isPaused = false;
-    public bool movingRight = true;
-=======
     [SerializeField]
     float health = 10;
 
@@ -47,17 +35,18 @@ public class SwordRobot : MonoBehaviour
     [SerializeField]
     GameObject theAttack;
 
->>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
     }
 
-<<<<<<< Updated upstream
-=======
     void Wait() {
         theAttack.tag = "Untagged";
+    }
+
+    void Unpause() {
+        isPaused = false;
     }
 
     void Attack() {
@@ -65,7 +54,6 @@ public class SwordRobot : MonoBehaviour
     }
 
 
->>>>>>> Stashed changes
     void InvokeFlip() {
         if (movingRight)
         {
@@ -78,45 +66,22 @@ public class SwordRobot : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180f, 0);
             movingRight = true;
         }
-
-        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-=======
         // attack cooldown check
         if (Time.time > nextAttack) {
             onCooldown = false;
         }
 
->>>>>>> Stashed changes
-        // move right and left
         if (!isPaused)
         {
             Vector3 HorzVector = new Vector3(5, 0.0f, 0.0f);
             transform.Translate(HorzVector * Time.deltaTime);
         }
 
-<<<<<<< Updated upstream
-=======
-        /*
->>>>>>> Stashed changes
-        // pause for 2 seconds
-        if (Time.time > nextFlip)
-        {
-            isPaused = true;
-            Invoke("InvokeFlip", 2);
-            nextFlip = Time.time + 2 + flipEveryXSecs;
-        }
-<<<<<<< Updated upstream
-    }
-
-    
-=======
-        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -138,7 +103,6 @@ public class SwordRobot : MonoBehaviour
         if (collision.CompareTag("Wall"))
         {
             Debug.Log("Flip");
-            isPaused = true;
             InvokeFlip();
         }
     }
@@ -147,9 +111,8 @@ public class SwordRobot : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            isPaused = false;
+            Invoke("Unpause", .5f);
         }
     }
 
->>>>>>> Stashed changes
 }
