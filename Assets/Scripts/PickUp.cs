@@ -4,41 +4,55 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private Inventory inv;
     public GameObject itemDisplay;
+    public int count;
     // Start is called before the first frame update
     void Start()
     {
-        inv = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        count = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (count == 1 && Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.A) ||Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            
+            count = 0;
+        }
+        }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log(count);
         if (collision.CompareTag("Player"))
         {
-           if (Input.GetKey(KeyCode.E))
-           {
-               // StartCoroutine(Wait());
-                for (int i = 0; i < inv.spots.Length; i++)
-                {
-                 //   StartCoroutine(Wait());
-                    if (inv._full[i] == false)
+            if (Input.GetKey(KeyCode.E))
+            {
+                // StartCoroutine(Wait());
+
+                    for (int i = 0; i < Inventory.spots.Length; i++)
                     {
-                   //     StartCoroutine(Wait());
-                        // CAN PICKUP
-                        inv._full[i] = true;
-                        Instantiate(itemDisplay, inv.spots[i].transform, false);
-                        Destroy(gameObject);
-                     //   StartCoroutine(Wait());
-                        break;
-                    }
+                        if (count == 0)
+                        {
+                            
+                            //StartCoroutine(Wait());
+                            //count = 0;
+                            if (Inventory._full[i] == false)
+                            {
+                                count = 1;
+                            //     StartCoroutine(Wait());
+                            // CAN PICKUP
+                                Inventory._full[i] = true;
+                                Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                Inventory.pos_objs[i] = itemDisplay;
+                                Destroy(gameObject);
+                                //   StartCoroutine(Wait());
+                                break;
+                            }
+                        }
+                    
+                    // StartCoroutine(Wait());
                 }
-               // StartCoroutine(Wait());
             }
         }
     }

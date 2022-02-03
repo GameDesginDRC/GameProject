@@ -2889,12 +2889,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50e33c123802464bbd7ca6ca76938ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _full: 00000000
-  spots:
+  _full1: 00000000
+  spots1:
   - {fileID: 1241526745}
   - {fileID: 803245828}
   - {fileID: 506126387}
   - {fileID: 588210353}
+  posobjs1:
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
 --- !u!1 &1833204911
 GameObject:
   m_ObjectHideFlags: 0

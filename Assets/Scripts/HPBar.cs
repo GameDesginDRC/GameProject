@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HPBar : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class HPBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "Shop 1")
+        {
+            hpvalue.value = 100;
+        }
     }
 
     // Update is called once per frame

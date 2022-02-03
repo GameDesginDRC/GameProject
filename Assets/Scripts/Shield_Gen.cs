@@ -7,7 +7,7 @@ public class Shield_Gen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Informant.bought_shield = true;
     }
 
     // Update is called once per frame
