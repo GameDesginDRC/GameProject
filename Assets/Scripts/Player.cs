@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -27,7 +28,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Damage(0);
+     //   Scene currentScene = SceneManager.GetActiveScene();
+     //   string sceneName = currentScene.name;
+     //   if (sceneName != "Stage 1")
+     //   {
+            Damage(0);
+     //   }
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
     }
@@ -62,7 +68,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Damage(2);
+      //      Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
                 transform.position += new Vector3(-2f, 0f, 0f);

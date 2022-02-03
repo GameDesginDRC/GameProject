@@ -36,7 +36,6 @@ public class Inventory : MonoBehaviour
         spots = spots1;
         if (sceneName == "Stage 1")
         {
-            Debug.Log("i");
             pos_objs = posobjs1;
             _full = _full1;
             spots = spots1;

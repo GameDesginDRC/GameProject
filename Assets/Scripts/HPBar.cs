@@ -10,18 +10,20 @@ public class HPBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(hpvalue.value);
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName == "Shop 1")
+        if (sceneName == "Stage 1")
         {
             hpvalue.value = 100;
         }
+        Debug.Log(hpvalue.value);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(hpvalue.value);
     }
 
     public void ChangeHealth(int hp)

@@ -28,10 +28,10 @@ public class LvlTracker : MonoBehaviour
         {
             SceneManager.LoadScene(_nextlevelname);
         }
-        if (Player.hp < 1)
+        if (Player.hp < 0)
         {
             // get component gets component of the entire object of the inspector
-            SceneManager.LoadScene(_losename);
+           // SceneManager.LoadScene(_losename);
         }
     }
 }
