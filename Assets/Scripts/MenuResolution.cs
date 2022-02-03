@@ -1,26 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class HPBar : MonoBehaviour
+public class MenuResolution : MonoBehaviour
 {
-    public Slider hpvalue;
     // Start is called before the first frame update
     void Start()
     {
-
+        Screen.SetResolution(1280, 720, true);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void ChangeHealth(int hp)
-    {
-        hpvalue.value = hp;
-
+        
     }
 }

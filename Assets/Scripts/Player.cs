@@ -21,11 +21,8 @@ public class Player : MonoBehaviour
     private int ClickCountD = 0;
     private int ClickCountA = 0;
 
-    public bool Invincible = false;
-    public int InvincibilityTime = 2;
-    public float TimeSinceInvStarted;
-
     public HPBar healthbar;
+    public GenBar GNBar;
     public static int hp;
     // Start is called before the first frame update
     void Start()
@@ -38,15 +35,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Invincible)
-        {
-            StartCoroutine(Blink());
-            if (TimeSinceInvStarted + InvincibilityTime < Time.time)
-            {
-                Invincible = false;
-            }
-        }
-
         HandleInput();
         ProcessStatusEffects();
     }
@@ -74,7 +62,6 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            // Can delete line bwlo; simply here for testing
             Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
@@ -110,14 +97,7 @@ public class Player : MonoBehaviour
         return inp && canJump;
     }
 
-    // player sprite blinks when hit
-    IEnumerator Blink()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds((float)0.2);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds((float)0.2);
-    }
+ 
 
 
     private void DamageBlink() {
@@ -156,17 +136,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        // for detecting collision w/ enemies
-        if (!Invincible)
-        {
-            if (collision.gameObject.tag == "Enemy")
-            {
-                Damage(10);
-                Invincible = true;
-                TimeSinceInvStarted = Time.time;
-            }
-        }
-
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
         {
             hasGun = true;
@@ -177,21 +146,14 @@ public class Player : MonoBehaviour
 
     void Damage(int dmg)
     {
-        hp -= dmg;
-        healthbar.ChangeHealth(hp);
-    }
-
-    // for detecting collision with enemies
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (!Invincible)
+        if (GenBar.shield)
         {
-            if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyAttack")
-            {
-                Damage(10);
-                Invincible = true;
-                TimeSinceInvStarted = Time.time;
-            }
+            GNBar.DecreaseHealth(dmg);
+        }
+        else
+        {
+            hp -= dmg;
+            healthbar.ChangeHealth(hp);
         }
     }
 
