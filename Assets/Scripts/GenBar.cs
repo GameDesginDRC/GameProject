@@ -34,8 +34,8 @@ public class GenBar : MonoBehaviour
         }
     }
 
-    public void DecreaseHealth(int hp)
+    public void DecreaseHealth(int dmg)
     {
-        hpvalue.value -= hp;
+        hpvalue.value -= dmg;
     }
 }
