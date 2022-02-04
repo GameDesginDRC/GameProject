@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     public float Speed = 10f;
     public float JumpForce = 10f;
     public float DamageInvincibilityPeriod = 5f;
-    public float DoubleClickTimerD = .5f;
-    public float DoubleClickTimerA = .5f;
+    public float DoubleClickTimerD = .3f;
+    public float DoubleClickTimerA = .3f;
     private bool canJump = false;
     private bool hasGun = false;
     private int ClickCountD = 0;
@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
             }   
             else
             {
+                ClickCountA = 0;
                 ClickCountD += 1;
                 DoubleClickTimerD = .5f;
             }
@@ -76,6 +77,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                ClickCountD = 0;
                 ClickCountA += 1;
                 DoubleClickTimerA = .5f;
             }
