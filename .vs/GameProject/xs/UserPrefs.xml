@@ -16,13 +16,13 @@
       <File FileName="Assets/Scripts/Informant.cs" />
       <File FileName="Assets/Scripts/TestInit.cs" />
       <File FileName="Assets/Scripts/LvlTracker.cs" />
-      <File FileName="Assets/Scripts/LaserGun.cs" />
+      <File FileName="Assets/Scripts/LaserGun.cs" Line="49" Column="6" />
       <File FileName="Assets/Scripts/GunRobot.cs" />
       <File FileName="Assets/Scripts/RegularGun.cs" />
       <File FileName="Assets/Scripts/Bomb.cs" />
       <File FileName="Assets/Scripts/Bullet.cs" />
-      <File FileName="Assets/Scripts/Explosives.cs" Line="22" Column="110" />
-      <File FileName="Assets/Scripts/Explosion.cs" Line="16" Column="49" />
+      <File FileName="Assets/Scripts/Explosives.cs" Line="32" Column="6" />
+      <File FileName="Assets/Scripts/Explosion.cs" Line="14" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
