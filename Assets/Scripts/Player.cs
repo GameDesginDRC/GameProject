@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool hasLaser = false;
 
+    private bool switched = false;
 
     // Start is called before the first frame update
     void Start()
@@ -164,6 +165,18 @@ public class Player : MonoBehaviour
         {
             ClickCountA = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.D) && switched == true)
+        {
+            transform.Rotate(0f, 180f, 0f); //Player sprite flips
+            switched = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.A) && switched == false)
+        {
+            transform.Rotate(0f, 180f, 0f); //Player sprite flips
+            switched = true;
+        }
+
     }
 
     private bool InputJump() {
