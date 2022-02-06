@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield_Item : MonoBehaviour
+public class Text_disp : MonoBehaviour
 {
     public GameObject FloatingTextPrefab;
    // private float DestroyTime = .0001f;

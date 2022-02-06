@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Explosives.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Progressor.cs">
     <Files>
       <File FileName="Assets/Scripts/GenBar.cs" Line="1" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Shield_Item.cs" IsPinned="True" />
@@ -16,18 +16,19 @@
       <File FileName="Assets/Scripts/Informant.cs" />
       <File FileName="Assets/Scripts/TestInit.cs" />
       <File FileName="Assets/Scripts/LvlTracker.cs" />
-      <File FileName="Assets/Scripts/LaserGun.cs" Line="49" Column="6" />
+      <File FileName="Assets/Scripts/LaserGun.cs" />
       <File FileName="Assets/Scripts/GunRobot.cs" />
       <File FileName="Assets/Scripts/RegularGun.cs" />
       <File FileName="Assets/Scripts/Bomb.cs" />
       <File FileName="Assets/Scripts/Bullet.cs" />
       <File FileName="Assets/Scripts/Explosives.cs" Line="32" Column="6" />
-      <File FileName="Assets/Scripts/Explosion.cs" Line="14" Column="5" />
+      <File FileName="Assets/Scripts/Explosion.cs" />
+      <File FileName="Assets/Scripts/Progressor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c60a7090-a5ee-40f3-9e2f-6db862dc315b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3b4b3ac3-d478-4983-bba6-445d5388934c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -16,8 +16,7 @@ public class PickUp : MonoBehaviour
     void Update()
     {
         if (count == 1 && Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.A) ||Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-            
+        {    
             count = 0;
         }
         }
@@ -26,7 +25,7 @@ public class PickUp : MonoBehaviour
         Debug.Log(count);
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.B))
             {
                 // StartCoroutine(Wait());
 
