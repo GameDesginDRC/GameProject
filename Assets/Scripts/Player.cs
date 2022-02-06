@@ -13,18 +13,47 @@ public class Player : MonoBehaviour
 
 
     public float Speed = 10f;
+    [SerializeField]
+    private bool facingRight;
+
     public float JumpForce = 10f;
     public float DamageInvincibilityPeriod = 5f;
     public float DoubleClickTimerD = .3f;
     public float DoubleClickTimerA = .3f;
     private bool canJump = false;
-    private bool hasGun = false;
     private int ClickCountD = 0;
     private int ClickCountA = 0;
 
     public HPBar healthbar;
     public GenBar GNBar;
     public static int hp;
+
+    // for attacks
+    [SerializeField]
+    private bool coolingDown;
+
+    [SerializeField]
+    private GameObject playerBullet;
+    [SerializeField]
+    Transform castPoint;
+    [SerializeField]
+    private bool hasGun = false;
+
+    [SerializeField]
+    private GameObject playerSword;
+    [SerializeField]
+    private bool hasSword = false;
+
+    [SerializeField]
+    private GameObject rocket;
+    [SerializeField]
+    private bool hasRketLncher = false;
+
+    // use Debug.DrawLine for the laser for now
+    [SerializeField]
+    private bool hasLaser = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +74,25 @@ public class Player : MonoBehaviour
         ProcessStatusEffects();
     }
 
+    // Different attacks depending on the weapon equipped
+    void GunShoot()
+    {
+        Vector3 shootLoc = castPoint.position;
+        GameObject newBullet = Instantiate(playerBullet, shootLoc + transform.right, playerBullet.transform.rotation);
+        newBullet.GetComponent<Rigidbody2D>().velocity = 10 * transform.right;
+    }
+
+    void SwordCooldown() {
+        coolingDown = false;
+        playerSword.tag = "Untagged";
+    }
+
+    void SwordAttack() {
+        coolingDown = true;
+        playerSword.tag = "PlayerAttack";
+        Invoke("SwordCooldown", .5f);
+    }
+
     private void HandleInput()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
@@ -56,7 +104,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (ClickCountD == 1 && DoubleClickTimerD>0)
-            {
+            {   // move right
+                if (!facingRight)
+                {
+                    castPoint.localPosition *= -1;
+                    facingRight = true;
+                }
                 transform.position += new Vector3(2f, 0f, 0f);
                 ClickCountD = 0;
             }   
@@ -72,6 +125,11 @@ public class Player : MonoBehaviour
       //      Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
+                // move left
+                if (facingRight) {
+                    castPoint.localPosition *= -1;
+                    facingRight = false;
+                }
                 transform.position += new Vector3(-2f, 0f, 0f);
                 ClickCountA = 0;
             }
@@ -80,6 +138,14 @@ public class Player : MonoBehaviour
                 ClickCountD = 0;
                 ClickCountA += 1;
                 DoubleClickTimerA = .5f;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (!coolingDown) {
+                // depending on weapon, choose attack
+                if (hasGun) { GunShoot(); }
+                else if (hasSword) { SwordAttack(); }
             }
         }
         if (DoubleClickTimerD > 0)

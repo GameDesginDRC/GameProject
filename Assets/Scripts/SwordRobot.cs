@@ -82,6 +82,8 @@ public class SwordRobot : MonoBehaviour
             transform.Translate(HorzVector * Time.deltaTime);
         }
 
+        if (health <= 0) Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -98,6 +100,12 @@ public class SwordRobot : MonoBehaviour
 
                 nextAttack = Time.time + 1f;
             }
+        }
+
+        if (collision.CompareTag("PlayerAttack"))
+        {
+            // decrease HP and pause
+            health -= 2;
         }
 
         if (collision.CompareTag("Wall"))

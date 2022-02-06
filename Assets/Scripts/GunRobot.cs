@@ -118,6 +118,7 @@ public class GunRobot : MonoBehaviour
             Debug.Log("Player spotted");
         }
 
+        if (health <= 0) Destroy(gameObject);
     }
 
     // Checks to see if player is in enemy's sight
@@ -142,5 +143,19 @@ public class GunRobot : MonoBehaviour
         Debug.DrawLine(castPoint.position, EndofSight, Color.red);
         
         return val;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("PlayerAttack"))
+        {
+            health -= 2;
+        }
+
+        if (collision.CompareTag("Wall"))
+        {
+            Debug.Log("Flip");
+            InvokeFlip();
+        }
     }
 }
