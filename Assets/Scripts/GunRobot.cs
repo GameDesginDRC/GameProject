@@ -36,6 +36,12 @@ public class GunRobot : MonoBehaviour
     [SerializeField]
     float shootevery = 1;
 
+    // invincibility when attacked
+    [SerializeField]
+    float invincibleTime = .3f;
+    [SerializeField]
+    bool invincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +80,11 @@ public class GunRobot : MonoBehaviour
             newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
         }
 
+    }
+
+    void Die() {
+        LevelManager.DecreaseEnemyNum();
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -118,7 +129,16 @@ public class GunRobot : MonoBehaviour
             Debug.Log("Player spotted");
         }
 
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void invinCooldown()
+    {
+        isPaused = false;
+        invincible = false;
     }
 
     // Checks to see if player is in enemy's sight
@@ -146,16 +166,24 @@ public class GunRobot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.CompareTag("PlayerAttack"))
-        {
-            health -= 2;
-        }
-
         if (collision.CompareTag("Wall"))
         {
             Debug.Log("Flip");
             InvokeFlip();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerAttack"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 2;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
         }
     }
 }

@@ -35,6 +35,12 @@ public class SwordRobot : MonoBehaviour
     [SerializeField]
     GameObject theAttack;
 
+    // invincibility when attacked
+    [SerializeField]
+    float invincibleTime = .3f;
+    [SerializeField]
+    bool invincible = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +74,12 @@ public class SwordRobot : MonoBehaviour
         }
     }
 
+    void Die()
+    {
+        LevelManager.DecreaseEnemyNum();
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -82,8 +94,16 @@ public class SwordRobot : MonoBehaviour
             transform.Translate(HorzVector * Time.deltaTime);
         }
 
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            Die();
+        }
 
+    }
+    void invinCooldown()
+    {
+        isPaused = false;
+        invincible = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -102,16 +122,25 @@ public class SwordRobot : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("PlayerAttack"))
-        {
-            // decrease HP and pause
-            health -= 2;
-        }
-
         if (collision.CompareTag("Wall"))
         {
             Debug.Log("Flip");
             InvokeFlip();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerAttack"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 2;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
         }
     }
 

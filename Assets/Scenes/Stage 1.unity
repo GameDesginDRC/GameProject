@@ -542,6 +542,8 @@ MonoBehaviour:
   shootSpeed: 10
   nextShootTime: 0
   shootevery: 1.5
+  invincibleTime: 0.3
+  invincible: 0
 --- !u!50 &279506375
 Rigidbody2D:
   serializedVersion: 4
@@ -1302,7 +1304,7 @@ GameObject:
   - component: {fileID: 719065419}
   m_Layer: 0
   m_Name: SwordHitbox
-  m_TagString: PlayerAttack
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1988,6 +1990,8 @@ MonoBehaviour:
   onCooldown: 0
   nextAttack: 0
   theAttack: {fileID: 961557800}
+  invincibleTime: 0.3
+  invincible: 0
 --- !u!1 &992649447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,6 +3089,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1499976472}
     - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: hasGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: castPoint
       value: 
       objectReference: {fileID: 168893264}
@@ -3195,8 +3203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
-  Code: {fileID: 1688629211}
-  Firepoint: {fileID: 168893264}
   ShootTimer: 0.5
   CanShoot: 0
 --- !u!114 &1688629211 stripped
@@ -3210,6 +3216,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598b261ed993f40d793463e6f807adf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1688629212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688629208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f16b56a434e12c43b0673e35616b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordHitbox: {fileID: 719065416}
+  hasSword: 0
+  coolingDown: 0
 --- !u!4 &1688629215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
@@ -3247,7 +3268,7 @@ MonoBehaviour:
   Code: {fileID: 1688629211}
   Firepoint: {fileID: 168893264}
   ShootTimer: 0.5
-  CanShoot: 1
+  CanShoot: 0
 --- !u!1 &1833204911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,3 +3625,47 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &2011012613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011012614}
+  - component: {fileID: 2011012615}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011012614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011012613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011012615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011012613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ef65bb16e21534fb26ad19cbc92da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numOfEnemies: 0

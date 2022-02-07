@@ -105,12 +105,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (ClickCountD == 1 && DoubleClickTimerD>0)
-            {   // move right
-                if (!facingRight)
-                {
-                    castPoint.localPosition *= -1;
-                    facingRight = true;
-                }
+            {   
                 transform.position += new Vector3(2f, 0f, 0f);
                 ClickCountD = 0;
             }   
@@ -126,11 +121,6 @@ public class Player : MonoBehaviour
             Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
-                // move left
-                if (facingRight) {
-                    castPoint.localPosition *= -1;
-                    facingRight = false;
-                }
                 transform.position += new Vector3(-2f, 0f, 0f);
                 ClickCountA = 0;
             }
@@ -141,14 +131,14 @@ public class Player : MonoBehaviour
                 DoubleClickTimerA = .5f;
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (!coolingDown) {
-                // depending on weapon, choose attack
-                if (hasGun) { GunShoot(); }
-                else if (hasSword) { SwordAttack(); }
+            if (hasGun) {
+                GunShoot();
             }
         }
+
         if (DoubleClickTimerD > 0)
         {
             DoubleClickTimerD -= 1 * Time.deltaTime;
