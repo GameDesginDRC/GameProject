@@ -5,7 +5,9 @@ using UnityEngine;
 public class Informant : MonoBehaviour
 {
     public static bool bought_shield;
+    public static bool bought_gun;
     public GameObject FloatingTextPrefab;
+    public GameObject FloatingTextPrefab2;
     private Vector3 newvec;
     private GameObject obj;
     private int first;
@@ -31,5 +33,16 @@ public class Informant : MonoBehaviour
             first++;
             //Destroy(obj, 8);
         }
+        if (bought_gun)
+        {
+            if (first != 0)
+            {
+                Destroy(obj);
+            }
+            bought_gun = false;
+            obj = Instantiate(FloatingTextPrefab2, transform.position + newvec, Quaternion.identity, transform);
+            first++;
+            //Destroy(obj, 8);
+           }
+        }
     }
-}

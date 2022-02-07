@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Damage(2);
+           // Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
                 transform.position += new Vector3(-2f, 0f, 0f);
