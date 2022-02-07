@@ -6,7 +6,8 @@ public class PickUp : MonoBehaviour
 {
     public GameObject itemDisplay;
     public int count;
-    public GameObject player1_;
+    //public GameObject player1_;
+    public int price;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,9 @@ public class PickUp : MonoBehaviour
         //Debug.Log(count);
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.B))
+            if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
             {
                 // StartCoroutine(Wait());
-
                     for (int i = 0; i < Inventory.spots.Length; i++)
                     {
                         if (count == 0)
@@ -39,7 +39,10 @@ public class PickUp : MonoBehaviour
                             //count = 0;
                             if (Inventory._full[i] == false)
                             {
-                                count = 1;
+                                //Debug.Log(ScoreKeeper.gold);
+                                ScoreKeeper.SubToGold(price);
+                                Debug.Log(ScoreKeeper.gold);
+                            count = 1;
                             //     StartCoroutine(Wait());
                             // CAN PICKUP
                                 Inventory._full[i] = true;

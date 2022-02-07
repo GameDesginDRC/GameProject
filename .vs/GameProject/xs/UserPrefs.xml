@@ -1,29 +1,30 @@
 ﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScoreKeeper.cs">
     <Files>
       <File FileName="Assets/Scripts/GenBar.cs" Line="1" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Shield_Item.cs" Line="6" Column="2" IsPinned="True" />
       <File FileName="Assets/Scripts/MenuResolution.cs" Line="1" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Door.cs" Line="24" Column="13" IsPinned="True" />
+      <File FileName="Assets/Scripts/HPBar.cs" Line="14" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/Player.cs" Line="128" Column="14" />
       <File FileName="Assets/Scripts/SwordRobot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ScoreKeeper.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUp.cs" Line="48" Column="77" />
+      <File FileName="Assets/Scripts/ScoreKeeper.cs" Line="29" Column="6" />
+      <File FileName="Assets/Scripts/PickUp.cs" Line="54" Column="63" />
       <File FileName="Assets/Scripts/Inv_Box.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Shield_Gen.cs" Line="22" Column="9" />
-      <File FileName="Assets/Scripts/HPBar.cs" Line="16" Column="35" />
+      <File FileName="Assets/Scripts/Shield_Gen.cs" Line="30" Column="6" />
       <File FileName="Assets/Scripts/Inventory.cs" Line="19" Column="36" />
-      <File FileName="Assets/Scripts/Informant.cs" Line="43" Column="50" />
+      <File FileName="Assets/Scripts/Informant.cs" Line="45" Column="12" />
       <File FileName="Assets/Scripts/TestInit.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/LvlTracker.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/LaserGun.cs" Line="49" Column="6" />
       <File FileName="Assets/Scripts/GunRobot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RegularGun.cs" Line="42" Column="39" />
-      <File FileName="Assets/Scripts/Bomb.cs" />
+      <File FileName="Assets/Scripts/RegularGun.cs" Line="12" Column="19" />
+      <File FileName="Assets/Scripts/Bomb.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Bullet.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Explosives.cs" Line="32" Column="6" />
       <File FileName="Assets/Scripts/Explosion.cs" Line="14" Column="5" />
       <File FileName="Assets/Scripts/Progressor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GunOn.cs" Line="10" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

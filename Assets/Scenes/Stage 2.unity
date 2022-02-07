@@ -1613,7 +1613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
   ShootTimer: 0.5
-  CanShoot: 0
 --- !u!114 &944089671
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1521,6 +1521,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 210619231094515054, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
+      propertyPath: price
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 210619231094515054, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
       propertyPath: player1_
       value: 
       objectReference: {fileID: 56694352}
@@ -1763,7 +1767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 6760289862264935830, guid: 7a1593e1348ee4c02ae5126556fee5e0, type: 3}
-  FloatingTextPrefab2: {fileID: 0}
+  FloatingTextPrefab2: {fileID: 7523103740559462323, guid: f51f42747cd5a443590b276d4fef90b5, type: 3}
 --- !u!212 &1903364285
 SpriteRenderer:
   m_ObjectHideFlags: 0
