@@ -10,7 +10,7 @@ public class HPBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(hpvalue.value);
+      //  Debug.Log(hpvalue.value);
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         if (sceneName == "Stage 1")

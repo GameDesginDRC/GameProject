@@ -893,6 +893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 2668435372244468505, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+      propertyPath: player1_
+      value: 
+      objectReference: {fileID: 56694352}
     - target: {fileID: 2668435372244468508, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1516,6 +1520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 210619231094515054, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
+      propertyPath: player1_
+      value: 
+      objectReference: {fileID: 56694352}
     - target: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
       propertyPath: m_Name
       value: Shield_Pickup (1)

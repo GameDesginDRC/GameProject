@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
     public GameObject itemDisplay;
     public int count;
+    public GameObject player1_;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class PickUp : MonoBehaviour
         }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(count);
+        //Debug.Log(count);
         if (collision.CompareTag("Player"))
         {
             if (Input.GetKey(KeyCode.B))
@@ -42,8 +43,17 @@ public class PickUp : MonoBehaviour
                             //     StartCoroutine(Wait());
                             // CAN PICKUP
                                 Inventory._full[i] = true;
-                                Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                var go = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                 Inventory.pos_objs[i] = itemDisplay;
+
+                                if (itemDisplay.GetComponent<Shield_Gen>() != null) {
+                                  go.GetComponent<Shield_Gen>().usednum = i;
+                                }
+                                else if (itemDisplay.GetComponent<GunOn>() != null)
+                                 {
+                                   RegularGun.CanShoot = true;
+                                }
+
                                 Destroy(gameObject);
                                 //   StartCoroutine(Wait());
                                 break;

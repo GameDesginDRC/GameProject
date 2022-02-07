@@ -3204,7 +3204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
   ShootTimer: 0.5
-  CanShoot: 1
 --- !u!114 &1688629211 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
