@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1013621663160438848}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee9a4bef15bd4c5a87ea15607be0a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionLongevity: 0.5
+  rbBullet: {fileID: 0}
+  DeathEffect: {fileID: 0}

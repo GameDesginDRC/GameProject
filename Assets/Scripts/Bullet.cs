@@ -16,6 +16,11 @@ public class Bullet : MonoBehaviour
         rbBullet.velocity = transform.right * BulletSpeed;
     }
 
+    private void ExplodeAndDie()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
 
@@ -27,7 +32,7 @@ public class Bullet : MonoBehaviour
         if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Enemy")) //When bullet hits Enemy or Ground
         {
             //Instantiate(DeathEffect, transform.position, transform.rotation); //animation for bullet
-            Destroy(gameObject); //Destroy Bullet
+            Invoke("ExplodeAndDie", .1f);
         }
     }   
 
