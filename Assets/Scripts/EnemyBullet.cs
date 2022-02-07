@@ -17,11 +17,16 @@ public class EnemyBullet : MonoBehaviour
     {
 
     }
-    public void OnTriggerEnter2D(Collider2D col)
-    {
+
+    private void ExplodeAndDie() {
         Destroy(gameObject);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        Invoke("ExplodeAndDie", .1f);
+    }
+    void OnBecameInvisible()
     {
         Destroy(gameObject);
     }

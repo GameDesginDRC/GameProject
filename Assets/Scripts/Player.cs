@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     private int ClickCountD = 0;
     private int ClickCountA = 0;
 
+    public bool Invincible = false;
+    public int InvincibilityTime = 2;
+    public float TimeSinceInvStarted;
+
     public HPBar healthbar;
     public GenBar GNBar;
     public static int hp;
@@ -68,30 +72,33 @@ public class Player : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // player sprite blinks when hit
+    IEnumerator Blink()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds((float)0.2);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds((float)0.2);
+    }
+
+    void HandleInvincible() {
+        if (Invincible)
+        {
+            StartCoroutine(Blink());
+            if (TimeSinceInvStarted + InvincibilityTime < Time.time)
+            {
+                Invincible = false;
+            }
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
+        HandleInvincible();
         HandleInput();
         ProcessStatusEffects();
-    }
-
-    // Different attacks depending on the weapon equipped
-    void GunShoot()
-    {
-        Vector3 shootLoc = castPoint.position;
-        GameObject newBullet = Instantiate(playerBullet, shootLoc + transform.right, playerBullet.transform.rotation);
-        newBullet.GetComponent<Rigidbody2D>().velocity = 10 * transform.right;
-    }
-
-    void SwordCooldown() {
-        coolingDown = false;
-        playerSword.tag = "Untagged";
-    }
-
-    void SwordAttack() {
-        coolingDown = true;
-        playerSword.tag = "PlayerAttack";
-        Invoke("SwordCooldown", .5f);
     }
 
     private void HandleInput()
@@ -129,13 +136,6 @@ public class Player : MonoBehaviour
                 ClickCountD = 0;
                 ClickCountA += 1;
                 DoubleClickTimerA = .5f;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (hasGun) {
-                GunShoot();
             }
         }
 
@@ -213,6 +213,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (!Invincible)
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                Damage(10);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+            }
+        }
+
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
         {
             hasGun = true;
