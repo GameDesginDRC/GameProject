@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2668435372244468506}
   - component: {fileID: 2668435372244468505}
   - component: {fileID: -5129773799048687008}
+  - component: {fileID: -1027053892184493359}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -125,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 5459096364762853538, guid: 9e3355ea1441d4c158d0a017bd485145, type: 3}
   count: 0
-  player1_: {fileID: 0}
   price: 80
 --- !u!114 &-5129773799048687008
 MonoBehaviour:
@@ -140,3 +140,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 7056965635353708283, guid: 9009e2e05897046a78fa78ee1bb21d7e, type: 3}
+--- !u!114 &-1027053892184493359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668435372244468504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946e4d7dd37b64629b4c990c8fa28a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

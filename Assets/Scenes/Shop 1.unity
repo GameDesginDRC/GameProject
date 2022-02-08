@@ -1522,7 +1522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 210619231094515054, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
       propertyPath: price
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 210619231094515054, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
       propertyPath: player1_

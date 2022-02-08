@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 210619231094515055}
   - component: {fileID: 210619231094515054}
   - component: {fileID: 210619231094515057}
+  - component: {fileID: 6363019071739763373}
   m_Layer: 0
   m_Name: Shield_Pickup
   m_TagString: Untagged
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 5757506720592358010, guid: b99c16a007ce34aee919b534aaa5e348, type: 3}
+  count: 0
+  price: 10
 --- !u!60 &210619231094515057
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -325,3 +328,15 @@ PolygonCollider2D:
       - {x: -3.0449998, y: -5.22}
       - {x: -3.0049999, y: -5.17}
       - {x: -3.0049999, y: -5.16}
+--- !u!114 &6363019071739763373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210619231094515056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697aa347491904c169ecd9e0c19edc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

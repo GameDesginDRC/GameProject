@@ -83,6 +83,8 @@
     <Compile Include="Assets/Scripts/LevelManager.cs" />
     <Compile Include="Assets/Scripts/RegularSword.cs" />
     <Compile Include="Assets/Scripts/GunOn.cs" />
+    <Compile Include="Assets/Scripts/Consumable.cs" />
+    <Compile Include="Assets/Scripts/Equipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
