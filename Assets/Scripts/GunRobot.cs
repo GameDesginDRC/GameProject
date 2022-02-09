@@ -81,7 +81,13 @@ public class GunRobot : MonoBehaviour
         }
 
     }
-
+    IEnumerator Blink()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds((float)0.2);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds((float)0.2);
+    }
     void Die() {
         LevelManager.DecreaseEnemyNum();
         Destroy(gameObject);
@@ -91,22 +97,7 @@ public class GunRobot : MonoBehaviour
     void Update()
     {
 
-        /*
-        // move right and left
-        if (!isPaused)
-        {
-            Vector3 HorzVector = new Vector3(5, 0.0f, 0.0f);
-            transform.Translate(HorzVector * Time.deltaTime);
-        }
-
-        // pause for 2 seconds
-        if (Time.time > nextFlip)
-        {
-            isPaused = true;
-            Invoke("InvokeFlip", 2);
-            nextFlip = Time.time + 2 + flipEveryXSecs;
-        }
-        */
+        if (invincible) { StartCoroutine(Blink()); }
 
         if (Time.time > nextFlip)
         {

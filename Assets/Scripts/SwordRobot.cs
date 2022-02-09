@@ -41,6 +41,9 @@ public class SwordRobot : MonoBehaviour
     [SerializeField]
     bool invincible = false;
 
+    // animation
+    [SerializeField]
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +52,7 @@ public class SwordRobot : MonoBehaviour
 
     void Wait() {
         theAttack.tag = "Untagged";
+        animator.SetBool("Attacking", false);
     }
 
     void Unpause() {
@@ -57,8 +61,17 @@ public class SwordRobot : MonoBehaviour
 
     void Attack() {
         theAttack.tag = "Enemy";
+        animator.SetBool("Attacking", true);
+        Invoke("Wait", .3f);
     }
 
+    IEnumerator Blink()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds((float)0.2);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds((float)0.2);
+    }
 
     void InvokeFlip() {
         if (movingRight)
@@ -83,6 +96,8 @@ public class SwordRobot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invincible) { StartCoroutine(Blink()); }
+
         // attack cooldown check
         if (Time.time > nextAttack) {
             onCooldown = false;
@@ -113,10 +128,10 @@ public class SwordRobot : MonoBehaviour
             if (!onCooldown)
             {
                 isPaused = true;
-                // half a second before attack
-                Invoke("Attack", .5f);
+                // 3/10th a second before attack
+                Invoke("Attack", .3f);
                 // Attack
-                Debug.Log("Attack!");
+                //Debug.Log("Attack!");
 
                 nextAttack = Time.time + 1f;
             }
@@ -139,6 +154,7 @@ public class SwordRobot : MonoBehaviour
                 health -= 2;
                 isPaused = true;
                 invincible = true;
+                // knockback
                 Invoke("invinCooldown", invincibleTime);
             }
         }

@@ -2,32 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegularSword : MonoBehaviour
+public class Lance : MonoBehaviour
 {
     [SerializeField]
-    private GameObject swordHitbox;
+    private GameObject lanceHitbox;
     [SerializeField]
-    private bool hasSword = false;
+    private bool hasLance = false;
     [SerializeField]
     private bool coolingDown = false;
     [SerializeField]
     private Animator animator;
 
-    void SwordCooldown()
+    void LanceCooldown()
     {
         animator.SetBool("Attacking", false);
         coolingDown = false;
-        swordHitbox.tag = "Untagged";
+        lanceHitbox.tag = "Untagged";
     }
 
-    void SwordAttack()
+    void LanceAttack()
     {
         animator.SetBool("Attacking", true);
         coolingDown = true;
-        swordHitbox.tag = "PlayerAttack";
-        Invoke("SwordCooldown", .3f);
+        lanceHitbox.tag = "PlayerAttack";
+        Invoke("LanceCooldown", .3f);
     }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,10 +36,9 @@ public class RegularSword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Z) && hasSword && !coolingDown)
+        if (Input.GetKeyDown(KeyCode.Z) && hasLance && !coolingDown)
         {
-            SwordAttack();
+            LanceAttack();
         }
     }
 }
