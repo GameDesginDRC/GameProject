@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     public int InvincibilityTime = 2;
     public float TimeSinceInvStarted;
 
-    public HPBar healthbar;
-    public GenBar GNBar;
+    public HPBar healthbar = null;
+    public GenBar GNBar= null;
     public static int hp;
 
     // for attacks
@@ -62,12 +62,17 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     //   Scene currentScene = SceneManager.GetActiveScene();
-     //   string sceneName = currentScene.name;
-     //   if (sceneName != "Stage 1")
-     //   {
+        //   Scene currentScene = SceneManager.GetActiveScene();
+        //   string sceneName = currentScene.name;
+        //   if (sceneName != "Stage 1")
+        //   {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName != "HUB")
+        {
             Damage(0);
-     //   }
+            //   }
+        }
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
     }

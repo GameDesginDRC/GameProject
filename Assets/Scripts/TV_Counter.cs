@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield_Bar : MonoBehaviour
+public class TV_Counter : MonoBehaviour
 {
+    public static int countertv;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

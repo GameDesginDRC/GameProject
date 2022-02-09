@@ -22,6 +22,7 @@ public class Resetter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
+            TV_Counter.countertv++;
             SceneManager.LoadScene(Level1);
         }
     }

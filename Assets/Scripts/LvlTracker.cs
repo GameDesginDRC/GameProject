@@ -31,7 +31,8 @@ public class LvlTracker : MonoBehaviour
         if (Player.hp < 0)
         {
             // get component gets component of the entire object of the inspector
-           // SceneManager.LoadScene(_losename);
+            TV_Counter.countertv++;
+           SceneManager.LoadScene(_losename);
         }
     }
 }
