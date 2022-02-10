@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public float TimeSinceInvStarted;
 
     public HPBar healthbar = null;
-    public GenBar GNBar= null;
+    public GenBar GNBar = null;
     public static int hp;
 
     // for attacks
@@ -114,13 +114,13 @@ public class Player : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse); ;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (ClickCountD == 1 && DoubleClickTimerD>0)
-            {   
+            if (ClickCountD == 1 && DoubleClickTimerD > 0)
+            {
                 transform.position += new Vector3(2f, 0f, 0f);
                 ClickCountD = 0;
-            }   
+            }
             else
             {
                 ClickCountA = 0;
@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
                 DoubleClickTimerD = .5f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
            // Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
@@ -161,12 +161,12 @@ public class Player : MonoBehaviour
             ClickCountA = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && switched == true)
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && switched == true)
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = false;
         }
-        else if (Input.GetKeyDown(KeyCode.A) && switched == false)
+        else if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && switched == false)
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = true;
