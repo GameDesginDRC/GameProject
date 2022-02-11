@@ -10,7 +10,8 @@ public class Shield_Gen : MonoBehaviour
     public static bool used;
     public int usednum;
     private Scene currentScene;
-    string sceneName; 
+    string sceneName;
+    public static int shield_count = 0;
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
@@ -34,10 +35,18 @@ public class Shield_Gen : MonoBehaviour
     void UseShieldGen()
     {
         //Debug.Log(usednum);
-        Inventory.pos_objs[usednum] = empty1;
-        Inventory._full[usednum] = false;
-        GenBar.shield = true;
-        GenBar.start1 = true;
-        Destroy(gameObject);
+        if (shield_count == 0)
+        {
+            Inventory.pos_objs[usednum] = empty1;
+            Inventory._full[usednum] = false;
+            GenBar.shield = true;
+            GenBar.start1 = true;
+            Destroy(gameObject);
+        } else
+        {
+            shield_count--;
+            GenBar.shield = true;
+            GenBar.start1 = true;
+        }
     }
 }

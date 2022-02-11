@@ -40,33 +40,38 @@ public class PickUp : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Q) && gameObject.GetComponent<Equipment>() != null)
                 {
-                    if (InvTracker.invcount == 0)
+                    if (count == 0)
                     {
-                        Destroy(item1);
-                        item1 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
-                    } else
-                    {
-                        Destroy(item2);
-                        item2 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                        count = 1;
+                        if (InvTracker.invcount == 0)
+                        {
+                            Destroy(item1);
+                            item1 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                        }
+                        else
+                        {
+                            Destroy(item2);
+                            item2 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                        }
+                        ScoreKeeper.SubToGold(price);
+                        // Disabling old replaced item
+                        if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
+                        {
+                            RegularGun.CanShoot = false;
+                            //Destroy(FindObjectOfType<GunOn>());
+                        }
+                        // New item picked up
+                        //var go = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                        Inventory.pos_objs[InvTracker.invcount] = itemDisplay;
+                        if (itemDisplay.GetComponent<GunOn>() != null)
+                        {
+                            RegularGun.CanShoot = true;
+                        }
+                        Destroy(gameObject);
                     }
-                    ScoreKeeper.SubToGold(price);
-                    // Disabling old replaced item
-                    if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = false;
-                        //Destroy(FindObjectOfType<GunOn>());
-                    }
-                    // New item picked up
-                    //var go = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
-                    Inventory.pos_objs[InvTracker.invcount] = itemDisplay;
-                    if (itemDisplay.GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = true;
-                    }
-                    Destroy(gameObject);
                 }
-
-                
+                // Check if the first consumable is full and is a shield
+             
                 // To switch out second weapon
                 /*
                 if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Equipment>() != null)
@@ -138,8 +143,31 @@ public class PickUp : MonoBehaviour
             */
             if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
             {
+                if (Inventory._full[2] && item3.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        ScoreKeeper.SubToGold(price);
+                        Shield_Gen.shield_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                // Check if second consumable is full and is a shield
+                else if (Inventory._full[3] && item4.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        ScoreKeeper.SubToGold(price);
+                        Shield_Gen.shield_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
                 //When item is an equipment
-                if (gameObject.GetComponent<Equipment>() != null) {
+                else if (gameObject.GetComponent<Equipment>() != null) {
                     for (int i = 0; i < 2; i++)
                     {
                         if (count == 0)
