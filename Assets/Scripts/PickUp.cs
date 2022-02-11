@@ -42,7 +42,7 @@ public class PickUp : MonoBehaviour
                             {
                                 //Debug.Log(ScoreKeeper.gold);
                                 ScoreKeeper.SubToGold(price);
-                                Debug.Log(ScoreKeeper.gold);
+                                //Debug.Log(ScoreKeeper.gold);
                                 count = 1;
                                 //     StartCoroutine(Wait());
                                 // CAN PICKUP

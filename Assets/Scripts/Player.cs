@@ -66,11 +66,17 @@ public class Player : MonoBehaviour
         //   string sceneName = currentScene.name;
         //   if (sceneName != "Stage 1")
         //   {
+
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName != "HUB")
+        if (sceneName != "HUB" && sceneName != "Stage 1")
         {
             Damage(0);
+            //   }
+        }
+        if (sceneName == "Stage 1")
+        {
+            hp = 100;
             //   }
         }
         myRB = GetComponent<Rigidbody2D>();

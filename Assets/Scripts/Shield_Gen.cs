@@ -28,7 +28,7 @@ public class Shield_Gen : MonoBehaviour
     }
     void UseShieldGen()
     {
-        Debug.Log(usednum);
+        //Debug.Log(usednum);
         Inventory.pos_objs[usednum] = empty1;
         Inventory._full[usednum] = false;
         GenBar.shield = true;

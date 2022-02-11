@@ -1,36 +1,28 @@
 ﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoxInvUIText.cs">
     <Files>
-      <File FileName="Assets/Scripts/GenBar.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/MenuResolution.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/Door.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/HPBar.cs" Line="11" Column="17" IsPinned="True" />
-      <File FileName="Assets/Scripts/Player.cs" Line="169" Column="86" />
+      <File FileName="Assets/Scripts/GenBar.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/Door.cs" IsPinned="True" />
+      <File FileName="Assets/Scripts/HPBar.cs" Line="10" Column="53" IsPinned="True" />
+      <File FileName="Assets/Scripts/Player.cs" Line="72" Column="57" />
       <File FileName="Assets/Scripts/SwordRobot.cs" />
       <File FileName="Assets/Scripts/ScoreKeeper.cs" />
-      <File FileName="Assets/Scripts/PickUp.cs" />
+      <File FileName="Assets/Scripts/PickUp.cs" Line="45" Column="35" />
       <File FileName="Assets/Scripts/Inv_Box.cs" />
-      <File FileName="Assets/Scripts/Shield_Gen.cs" />
+      <File FileName="Assets/Scripts/Shield_Gen.cs" Line="31" Column="11" />
       <File FileName="Assets/Scripts/Inventory.cs" />
       <File FileName="Assets/Scripts/Informant.cs" />
-      <File FileName="Assets/Scripts/TestInit.cs" />
       <File FileName="Assets/Scripts/LvlTracker.cs" />
-      <File FileName="Assets/Scripts/LaserGun.cs" />
-      <File FileName="Assets/Scripts/GunRobot.cs" />
-      <File FileName="Assets/Scripts/RegularGun.cs" />
-      <File FileName="Assets/Scripts/Bomb.cs" />
-      <File FileName="Assets/Scripts/Bullet.cs" />
-      <File FileName="Assets/Scripts/Explosives.cs" />
-      <File FileName="Assets/Scripts/Explosion.cs" />
       <File FileName="Assets/Scripts/GunOn.cs" />
-      <File FileName="Assets/Scripts/HUB_TV.cs" />
+      <File FileName="Assets/Scripts/HUB_TV.cs" Line="24" Column="1" />
       <File FileName="Assets/Scripts/TV_Counter.cs" />
-      <File FileName="Assets/Scripts/Resetter.cs" Line="25" Column="15" />
+      <File FileName="Assets/Scripts/Resetter.cs" />
+      <File FileName="Assets/Scripts/BoxInvUIText.cs" Line="10" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="936de93d-3192-4f6d-90e2-38f4fc2e2a02" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3036b9ea-35b2-4ae8-b978-74d421f8159a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

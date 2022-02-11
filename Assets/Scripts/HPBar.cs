@@ -16,6 +16,9 @@ public class HPBar : MonoBehaviour
         if (sceneName == "Stage 1")
         {
             hpvalue.value = 100;
+        } else
+        {
+            hpvalue.value = Player.hp;
         }
         Debug.Log(hpvalue.value);
     }
