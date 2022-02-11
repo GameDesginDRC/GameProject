@@ -27,6 +27,95 @@ public class PickUp : MonoBehaviour
         //Debug.Log(count);
         if (collision.CompareTag("Player"))
         {
+            // This is switching out equpiment
+            if (Inventory._full[0] && Inventory._full[1])
+            {
+                // To switch out first weapon
+
+                if (Input.GetKey(KeyCode.N) && gameObject.GetComponent<Equipment>() != null)
+                {
+                    ScoreKeeper.SubToGold(price);
+                    // Disabling old replaced item
+                    if (Inventory.pos_objs[0].GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = false;
+                    }
+
+                    // New item picked up
+                    var go = Instantiate(itemDisplay, Inventory.spots[0].transform, false);
+                    Inventory.pos_objs[0] = itemDisplay;
+                    if (itemDisplay.GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = true;
+                    }
+                    Destroy(gameObject);
+                }
+                // To switch out second weapon
+
+                if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Equipment>() != null)
+                {
+                    ScoreKeeper.SubToGold(price);
+                    // Disabling old replaced item
+                    if (Inventory.pos_objs[1].GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = false;
+                    }
+
+                    // New item picked up
+                    var go = Instantiate(itemDisplay, Inventory.spots[1].transform, false);
+                    Inventory.pos_objs[1] = itemDisplay;
+                    if (itemDisplay.GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = true;
+                    }
+                    Destroy(gameObject);
+                }
+            }
+
+            if (Inventory._full[2] && Inventory._full[3])
+            {
+                // To switch out first weapon
+
+                if (Input.GetKey(KeyCode.N) && gameObject.GetComponent<Consumable>() != null)
+                {
+                    ScoreKeeper.SubToGold(price);
+                    // Disabling old replaced item
+                    if (Inventory.pos_objs[2].GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = false;
+                    }
+
+                    // New item picked up
+                    var go = Instantiate(itemDisplay, Inventory.spots[2].transform, false);
+                    Inventory.pos_objs[2] = itemDisplay;
+                    if (itemDisplay.GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = true;
+                    }
+                    Destroy(gameObject);
+                }
+                // To switch out second weapon
+
+                if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Consumable>() != null)
+                {
+                    ScoreKeeper.SubToGold(price);
+                    // Disabling old replaced item
+                    if (Inventory.pos_objs[3].GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = false;
+                    }
+
+                    // New item picked up
+                    var go = Instantiate(itemDisplay, Inventory.spots[3].transform, false);
+                    Inventory.pos_objs[3] = itemDisplay;
+                    if (itemDisplay.GetComponent<GunOn>() != null)
+                    {
+                        RegularGun.CanShoot = true;
+                    }
+                    Destroy(gameObject);
+                }
+            }
+
             if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
             {
                 //When item is an equipment

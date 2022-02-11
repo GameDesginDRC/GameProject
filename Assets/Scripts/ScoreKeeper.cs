@@ -16,7 +16,7 @@ public class ScoreKeeper : MonoBehaviour
         string sceneName = currentScene.name;
         if (sceneName == "Stage 1")
         {
-            gold = 100;
+            gold = 200;
         }
         scoreText = GetComponent<Text>();
         UpdateText();
