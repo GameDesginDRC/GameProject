@@ -9,7 +9,7 @@ public class LaserGun : MonoBehaviour
     public Transform Firepoint; //Firepoint
 
     private double ShootTimer = 0.5; //Wait period before shooting
-    public bool CanShoot = true;
+    public static bool CanShoot = false;
     private double _Tracker; //Tracks time
 
 

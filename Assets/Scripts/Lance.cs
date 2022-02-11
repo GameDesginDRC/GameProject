@@ -7,7 +7,7 @@ public class Lance : MonoBehaviour
     [SerializeField]
     private GameObject lanceHitbox;
     [SerializeField]
-    private bool hasLance = false;
+    public static bool hasLance = false;
     [SerializeField]
     private bool coolingDown = false;
     [SerializeField]

@@ -7,7 +7,7 @@ public class RegularSword : MonoBehaviour
     [SerializeField]
     private GameObject swordHitbox;
     [SerializeField]
-    private bool hasSword = false;
+    public static bool hasSword = true;
     [SerializeField]
     private bool coolingDown = false;
     [SerializeField]

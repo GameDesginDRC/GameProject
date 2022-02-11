@@ -9,7 +9,7 @@ public class RocketLauncher : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
     [SerializeField]
-    private bool hasRL = false;
+    public static bool hasRL = false;
     [SerializeField]
     private bool coolingDown = false;
 

@@ -89,6 +89,7 @@
     <Compile Include="Assets/Scripts/Progressor.cs" />
     <Compile Include="Assets/Scripts/RegularSword.cs" />
     <Compile Include="Assets/Scripts/BoxInvUIText.cs" />
+    <Compile Include="Assets/Scripts/InvTracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

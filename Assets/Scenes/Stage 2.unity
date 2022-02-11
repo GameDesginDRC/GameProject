@@ -1567,7 +1567,6 @@ MonoBehaviour:
   Code: {fileID: 944089665}
   Firepoint: {fileID: 1038377907}
   ShootTimer: 0.5
-  CanShoot: 1
 --- !u!114 &944089668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordHitbox: {fileID: 1055189290}
-  hasSword: 1
   coolingDown: 0
   animator: {fileID: 0}
 --- !u!114 &944089670
@@ -3327,6 +3325,7 @@ GameObject:
   - component: {fileID: 1652450682}
   - component: {fileID: 1652450681}
   - component: {fileID: 1652450680}
+  - component: {fileID: 1652450684}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -3387,6 +3386,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1652450684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652450679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d33e825d03a4287bfaa297cf0bf130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1685875414
 GameObject:
   m_ObjectHideFlags: 0
