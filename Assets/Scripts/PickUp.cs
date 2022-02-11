@@ -65,6 +65,8 @@ public class PickUp : MonoBehaviour
                     }
                     Destroy(gameObject);
                 }
+
+                
                 // To switch out second weapon
                 /*
                 if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Equipment>() != null)
