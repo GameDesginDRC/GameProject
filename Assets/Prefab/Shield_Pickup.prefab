@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 210619231094515054}
   - component: {fileID: 210619231094515057}
   - component: {fileID: 6363019071739763373}
+  - component: {fileID: 1723128835}
   m_Layer: 0
   m_Name: Shield_Pickup
   m_TagString: Untagged
@@ -340,3 +341,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697aa347491904c169ecd9e0c19edc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1723128835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210619231094515056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b37c819f5ef40fe8694b86660a486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 6615168947580284989, guid: 759e85823fef44c35bce9deddbe0cbb5, type: 3}

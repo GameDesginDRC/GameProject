@@ -42,12 +42,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3950131371
     locked: 0
+  - name: Terrain
+    uniqueID: 2115205735
+    locked: 0
+  - name: Items
+    uniqueID: 2684715875
+    locked: 0
+  - name: Characters
+    uniqueID: 1351060379
+    locked: 0
   - name: UI
     uniqueID: 2677558543
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

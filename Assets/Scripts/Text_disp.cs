@@ -22,7 +22,7 @@ public class Text_disp : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Player>() != null & counter == 0)
         {

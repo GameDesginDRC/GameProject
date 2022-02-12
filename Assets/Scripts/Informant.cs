@@ -31,7 +31,7 @@ public class Informant : MonoBehaviour
             bought_shield = false;
             obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
             first++;
-           // Destroy(obj, 8);
+            Destroy(obj, 5);
         }
         if (bought_gun)
         {
@@ -42,7 +42,7 @@ public class Informant : MonoBehaviour
             bought_gun = false;
             obj = Instantiate(FloatingTextPrefab2, transform.position + newvec, Quaternion.identity, transform);
             first++;
-         //   Destroy(obj, 8);
+            Destroy(obj, 5);
            }
         }
     }
