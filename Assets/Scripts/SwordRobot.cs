@@ -45,9 +45,14 @@ public class SwordRobot : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    private Rigidbody2D rb;
+    private Collider2D col2d;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        col2d = gameObject.GetComponent<Collider2D>();
     }
 
     void Wait() {
@@ -121,6 +126,19 @@ public class SwordRobot : MonoBehaviour
         invincible = false;
     }
 
+    private void KnockbackEnd()
+    {
+        col2d.isTrigger = true;
+        rb.isKinematic = true;
+    }
+    private void Knockback()
+    {
+        col2d.isTrigger = false;
+        rb.isKinematic = false;
+        rb.AddForce(-transform.right * 1.5f, ForceMode2D.Impulse);
+        Invoke("KnockbackEnd", .1f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -130,8 +148,6 @@ public class SwordRobot : MonoBehaviour
                 isPaused = true;
                 // 3/10th a second before attack
                 Invoke("Attack", .3f);
-                // Attack
-                //Debug.Log("Attack!");
 
                 nextAttack = Time.time + 1f;
             }
@@ -154,11 +170,13 @@ public class SwordRobot : MonoBehaviour
                 health -= 2;
                 isPaused = true;
                 invincible = true;
-                // knockback
+                Knockback();
+
                 Invoke("invinCooldown", invincibleTime);
             }
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -42,9 +42,14 @@ public class GunRobot : MonoBehaviour
     [SerializeField]
     bool invincible = false;
 
+    private Rigidbody2D rb;
+    private Collider2D col2d;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        col2d = gameObject.GetComponent<Collider2D>();
     }
 
     void InvokeFlip()
@@ -113,7 +118,7 @@ public class GunRobot : MonoBehaviour
             if (Time.time > nextShootTime)
             {
                 Debug.Log("Shoot!");
-                Shoot();
+                Invoke("Shoot", .5f);
                 nextShootTime = Time.time + shootevery;
             }
 
@@ -173,6 +178,7 @@ public class GunRobot : MonoBehaviour
                 health -= 2;
                 isPaused = true;
                 invincible = true;
+
                 Invoke("invinCooldown", invincibleTime);
             }
         }
