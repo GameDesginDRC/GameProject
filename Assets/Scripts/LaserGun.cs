@@ -41,7 +41,7 @@ public class LaserGun : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire1")&& CanShoot) //When player can shoot
+        if (Input.GetKeyDown(KeyCode.Z)&& CanShoot) //When player can shoot
         {
             ShootTimer = 0; //Resets timer
             StartCoroutine(timeout());
