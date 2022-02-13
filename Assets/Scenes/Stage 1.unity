@@ -3712,9 +3712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754a2187ae7c8e4387c5a559e788981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  explosion: {fileID: 0}
+  rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
+  ShootTimer: 0.5
+  _Tracker: 0
+  ShotPoint: {fileID: 0}
+  temp: {fileID: 0}
 --- !u!1 &1738783859
 GameObject:
   m_ObjectHideFlags: 0
