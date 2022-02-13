@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private int numOfEnemies;
+    private int numOfAbilities;
+
 
     public static LevelManager Singleton;
 
@@ -16,6 +18,7 @@ public class LevelManager : MonoBehaviour
     {
         // count all the enemies in the level
         numOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        numOfAbilities = GameObject.FindGameObjectsWithTag("Abilities").Length;
         Singleton = this;
     }
 
@@ -27,7 +30,11 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         // if all enemies are dead
-        if (numOfEnemies == 0) {
+        if (numOfEnemies == 0 && numOfAbilities == 0) {
+            // go to the next stage
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (numOfAbilities == 2) {
             // go to the next stage
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

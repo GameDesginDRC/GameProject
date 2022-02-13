@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
             _full = _full1;
             spots = spots1;
         }
-        else if (sceneName != "HUB") 
+        else if (sceneName != "HUB" || sceneName != "Abilities") 
         {
             for (int i = 0; i < pos_objs.Length; i++)
             {
