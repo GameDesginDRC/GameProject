@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool facingRight;
 
-    public float JumpForce = 10f;
+    public float JumpForce = .5f;
     public float DamageInvincibilityPeriod = 5f;
     public float DoubleClickTimerD = .3f;
     public float DoubleClickTimerA = .3f;
@@ -53,6 +53,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool hasRketLncher = false;
 
+    // handling jumps
+    private bool jumping = false;
+    private bool releaseJump = false;
+    private bool startJumpTimer = false;
+    [SerializeField]
+    private float jumpTimer = .25f;
+
+    // moving down after a jump
+    private bool movingDown = false;
+
     // use Debug.DrawLine for the laser for now
     [SerializeField]
     private bool hasLaser = false;
@@ -62,6 +72,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //   Scene currentScene = SceneManager.GetActiveScene();
         //   string sceneName = currentScene.name;
         //   if (sceneName != "Stage 1")
@@ -116,10 +127,30 @@ public class Player : MonoBehaviour
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
         transform.position += movement * Time.deltaTime * Speed;
+
+        // for jumps
+        if (Input.GetKeyDown("space") && canJump && !jumping) {
+            jumping = true;
+        };
+        if (Input.GetKeyUp("space")) { releaseJump = true; }
+
+        if (startJumpTimer) {
+            jumpTimer -= Time.deltaTime;
+            if (jumpTimer <= 0) { 
+                releaseJump = true;
+                startJumpTimer = false;
+            }
+        }
+
+        // on down
+        if (Input.GetKeyDown(KeyCode.DownArrow)) { movingDown = true; }
+
+        /*
         if (InputJump())
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse); ;
         }
+        */
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (ClickCountD == 1 && DoubleClickTimerD > 0)
@@ -180,14 +211,37 @@ public class Player : MonoBehaviour
 
     }
 
-    private bool InputJump() {
-        var inp = Input.GetKeyDown("space");
-        return inp && canJump;
+    // for handling jumps
+    private void StartJump() {
+        myRB.gravityScale = 0;
+        myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+        jumping = false;
+        startJumpTimer = true;
     }
 
- 
+    private void StopJump()
+    {
+        myRB.gravityScale = 2f;
+        releaseJump = false;
+        jumpTimer = .25f;
+    }
+
+    private void MoveDown()
+    {
+        myRB.AddForce(new Vector2(0f, -2f), ForceMode2D.Impulse);
+        movingDown = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (jumping) { StartJump(); }
+        if (releaseJump) { StopJump(); }
+        if (movingDown) { MoveDown(); }
+    }
 
 
+
+    // for the invincibility blink effect
     private void DamageBlink() {
         if (statusEffect == StatusEffect.TookDamage) {
             myRenderer.enabled = !myRenderer.enabled;

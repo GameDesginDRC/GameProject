@@ -3429,6 +3429,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2657389116580683977, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: GNBar
       value: 
@@ -3436,6 +3440,10 @@ PrefabInstance:
     - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: hasGun
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: JumpForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: castPoint
@@ -3646,8 +3654,6 @@ MonoBehaviour:
   coolingDown: 0
   ShootTimer: 0.5
   _Tracker: 0
-  ShotPoint: {fileID: 0}
-  temp: {fileID: 0}
 --- !u!1 &1738783859
 GameObject:
   m_ObjectHideFlags: 0
