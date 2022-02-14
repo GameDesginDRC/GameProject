@@ -2336,8 +2336,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1724118163}
   - component: {fileID: 1724118162}
-  - component: {fileID: 1724118161}
-  - component: {fileID: 1724118160}
   - component: {fileID: 1724118159}
   m_Layer: 0
   m_Name: LevelController
@@ -2356,32 +2354,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3d33e825d03a4287bfaa297cf0bf130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1724118160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724118158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60fbb1e58b3a54f288c2ef50f4f45eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _losename: HUB
-  _nextlevelname: Shop 1
---- !u!114 &1724118161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724118158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad8975d47f26470fbae8980b197bbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1724118162

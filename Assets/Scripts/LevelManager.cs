@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
         // count all the enemies in the level
         numOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         numOfAbilities = GameObject.FindGameObjectsWithTag("Abilities").Length;
+        //Debug.Log(numOfAbilities);
         Singleton = this;
     }
 
@@ -29,12 +30,20 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if all enemies are dead
-        if (numOfEnemies == 0 && numOfAbilities == 0) {
+        /*Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "Stage 1")
+        {
+            numOfAbilities = 12;
+        }*/
+            // if all enemies are dead
+            if (numOfEnemies == 0 && numOfAbilities == 0) {
             // go to the next stage
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //Debug.Log(SceneManager.(SceneManager.GetActiveScene().buildIndex + 1).name);
         }
         if (numOfAbilities == 2) {
+            // was 2
             // go to the next stage
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

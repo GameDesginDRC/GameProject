@@ -4134,8 +4134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1881819707}
   - component: {fileID: 1881819706}
-  - component: {fileID: 1881819705}
-  - component: {fileID: 1881819704}
   - component: {fileID: 1881819708}
   m_Layer: 0
   m_Name: LevelController
@@ -4144,32 +4142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1881819704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881819703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60fbb1e58b3a54f288c2ef50f4f45eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _losename: HUB
-  _nextlevelname: Shop 1
---- !u!114 &1881819705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881819703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad8975d47f26470fbae8980b197bbec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1881819706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,7 +4380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ef65bb16e21534fb26ad19cbc92da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfEnemies: 0
+  numOfEnemies: 4
 --- !u!1 &2021255990
 GameObject:
   m_ObjectHideFlags: 0
