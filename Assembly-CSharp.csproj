@@ -67,7 +67,7 @@
      <Compile Include="Assets\Scripts\Lance.cs" />
      <Compile Include="Assets\Scripts\GunOn.cs" />
      <Compile Include="Assets\Scripts\Explosives.cs" />
-     <Compile Include="Assets\RandomAbilities.cs" />
+     <Compile Include="Assets\Scripts\RandomAbilities.cs" />
      <Compile Include="Assets\Scripts\LvlTracker.cs" />
      <Compile Include="Assets\Scripts\TV_Counter.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\Platform.cs" />
      <Compile Include="Assets\Scripts\Progressor.cs" />
      <Compile Include="Assets\Scripts\RegularSword.cs" />
+     <Compile Include="Assets\Scripts\PickUpAbilities.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity Games/2020.3.26f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

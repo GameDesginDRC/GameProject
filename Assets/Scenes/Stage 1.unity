@@ -1928,7 +1928,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &974728730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4381,6 +4381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfEnemies: 4
+  numOfAbilities: 0
 --- !u!1 &2021255990
 GameObject:
   m_ObjectHideFlags: 0

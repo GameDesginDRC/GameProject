@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6430545406588981658}
   - component: {fileID: 5039607611070183381}
-  - component: {fileID: 1633582037310105285}
   - component: {fileID: 802081753686253194}
   - component: {fileID: 5412701777472793344}
+  - component: {fileID: -1438290605950202442}
   m_Layer: 0
   m_Name: Damage+
-  m_TagString: Untagged
+  m_TagString: Abilities
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3868810375153435356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1633582037310105285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3868810375153435356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d17211bec88047dd88975169b35fc0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 3868810375153435356}
-  count: 0
-  price: 0
 --- !u!58 &802081753686253194
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +114,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 7734678011914182712, guid: e3fe84e05b60a4f118ff8059f0e2c15b, type: 3}
+--- !u!114 &-1438290605950202442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3868810375153435356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ca076bcc7fb4da2ad7a0223667d66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

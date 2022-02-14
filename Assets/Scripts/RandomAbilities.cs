@@ -15,18 +15,18 @@ public class RandomAbilities : MonoBehaviour
 
     void Start()
     {
-        Vector3 displ1 = new Vector3(-10f, .5f, 0);
-        Vector3 displ2 = new Vector3(-5f, .5f, 0);
-        Vector3 displ3 = new Vector3(-15f, .5f, 0);
+        Vector3 displ1 = new Vector3(-8f, .5f, 0);
+        Vector3 displ2 = new Vector3(0f, .5f, 0);
+        Vector3 displ3 = new Vector3(8f, .5f, 0);
         List<int> listofabil = new List<int> {1,2,3,4};
         
         int xindex = Random.Range(0, listofabil.Count);
         int xcount = listofabil[xindex];
-        listofabil.Remove(xindex);
+        listofabil.Remove(xcount);
 
         int yindex = Random.Range(0, listofabil.Count);
         int ycount = listofabil[yindex];
-        listofabil.Remove(yindex);
+        listofabil.Remove(ycount);
 
         int zindex = Random.Range(0, listofabil.Count);
         int zcount = listofabil[zindex];
@@ -67,19 +67,19 @@ public class RandomAbilities : MonoBehaviour
 
         if (zcount == 1)
         {
-            var go = Instantiate(GoldBoost, gameObject.transform.position + displ1, Quaternion.identity);
+            var go = Instantiate(GoldBoost, gameObject.transform.position + displ3, Quaternion.identity);
         }
         else if (zcount == 2)
         {
-            var go = Instantiate(HealthBoost, gameObject.transform.position + displ1, Quaternion.identity);
+            var go = Instantiate(HealthBoost, gameObject.transform.position + displ3, Quaternion.identity);
         }
         else if (zcount == 3)
         {
-            var go = Instantiate(DamageBoost, gameObject.transform.position + displ1, Quaternion.identity);
+            var go = Instantiate(DamageBoost, gameObject.transform.position + displ3, Quaternion.identity);
         }
         else if (zcount == 4)
         {
-            var go = Instantiate(DashCoolDownBoost, gameObject.transform.position +displ1, Quaternion.identity);
+            var go = Instantiate(DashCoolDownBoost, gameObject.transform.position +displ3, Quaternion.identity);
         }
 
     }

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7794368977590308351}
   - component: {fileID: 5588629287518229843}
-  - component: {fileID: 748446851673446864}
   - component: {fileID: 1475207521804441817}
   - component: {fileID: 6420096401418518567}
+  - component: {fileID: 4312161799906634283}
   m_Layer: 0
   m_Name: Dash+
-  m_TagString: Untagged
+  m_TagString: Abilities
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 159699710485154864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &748446851673446864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159699710485154864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d17211bec88047dd88975169b35fc0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 159699710485154864}
-  count: 0
-  price: 0
 --- !u!58 &1475207521804441817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +114,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 7514911254853936151, guid: b14ef9c6e1749468691a759df19904f5, type: 3}
+--- !u!114 &4312161799906634283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159699710485154864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ca076bcc7fb4da2ad7a0223667d66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

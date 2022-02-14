@@ -1725,6 +1725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfEnemies: 0
+  numOfAbilities: 2
 --- !u!4 &1317104011
 Transform:
   m_ObjectHideFlags: 0
