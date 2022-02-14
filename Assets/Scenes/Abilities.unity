@@ -656,9 +656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754a2187ae7c8e4387c5a559e788981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  explosion: {fileID: 0}
+  rocket: {fileID: 0}
   coolingDown: 0
+  ShootTimer: 1
+  _Tracker: 0
 --- !u!114 &287168612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,10 +1768,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57b6e0cc33224b32b162781c384d4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoldBoost: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
-  HealthBoost: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
-  DamageBoost: {fileID: 2668435372244468504, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
-  DashCoolDownBoost: {fileID: 2668435372244468504, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+  GoldBoost: {fileID: 422273878246456151, guid: 122847c5fee73442aa96ae7a402b0051, type: 3}
+  HealthBoost: {fileID: 6764249877393796762, guid: 85b6a5a07b73f417ea9bd8379468ea1f, type: 3}
+  DamageBoost: {fileID: 3868810375153435356, guid: 1c090debbea71423a95d4807c1191f90, type: 3}
+  DashCoolDownBoost: {fileID: 159699710485154864, guid: 439128df3a8814c8f9668a4c42dd6fb3, type: 3}
 --- !u!4 &1343105543
 Transform:
   m_ObjectHideFlags: 0
