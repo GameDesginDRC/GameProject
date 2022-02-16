@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.Z))
         {
             SceneManager.LoadScene(next);
         }

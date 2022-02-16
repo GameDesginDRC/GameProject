@@ -126,6 +126,8 @@ public class SwordRobot : MonoBehaviour
         invincible = false;
     }
 
+
+    // for knockback
     private void KnockbackEnd()
     {
         col2d.isTrigger = true;

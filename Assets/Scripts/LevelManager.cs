@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         }*/
             // if all enemies are dead
         Scene scene = SceneManager.GetActiveScene();
-        if (numOfEnemies == 0 && scene.name != "Abilities") {
+        if (numOfEnemies == 0 && scene.name != "Abilities" && scene.name != "TUTORIAL") {
             // go to the next stage
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //Debug.Log(SceneManager.(SceneManager.GetActiveScene().buildIndex + 1).name);
