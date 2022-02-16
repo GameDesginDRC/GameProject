@@ -12,7 +12,7 @@ public class RocketLauncher : MonoBehaviour
     [SerializeField]
     private double ShootTimer = 1; //Wait period before shooting
     [SerializeField]
-    private static bool CanShoot = true;
+    private static bool CanShoot = false;
     [SerializeField]
     private double _Tracker; //Tracks time
 
