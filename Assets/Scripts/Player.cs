@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public enum StatusEffect { None, TookDamage };
     private StatusEffect statusEffect;
     private float statusEffectTimeout;
-
+    public static bool circleFill_ = false;
 
     public float Speed = 10f;
     [SerializeField]
@@ -285,6 +285,18 @@ public class Player : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {
                 Damage(10);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+            }
+            if (collision.gameObject.tag == "Lightning")
+            {
+                Damage(15);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+            }
+            if (collision.gameObject.tag == "Ring" && circleFill_)
+            {
+                Damage(15);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
             }

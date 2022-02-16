@@ -316,8 +316,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1610251421
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7bf17b116562147d1b58652602aecba5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -666,8 +666,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -344835925
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 70f0bf49bb7664c6db75ee9bb16c6b40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -750,8 +750,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1610251421
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bd163274bcd65462b8ee75b2a03c9161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -861,8 +861,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1610251421
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0ff726030abe94f52a74a5bc61c7ab25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1087,10 +1087,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754a2187ae7c8e4387c5a559e788981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  explosion: {fileID: 0}
-  hasRL: 0
+  rocket: {fileID: 0}
   coolingDown: 0
+  ShootTimer: 1
+  _Tracker: 0
 --- !u!114 &1211683206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,7 +1104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanceHitbox: {fileID: 1861473995}
-  hasLance: 0
   coolingDown: 0
   animator: {fileID: 1861473996}
 --- !u!114 &1211683207
@@ -1123,7 +1122,6 @@ MonoBehaviour:
   Code: {fileID: 1211683203}
   Firepoint: {fileID: 10367944}
   ShootTimer: 0.5
-  CanShoot: 0
 --- !u!114 &1211683208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1137,6 @@ MonoBehaviour:
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
   Code: {fileID: 1211683203}
   Firepoint: {fileID: 10367944}
-  CanShoot: 0
 --- !u!114 &1211683209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,7 +1150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordHitbox: {fileID: 1628117798}
-  hasSword: 1
   coolingDown: 0
   animator: {fileID: 1628117799}
 --- !u!114 &1211683210
@@ -1601,7 +1597,7 @@ GameObject:
   - component: {fileID: 1909291544}
   - component: {fileID: 1909291543}
   m_Layer: 0
-  m_Name: 360_F_234652860_VKC10W2bQoF9rZlECQT6AUxkRF7xHP2d
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1644,8 +1640,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -344835925
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6fdf82655f88a4e2ea029f349aa08031, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

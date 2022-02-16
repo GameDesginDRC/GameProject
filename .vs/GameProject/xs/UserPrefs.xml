@@ -1,23 +1,21 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RandomAbilities.cs">
+﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Informant.cs">
     <Files>
       <File FileName="Assets/Scripts/GenBar.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/Door.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/HPBar.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/Player.cs" />
-      <File FileName="Assets/Scripts/SwordRobot.cs" />
+      <File FileName="Assets/Scripts/Door.cs" Line="5" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/HPBar.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/Player.cs" Line="297" Column="66" />
       <File FileName="Assets/Scripts/ScoreKeeper.cs" />
-      <File FileName="Assets/Scripts/PickUp.cs" />
+      <File FileName="Assets/Scripts/PickUp.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Inv_Box.cs" />
       <File FileName="Assets/Scripts/Shield_Gen.cs" />
-      <File FileName="Assets/Scripts/Inventory.cs" />
-      <File FileName="Assets/Scripts/Informant.cs" />
-      <File FileName="Assets/Scripts/LvlTracker.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LvlTracker.cs" />
       <File FileName="Assets/Scripts/GunOn.cs" />
       <File FileName="Assets/Scripts/HUB_TV.cs" />
-      <File FileName="Assets/Scripts/TV_Counter.cs" />
-      <File FileName="Assets/Scripts/Resetter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BoxInvUIText.cs" />
+      <File FileName="Assets/Scripts/TV_Counter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Resetter.cs" />
+      <File FileName="Assets/Scripts/BoxInvUIText.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/InvTracker.cs" />
       <File FileName="Assets/Scripts/Lance.cs" />
       <File FileName="Assets/Scripts/RegularGun.cs" />
@@ -26,16 +24,22 @@
       <File FileName="Assets/Scripts/Bomb.cs" />
       <File FileName="Assets/Scripts/LaserGun.cs" />
       <File FileName="Assets/Scripts/PlatformGoUnder.cs" />
-      <File FileName="Assets/Scripts/RandomWeapon.cs" />
-      <File FileName="Assets/Scripts/Text_disp.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Progressor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RandomWeapon.cs" Line="17" Column="22" />
+      <File FileName="Assets/Scripts/Text_disp.cs" />
+      <File FileName="Assets/Scripts/Progressor.cs" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/RandomAbilities.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Lightning.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/GunRobot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Conductor.cs" Line="136" Column="94" />
+      <File FileName="Assets/Scripts/Warning.cs" Line="16" Column="9" />
+      <File FileName="Assets/Scripts/ConductorCircle.cs" Line="27" Column="26" />
+      <File FileName="Assets/Scripts/SwordRobot.cs" Line="73" Column="2" NotebookId="1" />
+      <File FileName="Assets/Scripts/Informant.cs" Line="9" Column="5" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="279a05fe-3f79-43fe-bef8-5b62bdaf6728" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="845013ac-39ff-425e-98c5-39ab28416567" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
