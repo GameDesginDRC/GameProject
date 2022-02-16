@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
     public HPBar healthbar = null;
     public GenBar GNBar = null;
+
+    [SerializeField]
     public static int hp;
 
     // for attacks
@@ -92,7 +94,10 @@ public class Player : MonoBehaviour
         if (sceneName == "Stage 1")
         {
             hp = 100;
-            //   }
+        }
+        if (sceneName == "TUTORIAL")
+        {
+            hp = 100;
         }
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
