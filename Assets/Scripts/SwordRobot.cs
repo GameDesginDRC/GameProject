@@ -186,4 +186,12 @@ public class SwordRobot : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("Flip");
+            InvokeFlip();
+        }
+    }
 }

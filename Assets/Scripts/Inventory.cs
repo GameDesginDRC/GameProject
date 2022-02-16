@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+        /*
         if (sceneName != "Stage 1")
         {
             //for (int i = 0; i < _full.Length; i++)
@@ -27,6 +28,7 @@ public class Inventory : MonoBehaviour
                 DontDestroyOnLoad(pos_objs[i]);
             }
         }
+        */
     }
     void Start()
     {
