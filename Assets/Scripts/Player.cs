@@ -57,6 +57,10 @@ public class Player : MonoBehaviour
     private bool jumping = false;
     private bool releaseJump = false;
     private bool startJumpTimer = false;
+    private bool falling = false;
+
+    [SerializeField]
+    private float jumpDuration = .1f;
     [SerializeField]
     private float jumpTimer = .25f;
 
@@ -129,7 +133,7 @@ public class Player : MonoBehaviour
         transform.position += movement * Time.deltaTime * Speed;
 
         // for jumps
-        if (Input.GetKeyDown("space") && canJump && !jumping) {
+        if (Input.GetKeyDown("space") && canJump) {
             jumping = true;
         };
         if (Input.GetKeyUp("space")) { releaseJump = true; }
@@ -142,16 +146,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        // on down
+
+        // arrow key control scheme
         if (Input.GetKeyDown(KeyCode.DownArrow)) { movingDown = true; }
 
-        /*
-        if (InputJump())
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse); ;
-        }
-        */
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (ClickCountD == 1 && DoubleClickTimerD > 0)
             {
@@ -165,9 +164,8 @@ public class Player : MonoBehaviour
                 DoubleClickTimerD = .5f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-           // Damage(2);
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
                 transform.position += new Vector3(-2f, 0f, 0f);
@@ -198,12 +196,13 @@ public class Player : MonoBehaviour
             ClickCountA = 0;
         }
 
-        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && switched == true)
+        // flipping the player sprite
+        if ((Input.GetKeyDown(KeyCode.RightArrow) && switched == true))
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = false;
         }
-        else if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && switched == false)
+        else if ((Input.GetKeyDown(KeyCode.LeftArrow) && switched == false))
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = true;
@@ -215,15 +214,16 @@ public class Player : MonoBehaviour
     private void StartJump() {
         myRB.gravityScale = 0;
         myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
-        jumping = false;
         startJumpTimer = true;
     }
 
     private void StopJump()
     {
         myRB.gravityScale = 2f;
+        jumping = false;
         releaseJump = false;
-        jumpTimer = .25f;
+        jumpTimer = jumpDuration;
+        falling = true;
     }
 
     private void MoveDown()
@@ -239,7 +239,19 @@ public class Player : MonoBehaviour
         if (movingDown) { MoveDown(); }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (falling)
+        {
+            canJump = true;
+            falling = false;
+        }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        canJump = false;
+    }
 
     // for the invincibility blink effect
     private void DamageBlink() {
@@ -264,16 +276,6 @@ public class Player : MonoBehaviour
         if (statusEffectTimeout < Time.time) {
             ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        canJump = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        canJump = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
