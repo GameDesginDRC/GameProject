@@ -81,7 +81,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3644578496862393292}
-  m_Text: "Press down arrow \nto go to next level."
+  m_Text: 'Press Z
+
+    to go to next level.'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

@@ -16,8 +16,8 @@ public class Inventory : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        /*
-        if (sceneName != "Stage 1")
+        
+        if (sceneName != "Stage 1" && sceneName != "TUTORIAL" && sceneName != "HUB")
         {
             //for (int i = 0; i < _full.Length; i++)
            // {
@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
                 DontDestroyOnLoad(pos_objs[i]);
             }
         }
-        */
+        
     }
     void Start()
     {
@@ -37,12 +37,12 @@ public class Inventory : MonoBehaviour
         string sceneName = currentScene.name;
         spots = spots1;
         if (sceneName == "Stage 1")
-        {
-            pos_objs = posobjs1;
-            _full = _full1;
-            spots = spots1;
-        }
-        else if (sceneName != "HUB" || sceneName != "Abilities") 
+           {
+                pos_objs = posobjs1;
+                _full = _full1;
+                spots = spots1;
+            }
+        else if (sceneName != "HUB" || sceneName != "Abilities")
         {
             for (int i = 0; i < pos_objs.Length; i++)
             {

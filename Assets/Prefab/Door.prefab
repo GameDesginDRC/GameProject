@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6170dc9f4969f4d4192803ed6c025564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 3644578496862393292, guid: 7deff58f528334200ad2f3dcefe56298, type: 3}
   next: Stage 2
 --- !u!61 &1762951695659556770
 BoxCollider2D:
