@@ -130,6 +130,12 @@ public class Player : MonoBehaviour
         HandleInvincible();
         HandleInput();
         ProcessStatusEffects();
+
+        if (HP_Pot.hpIncr == 1)
+        {
+            HP_Pot.hpIncr = 0;
+            Damage(0);
+        }
     }
 
     private void HandleInput()

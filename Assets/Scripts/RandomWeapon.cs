@@ -10,12 +10,13 @@ public class RandomWeapon : MonoBehaviour
     public GameObject Lanceobj;
     public GameObject LaserGunobj;
     public GameObject RocketLauncherobj;
+    public GameObject hpPot;
     void Start()
     {
         Vector3 displx = new Vector3(-10f, .5f, 0);
         Vector3 disply = new Vector3(-5f, .5f, 0);
-        int xcount = Random.Range(1, 3);
-        int ycount = Random.Range(1, 3);
+        int xcount = Random.Range(1, 4);
+        int ycount = Random.Range(1, 4);
         Debug.Log(xcount);
         Debug.Log(ycount);
         if (xcount == 1)
@@ -28,7 +29,8 @@ public class RandomWeapon : MonoBehaviour
         }
         else if (xcount == 3)
         {
-            var go = Instantiate(Lanceobj, gameObject.transform.position + displx, Quaternion.identity);
+            // var go = Instantiate(Lanceobj, gameObject.transform.position + displx, Quaternion.identity);
+            var go = Instantiate(hpPot, gameObject.transform.position + displx, Quaternion.identity);
         }
         else if (xcount == 4)
         {
@@ -49,7 +51,8 @@ public class RandomWeapon : MonoBehaviour
         }
         else if (ycount == 3)
         {
-            var go = Instantiate(Lanceobj, gameObject.transform.position + disply, Quaternion.identity);
+            //var go = Instantiate(Lanceobj, gameObject.transform.position + disply, Quaternion.identity);
+            var go = Instantiate(hpPot, gameObject.transform.position + disply, Quaternion.identity);
         }
         else if (ycount == 4)
         {

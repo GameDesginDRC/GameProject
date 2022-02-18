@@ -6,8 +6,10 @@ public class Informant : MonoBehaviour
 {
     public static bool bought_shield;
     public static bool bought_gun;
+    public static bool bought_pot;
     public GameObject FloatingTextPrefab;
     public GameObject FloatingTextPrefab2;
+    public GameObject FloatingTextPrefab3;
     private Vector3 newvec;
     private GameObject obj;
     private int first;
@@ -20,6 +22,7 @@ public class Informant : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Make sure first works fine wouldn't objects not be destroyed if first != 0
     void Update()
     {
         if (bought_shield)
@@ -43,6 +46,17 @@ public class Informant : MonoBehaviour
             obj = Instantiate(FloatingTextPrefab2, transform.position + newvec, Quaternion.identity, transform);
             first++;
             Destroy(obj, 5);
+           }  
+        if (bought_pot)
+         {
+               if (first != 0)
+               {
+                    Destroy(obj);
+               }
+               bought_pot = false;
+               obj = Instantiate(FloatingTextPrefab3, transform.position + newvec, Quaternion.identity, transform);
+                first++;
+                Destroy(obj, 5);
            }
         }
     }

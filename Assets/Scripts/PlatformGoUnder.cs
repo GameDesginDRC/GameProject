@@ -16,23 +16,29 @@ public class PlatformGoUnder : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.DownArrow)) {
-            waitTime = .5f;
+           // waitTime = .001f;
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            if (waitTime <= 0)
-            {
+           // if (waitTime <= 0)
+       //     {
                 effector.rotationalOffset = 180f;
-                waitTime = .5f;
-            } else
-            {
-                waitTime -= Time.deltaTime;
-            }
+                StartCoroutine(Blink());
+              //  waitTime = .001f;
+          //  } else
+          //  {
+          //      waitTime -= Time.deltaTime;
+           // }
         }
 
-        if(Input.GetKey(KeyCode.Space))
-        {
-            effector.rotationalOffset = 0;
-        }
+   //     if(Input.GetKey(KeyCode.Space))
+   //     {
+    //        effector.rotationalOffset = 0;
+    //    }
+    }
+    IEnumerator Blink()
+    {
+        yield return new WaitForSeconds(.4f);
+        effector.rotationalOffset = 0;
     }
 }

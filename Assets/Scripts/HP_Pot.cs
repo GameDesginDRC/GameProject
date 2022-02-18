@@ -3,55 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Shield_Gen : MonoBehaviour
+public class HP_Pot : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject empty1;
     public static bool used;
-    public int usednum;
+    public int usednum = 0;
     private Scene currentScene;
     string sceneName;
-    public static int shield_count = 0;
-    private float waitTime;
+    public static int HPpot_count = 0;
+    public static int hpIncr = 0;
+    private float waitTime = 0;
+    // Start is called before the first frame update
     void Start()
     {
         waitTime = .2f;
+        hpIncr = 0;
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        usednum = 0;
-        Informant.bought_shield = true;
+        Informant.bought_pot = true;
     }
 
     // Update is called once per frame
     void Update()
-    {
-      //  if (used)
-      //  {
-      //      Inventory.pos_objs[usednum] = null;
-      //  }
-        if(Input.GetKeyDown(KeyCode.T) && sceneName != "Shop 1" && waitTime <= 0)
+    { 
+        if (Input.GetKeyDown(KeyCode.U) && sceneName != "Shop 1" && waitTime <= 0)
         {
-            UseShieldGen();
+            waitTime = .2f;
+            UseHPPot();
         } else
         {
             waitTime -= Time.deltaTime;
         }
     }
-    void UseShieldGen()
+    void UseHPPot()
     {
         //Debug.Log(usednum);
-        if (shield_count == 1)
+        // look at this code, should be when == 1???
+        if (HPpot_count == 1)
         {
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
-            GenBar.shield = true;
-            GenBar.start1 = true;
+            Player.hp += 15;
             Destroy(gameObject);
-        } else
+        }
+        else
         {
-            shield_count--;
-            GenBar.shield = true;
-            GenBar.start1 = true;
+            HPpot_count--;
+            Player.hp += 15;
+            hpIncr = 1;
         }
     }
 }

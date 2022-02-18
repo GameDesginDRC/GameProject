@@ -70,77 +70,8 @@ public class PickUp : MonoBehaviour
                         Destroy(gameObject);
                     }
                 }
-                // Check if the first consumable is full and is a shield
-             
-                // To switch out second weapon
-                /*
-                if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Equipment>() != null)
-                {
-                    ScoreKeeper.SubToGold(price);
-                    // Disabling old replaced item
-                    if (Inventory.pos_objs[1].GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = false;
-                    }
-
-                    // New item picked up
-                    var go = Instantiate(itemDisplay, Inventory.spots[1].transform, false);
-                    Inventory.pos_objs[1] = itemDisplay;
-                    if (itemDisplay.GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = true;
-                    }
-                    Destroy(gameObject);
-                }*/
             }
 
-            // Disabling code below because we will have a slot for all consumables?? Feels weird to swap consumables out.
-
-
-            /*
-            if (Inventory._full[2] && Inventory._full[3])
-            {
-                // To switch out first weapon
-
-                if (Input.GetKey(KeyCode.N) && gameObject.GetComponent<Consumable>() != null)
-                {
-                    ScoreKeeper.SubToGold(price);
-                    // Disabling old replaced item
-                    if (Inventory.pos_objs[2].GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = false;
-                    }
-
-                    // New item picked up
-                    var go = Instantiate(itemDisplay, Inventory.spots[2].transform, false);
-                    Inventory.pos_objs[2] = itemDisplay;
-                    if (itemDisplay.GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = true;
-                    }
-                    Destroy(gameObject);
-                }
-                
-                if (Input.GetKey(KeyCode.M) && gameObject.GetComponent<Consumable>() != null)
-                {
-                    ScoreKeeper.SubToGold(price);
-                    // Disabling old replaced item
-                    if (Inventory.pos_objs[3].GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = false;
-                    }
-
-                    // New item picked up
-                    var go = Instantiate(itemDisplay, Inventory.spots[3].transform, false);
-                    Inventory.pos_objs[3] = itemDisplay;
-                    if (itemDisplay.GetComponent<GunOn>() != null)
-                    {
-                        RegularGun.CanShoot = true;
-                    }
-                    Destroy(gameObject);
-                }
-            }
-            */
             if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
             {
                 if (Inventory._full[2] && item3.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
@@ -154,14 +85,36 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                // Check if second consumable is full and is a shield
-                else if (Inventory._full[3] && item4.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
-                {
+                else if (Inventory._full[2] && item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
+                    {
+                        if (count == 0)
+                        {
+                            count = 1;
+                            ScoreKeeper.SubToGold(price);
+                            HP_Pot.HPpot_count += 1;
+                            Destroy(gameObject);
+                        }
+
+                    }
+                    // Check if second consumable is full and is a shield
+                   else if (Inventory._full[3] && item4.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                  {
                     if (count == 0)
                     {
                         count = 1;
                         ScoreKeeper.SubToGold(price);
                         Shield_Gen.shield_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                else if (Inventory._full[3] && item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        ScoreKeeper.SubToGold(price);
+                        HP_Pot.HPpot_count += 1;
                         Destroy(gameObject);
                     }
 
@@ -235,6 +188,11 @@ public class PickUp : MonoBehaviour
                                     if (itemDisplay.GetComponent<Shield_Gen>() != null)
                                     {
                                         item3.GetComponent<Shield_Gen>().usednum = i;
+                                        Shield_Gen.shield_count += 1;
+                                    } else if (itemDisplay.GetComponent<HP_Pot>() != null)
+                                    {
+                                        item3.GetComponent<HP_Pot>().usednum = i;
+                                        HP_Pot.HPpot_count += 1;
                                     }
                                 }
 
@@ -245,6 +203,12 @@ public class PickUp : MonoBehaviour
                                     if (itemDisplay.GetComponent<Shield_Gen>() != null)
                                     {
                                         item4.GetComponent<Shield_Gen>().usednum = i;
+                                        Shield_Gen.shield_count += 1;
+                                    }
+                                    else if (itemDisplay.GetComponent<HP_Pot>() != null)
+                                    {
+                                        item4.GetComponent<HP_Pot>().usednum = i;
+                                        HP_Pot.HPpot_count += 1;
                                     }
                                 }
                                 //Inventory.pos_objs[i] = itemDisplay;
