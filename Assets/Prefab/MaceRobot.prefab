@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7327034634390131277}
   - component: {fileID: 7327034634390131276}
+  - component: {fileID: 6880215153165580355}
+  - component: {fileID: 6880215153165580366}
   - component: {fileID: 7327034634390131315}
-  - component: {fileID: 1724860397}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: MaceRobot
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7327034634390131314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.398965, y: -1.044209, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5, y: -4.11, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,38 +74,38 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 70f0bf49bb7664c6db75ee9bb16c6b40, type: 3}
+  m_Sprite: {fileID: 2969971681249491454, guid: f6943b8254896471a903d4a8f3bc1933, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.26, y: 0.39}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7327034634390131315
-MonoBehaviour:
+--- !u!95 &6880215153165580355
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7327034634390131314}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ba03b1fa04d4a85b1a4f752dcc27f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 25
-  isPaused: 0
-  darklaser_: {fileID: 791954838803185487, guid: 25fb26a1cf9204d1b910b47fca5c528e, type: 3}
-  onCooldown: 0
-  nextAttack: 3
-  invincibleTime: 0.3
-  invincible: 0
---- !u!61 &1724860397
-BoxCollider2D:
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c837049be13a46219f618b45d434959, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &6880215153165580366
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,12 +121,39 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.26, y: 0.39}
+    newSize: {x: 1.26, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.02562292, y: 0.05343449}
+      - {x: -0.02656015, y: -0.0018796921}
+      - {x: -0.089999996, y: -0.105}
+      - {x: 0.010628387, y: -0.10874857}
+      - {x: 0.06, y: -0.145}
+      - {x: 0.12187435, y: -0.105}
+      - {x: 0.09749727, y: 0.013125653}
+      - {x: 0.13374858, y: 0.06249726}
+--- !u!114 &7327034634390131315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7327034634390131314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba03b1fa04d4a85b1a4f752dcc27f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 25
+  isPaused: 0
+  AttackAnim: {fileID: 0}
+  darklaser_: {fileID: 791954838803185487, guid: 25fb26a1cf9204d1b910b47fca5c528e, type: 3}
+  onCooldown: 0
+  nextAttack: 3
+  invincibleTime: 0.3
+  invincible: 0

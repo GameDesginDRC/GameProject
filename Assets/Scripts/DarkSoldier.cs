@@ -9,6 +9,10 @@ public class DarkSoldier : MonoBehaviour
     [SerializeField]
     bool isPaused = false;
 
+    [SerializeField]
+    Animation AttackAnim;
+    private Animator animA;
+
     public GameObject darklaser_;
 
     private Vector3 displ1;
@@ -31,6 +35,7 @@ public class DarkSoldier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animA = gameObject.GetComponent<Animator>();
         leftshot = -1;
         rightshot = 1;
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -46,7 +51,7 @@ public class DarkSoldier : MonoBehaviour
 
             nextAttack = Time.time + 10;
             StartCoroutine(LaserChain());
-
+            animA.SetTrigger("attack");
 
         }
         if (health <= 0)
