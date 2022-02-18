@@ -11,7 +11,7 @@ public class ConductorCircle : MonoBehaviour
     void Start()
     {
         Player.circleFill_ = false;
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(-.06f, -.39f, 0);
         ready_ = true;
         spr = gameObject.GetComponent<SpriteRenderer>();
         tmp = spr.color;

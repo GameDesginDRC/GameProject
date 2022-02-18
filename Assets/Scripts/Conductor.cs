@@ -30,12 +30,15 @@ public class Conductor : MonoBehaviour
     [SerializeField]
     bool invincible = false;
 
+    private Animator animA;
+
     private Rigidbody2D rb;
     private Collider2D col2d;
 
     // Start is called before the first frame update
     void Start()
     {
+        animA = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         col2d = gameObject.GetComponent<Collider2D>();
     }
@@ -131,6 +134,7 @@ public class Conductor : MonoBehaviour
     private IEnumerator WarningCooldown()
     {
         yield return new WaitForSeconds(3);
+        animA.SetTrigger("attack");
         Instantiate(lightning_, transform.position + displ1, Quaternion.identity, transform);
         Instantiate(lightning_, transform.position + displ2, Quaternion.identity, transform);
         Instantiate(lightning_, transform.position + displ3, Quaternion.identity, transform);

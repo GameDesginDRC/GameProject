@@ -9,8 +9,6 @@ public class DarkSoldier : MonoBehaviour
     [SerializeField]
     bool isPaused = false;
 
-    [SerializeField]
-    Animation AttackAnim;
     private Animator animA;
 
     public GameObject darklaser_;
