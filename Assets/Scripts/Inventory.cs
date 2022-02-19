@@ -43,15 +43,15 @@ public class Inventory : MonoBehaviour
                 DontDestroyOnLoad(pos_objs[i]);
             }
 
-                // not even sure if need this...
- 
+                // UNCOMMENT LATER
+ /*
                     DontDestroyOnLoad(item1);
                     DontDestroyOnLoad(item2);
                     DontDestroyOnLoad(item3);
                     DontDestroyOnLoad(item4);
                     DontDestroyOnLoad(item5);
                 
-            
+            */
         }
         
     }
