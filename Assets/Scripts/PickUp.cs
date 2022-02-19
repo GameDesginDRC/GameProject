@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickUp : MonoBehaviour
 {
     // NOTE: WHEN THE OTHER WEAPONS SPRITES ARE IMPLEMENTED CHECKTO SEE IF THEY ARE != NULL
     public GameObject itemDisplay;
-    public static GameObject item1;
-    public static GameObject item2;
-    public static GameObject item3;
-    public static GameObject item4;
-    public static GameObject item5;
     public int count;
     //public GameObject player1_;
     public int price;
     // Start is called before the first frame update
+
     void Start()
     {
         count = 0;
+        /*Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName != "Shop 1" && item3.GetComponent<HP_Pot>() != null)
+        {
+            count = 1;
+        }*/
     }
 
     // Update is called once per frame
@@ -45,13 +48,13 @@ public class PickUp : MonoBehaviour
                         count = 1;
                         if (InvTracker.invcount == 0)
                         {
-                            Destroy(item1);
-                            item1 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                            Destroy(Inventory.item1);
+                            Inventory.item1 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
                         }
                         else
                         {
-                            Destroy(item2);
-                            item2 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                            Destroy(Inventory.item2);
+                            Inventory.item2 = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
                         }
                         ScoreKeeper.SubToGold(price);
                         // Disabling old replaced item
@@ -74,7 +77,8 @@ public class PickUp : MonoBehaviour
 
             if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
             {
-                if (Inventory._full[2] && item3.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                if (Inventory._full[2] && Inventory.item3.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                //if (Inventory._full[2])
                 {
                     if (count == 0)
                     {
@@ -85,7 +89,7 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                else if (Inventory._full[2] && item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
+                else if (Inventory._full[2] && Inventory.item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
                     {
                         if (count == 0)
                         {
@@ -97,7 +101,7 @@ public class PickUp : MonoBehaviour
 
                     }
                     // Check if second consumable is full and is a shield
-                   else if (Inventory._full[3] && item4.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                   else if (Inventory._full[3] && Inventory.item4.GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
                   {
                     if (count == 0)
                     {
@@ -108,7 +112,7 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                else if (Inventory._full[3] && item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
+                else if (Inventory._full[3] && Inventory.item3.GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
                 {
                     if (count == 0)
                     {
@@ -141,11 +145,11 @@ public class PickUp : MonoBehaviour
                                 Inventory._full[i] = true;
                                 if (i == 0)
                                 {
-                                    item1 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Inventory.item1 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.pos_objs[i] = itemDisplay;
                                 } else
                                 {
-                                    item2 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Inventory.item2 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.pos_objs[i] = itemDisplay;
                                 }
                                 //Inventory.pos_objs[i] = itemDisplay;
@@ -183,31 +187,33 @@ public class PickUp : MonoBehaviour
                                 Inventory._full[i] = true;
                                 if (i == 2)
                                 {
-                                    item3 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Inventory.item3 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.pos_objs[i] = itemDisplay;
                                     if (itemDisplay.GetComponent<Shield_Gen>() != null)
                                     {
-                                        item3.GetComponent<Shield_Gen>().usednum = i;
+                                        Inventory.item3.GetComponent<Shield_Gen>().usednum = i;
                                         Shield_Gen.shield_count += 1;
+                                        Debug.Log(Inventory.item3);
                                     } else if (itemDisplay.GetComponent<HP_Pot>() != null)
                                     {
-                                        item3.GetComponent<HP_Pot>().usednum = i;
+                                        Inventory.item3.GetComponent<HP_Pot>().usednum = i;
                                         HP_Pot.HPpot_count += 1;
+                                        Debug.Log(Inventory.item3);
                                     }
                                 }
 
                                 else if (i == 3)
                                 {
-                                    item4 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Inventory.item4 = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.pos_objs[i] = itemDisplay;
                                     if (itemDisplay.GetComponent<Shield_Gen>() != null)
                                     {
-                                        item4.GetComponent<Shield_Gen>().usednum = i;
+                                        Inventory.item4.GetComponent<Shield_Gen>().usednum = i;
                                         Shield_Gen.shield_count += 1;
                                     }
                                     else if (itemDisplay.GetComponent<HP_Pot>() != null)
                                     {
-                                        item4.GetComponent<HP_Pot>().usednum = i;
+                                        Inventory.item4.GetComponent<HP_Pot>().usednum = i;
                                         HP_Pot.HPpot_count += 1;
                                     }
                                 }
