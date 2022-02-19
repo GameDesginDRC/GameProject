@@ -11,6 +11,7 @@ TagManager:
   - Abilities
   - Lightning
   - Ring
+  - InvisWall
   layers:
   - Default
   - TransparentFX
