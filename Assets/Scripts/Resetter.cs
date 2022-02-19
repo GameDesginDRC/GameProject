@@ -7,6 +7,7 @@ public class Resetter : MonoBehaviour
 {
 
     [SerializeField] string Level1;
+    [SerializeField] string Level2;
     // public static means that we can use this variable in other scripts
 
     // Start is called before the first frame update
@@ -24,6 +25,10 @@ public class Resetter : MonoBehaviour
         {
             TV_Counter.countertv++;
             SceneManager.LoadScene(Level1);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            SceneManager.LoadScene(Level2);
         }
     }
 }

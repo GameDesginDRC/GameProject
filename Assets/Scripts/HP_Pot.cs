@@ -44,12 +44,20 @@ public class HP_Pot : MonoBehaviour
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             Player.hp += 15;
+            if (Player.hp > 100)
+            {
+                Player.hp = 100;
+            }
             Destroy(gameObject);
         }
         else
         {
             HPpot_count--;
             Player.hp += 15;
+            if (Player.hp > 100)
+            {
+                Player.hp = 100;
+            }
             hpIncr = 1;
         }
     }
