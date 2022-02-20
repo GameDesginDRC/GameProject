@@ -144,10 +144,10 @@ public class Player : MonoBehaviour
         transform.position += movement * Time.deltaTime * Speed;
 
         // for jumps
-        if (Input.GetKeyDown("space") && canJump) {
+        if ((Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow)) && canJump) {
             jumping = true;
         };
-        if (Input.GetKeyUp("space")) { releaseJump = true; }
+        if (Input.GetKeyUp("space") || Input.GetKeyUp(KeyCode.UpArrow)) { releaseJump = true; }
 
         if (startJumpTimer) {
             jumpTimer -= Time.deltaTime;
@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
             {
                 ClickCountA = 0;
                 ClickCountD += 1;
-                DoubleClickTimerD = .5f;
+                DoubleClickTimerD = .2f;
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -186,7 +186,7 @@ public class Player : MonoBehaviour
             {
                 ClickCountD = 0;
                 ClickCountA += 1;
-                DoubleClickTimerA = .5f;
+                DoubleClickTimerA = .2f;
             }
         }
 
@@ -225,6 +225,7 @@ public class Player : MonoBehaviour
     private void StartJump() {
         myRB.gravityScale = 0;
         myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+        
         startJumpTimer = true;
     }
 
@@ -239,7 +240,7 @@ public class Player : MonoBehaviour
 
     private void MoveDown()
     {
-        myRB.AddForce(new Vector2(0f, -2f), ForceMode2D.Impulse);
+        myRB.AddForce(new Vector2(0f, -10f), ForceMode2D.Impulse);
         movingDown = false;
     }
 
@@ -337,15 +338,6 @@ public class Player : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         canJump = true;
-        // Taking damage from enemy will make player blink
-        //if (col.gameObject.GetComponent<Enemy>())
-        //{
-        //    if (!(statusEffect == StatusEffect.TookDamage)
-        //    {
-        //        healthCounter.Lose(1);
-        //        ApplyStatusEffect(StatusEffect.TookDamage, DamageInvincibilityPeriod);
-        //        return; 
-        //    }
-        //}
+
     }
 }

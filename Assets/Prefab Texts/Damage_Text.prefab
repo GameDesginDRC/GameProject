@@ -86,9 +86,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7734678011914182712}
-  m_Text: 'Damage Boost
-
-    Press Z to Deal More Damage'
+  m_Text: "Press Z to Recieve \n\"Damage Boost\""
   m_OffsetZ: 0
   m_CharacterSize: 3
   m_LineSpacing: 1

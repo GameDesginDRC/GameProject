@@ -12,7 +12,7 @@ public class Text_disp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        newvec = new Vector3(-1.0f, 5.0f, 0);
+        newvec = new Vector3(-2.0f, 3.0f, 0);
         counter = 0;
     }
 
