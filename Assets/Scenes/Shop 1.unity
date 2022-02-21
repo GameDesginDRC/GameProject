@@ -222,6 +222,7 @@ MonoBehaviour:
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   filler: {fileID: 0}
+  items1: []
 --- !u!1 &265779038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,6 +2307,7 @@ MonoBehaviour:
   Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   Code: {fileID: 3692583819128857496}
   Firepoint: {fileID: 600535769}
+  CanShoot: 0
 --- !u!114 &1572290886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,6 +2377,11 @@ MonoBehaviour:
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   filler: {fileID: 6858215307700848479, guid: f08f28267fb784e71b92ca200c38bbe5, type: 3}
+  items1:
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
 --- !u!114 &1572290943
 MonoBehaviour:
   m_ObjectHideFlags: 0
