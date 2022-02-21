@@ -243,7 +243,6 @@ MonoBehaviour:
   Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   Code: {fileID: 3692583817730630380}
   Firepoint: {fileID: 2122068909}
-  CanShoot: 0
 --- !u!1 &83322832
 GameObject:
   m_ObjectHideFlags: 0
