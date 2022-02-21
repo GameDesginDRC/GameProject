@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 86712553}
   - component: {fileID: 86712555}
   - component: {fileID: 86712556}
+  - component: {fileID: 86712557}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -309,6 +310,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &86712557
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86712552}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &88867790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7555,7 +7577,6 @@ MonoBehaviour:
   Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   Code: {fileID: 3692583818891492507}
   Firepoint: {fileID: 892169690}
-  CanShoot: 0
 --- !u!114 &1263623746
 MonoBehaviour:
   m_ObjectHideFlags: 0
