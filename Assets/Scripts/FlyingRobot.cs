@@ -6,7 +6,6 @@ public class FlyingRobot : MonoBehaviour
 {
     // health
     [SerializeField]
-
     private float health = 10;
     // invincibility when attacked
     [SerializeField]
