@@ -258,6 +258,7 @@ public class Player : MonoBehaviour
             canJump = true;
             falling = false;
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -338,6 +339,7 @@ public class Player : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         canJump = true;
-
     }
+
+    
 }
