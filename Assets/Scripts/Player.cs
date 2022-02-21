@@ -310,7 +310,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!Invincible || !dashInvincible)
+        if (!Invincible)
         {
             if (collision.gameObject.tag == "Enemy")
             {
