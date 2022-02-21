@@ -12,6 +12,7 @@ TagManager:
   - Lightning
   - Ring
   - InvisWall
+  - MovPlatform
   layers:
   - Default
   - TransparentFX

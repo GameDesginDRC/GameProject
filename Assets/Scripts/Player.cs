@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     public bool Invincible = false;
     public int InvincibilityTime = 2;
     public float TimeSinceInvStarted;
+    // for dashes
+    public bool dashInvincible = false;
+    public float dashInvicTime = .5f;
+    public float TimeSinceDashInv;
 
     public HPBar healthbar = null;
     public GenBar GNBar = null;
@@ -122,6 +126,11 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (dashInvincible)
+        {
+            TimeSinceInvStarted -= Time.deltaTime;
+            if (TimeSinceInvStarted < 0) dashInvincible = false;
+        }
     }
 
     // Update is called once per frame
@@ -165,6 +174,10 @@ public class Player : MonoBehaviour
         {
             if (ClickCountD == 1 && DoubleClickTimerD > 0)
             {
+                // add i-frames
+                dashInvincible = true;
+                TimeSinceDashInv = dashInvicTime;
+
                 transform.position += new Vector3(2f, 0f, 0f);
                 ClickCountD = 0;
             }
@@ -179,6 +192,10 @@ public class Player : MonoBehaviour
         {
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
+                // add i-frames
+                dashInvincible = true;
+                TimeSinceDashInv = dashInvicTime;
+
                 transform.position += new Vector3(-2f, 0f, 0f);
                 ClickCountA = 0;
             }
@@ -258,6 +275,7 @@ public class Player : MonoBehaviour
             canJump = true;
             falling = false;
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -292,7 +310,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!Invincible)
+        if (!Invincible || !dashInvincible)
         {
             if (collision.gameObject.tag == "Enemy")
             {
@@ -338,6 +356,7 @@ public class Player : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         canJump = true;
-
     }
+
+    
 }
