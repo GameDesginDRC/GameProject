@@ -15,20 +15,20 @@ public class PlatformGoUnder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.DownArrow)) {
-           // waitTime = .001f;
-        }
-        if(Input.GetKey(KeyCode.DownArrow))
+        //if (Input.GetKeyUp(KeyCode.DownArrow)) {
+        //   waitTime = .001f;
+        //}
+        if(Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.Space))
         {
-           // if (waitTime <= 0)
-       //     {
+        //   if (waitTime <= 0)
+         //   {
                 effector.rotationalOffset = 180f;
                 StartCoroutine(Blink());
-              //  waitTime = .001f;
-          //  } else
+        //        waitTime = .001f;
+         //   } else
           //  {
-          //      waitTime -= Time.deltaTime;
-           // }
+          //     waitTime -= Time.deltaTime;
+          //  }
         }
 
    //     if(Input.GetKey(KeyCode.Space))
@@ -38,7 +38,7 @@ public class PlatformGoUnder : MonoBehaviour
     }
     IEnumerator Blink()
     {
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.2f);
         effector.rotationalOffset = 0;
     }
 }
