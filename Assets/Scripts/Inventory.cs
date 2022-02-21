@@ -9,28 +9,17 @@ public class Inventory : MonoBehaviour
     [SerializeField] public GameObject[] spots1;
     [SerializeField] public GameObject[] posobjs1;
     [SerializeField] public GameObject filler;
+    [SerializeField] public GameObject[] items1;
     public static bool[] _full;
     public static GameObject[] spots;
     public static GameObject[] pos_objs;
-    public static GameObject item1;
-    public static GameObject item2;
-    public static GameObject item3;
-    public static GameObject item4;
-    public static GameObject item5;
+    public static GameObject[] items;
     // Start is called before the first frame update
     // ISSUE: put items in public array and assign values later
     private void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName == "Stage 1")
-        {
-            item1 = filler;
-            item2 = filler;
-            item3 = filler;
-            item4 = filler;
-            item5 = filler;
-        }
 
         if (sceneName != "Stage 1" && sceneName != "TUTORIAL" && sceneName != "HUB")
         {
@@ -41,6 +30,10 @@ public class Inventory : MonoBehaviour
             for (int i = 0; i < _full.Length; i++)
             {
                 DontDestroyOnLoad(pos_objs[i]);
+                //line below affects item display for pos_objs
+                //DontDestroyOnLoad(spots[i]);
+                DontDestroyOnLoad(items[i]);
+
             }
 
                 // UNCOMMENT LATER
@@ -57,7 +50,7 @@ public class Inventory : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(item3);
+       // Debug.Log(item3);
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         spots = spots1;
@@ -66,6 +59,7 @@ public class Inventory : MonoBehaviour
                 pos_objs = posobjs1;
                 _full = _full1;
                 spots = spots1;
+                items = items1;
             }
         else if (sceneName != "HUB" || sceneName != "Abilities")
         {
