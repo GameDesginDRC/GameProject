@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: -5366959777432866047}
   - component: {fileID: 2657389116580683977}
   - component: {fileID: 4607505613661102274}
+  - component: {fileID: 5197882267354306471}
   - component: {fileID: 3692583819280829755}
   - component: {fileID: 1688629209}
   - component: {fileID: 1688629210}
@@ -328,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 4402328447230336302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450518138}
   - {fileID: 168893264}
@@ -401,7 +402,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0149976015}
+  m_Offset: {x: -0.005882755, y: 0.00029069185}
   m_SpriteTilingProperty:
     border: {x: 0.625, y: 0, z: 0.75, w: 0.625}
     pivot: {x: 0.46875, y: 0.34375}
@@ -412,7 +413,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1.35}
+  m_Size: {x: 0.74118626, y: 1.3794137}
   m_EdgeRadius: 0
 --- !u!50 &2657389116580683977
 Rigidbody2D:
@@ -448,7 +449,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014997661}
+  m_Offset: {x: 0.004867792, y: 0.15912518}
   m_SpriteTilingProperty:
     border: {x: 0.625, y: 0, z: 0.75, w: 0.625}
     pivot: {x: 0.46875, y: 0.34375}
@@ -459,8 +460,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.3399156}
+  m_Size: {x: 0.584372, y: 1.0707619}
   m_EdgeRadius: 0
+--- !u!58 &5197882267354306471
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402328447230336302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0036723614, y: -0.3757827}
+  serializedVersion: 2
+  m_Radius: 0.29406908
 --- !u!114 &3692583819280829755
 MonoBehaviour:
   m_ObjectHideFlags: 0
