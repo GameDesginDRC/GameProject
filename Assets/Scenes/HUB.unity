@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level1: HUB
+  Level2: 
 --- !u!4 &377173370
 Transform:
   m_ObjectHideFlags: 0
@@ -1920,6 +1921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   facingRight: 0
+  gameOver: GameOver
   JumpForce: 2
   DamageInvincibilityPeriod: 5
   DoubleClickTimerD: 0.3
@@ -1927,6 +1929,9 @@ MonoBehaviour:
   Invincible: 0
   InvincibilityTime: 2
   TimeSinceInvStarted: 0
+  dashInvincible: 0
+  dashInvicTime: 0.5
+  TimeSinceDashInv: 0
   healthbar: {fileID: 0}
   GNBar: {fileID: 0}
   coolingDown: 0

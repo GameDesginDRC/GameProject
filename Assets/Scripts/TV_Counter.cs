@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TV_Counter : MonoBehaviour
 {
-    public static int countertv;
+    public static int countertv = 0;
     // Start is called before the first frame update
     void Start()
     {

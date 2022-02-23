@@ -141,7 +141,9 @@ public class Player : MonoBehaviour
         HandleInput();
         ProcessStatusEffects();
 
-        if (hp <= 0)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (hp <= 0 && sceneName != "Shop 1" && sceneName != "Shop 2" && sceneName != "Shop 3" && sceneName != "Shop 4" && sceneName != "Shop 5" && sceneName != "Shop 6" && sceneName != "HUB")
         {
             SceneManager.LoadScene(gameOver);
         }

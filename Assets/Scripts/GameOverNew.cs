@@ -17,6 +17,7 @@ public class GameOverNew : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            TV_Counter.countertv++;
             SceneManager.LoadScene(next);
         }
     }

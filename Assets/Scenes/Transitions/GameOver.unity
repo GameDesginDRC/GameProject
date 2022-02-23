@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 1823254844}
   - component: {fileID: 1823254846}
   - component: {fileID: 1823254847}
+  - component: {fileID: 1823254848}
   m_Layer: 0
   m_Name: GOBackground
   m_TagString: Untagged
@@ -707,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57ef36a2026f45a899c05374180e5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: 'HUB '
+  next: HUB
 --- !u!50 &1823254847
 Rigidbody2D:
   serializedVersion: 4
@@ -729,3 +730,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1823254848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823254843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e24016dece4a4db37e3527728b567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
