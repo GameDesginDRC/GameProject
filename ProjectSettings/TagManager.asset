@@ -13,6 +13,9 @@ TagManager:
   - Ring
   - InvisWall
   - MovPlatform
+  - Bullet
+  - RL
+  - Laser
   layers:
   - Default
   - TransparentFX

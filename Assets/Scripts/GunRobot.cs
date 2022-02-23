@@ -168,6 +168,21 @@ public class GunRobot : MonoBehaviour
             InvokeFlip();
         }
     }
+    /* private void OnTriggerStay2D(Collider2D collision)
+     {
+         if (collision.CompareTag("PlayerAttack"))
+         {
+             // decrease HP and pause
+             if (!invincible)
+             {
+                 health -= 2;
+                 isPaused = true;
+                 invincible = true;
+
+                 Invoke("invinCooldown", invincibleTime);
+             }
+         }
+     }*/
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
@@ -175,10 +190,42 @@ public class GunRobot : MonoBehaviour
             // decrease HP and pause
             if (!invincible)
             {
-                health -= 2;
+                health -= 5;
                 isPaused = true;
                 invincible = true;
-
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("Laser"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 3;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("RL"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 4;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("Bullet"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 3;
+                isPaused = true;
+                invincible = true;
                 Invoke("invinCooldown", invincibleTime);
             }
         }

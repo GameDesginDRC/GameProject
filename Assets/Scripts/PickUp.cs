@@ -9,6 +9,7 @@ public class PickUp : MonoBehaviour
     public GameObject itemDisplay;
     public int count;
     //public GameObject player1_;
+    [SerializeField]
     public int price;
     // Start is called before the first frame update
 
@@ -48,15 +49,17 @@ public class PickUp : MonoBehaviour
                         count = 1;
                         if (InvTracker.invcount == 0)
                         {
-                           Destroy(Inventory.items[0]);
+                            // Destroy(Inventory.items[0]);
                             //Inventory.items[0] = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                            Inventory.spots[0].GetComponent<DestroyItem>().dst = true;
                             Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
                             Inventory.items[0] = itemDisplay;
                         }
                         else
                         {
-                           Destroy(Inventory.items[1]);
+                            //Destroy(Inventory.items[1]);
                             //Inventory.items[1] = Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
+                            Inventory.spots[1].GetComponent<DestroyItem>().dst = true;
                             Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
                             Inventory.items[1] = itemDisplay;
                         }
@@ -65,6 +68,21 @@ public class PickUp : MonoBehaviour
                         if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
                         {
                             RegularGun.CanShoot = false;
+                            Destroy(FindObjectOfType<GunOn>());
+                        }
+                        else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<RLOn>() != null)
+                        {
+                            RocketLauncher.CanShoot = false;
+                            Destroy(FindObjectOfType<RLOn>());
+                        }
+                        else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<LaserGunOn>() != null)
+                        {
+                            LaserGun.CanShoot = false;
+                            //Destroy(FindObjectOfType<GunOn>());
+                        }
+                        else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<SwordOn>() != null)
+                        {
+                            RegularSword.hasSword = false;
                             //Destroy(FindObjectOfType<GunOn>());
                         }
                         // New item picked up
@@ -73,6 +91,21 @@ public class PickUp : MonoBehaviour
                         if (itemDisplay.GetComponent<GunOn>() != null)
                         {
                             RegularGun.CanShoot = true;
+                        }
+                        else if (itemDisplay.GetComponent<RLOn>() != null)
+                        {
+                            RocketLauncher.CanShoot = true;
+                            //Destroy(FindObjectOfType<GunOn>());
+                        }
+                        else if (itemDisplay.GetComponent<LaserGunOn>() != null)
+                        {
+                            LaserGun.CanShoot = true;
+                            //Destroy(FindObjectOfType<GunOn>());
+                        }
+                        else if (itemDisplay.GetComponent<SwordOn>() != null)
+                        {
+                            RegularSword.hasSword = true;
+                            //Destroy(FindObjectOfType<GunOn>());
                         }
                         Destroy(gameObject);
                     }
@@ -149,13 +182,14 @@ public class PickUp : MonoBehaviour
                                 Inventory._full[i] = true;
                                 if (i == 0)
                                 {
-
+                                    Inventory.spots[0].GetComponent<DestroyItem>().dst = true;
                                     //Inventory.items[0] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.items[0] = itemDisplay;
                                     Inventory.pos_objs[i] = itemDisplay;
                                 } else
                                 {
+                                    Inventory.spots[1].GetComponent<DestroyItem>().dst = true;
                                     //Inventory.items[1] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Inventory.items[1] = itemDisplay;

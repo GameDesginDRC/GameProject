@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
-{
+{ 
     [SerializeField] public bool[] _full1;
     [SerializeField] public GameObject[] spots1;
     [SerializeField] public GameObject[] posobjs1;
     [SerializeField] public GameObject filler;
     [SerializeField] public GameObject[] items1;
+    [SerializeField] public GameObject startingWeapon;
     public static bool[] _full;
     public static GameObject[] spots;
     public static GameObject[] pos_objs;
@@ -24,9 +25,10 @@ public class Inventory : MonoBehaviour
         if (sceneName != "Stage 1" && sceneName != "TUTORIAL" && sceneName != "HUB")
         {
             //for (int i = 0; i < _full.Length; i++)
-           // {
-           //     DontDestroyOnLoad(spots[i]);
-           // }
+            // {
+            //     DontDestroyOnLoad(spots[i]);
+            // }
+
             for (int i = 0; i < _full.Length; i++)
             {
                 DontDestroyOnLoad(pos_objs[i]);
@@ -60,7 +62,11 @@ public class Inventory : MonoBehaviour
                 _full = _full1;
                 spots = spots1;
                 items = items1;
-            }
+                Instantiate(startingWeapon, Inventory.spots[0].transform, false);
+                items[0] = startingWeapon;
+                pos_objs[0] = startingWeapon;
+                _full[0] = true;
+        }
         else if (sceneName != "HUB" || sceneName != "Abilities")
         {
             for (int i = 0; i < pos_objs.Length; i++)

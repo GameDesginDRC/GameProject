@@ -36,45 +36,36 @@ public class InvTracker : MonoBehaviour
             {
                 RegularGun.CanShoot = true;
             }
-            /*else if (Inventory.pos_objs[0].GetComponent<LanceScript>() != null)
+            else if (Inventory.pos_objs[0].GetComponent<SwordOn>() != null)
             {
-                Lance.hasLance = true;
+                RegularSword.hasSword = true;
             }
-            else if (Inventory.pos_objs[0].GetComponent<BombScript>() != null)
+            else if (Inventory.pos_objs[0].GetComponent<RLOn>() != null)
             {
-                Bomb.CanShoot = true;
+                RocketLauncher.CanShoot = true;
             }
-            else if (Inventory.pos_objs[0].GetComponent<RocketLauncherScript>() != null)
-            {
-                RocketLauncher.hasRL = true;
-            }
-            else if (Inventory.pos_objs[0].GetComponent<LaserScript>() != null)
+            else if (Inventory.pos_objs[0].GetComponent<LaserGunOn>() != null)
             {
                 LaserGun.CanShoot = true;
-            }*/
+            }
 
             //Make whatever is in 1st index inactive
             if (Inventory.pos_objs[1].GetComponent<GunOn>() != null)
             {
                 RegularGun.CanShoot = false;
             }
-            /*else if (Inventory.pos_objs[1].GetComponent<LanceScript>() != null)
+            else if (Inventory.pos_objs[1].GetComponent<SwordOn>() != null)
             {
-                Lance.hasLance = false;
+                RegularSword.hasSword = false;
             }
-            else if (Inventory.pos_objs[1].GetComponent<BombScript>() != null)
+            else if (Inventory.pos_objs[1].GetComponent<RLOn>() != null)
             {
-                Bomb.CanShoot = false;
+                RocketLauncher.CanShoot = false;
             }
-            else if (Inventory.pos_objs[1].GetComponent<RocketLauncherScript>() != null)
-            {
-                RocketLauncher.hasRL = false;
-            }
-            else if (Inventory.pos_objs[1].GetComponent<LaserScript>() != null)
+            else if (Inventory.pos_objs[1].GetComponent<LaserGunOn>() != null)
             {
                 LaserGun.CanShoot = false;
-            }*/
-
+            }
         }
 
         // Weapon 2 is active
@@ -84,6 +75,18 @@ public class InvTracker : MonoBehaviour
             if (Inventory.pos_objs[1].GetComponent<GunOn>() != null)
             {
                 RegularGun.CanShoot = true;
+            }
+            else if (Inventory.pos_objs[1].GetComponent<SwordOn>() != null)
+            {
+                RegularSword.hasSword = true;
+            }
+            else if (Inventory.pos_objs[1].GetComponent<RLOn>() != null)
+            {
+                RocketLauncher.CanShoot = true;
+            }
+            else if (Inventory.pos_objs[1].GetComponent<LaserGunOn>() != null)
+            {
+                LaserGun.CanShoot = true;
             }
             /*else if (Inventory.pos_objs[1].GetComponent<LanceScript>() != null)
             {
@@ -106,6 +109,18 @@ public class InvTracker : MonoBehaviour
             if (Inventory.pos_objs[0].GetComponent<GunOn>() != null)
             {
                 RegularGun.CanShoot = false;
+            }
+            else if (Inventory.pos_objs[0].GetComponent<SwordOn>() != null)
+            {
+                RegularSword.hasSword = false;
+            }
+            else if (Inventory.pos_objs[0].GetComponent<RLOn>() != null)
+            {
+                RocketLauncher.CanShoot = false;
+            }
+            else if (Inventory.pos_objs[0].GetComponent<LaserGunOn>() != null)
+            {
+                LaserGun.CanShoot = false;
             }
             /*else if (Inventory.pos_objs[0].GetComponent<LanceScript>() != null)
             {

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 5757506720592358010, guid: b99c16a007ce34aee919b534aaa5e348, type: 3}
   count: 0
-  price: 10
+  price: 35
 --- !u!60 &210619231094515057
 PolygonCollider2D:
   m_ObjectHideFlags: 0

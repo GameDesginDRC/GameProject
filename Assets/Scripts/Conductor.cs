@@ -123,10 +123,42 @@ public class Conductor : MonoBehaviour
             // decrease HP and pause
             if (!invincible)
             {
-                health -= 2;
+                health -= 5;
                 isPaused = true;
                 invincible = true;
-
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("Laser"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 3;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("RL"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 4;
+                isPaused = true;
+                invincible = true;
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+        else if (collision.CompareTag("Bullet"))
+        {
+            // decrease HP and pause
+            if (!invincible)
+            {
+                health -= 3;
+                isPaused = true;
+                invincible = true;
                 Invoke("invinCooldown", invincibleTime);
             }
         }

@@ -181,6 +181,7 @@ MonoBehaviour:
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
+  startingWeapon: {fileID: 8912990897589149740, guid: b0af79658869145de9f0a06445b16dae, type: 3}
 --- !u!114 &50
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,6 +2034,7 @@ GameObject:
   - component: {fileID: 1132667758}
   - component: {fileID: 1132667760}
   - component: {fileID: 1132667759}
+  - component: {fileID: 1132667761}
   m_Layer: 5
   m_Name: Inv_Slot1
   m_TagString: Untagged
@@ -2097,6 +2099,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132667757}
   m_CullTransparentMesh: 1
+--- !u!114 &1132667761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132667757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c635cf93d834423687c5bb8ecbfb232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dst: 0
 --- !u!1 &1150594552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2123,7 @@ GameObject:
   - component: {fileID: 1150594553}
   - component: {fileID: 1150594555}
   - component: {fileID: 1150594554}
+  - component: {fileID: 1150594556}
   m_Layer: 5
   m_Name: Inv_Slot2
   m_TagString: Untagged
@@ -2172,6 +2188,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150594552}
   m_CullTransparentMesh: 1
+--- !u!114 &1150594556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150594552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c635cf93d834423687c5bb8ecbfb232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dst: 0
 --- !u!1 &1211022362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,6 +4130,9 @@ MonoBehaviour:
   Invincible: 0
   InvincibilityTime: 2
   TimeSinceInvStarted: 0
+  dashInvincible: 0
+  dashInvicTime: 0.5
+  TimeSinceDashInv: 0
   healthbar: {fileID: 997728261}
   GNBar: {fileID: 1499976472}
   coolingDown: 0

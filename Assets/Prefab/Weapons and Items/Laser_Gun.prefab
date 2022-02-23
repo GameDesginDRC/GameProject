@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d17211bec88047dd88975169b35fc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 0}
-  count: 0
+  itemDisplay: {fileID: 2372972925542499735, guid: c8e1ab1abc549409abcaf21794b77ded, type: 3}
+  count: 160
   price: 0
 --- !u!114 &8335735379947630580
 MonoBehaviour:
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b37c819f5ef40fe8694b86660a486c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 0}
+  FloatingTextPrefab: {fileID: 6717230697595807644, guid: ec90677bcfecf47f4a46feeddfab542d, type: 3}
 --- !u!114 &-2837730840689865339
 MonoBehaviour:
   m_ObjectHideFlags: 0

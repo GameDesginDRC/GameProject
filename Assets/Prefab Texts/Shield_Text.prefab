@@ -86,7 +86,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514911254853936151}
-  m_Text: "Press Z to Recieve \n\"Increased Shield\""
+  m_Text: "Press B to Recieve \n\"Increased Shield\"\nPrice: 35 Gold"
   m_OffsetZ: 0
   m_CharacterSize: 3
   m_LineSpacing: 1

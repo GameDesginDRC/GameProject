@@ -7,6 +7,9 @@ public class Informant : MonoBehaviour
     public static bool bought_shield;
     public static bool bought_gun;
     public static bool bought_pot;
+    public static bool bought_sword;
+    public static bool bought_RL;
+    public static bool bought_LaserGun;
     public GameObject FloatingTextPrefab;
     public GameObject FloatingTextPrefab2;
     public GameObject FloatingTextPrefab3;
