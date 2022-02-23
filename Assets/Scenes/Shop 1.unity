@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 3644578496862393292, guid: 7deff58f528334200ad2f3dcefe56298, type: 3}
-  next: Stage 2
+  next: Transition2
 --- !u!212 &910896770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3389,6 +3389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   facingRight: 0
+  gameOver: 
   JumpForce: 2
   DamageInvincibilityPeriod: 5
   DoubleClickTimerD: 0.3

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float Speed = 10f;
     [SerializeField]
     private bool facingRight;
+    [SerializeField] string gameOver;
 
     public float JumpForce = .5f;
     public float DamageInvincibilityPeriod = 5f;
@@ -139,6 +140,11 @@ public class Player : MonoBehaviour
         HandleInvincible();
         HandleInput();
         ProcessStatusEffects();
+
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene(gameOver);
+        }
 
         if (HP_Pot.hpIncr == 1)
         {

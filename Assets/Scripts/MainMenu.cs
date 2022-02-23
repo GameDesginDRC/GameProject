@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
             if (option == 1)
             {
                 // go to first level
-                SceneManager.LoadScene("Stage 1");
+                SceneManager.LoadScene("Transition1");
             }
             if (option == 2)
             {

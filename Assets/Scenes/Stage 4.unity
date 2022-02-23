@@ -4588,6 +4588,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296312903}
     - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: gameOver
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692583819280829755, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 53184088}

@@ -53,4 +53,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage 6.unity
     guid: f02672885c7a74f7cb7ad209c01e1c4f
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition 1.unity
+    guid: f4651e652b2614e5e9459e69ddd2fe3a
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition2.unity
+    guid: 335f09cd0fa0a4e74a0ddfebd1dfa4cf
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition3.unity
+    guid: c0dbab00b170843b6852ceac30e310f7
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition4.unity
+    guid: ec6ff3cba8d874c43ababb79660fe99f
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition5.unity
+    guid: 2c19d89cd595244e3b46bea685fc21be
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition6.unity
+    guid: 09a8fb9a4e561425998d432a8ae11abf
+  - enabled: 1
+    path: Assets/Scenes/Transitions/GameOver.unity
+    guid: 830b6e6024ccb4bafac618a21b283a1d
   m_configObjects: {}

@@ -415,12 +415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9ec58687b4d4173b7f60717847ed1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shieldobj: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
+  Swordobj: {fileID: 0}
   Gunobj: {fileID: 2668435372244468504, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
-  Lanceobj: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
   LaserGunobj: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
   RocketLauncherobj: {fileID: 210619231094515056, guid: 4ae836ae39f244d87842d4e70aa3dc1f, type: 3}
-  hpPot: {fileID: 5953105412863448696, guid: 889a19d7b326c4ee9bbaed83cd7250ba, type: 3}
 --- !u!4 &181536897
 Transform:
   m_ObjectHideFlags: 0
@@ -893,6 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   facingRight: 0
+  gameOver: 
   JumpForce: 2
   DamageInvincibilityPeriod: 5
   DoubleClickTimerD: 0.3
@@ -2842,7 +2841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 3644578496862393292, guid: 7deff58f528334200ad2f3dcefe56298, type: 3}
-  next: Stage 3
+  next: Transition3
 --- !u!212 &1991205820
 SpriteRenderer:
   m_ObjectHideFlags: 0
