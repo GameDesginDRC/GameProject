@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage 6.unity
     guid: f02672885c7a74f7cb7ad209c01e1c4f
   - enabled: 1
-    path: Assets/Scenes/Transitions/Transition 1.unity
+    path: Assets/Scenes/Transitions/Transition1.unity
     guid: f4651e652b2614e5e9459e69ddd2fe3a
   - enabled: 1
     path: Assets/Scenes/Transitions/Transition2.unity
