@@ -15,9 +15,8 @@ public class InvTracker : MonoBehaviour
     void Update()
     {
         // Determining which weapon is on
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("W");
             if (invcount == 0)
             {
                 invcount = 1;

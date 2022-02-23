@@ -48,6 +48,7 @@ public class HP_Pot : MonoBehaviour
             {
                 Player.hp = 100;
             }
+            hpIncr = 1;
             Destroy(gameObject);
         }
         else

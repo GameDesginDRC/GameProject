@@ -38,12 +38,12 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // This is switching out equpiment
-            if (Inventory._full[0] && Inventory._full[1])
+            if (Inventory._full[0] && Inventory._full[1] && Input.GetKey(KeyCode.B) && gameObject.GetComponent<Equipment>() != null && ScoreKeeper.gold >= price)
             {
                 // To switch out first weapon
 
-                if (Input.GetKey(KeyCode.Q) && gameObject.GetComponent<Equipment>() != null)
-                {
+               // if (Input.GetKey(KeyCode.B) && gameObject.GetComponent<Equipment>() != null && ScoreKeeper.gold >= price)
+               // {
                     if (count == 0)
                     {
                         count = 1;
@@ -63,7 +63,9 @@ public class PickUp : MonoBehaviour
                             Instantiate(itemDisplay, Inventory.spots[InvTracker.invcount].transform, false);
                             Inventory.items[1] = itemDisplay;
                         }
-                        ScoreKeeper.SubToGold(price);
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
                         // Disabling old replaced item
                         if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
                         {
@@ -109,10 +111,10 @@ public class PickUp : MonoBehaviour
                         }
                         Destroy(gameObject);
                     }
-                }
+               // }
             }
 
-            if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold > price)
+            else if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold >= price)
             {
                 if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
                 //if (Inventory._full[2])
@@ -120,7 +122,9 @@ public class PickUp : MonoBehaviour
                     if (count == 0)
                     {
                         count = 1;
-                        ScoreKeeper.SubToGold(price);
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
                         Shield_Gen.shield_count += 1;
                         Destroy(gameObject);
                     }
@@ -131,8 +135,10 @@ public class PickUp : MonoBehaviour
                         if (count == 0)
                         {
                             count = 1;
-                            ScoreKeeper.SubToGold(price);
-                            HP_Pot.HPpot_count += 1;
+                         //ScoreKeeper.SubToGold(price);
+                         ScoreKeeper.gold -= price;
+                         ScoreKeeper.AddToGold(0);
+                           HP_Pot.HPpot_count += 1;
                             Destroy(gameObject);
                         }
 
@@ -143,7 +149,9 @@ public class PickUp : MonoBehaviour
                     if (count == 0)
                     {
                         count = 1;
-                        ScoreKeeper.SubToGold(price);
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
                         Shield_Gen.shield_count += 1;
                         Destroy(gameObject);
                     }
@@ -154,7 +162,8 @@ public class PickUp : MonoBehaviour
                     if (count == 0)
                     {
                         count = 1;
-                        ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
                         HP_Pot.HPpot_count += 1;
                         Destroy(gameObject);
                     }
@@ -171,11 +180,12 @@ public class PickUp : MonoBehaviour
                             //count = 0;
                             if (Inventory._full[i] == false)
                             {
-                                
+
 
                                 //Debug.Log(ScoreKeeper.gold);
-                                ScoreKeeper.SubToGold(price);
-                                //Debug.Log(ScoreKeeper.gold);
+                                //ScoreKeeper.SubToGold(price);
+                                ScoreKeeper.gold -= price;
+                                ScoreKeeper.AddToGold(0);
                                 count = 1;
                                 //     StartCoroutine(Wait());
                                 // CAN PICKUP
@@ -222,8 +232,9 @@ public class PickUp : MonoBehaviour
                             {
 
                                 //Debug.Log(ScoreKeeper.gold);
-                                ScoreKeeper.SubToGold(price);
-                                Debug.Log(ScoreKeeper.gold);
+                                //ScoreKeeper.SubToGold(price);
+                                ScoreKeeper.gold -= price;
+                                ScoreKeeper.AddToGold(0);
                                 count = 1;
                                 //     StartCoroutine(Wait());
                                 // CAN PICKUP

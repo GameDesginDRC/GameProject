@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 2372972925542499735, guid: c8e1ab1abc549409abcaf21794b77ded, type: 3}
-  count: 160
-  price: 0
+  count: 0
+  price: 160
 --- !u!114 &8335735379947630580
 MonoBehaviour:
   m_ObjectHideFlags: 0
