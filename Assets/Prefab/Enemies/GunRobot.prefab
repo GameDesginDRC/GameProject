@@ -160,6 +160,7 @@ MonoBehaviour:
   shootevery: 1.5
   invincibleTime: 0.3
   invincible: 0
+  animator: {fileID: 3085811104843095069}
 --- !u!95 &3085811104843095069
 Animator:
   serializedVersion: 3

@@ -15,6 +15,7 @@ public class GunRobot : MonoBehaviour
     float flipEveryXSecs = 1f;
     [SerializeField]
     float nextFlip = 0f;
+    bool flipTimerOn = true;
     [SerializeField]
     bool isPaused = false;
     [SerializeField]
@@ -42,12 +43,17 @@ public class GunRobot : MonoBehaviour
     [SerializeField]
     bool invincible = false;
 
+    // for animations
+    [SerializeField]
+    private Animator animator;
+
     private Rigidbody2D rb;
     private Collider2D col2d;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         col2d = gameObject.GetComponent<Collider2D>();
     }
@@ -70,6 +76,8 @@ public class GunRobot : MonoBehaviour
         isPaused = false;
     }
 
+    void turnFlipTimerOn() { flipTimerOn = true; }
+
     void Shoot()
     {
         Vector3 shootLoc = castPoint.position;
@@ -84,6 +92,8 @@ public class GunRobot : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
         }
+        animator.SetBool("Attacking", false);
+        Invoke("turnFlipTimerOn", 0.5f);
 
     }
     IEnumerator Blink()
@@ -106,8 +116,11 @@ public class GunRobot : MonoBehaviour
 
         if (Time.time > nextFlip)
         {
-            Invoke("InvokeFlip", 2);
-            nextFlip = Time.time + 2 + flipEveryXSecs;
+            if (flipTimerOn)
+            {
+                Invoke("InvokeFlip", 2);
+                nextFlip = Time.time + 2 + flipEveryXSecs;
+            }
         }
         
 
@@ -117,8 +130,9 @@ public class GunRobot : MonoBehaviour
             // shoot at the player
             if (Time.time > nextShootTime)
             {
-                Debug.Log("Shoot!");
-                Invoke("Shoot", .5f);
+                flipTimerOn = false;
+                animator.SetBool("Attacking", true);
+                Invoke("Shoot", 1f);
                 nextShootTime = Time.time + shootevery;
             }
 

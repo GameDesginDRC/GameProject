@@ -44,6 +44,8 @@ public class SwordRobot : MonoBehaviour
     // animation
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private Animator animator2;
 
     private Rigidbody2D rb;
     private Collider2D col2d;
@@ -51,13 +53,15 @@ public class SwordRobot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator2 = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         col2d = gameObject.GetComponent<Collider2D>();
     }
 
-    void Wait() {
-        theAttack.tag = "Untagged";
+    void Wait()
+    {
         animator.SetBool("Attacking", false);
+        theAttack.tag = "Untagged";
     }
 
     void Unpause() {
@@ -67,6 +71,7 @@ public class SwordRobot : MonoBehaviour
     void Attack() {
         theAttack.tag = "Enemy";
         animator.SetBool("Attacking", true);
+        animator2.SetBool("Attacking", false);
         Invoke("Wait", .3f);
     }
 
@@ -149,6 +154,7 @@ public class SwordRobot : MonoBehaviour
             {
                 isPaused = true;
                 // 3/10th a second before attack
+                animator2.SetBool("Attacking", true);
                 Invoke("Attack", .3f);
 
                 nextAttack = Time.time + 1f;

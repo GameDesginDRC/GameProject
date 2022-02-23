@@ -520,6 +520,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &208399113 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1839256583410803112, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+  m_PrefabInstance: {fileID: 1839256583040061363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &235619748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,6 +1833,7 @@ MonoBehaviour:
   shootevery: 1.5
   invincibleTime: 0.3
   invincible: 0
+  animator: {fileID: 0}
 --- !u!50 &1026517211
 Rigidbody2D:
   serializedVersion: 4
@@ -2023,6 +2029,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1086346646 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1839256583456357023, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+  m_PrefabInstance: {fileID: 1839256583040061363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1132667757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,6 +2745,7 @@ MonoBehaviour:
   shootevery: 1.5
   invincibleTime: 0.3
   invincible: 0
+  animator: {fileID: 0}
 --- !u!50 &1458457532
 Rigidbody2D:
   serializedVersion: 4
@@ -3928,6 +3940,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordRobot
       objectReference: {fileID: 0}
+    - target: {fileID: 1839256583410803113, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1086346646}
+    - target: {fileID: 1839256583410803113, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: animator2
+      value: 
+      objectReference: {fileID: 208399113}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3970,6 +3990,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839256583456357017, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839256583456357017, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: m_Size.y
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839256583456357017, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839256583456357017, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
