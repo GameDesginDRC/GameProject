@@ -143,8 +143,21 @@ public class PickUp : MonoBehaviour
                         }
 
                     }
-                    // Check if second consumable is full and is a shield
-                   else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                else if (Inventory._full[2] && Inventory.items[2].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
+                        GrenadeOn.GrenadeCount += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                // Check if second consumable is full and is a shield
+                else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
                   {
                     if (count == 0)
                     {
@@ -165,6 +178,57 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         HP_Pot.HPpot_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                else if (Inventory._full[3] && Inventory.items[3].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
+                        GrenadeOn.GrenadeCount += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                else if (Inventory._full[4] && Inventory.items[4].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
+                        Shield_Gen.shield_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                else if (Inventory._full[4] && Inventory.items[4].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
+                        HP_Pot.HPpot_count += 1;
+                        Destroy(gameObject);
+                    }
+
+                }
+                else if (Inventory._full[4] && Inventory.items[4].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null)
+                {
+                    if (count == 0)
+                    {
+                        count = 1;
+                        //ScoreKeeper.SubToGold(price);
+                        ScoreKeeper.gold -= price;
+                        ScoreKeeper.AddToGold(0);
+                        GrenadeOn.GrenadeCount += 1;
                         Destroy(gameObject);
                     }
 
@@ -221,7 +285,7 @@ public class PickUp : MonoBehaviour
                 //When item is a consumeable
                 else if (gameObject.GetComponent<Consumable>() != null)
                 {
-                    for (int i = 2; i < 4; i++)
+                    for (int i = 2; i < 5; i++)
                     {
                         if (count == 0)
                         {
@@ -254,6 +318,11 @@ public class PickUp : MonoBehaviour
                                         Inventory.items[2].GetComponent<HP_Pot>().usednum = i;
                                         HP_Pot.HPpot_count += 1;
                                     }
+                                    else if (itemDisplay.GetComponent<GrenadeOn>() != null)
+                                    {
+                                        Inventory.items[2].GetComponent<GrenadeOn>().usednum = i;
+                                        GrenadeOn.GrenadeCount += 1;
+                                    }
                                 }
 
                                 else if (i == 3)
@@ -271,6 +340,33 @@ public class PickUp : MonoBehaviour
                                     {
                                         Inventory.items[3].GetComponent<HP_Pot>().usednum = i;
                                         HP_Pot.HPpot_count += 1;
+                                    }
+                                    else if (itemDisplay.GetComponent<GrenadeOn>() != null)
+                                    {
+                                        Inventory.items[3].GetComponent<GrenadeOn>().usednum = i;
+                                        GrenadeOn.GrenadeCount += 1;
+                                    }
+                                }
+                                else if (i == 4)
+                                {
+                                    //Inventory.items[3] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+                                    Inventory.items[4] = itemDisplay;
+                                    Inventory.pos_objs[i] = itemDisplay;
+                                    if (itemDisplay.GetComponent<Shield_Gen>() != null)
+                                    {
+                                        Inventory.items[4].GetComponent<Shield_Gen>().usednum = i;
+                                        Shield_Gen.shield_count += 1;
+                                    }
+                                    else if (itemDisplay.GetComponent<HP_Pot>() != null)
+                                    {
+                                        Inventory.items[4].GetComponent<HP_Pot>().usednum = i;
+                                        HP_Pot.HPpot_count += 1;
+                                    }
+                                    else if (itemDisplay.GetComponent<GrenadeOn>() != null)
+                                    {
+                                        Inventory.items[4].GetComponent<GrenadeOn>().usednum = i;
+                                        GrenadeOn.GrenadeCount += 1;
                                     }
                                 }
                                 //Inventory.pos_objs[i] = itemDisplay;
