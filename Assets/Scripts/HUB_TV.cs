@@ -20,7 +20,7 @@ public class HUB_TV : MonoBehaviour
             PlayerPrefs.SetInt("isFirstTime", 1);
             TV_Counter.countertv = 1;
         }
-        newvec = new Vector3(-3.7f, 2f, 0);
+        newvec = new Vector3(-3.2f, 1f, 0);
         if (TV_Counter.countertv == 1)
         {
             var obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
@@ -33,7 +33,7 @@ public class HUB_TV : MonoBehaviour
         {
             var obj = Instantiate(FloatingTextPrefab2, transform.position + newvec, Quaternion.identity, transform);
         }
-        else if (TV_Counter.countertv == 4)
+        else if (TV_Counter.countertv >= 4)
         {
             var obj = Instantiate(FloatingTextPrefab3, transform.position + newvec, Quaternion.identity, transform);
         }
@@ -42,9 +42,6 @@ public class HUB_TV : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene(_nextlevelname);
-        }
+
     }
 }

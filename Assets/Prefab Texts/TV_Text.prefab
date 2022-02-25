@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8429713975093386753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -666.5, y: -419.7, z: -23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b875428460f8641d69a8a3bdf253fdd8, type: 3}
+  - {fileID: 2100000, guid: 29fd7191de66a4bcbbd3d7ac405a4daf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,10 +81,10 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8429713975093386753}
-  m_Text: "Hello User! Welcome back. \nOnce you are ready to gear \nup again,  press
-    L to do so. "
+  m_Text: "Hello User! Welcome back. \nOnce you are ready to gear \nup again, move
+    leftwards."
   m_OffsetZ: 0
-  m_CharacterSize: 0.6
+  m_CharacterSize: 1.3
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -92,7 +92,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b875428460f8641d69a8a3bdf253fdd8, type: 3}
+  m_Font: {fileID: 12800000, guid: 29fd7191de66a4bcbbd3d7ac405a4daf, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4282137660
