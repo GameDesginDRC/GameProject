@@ -145,6 +145,7 @@ public class GunRobot : MonoBehaviour
     {
         isPaused = false;
         invincible = false;
+        sprite.color = spriteColor;
     }
 
     // Checks to see if player is in enemy's sight
@@ -178,23 +179,14 @@ public class GunRobot : MonoBehaviour
             InvokeFlip();
         }
     }
-    /* private void OnTriggerStay2D(Collider2D collision)
-     {
-         if (collision.CompareTag("PlayerAttack"))
-         {
-             // decrease HP and pause
-             if (!invincible)
-             {
-                 health -= 2;
-                 isPaused = true;
-                 invincible = true;
 
-                 Invoke("invinCooldown", invincibleTime);
-             }
-         }
-     }*/
+    void Recolor()
+    {
+        Color transparentColor = spriteColor;
+        transparentColor.a = .50f;
+        sprite.color = transparentColor;
+    }
 
-    void Recolor() { sprite.color = spriteColor; }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
@@ -202,46 +194,8 @@ public class GunRobot : MonoBehaviour
             // decrease HP and pause
             if (!invincible)
             {
-                health -= 5;
-                isPaused = true;
-                invincible = true;
-                sprite.color = Color.red;
-                Invoke("Recolor", .05f);
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Laser"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
-                isPaused = true;
-                invincible = true;
-                sprite.color = Color.red;
-                Invoke("Recolor", .05f);
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("RL"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 4;
-                isPaused = true;
-                invincible = true;
-                sprite.color = Color.red;
-                Invoke("Recolor", .05f);
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Bullet"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
+                float attackVal = collision.GetComponent<PAttack>().AttackValue;
+                health -= attackVal;
                 isPaused = true;
                 invincible = true;
                 sprite.color = Color.red;

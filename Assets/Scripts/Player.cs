@@ -80,10 +80,16 @@ public class Player : MonoBehaviour
 
     private bool switched = false;
 
+    // sprite handling
+    SpriteRenderer sprite;
+    Color spriteColor;
+
     // Start is called before the first frame update
     void Start()
     {
 
+        sprite = GetComponent<SpriteRenderer>();
+        spriteColor = sprite.color;
         //   Scene currentScene = SceneManager.GetActiveScene();
         //   string sceneName = currentScene.name;
         //   if (sceneName != "Stage 1")
@@ -108,21 +114,13 @@ public class Player : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // player sprite blinks when hit
-    IEnumerator Blink()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds((float)0.2);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds((float)0.2);
-    }
 
     void HandleInvincible() {
         if (Invincible)
         {
-            StartCoroutine(Blink());
             if (TimeSinceInvStarted + InvincibilityTime < Time.time)
             {
+                sprite.color = spriteColor;
                 Invincible = false;
             }
         }
@@ -139,7 +137,7 @@ public class Player : MonoBehaviour
     {
         HandleInvincible();
         HandleInput();
-        ProcessStatusEffects();
+        //ProcessStatusEffects();
 
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
@@ -157,9 +155,6 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
-        transform.position += movement * Time.deltaTime * Speed;
-
         // for jumps
         if ((Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow)) && canJump) {
             jumping = true;
@@ -274,6 +269,10 @@ public class Player : MonoBehaviour
         if (jumping) { StartJump(); }
         if (releaseJump) { StopJump(); }
         if (movingDown) { MoveDown(); }
+
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
+        transform.position += movement * Time.deltaTime * Speed;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -291,6 +290,7 @@ public class Player : MonoBehaviour
         canJump = false;
     }
 
+    /*
     // for the invincibility blink effect
     private void DamageBlink() {
         if (statusEffect == StatusEffect.TookDamage) {
@@ -315,6 +315,13 @@ public class Player : MonoBehaviour
             ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
         }
     }
+    */
+    void Recolor()
+    {
+        Color transparentColor = spriteColor;
+        transparentColor.a = .50f;
+        sprite.color = transparentColor;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -338,6 +345,8 @@ public class Player : MonoBehaviour
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
             }
+
+            Invoke("Recolor", .05f);
         }
 
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
