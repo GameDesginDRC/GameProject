@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
 
         sprite = GetComponent<SpriteRenderer>();
         spriteColor = sprite.color;
+
         //   Scene currentScene = SceneManager.GetActiveScene();
         //   string sceneName = currentScene.name;
         //   if (sceneName != "Stage 1")
@@ -332,21 +333,23 @@ public class Player : MonoBehaviour
                 Damage(10);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
+                Invoke("Recolor", .05f);
             }
             if (collision.gameObject.tag == "Lightning")
             {
                 Damage(15);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
+                Invoke("Recolor", .05f);
             }
             if (collision.gameObject.tag == "Ring" && circleFill_)
             {
                 Damage(15);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
+                Invoke("Recolor", .05f);
             }
 
-            Invoke("Recolor", .05f);
         }
 
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))

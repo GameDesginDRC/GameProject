@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: 719065417}
   - component: {fileID: 719065419}
   - component: {fileID: 719065420}
+  - component: {fileID: 1169903749}
+  - component: {fileID: 1169903750}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -189,6 +191,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1169903749
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719065416}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1169903750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719065416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d696a9826279e64a8d316f9aa4f0736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackValue: 5
 --- !u!1 &2021255990
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +342,6 @@ GameObject:
   - component: {fileID: 4607505613661102274}
   - component: {fileID: 5197882267354306471}
   - component: {fileID: 3692583819280829755}
-  - component: {fileID: 1688629209}
   - component: {fileID: 1688629210}
   - component: {fileID: 1688629212}
   - component: {fileID: 1688629217}
@@ -492,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   facingRight: 0
+  gameOver: GameOver
   JumpForce: 2
   DamageInvincibilityPeriod: 5
   DoubleClickTimerD: 0.3
@@ -499,6 +535,9 @@ MonoBehaviour:
   Invincible: 0
   InvincibilityTime: 2
   TimeSinceInvStarted: 0
+  dashInvincible: 0
+  dashInvicTime: 0.5
+  TimeSinceDashInv: 0
   healthbar: {fileID: 0}
   GNBar: {fileID: 0}
   coolingDown: 0
@@ -512,30 +551,6 @@ MonoBehaviour:
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
---- !u!114 &1688629209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4402328447230336302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c50e33c123802464bbd7ca6ca76938ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _full1: 00000000
-  spots1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  posobjs1:
-  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
-  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
-  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
-  - {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
-  filler: {fileID: 0}
 --- !u!114 &1688629210
 MonoBehaviour:
   m_ObjectHideFlags: 0

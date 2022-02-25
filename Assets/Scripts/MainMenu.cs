@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,24 +15,50 @@ public class MainMenu : MonoBehaviour
     private TextMeshPro TutorialText;
     [SerializeField]
     private TextMeshPro QuitText;
+    [SerializeField]
+    private AudioSource menuAudio;
+
+    [SerializeField]
+    private AudioClip MenuNavi;
+    [SerializeField]
+    private AudioClip MenuSelect;
+    [SerializeField]
+    public Image m_Image;
+    private bool fading = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Image.canvasRenderer.SetAlpha(0);
+    }
+
+    void LoadLevel1()
+    {
+        SceneManager.LoadScene("Transition1");
+    }
+    void LoadTutorial()
+    {
+        SceneManager.LoadScene("TUTORIAL");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (fading)
         {
+            m_Image.CrossFadeAlpha(1, .5f, false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            menuAudio.PlayOneShot(MenuNavi);
             option += 1;
             if (option == 4) { option = 1; }
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            menuAudio.PlayOneShot(MenuNavi);
             option -= 1;
             if (option == 0) { option = 3; }
         }
@@ -41,18 +68,24 @@ public class MainMenu : MonoBehaviour
             if (option == 1)
             {
                 // go to first level
-                SceneManager.LoadScene("Transition1");
+                menuAudio.PlayOneShot(MenuSelect);
+                fading = true;
+                Invoke("LoadLevel1", 1f);
             }
             if (option == 2)
             {
                 // go to tutorial
-                SceneManager.LoadScene("TUTORIAL");
+                menuAudio.PlayOneShot(MenuSelect);
+                fading = true;
+                Invoke("LoadTutorial", 1f);
             }
 
             if (option == 3)
             {
                 // quit game
+                menuAudio.PlayOneShot(MenuSelect);
                 Debug.Log("quit");
+                fading = true;
                 Application.Quit();
             }
         }
