@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1051445744474157289, guid: 09f725576df307649a4b53882fbf3349, type: 3}
-  m_Color: {r: 0.9811321, g: 0.32766104, b: 0.32766104, a: 1}
+  m_Color: {r: 0.8679245, g: 0.45361334, b: 0.61779827, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   invincibleTime: 0.3
   invincible: 0
   animator: {fileID: 1839256583456357023}
+  animator2: {fileID: 1839256583410803112}
 --- !u!95 &1839256583410803112
 Animator:
   serializedVersion: 3

@@ -79,14 +79,6 @@ public class SwordRobot : MonoBehaviour
         Invoke("Wait", .3f);
     }
 
-    IEnumerator Blink()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds((float)0.2);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds((float)0.2);
-    }
-
     void InvokeFlip() {
         if (movingRight)
         {
@@ -110,7 +102,6 @@ public class SwordRobot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (invincible) { StartCoroutine(Blink()); }
 
         // attack cooldown check
         if (Time.time > nextAttack) {
@@ -172,6 +163,8 @@ public class SwordRobot : MonoBehaviour
         }
     }
 
+    void Recolor() { sprite.color = spriteColor; }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
@@ -184,6 +177,8 @@ public class SwordRobot : MonoBehaviour
                 invincible = true;
                 Knockback();
 
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -197,6 +192,8 @@ public class SwordRobot : MonoBehaviour
                 invincible = true;
                 Knockback();
 
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -210,6 +207,8 @@ public class SwordRobot : MonoBehaviour
                 invincible = true;
                 Knockback();
 
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -223,6 +222,8 @@ public class SwordRobot : MonoBehaviour
                 invincible = true;
                 Knockback();
 
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
