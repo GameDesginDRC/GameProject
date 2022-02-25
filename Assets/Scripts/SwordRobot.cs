@@ -49,10 +49,14 @@ public class SwordRobot : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D col2d;
+    SpriteRenderer sprite;
+    Color spriteColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        spriteColor = sprite.color;
         animator2 = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         col2d = gameObject.GetComponent<Collider2D>();

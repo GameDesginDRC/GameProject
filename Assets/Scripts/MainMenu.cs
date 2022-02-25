@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     private TextMeshPro StartGameText;
     [SerializeField]
     private TextMeshPro TutorialText;
+    [SerializeField]
+    private TextMeshPro QuitText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +27,13 @@ public class MainMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             option += 1;
-            if (option == 3) { option = 1; }
+            if (option == 4) { option = 1; }
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             option -= 1;
-            if (option == 0) { option = 2; }
+            if (option == 0) { option = 3; }
         }
 
         if (Input.GetKeyDown("z"))
@@ -46,16 +48,31 @@ public class MainMenu : MonoBehaviour
                 // go to tutorial
                 SceneManager.LoadScene("TUTORIAL");
             }
+
+            if (option == 3)
+            {
+                // quit game
+                Debug.Log("quit");
+                Application.Quit();
+            }
         }
 
         if (option == 1) {
             StartGameText.color = Color.cyan;
             TutorialText.color = Color.white;
+            QuitText.color = Color.white;
         }
         if (option == 2)
         {
             StartGameText.color = Color.white;
             TutorialText.color = Color.cyan;
+            QuitText.color = Color.white;
+        }
+        if (option == 3)
+        {
+            StartGameText.color = Color.white;
+            TutorialText.color = Color.white;
+            QuitText.color = Color.cyan;
         }
 
     }

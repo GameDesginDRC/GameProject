@@ -49,10 +49,14 @@ public class GunRobot : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D col2d;
+    SpriteRenderer sprite;
+    Color spriteColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        spriteColor = sprite.color;
         animator = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         col2d = gameObject.GetComponent<Collider2D>();
@@ -92,16 +96,10 @@ public class GunRobot : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
         }
+
         animator.SetBool("Attacking", false);
         Invoke("turnFlipTimerOn", 0.5f);
 
-    }
-    IEnumerator Blink()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds((float)0.2);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds((float)0.2);
     }
     void Die() {
         LevelManager.DecreaseEnemyNum();
@@ -112,13 +110,11 @@ public class GunRobot : MonoBehaviour
     void Update()
     {
 
-        if (invincible) { StartCoroutine(Blink()); }
-
         if (Time.time > nextFlip)
         {
             if (flipTimerOn)
             {
-                Invoke("InvokeFlip", 2);
+                InvokeFlip();
                 nextFlip = Time.time + 2 + flipEveryXSecs;
             }
         }
@@ -197,6 +193,8 @@ public class GunRobot : MonoBehaviour
              }
          }
      }*/
+
+    void Recolor() { sprite.color = spriteColor; }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
@@ -207,6 +205,8 @@ public class GunRobot : MonoBehaviour
                 health -= 5;
                 isPaused = true;
                 invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -218,6 +218,8 @@ public class GunRobot : MonoBehaviour
                 health -= 3;
                 isPaused = true;
                 invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -229,6 +231,8 @@ public class GunRobot : MonoBehaviour
                 health -= 4;
                 isPaused = true;
                 invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -240,6 +244,8 @@ public class GunRobot : MonoBehaviour
                 health -= 3;
                 isPaused = true;
                 invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }

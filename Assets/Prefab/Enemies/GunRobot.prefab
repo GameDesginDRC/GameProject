@@ -153,7 +153,7 @@ MonoBehaviour:
   isPaused: 0
   movingRight: 1
   castPoint: {fileID: 3085811104914220679}
-  aggroRange: 8
+  aggroRange: 10
   bullet: {fileID: 7428550766127217420, guid: 24242ec4cb1b6764c8436f6c99e6e54a, type: 3}
   shootSpeed: 10
   nextShootTime: 0
