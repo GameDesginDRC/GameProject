@@ -127,6 +127,7 @@ MonoBehaviour:
   itemDisplay: {fileID: 5459096364762853538, guid: 9e3355ea1441d4c158d0a017bd485145, type: 3}
   count: 0
   price: 120
+  buySound: {fileID: 8300000, guid: 1f5a709abf242b946936eca0884b8b48, type: 3}
 --- !u!114 &-5129773799048687008
 MonoBehaviour:
   m_ObjectHideFlags: 0

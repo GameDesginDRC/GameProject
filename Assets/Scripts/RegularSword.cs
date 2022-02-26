@@ -13,6 +13,11 @@ public class RegularSword : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip slashSound;
+
     void SwordCooldown()
     {
         animator.SetBool("Attacking", false);
@@ -22,6 +27,7 @@ public class RegularSword : MonoBehaviour
 
     void SwordAttack()
     {
+        if (aSource) aSource.PlayOneShot(slashSound);
         animator.SetBool("Attacking", true);
         coolingDown = true;
         swordHitbox.tag = "PlayerAttack";
@@ -31,7 +37,9 @@ public class RegularSword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
     }
 
     // Update is called once per frame

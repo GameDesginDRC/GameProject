@@ -42,23 +42,9 @@ public class Player : MonoBehaviour
     // for attacks
     [SerializeField]
     private bool coolingDown;
-
-    [SerializeField]
-    private GameObject playerBullet;
     [SerializeField]
     Transform castPoint;
-    [SerializeField]
-    private bool hasGun = false;
 
-    [SerializeField]
-    private GameObject playerSword;
-    [SerializeField]
-    private bool hasSword = false;
-
-    [SerializeField]
-    private GameObject rocket;
-    [SerializeField]
-    private bool hasRketLncher = false;
 
     // handling jumps
     private bool jumping = false;
@@ -85,12 +71,20 @@ public class Player : MonoBehaviour
     Color spriteColor;
 
     // for audio
-    
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip hitSound;
+    [SerializeField]
+    AudioClip dashSound;
 
     // Start is called before the first frame update
     void Start()
     {
 
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
+        // sprite
         sprite = GetComponent<SpriteRenderer>();
         spriteColor = sprite.color;
 
@@ -181,6 +175,9 @@ public class Player : MonoBehaviour
         {
             if (ClickCountD == 1 && DoubleClickTimerD > 0)
             {
+                //play dash sound
+                aSource.PlayOneShot(dashSound);
+
                 // add i-frames
                 dashInvincible = true;
                 TimeSinceDashInv = dashInvicTime;
@@ -199,6 +196,8 @@ public class Player : MonoBehaviour
         {
             if (ClickCountA == 1 && DoubleClickTimerA > 0)
             {
+                aSource.PlayOneShot(dashSound);
+
                 // add i-frames
                 dashInvincible = true;
                 TimeSinceDashInv = dashInvicTime;
@@ -333,6 +332,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
+                aSource.PlayOneShot(hitSound);
                 Damage(10);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
@@ -340,6 +340,7 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Lightning")
             {
+                aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
@@ -347,6 +348,7 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Ring" && circleFill_)
             {
+                aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
@@ -357,8 +359,8 @@ public class Player : MonoBehaviour
 
         if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
         {
-            hasGun = true;
-            Destroy(collision.gameObject);
+            //hasGun = true;
+            //Destroy(collision.gameObject);
             //Able to buy gun
         }
     }

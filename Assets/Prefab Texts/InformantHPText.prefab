@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec7d41b318cc248ae857b382be236664, type: 3}
+  - {fileID: 2100000, guid: 2cf35a2c9817ede48bdcb306288ef397, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,8 +81,12 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886098813770839326}
-  m_Text: "You just bought a potion!\nPress U to use it. It will provide heal \n15
-    hitpoints."
+  m_Text: 'You just bought a potion!
+
+    It''ll heal you for 15 hitpoints.
+
+    Press
+    U to use it. '
   m_OffsetZ: 0
   m_CharacterSize: 0.11
   m_LineSpacing: 1
@@ -92,7 +96,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: ec7d41b318cc248ae857b382be236664, type: 3}
+  m_Font: {fileID: 12800000, guid: 2cf35a2c9817ede48bdcb306288ef397, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4281845017
+    rgba: 4294967295

@@ -138,6 +138,8 @@ MonoBehaviour:
   swordHitbox: {fileID: 1316650655}
   coolingDown: 0
   animator: {fileID: 1316650651}
+  slashSound: {fileID: 8300000, guid: b391f10b4a12527468db3835a0813c85, type: 3}
+  dashSound: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4729,16 +4731,12 @@ MonoBehaviour:
   healthbar: {fileID: 997728261}
   GNBar: {fileID: 1499976472}
   coolingDown: 0
-  playerBullet: {fileID: 7770169447531621916, guid: 046799f3952c7d24a94ff8e35aef3b4e, type: 3}
   castPoint: {fileID: 1857516679}
-  hasGun: 0
-  playerSword: {fileID: 1316650655}
-  hasSword: 0
-  rocket: {fileID: 0}
-  hasRketLncher: 0
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
+  hitSound: {fileID: 8300000, guid: c7774a2f9dcb1bc4987f8d1947ecefef, type: 3}
+  dashSound: {fileID: 8300000, guid: 14968b8ac936e714b9380a7e1f34048d, type: 3}
 --- !u!61 &3856412260975746262
 BoxCollider2D:
   m_ObjectHideFlags: 0

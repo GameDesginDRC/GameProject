@@ -13,8 +13,15 @@ public class PickUp : MonoBehaviour
     public int price;
     // Start is called before the first frame update
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip buySound;
+
     void Start()
     {
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         count = 0;
         /*Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
@@ -116,6 +123,7 @@ public class PickUp : MonoBehaviour
 
             else if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold >= price)
             {
+                aSource.PlayOneShot(buySound);
                 if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null)
                 //if (Inventory._full[2])
                 {
