@@ -161,6 +161,9 @@ MonoBehaviour:
   invincibleTime: 0.3
   invincible: 0
   animator: {fileID: 3085811104843095069}
+  shootSound: {fileID: 8300000, guid: 2202bc1c4ca4bf2498050c5cefd8a7bf, type: 3}
+  hitSound: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
+  deathSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
 --- !u!95 &3085811104843095069
 Animator:
   serializedVersion: 3

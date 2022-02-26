@@ -84,6 +84,9 @@ public class Player : MonoBehaviour
     SpriteRenderer sprite;
     Color spriteColor;
 
+    // for audio
+    
+
     // Start is called before the first frame update
     void Start()
     {

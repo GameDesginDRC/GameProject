@@ -42,10 +42,20 @@ public class GunRobot : MonoBehaviour
     float invincibleTime = .3f;
     [SerializeField]
     bool invincible = false;
+    bool dying = false;
 
     // for animations
     [SerializeField]
     private Animator animator;
+
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip shootSound;
+    [SerializeField]
+    AudioClip hitSound;
+    [SerializeField]
+    AudioClip deathSound;
 
     private Rigidbody2D rb;
     private Collider2D col2d;
@@ -55,6 +65,9 @@ public class GunRobot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         sprite = GetComponent<SpriteRenderer>();
         spriteColor = sprite.color;
         animator = gameObject.GetComponent<Animator>();
@@ -84,6 +97,7 @@ public class GunRobot : MonoBehaviour
 
     void Shoot()
     {
+        aSource.PlayOneShot(shootSound);
         Vector3 shootLoc = castPoint.position;
 
         if (movingRight)
@@ -101,9 +115,17 @@ public class GunRobot : MonoBehaviour
         Invoke("turnFlipTimerOn", 0.5f);
 
     }
-    void Die() {
+    void RemoveFromGame()
+    {
         LevelManager.DecreaseEnemyNum();
         Destroy(gameObject);
+    }
+
+    void Die()
+    {
+        aSource.PlayOneShot(deathSound);
+        animator.SetBool("Dead", true);
+        Invoke("RemoveFromGame", .8f);
     }
 
     // Update is called once per frame
@@ -112,7 +134,7 @@ public class GunRobot : MonoBehaviour
 
         if (Time.time > nextFlip)
         {
-            if (flipTimerOn)
+            if (flipTimerOn && !dying)
             {
                 InvokeFlip();
                 nextFlip = Time.time + 2 + flipEveryXSecs;
@@ -121,7 +143,7 @@ public class GunRobot : MonoBehaviour
         
 
         // check to see if player is in range
-        if (PlayerInSight(aggroRange))
+        if (PlayerInSight(aggroRange) && !dying)
         {
             // shoot at the player
             if (Time.time > nextShootTime)
@@ -135,8 +157,10 @@ public class GunRobot : MonoBehaviour
             Debug.Log("Player spotted");
         }
 
-        if (health <= 0)
+        if (health <= 0 && !dying)
         {
+            dying = true;
+            gameObject.tag = "Untagged";
             Die();
         }
     }
@@ -192,8 +216,10 @@ public class GunRobot : MonoBehaviour
         if (collision.CompareTag("PlayerAttack"))
         {
             // decrease HP and pause
-            if (!invincible)
+            if (!invincible && !dying)
             {
+                aSource.PlayOneShot(hitSound);
+
                 float attackVal = collision.GetComponent<PAttack>().AttackValue;
                 health -= attackVal;
                 isPaused = true;

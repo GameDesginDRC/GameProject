@@ -40,6 +40,7 @@ public class SwordRobot : MonoBehaviour
     float invincibleTime = .3f;
     [SerializeField]
     bool invincible = false;
+    bool dying = false;
 
     // animation
     [SerializeField]
@@ -52,9 +53,21 @@ public class SwordRobot : MonoBehaviour
     SpriteRenderer sprite;
     Color spriteColor;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip slashSound;
+    [SerializeField]
+    AudioClip hitSound;
+    [SerializeField]
+    AudioClip deathSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         sprite = GetComponent<SpriteRenderer>();
         spriteColor = sprite.color;
         animator2 = gameObject.GetComponent<Animator>();
@@ -74,6 +87,7 @@ public class SwordRobot : MonoBehaviour
 
     void Attack() {
         theAttack.tag = "Enemy";
+        aSource.PlayOneShot(slashSound);
         animator.SetBool("Attacking", true);
         animator2.SetBool("Attacking", false);
         Invoke("Wait", .3f);
@@ -93,10 +107,17 @@ public class SwordRobot : MonoBehaviour
         }
     }
 
-    void Die()
+    void RemoveFromGame()
     {
         LevelManager.DecreaseEnemyNum();
         Destroy(gameObject);
+    }
+
+    void Die()
+    {
+        aSource.PlayOneShot(deathSound);
+        animator2.SetBool("Dead", true);
+        Invoke("RemoveFromGame", .8f);
     }
 
     // Update is called once per frame
@@ -108,14 +129,16 @@ public class SwordRobot : MonoBehaviour
             onCooldown = false;
         }
 
-        if (!isPaused)
+        if (!isPaused && !dying)
         {
             Vector3 HorzVector = new Vector3(5, 0.0f, 0.0f);
             transform.Translate(HorzVector * Time.deltaTime);
         }
 
-        if (health <= 0)
+        if (health <= 0 && !dying)
         {
+            dying = true;
+            gameObject.tag = "Untagged";
             Die();
         }
 
@@ -146,7 +169,7 @@ public class SwordRobot : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (!onCooldown)
+            if (!onCooldown && !dying)
             {
                 isPaused = true;
                 // 3/10th a second before attack
@@ -175,8 +198,9 @@ public class SwordRobot : MonoBehaviour
         if (collision.CompareTag("PlayerAttack"))
         {
             // decrease HP and pause
-            if (!invincible)
+            if (!invincible && !dying)
             {
+                aSource.PlayOneShot(hitSound);
                 float attackVal = collision.GetComponent<PAttack>().AttackValue;
                 health -= attackVal;
                 isPaused = true;
