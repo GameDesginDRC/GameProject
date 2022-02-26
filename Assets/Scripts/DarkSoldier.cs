@@ -27,12 +27,23 @@ public class DarkSoldier : MonoBehaviour
     float invincibleTime = .3f;
     [SerializeField]
     bool invincible = false;
+    bool dying = false;
 
     private Rigidbody2D rb;
     private Collider2D col2d;
+
+    SpriteRenderer sprite;
+    Color spriteColor;
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+        sprite = GetComponent<SpriteRenderer>();
+        spriteColor = sprite.color;
+
         animA = gameObject.GetComponent<Animator>();
         leftshot = -1;
         rightshot = 1;
@@ -44,7 +55,7 @@ public class DarkSoldier : MonoBehaviour
     {
         if (invincible) { StartCoroutine(Blink()); }
 
-        if (Time.time > nextAttack)
+        if (Time.time > nextAttack && !dying)
         { 
 
             nextAttack = Time.time + 10;
@@ -52,9 +63,11 @@ public class DarkSoldier : MonoBehaviour
             animA.SetTrigger("attack");
 
         }
-        if (health <= 0)
+        if (health <= 0 && !dying)
         {
-            Die();
+            dying = true;
+            gameObject.tag = "Untagged";
+            Death();
         }
     }
     IEnumerator Blink()
@@ -69,6 +82,12 @@ public class DarkSoldier : MonoBehaviour
         LevelManager.DecreaseEnemyNum();
         Destroy(gameObject);
     }
+    void Death()
+    {
+        aSource.PlayOneShot(deathSound);
+        animA.SetBool("death", true);
+        Invoke("Die", .8f);
+    }
     void Unpause()
     {
         isPaused = false;
@@ -77,50 +96,23 @@ public class DarkSoldier : MonoBehaviour
     {
         isPaused = false;
         invincible = false;
+        sprite.color = spriteColor;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
         {
             // decrease HP and pause
-            if (!invincible)
+            if (!invincible && !dying)
             {
-                health -= 5;
+                //aSource.PlayOneShot(hitSound);
+
+                float attackVal = collision.GetComponent<PAttack>().AttackValue;
+                health -= attackVal;
                 isPaused = true;
                 invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Laser"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
-                isPaused = true;
-                invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("RL"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 4;
-                isPaused = true;
-                invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Bullet"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
-                isPaused = true;
-                invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
@@ -144,5 +136,11 @@ public class DarkSoldier : MonoBehaviour
                 break;
             }
         }
+    }
+    void Recolor()
+    {
+        Color transparentColor = spriteColor;
+        transparentColor.a = .50f;
+        sprite.color = transparentColor;
     }
 }

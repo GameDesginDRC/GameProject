@@ -66,6 +66,14 @@ public class Inventory : MonoBehaviour
                 items[0] = startingWeapon;
                 pos_objs[0] = startingWeapon;
                 _full[0] = true;
+                RandomWeapon.listofitems.Clear();
+                RandomWeapon.listofitems.Add(2);
+                RandomWeapon.listofitems.Add(3);
+                RandomWeapon.listofitems.Add(4);
+                RegularGun.CanShoot = false;
+                RocketLauncher.CanShoot = false;
+                LaserGun.CanShoot = false;
+                RegularSword.hasSword = true;
         }
         else if (sceneName != "HUB" || sceneName != "Abilities")
         {

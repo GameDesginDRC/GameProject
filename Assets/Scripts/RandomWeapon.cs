@@ -9,18 +9,21 @@ public class RandomWeapon : MonoBehaviour
     public GameObject Gunobj;
     public GameObject LaserGunobj;
     public GameObject RocketLauncherobj;
+    public static List<int> listofitems = new List<int> {1, 2, 3, 4};
     void Start()
     {
         Vector3 displx = new Vector3(-10f, .5f, 0);
         Vector3 disply = new Vector3(-5f, .5f, 0);
-        int xcount = Random.Range(1, 5);
-        int ycount = Random.Range(1, 5);
+        int xindex = Random.Range(0, listofitems.Count);
+        int xcount = listofitems[xindex];
+        listofitems.Remove(xcount);
+        //int ycount = Random.Range(1, 5);
         //Debug.Log(xcount);
         //Debug.Log(ycount);
         if (xcount == 1)
         {
             // change this later.
-            var go = Instantiate(Gunobj, gameObject.transform.position + displx, Quaternion.identity);
+            var go = Instantiate(Swordobj, gameObject.transform.position + displx, Quaternion.identity);
             //var go = Instantiate(Swordobj, gameObject.transform.position + displx, Quaternion.identity);
         }
         else if (xcount == 2)
