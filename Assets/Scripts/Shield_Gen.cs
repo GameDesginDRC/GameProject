@@ -37,6 +37,23 @@ public class Shield_Gen : MonoBehaviour
             waitTime -= Time.deltaTime;
         }
     }
+
+    private void DecrConsume(int ind)
+    {
+        if (ind == 2)
+        {
+            ConsumeCountText.ChangeConsume(-1);
+        }
+        else if (ind == 3)
+        {
+            ConsumeText2.ChangeConsume2(-1);
+        }
+        else if (ind == 4)
+        {
+            ConsumeText3.ChangeConsume3(-1);
+        }
+    }
+
     void UseShieldGen()
     {
         //Debug.Log(usednum);
@@ -44,11 +61,13 @@ public class Shield_Gen : MonoBehaviour
         {
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
+            DecrConsume(usednum);
             GenBar.shield = true;
             GenBar.start1 = true;
             Destroy(gameObject);
         } else
         {
+            DecrConsume(usednum);
             shield_count--;
             GenBar.shield = true;
             GenBar.start1 = true;

@@ -36,6 +36,23 @@ public class GrenadeOn : MonoBehaviour
             waitTime -= Time.deltaTime;
         }
     }
+
+    private void DecrConsume(int ind)
+    {
+        if (ind == 2)
+        {
+            ConsumeCountText.ChangeConsume(-1);
+        }
+        else if (ind == 3)
+        {
+            ConsumeText2.ChangeConsume2(-1);
+        }
+        else if (ind == 4)
+        {
+            ConsumeText3.ChangeConsume3(-1);
+        }
+    }
+
     void UseGrenade()
     {
         //Debug.Log(usednum);
@@ -43,6 +60,7 @@ public class GrenadeOn : MonoBehaviour
         if (GrenadeCount == 1)
         {
             Debug.Log("POL");
+            DecrConsume(usednum);
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             GameObject temp = GameObject.Find("Player");
@@ -53,6 +71,7 @@ public class GrenadeOn : MonoBehaviour
         else
         {
             GrenadeCount--;
+            DecrConsume(usednum);
             GameObject temp = GameObject.Find("Player");
             Transform temptrans = temp.GetComponent<Transform>();
             Instantiate(gren, temptrans.position, Quaternion.identity);

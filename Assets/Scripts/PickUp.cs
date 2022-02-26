@@ -126,6 +126,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         Shield_Gen.shield_count += 1;
+                        IncrConsume(2);
                         Destroy(gameObject);
                     }
 
@@ -138,8 +139,9 @@ public class PickUp : MonoBehaviour
                          //ScoreKeeper.SubToGold(price);
                          ScoreKeeper.gold -= price;
                          ScoreKeeper.AddToGold(0);
-                           HP_Pot.HPpot_count += 1;
-                            Destroy(gameObject);
+                         HP_Pot.HPpot_count += 1;
+                         IncrConsume(2);
+                         Destroy(gameObject);
                         }
 
                     }
@@ -152,6 +154,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         GrenadeOn.GrenadeCount += 1;
+                        IncrConsume(2);
                         Destroy(gameObject);
                     }
 
@@ -166,6 +169,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         Shield_Gen.shield_count += 1;
+                        IncrConsume(3);
                         Destroy(gameObject);
                     }
 
@@ -178,6 +182,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         HP_Pot.HPpot_count += 1;
+                        IncrConsume(3);
                         Destroy(gameObject);
                     }
 
@@ -191,6 +196,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         GrenadeOn.GrenadeCount += 1;
+                        IncrConsume(3);
                         Destroy(gameObject);
                     }
 
@@ -204,6 +210,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         Shield_Gen.shield_count += 1;
+                        IncrConsume(4);
                         Destroy(gameObject);
                     }
 
@@ -216,6 +223,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         HP_Pot.HPpot_count += 1;
+                        IncrConsume(4);
                         Destroy(gameObject);
                     }
 
@@ -229,6 +237,7 @@ public class PickUp : MonoBehaviour
                         ScoreKeeper.gold -= price;
                         ScoreKeeper.AddToGold(0);
                         GrenadeOn.GrenadeCount += 1;
+                        IncrConsume(4);
                         Destroy(gameObject);
                     }
 
@@ -303,6 +312,7 @@ public class PickUp : MonoBehaviour
                                 //     StartCoroutine(Wait());
                                 // CAN PICKUP
                                 Inventory._full[i] = true;
+                                IncrConsume(i);
                                 if (i == 2)
                                 {
                                     //Inventory.items[2] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
@@ -380,6 +390,23 @@ public class PickUp : MonoBehaviour
             }
         }
     }
+
+    private void IncrConsume(int ind)
+    {
+        if(ind == 2)
+        {
+            ConsumeCountText.ChangeConsume(1);
+        }
+        else if (ind == 3)
+        {
+            ConsumeText2.ChangeConsume2(1);
+        }
+        else if (ind == 4)
+        {
+            ConsumeText3.ChangeConsume3(1);
+        }
+    }
+
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2);

@@ -35,12 +35,30 @@ public class HP_Pot : MonoBehaviour
             waitTime -= Time.deltaTime;
         }
     }
+
+    private void DecrConsume(int ind)
+    {
+        if (ind == 2)
+        {
+            ConsumeCountText.ChangeConsume(-1);
+        }
+        else if (ind == 3)
+        {
+            ConsumeText2.ChangeConsume2(-1);
+        }
+        else if (ind == 4)
+        {
+            ConsumeText3.ChangeConsume3(-1);
+        }
+    }
+
     void UseHPPot()
     {
         //Debug.Log(usednum);
         // look at this code, should be when == 1???
         if (HPpot_count == 1)
         {
+            DecrConsume(usednum);
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             Player.hp += 35;
@@ -53,6 +71,7 @@ public class HP_Pot : MonoBehaviour
         }
         else
         {
+            DecrConsume(usednum);
             HPpot_count--;
             Player.hp += 15;
             if (Player.hp > 100)
