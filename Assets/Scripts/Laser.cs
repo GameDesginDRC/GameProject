@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    private float BulletSpeed = 30f; //Bullet Speed
+    public int BulletDamage = 1; //Bullet Damage
     public float BulletLongevity = 0.5f; //Bullet longevity
 
     public Rigidbody2D rbBullet; //Rigidbody of Bullet
     public GameObject DeathEffect; //Gameobject DeathEffect
     
-    private void LaserDuration()
+    void Start()
     {
-        Destroy(gameObject);
+        rbBullet.velocity = transform.right * BulletSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-
-        if (hitInfo.gameObject.tag == ("Enemy")) //When Enemy is there
+        if (hitInfo.gameObject.tag==("Ground")) //When bullet hits Enemy or Ground
         {
-            //Enemy takes damage
+            Destroy(gameObject);
         }
-        Invoke("LaserDuration", .5f);
     }   
+
+    private void OnBecameInvisible()
+    {
+        enabled = false; 
+        Destroy(gameObject, BulletLongevity); //Bullet destroys itself after a period of time
+    } 
 
 }

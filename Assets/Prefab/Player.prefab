@@ -28,36 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1462000694102928976}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &450518137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 450518138}
-  m_Layer: 0
-  m_Name: LaserPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &450518138
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450518137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.011, y: 0.059, z: -3.5417168}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1462000694102928976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719065416
@@ -93,7 +63,7 @@ Transform:
   m_LocalScale: {x: 1.3544339, y: 1.9392458, z: 1.5706}
   m_Children: []
   m_Father: {fileID: 1462000694102928976}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &719065417
 SpriteRenderer:
@@ -255,7 +225,7 @@ Transform:
   m_LocalScale: {x: 5.989909, y: 3.5691116, z: 1}
   m_Children: []
   m_Father: {fileID: 1462000694102928976}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2021255992
 SpriteRenderer:
@@ -366,7 +336,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 450518138}
   - {fileID: 168893264}
   - {fileID: 719065418}
   - {fileID: 2021255991}
@@ -541,16 +510,12 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   GNBar: {fileID: 0}
   coolingDown: 0
-  playerBullet: {fileID: 7770169447531621916, guid: 046799f3952c7d24a94ff8e35aef3b4e, type: 3}
   castPoint: {fileID: 168893264}
-  hasGun: 0
-  playerSword: {fileID: 719065416}
-  hasSword: 0
-  rocket: {fileID: 0}
-  hasRketLncher: 0
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
+  hitSound: {fileID: 0}
+  dashSound: {fileID: 0}
 --- !u!114 &1688629210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
-  ShootTimer: 0.5
 --- !u!114 &1688629212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +544,7 @@ MonoBehaviour:
   swordHitbox: {fileID: 719065416}
   coolingDown: 0
   animator: {fileID: 719065420}
+  slashSound: {fileID: 0}
 --- !u!114 &1688629217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   Code: {fileID: 3692583819280829755}
-  Firepoint: {fileID: 450518138}
+  Firepoint: {fileID: 168893264}
 --- !u!114 &1688629218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,5 +605,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
-  ShootTimer: 0.5
-  _Tracker: 0
+  Interval: 5
+  ShotPoint: {fileID: 0}
