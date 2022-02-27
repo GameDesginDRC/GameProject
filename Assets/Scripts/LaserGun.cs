@@ -8,43 +8,27 @@ public class LaserGun : MonoBehaviour
     public Player Code; //Code
     public Transform Firepoint; //Firepoint
 
-    private double ShootTimer = 0.5; //Wait period before shooting
-    public static bool CanShoot = false;
-    private double _Tracker; //Tracks time
+    private double Interval = 5;
+    private double TimeLeft = 0;
+    public static bool CanShoot = true;
 
-
-    void Start()
-    {
-        _Tracker = ShootTimer; //Tracks time
-    }
 
     void Update()
     {
-        ShootTimer += Time.deltaTime; //Updates time
-
-        if (ShootTimer > _Tracker) //When player can shoot
-        {
+        if (Time.time > TimeLeft) {
             Shoot(); //shoots
         }
 
     }
 
-    IEnumerator timeout()
-    {
-        CanShoot = false;
-        yield return new WaitForSeconds(1);
-        Instantiate(Bullet, Firepoint.position, Firepoint.rotation);
-        CanShoot = true;
-
-
-    }
-
     void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Z)&& CanShoot) //When player can shoot
+        if (Input.GetButtonDown("Fire2") && CanShoot == true)
         {
-            ShootTimer = 0; //Resets timer
-            StartCoroutine(timeout());
+            Instantiate(Bullet, Firepoint.position, Firepoint.rotation); //Spawns rocket
+            TimeLeft = Time.time;
+            TimeLeft += Interval;
         }
     }
+
 }
