@@ -63,4 +63,8 @@ public class Informant : MonoBehaviour
                 Destroy(obj, 5);
            }
         }
+  /*  private void DestLater(GameObject obj1)
+       {
+
+       }*/
     }

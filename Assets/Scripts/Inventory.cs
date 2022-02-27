@@ -74,6 +74,9 @@ public class Inventory : MonoBehaviour
                 RocketLauncher.CanShoot = false;
                 LaserGun.CanShoot = false;
                 RegularSword.hasSword = true;
+                Shield_Gen.shield_count = 0;
+                GrenadeOn.GrenadeCount = 0;
+                HP_Pot.HPpot_count = 0;
         }
         else if (sceneName != "HUB" || sceneName != "Abilities")
         {

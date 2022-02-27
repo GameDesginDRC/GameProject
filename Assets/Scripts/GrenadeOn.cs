@@ -59,7 +59,7 @@ public class GrenadeOn : MonoBehaviour
         // look at this code, should be when == 1???
         if (GrenadeCount == 1)
         {
-            Debug.Log("POL");
+            
             DecrConsume(usednum);
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;

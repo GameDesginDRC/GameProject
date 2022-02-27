@@ -16,7 +16,7 @@ public class RandomWeapon : MonoBehaviour
         Vector3 disply = new Vector3(-5f, .5f, 0);
         int xindex = Random.Range(0, listofitems.Count);
         int xcount = listofitems[xindex];
-        listofitems.Remove(xcount);
+        //listofitems.Remove(xcount);
         //int ycount = Random.Range(1, 5);
         //Debug.Log(xcount);
         //Debug.Log(ycount);

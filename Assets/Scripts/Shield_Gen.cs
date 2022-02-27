@@ -8,7 +8,7 @@ public class Shield_Gen : MonoBehaviour
     // Start is called before the first frame update
     public GameObject empty1;
     public static bool used;
-    public int usednum;
+    public int usednum = 0;
     private Scene currentScene;
     string sceneName;
     public static int shield_count = 0;
@@ -18,7 +18,7 @@ public class Shield_Gen : MonoBehaviour
         waitTime = .2f;
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        usednum = 0;
+        
         Informant.bought_shield = true;
     }
 
@@ -40,6 +40,7 @@ public class Shield_Gen : MonoBehaviour
 
     private void DecrConsume(int ind)
     {
+        Debug.Log(ind);
         if (ind == 2)
         {
             ConsumeCountText.ChangeConsume(-1);
@@ -47,6 +48,7 @@ public class Shield_Gen : MonoBehaviour
         else if (ind == 3)
         {
             ConsumeText2.ChangeConsume2(-1);
+            Debug.Log("ALALL");
         }
         else if (ind == 4)
         {
