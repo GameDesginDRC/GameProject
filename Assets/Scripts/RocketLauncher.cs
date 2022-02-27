@@ -10,31 +10,21 @@ public class RocketLauncher : MonoBehaviour
     private bool coolingDown = false;
 
     [SerializeField]
-    private double ShootTimer = 1; //Wait period before shooting
+    private double Interval = 5;
+    private double TimeLeft = 0;
     public static bool CanShoot = false;
     [SerializeField]
-    private double _Tracker; //Tracks time
 
     private Transform ShotPoint;
     private GameObject temp;
 
-    void Start()
-    {
-        _Tracker = ShootTimer; //Tracks time
-        temp = GameObject.Find("ShootPoint");
-        ShotPoint = temp.GetComponent<Transform>();
-
-    }
 
     void Update()
     {
         temp = GameObject.Find("ShootPoint");
         ShotPoint = temp.GetComponent<Transform>();
 
-        ShootTimer += Time.deltaTime; //Updates time
-
-        if (ShootTimer > _Tracker) //When player can shoot
-        {
+        if (Time.time > TimeLeft) {
             Shoot(); //shoots
         }
 
@@ -44,9 +34,10 @@ public class RocketLauncher : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && CanShoot == true)
         {
-            ShootTimer = 0; //Resets timer
             GameObject aRocket = Instantiate(rocket, ShotPoint.position, ShotPoint.rotation); //Spawns rocket
-            aRocket.GetComponent<Rigidbody2D>().velocity = 5 * transform.right;
+            aRocket.GetComponent<Rigidbody2D>().velocity = 20 * transform.right;
+            TimeLeft = Time.time;
+            TimeLeft += Interval;
         }
     }
 }
