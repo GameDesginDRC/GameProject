@@ -99,12 +99,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_AngularDrag: 0
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 053192c66e5284c2c81a45acc9584673, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &-6441312577039216615
 CircleCollider2D:
@@ -134,8 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582493ec4d6244fb4abf3dd3689e53de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BombSpeed: 10
-  BulletDamage: 20
+  BombSpeed: 5
   BombLongevity: 4
-  rbBullet: {fileID: -5370831893205644859}
+  rbBomb: {fileID: -5370831893205644859}
   Explosion: {fileID: 1090894406680360994, guid: 8e9cb35269c704a3eb083c712871b2ef, type: 3}

@@ -7,34 +7,26 @@ public class Bomb : MonoBehaviour
     public GameObject Explosives; //Bullet Gameobject
     public Player Code; //Code
     public Transform Firepoint; //Firepoint
-
-    public double ShootTimer = 0.5; //Wait period before shooting
     public static bool CanShoot = false;
-    private double _Tracker; //Tracks time
 
+    private double Interval = 0.5;
+    private double TimeLeft = 0;
 
-    void Start()
-    {
-        _Tracker = ShootTimer; //Tracks time
-    }
 
     void Update()
     {
-        ShootTimer += Time.deltaTime; //Updates time
-
-        if (ShootTimer > _Tracker) //When player can shoot
-        {
+        if (Time.time > TimeLeft) {
             Shoot(); //shoots
         }
-
     }
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire1") && CanShoot == true) //When player can shoot
+        if (Input.GetButtonDown("Fire2") && CanShoot == true) //When player can shoot
         {
-            ShootTimer = 0; //Resets timer
             Instantiate(Explosives, Firepoint.position, Firepoint.rotation); //Spawns bullet
+            TimeLeft = Time.time;
+            TimeLeft += Interval;
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     private float BulletSpeed = 30f; //Bullet Speed
-    public int BulletDamage = 1; //Bullet Damage
     public float BulletLongevity = 0.5f; //Bullet longevity
 
     public Rigidbody2D rbBullet; //Rigidbody of Bullet
