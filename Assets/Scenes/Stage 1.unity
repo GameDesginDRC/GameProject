@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
-  ShootTimer: 0.5
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
-  ShootTimer: 0.5
-  _Tracker: 0
+  Interval: 5
+  ShotPoint: {fileID: 0}
 --- !u!114 &51
 MonoBehaviour:
   m_ObjectHideFlags: 0
