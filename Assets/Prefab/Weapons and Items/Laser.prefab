@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23672155052907113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -6.7451, y: 0.1088, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 4039527258408786561, guid: e80af4850f247401eb4c71fdb99c8779, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8665247, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7221639047e345eeb2379622c4fb4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletDamage: 20
   BulletLongevity: 0.5
   rbBullet: {fileID: -6826913666597932177}
   DeathEffect: {fileID: 0}
@@ -161,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d696a9826279e64a8d316f9aa4f0736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackValue: 3
+  AttackValue: 2

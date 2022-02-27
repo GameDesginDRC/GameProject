@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1839256583410803110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5331, y: -3.2679, z: 0}
-  m_LocalScale: {x: 3.8059182, y: 9.413025, z: 5.1141067}
+  m_LocalScale: {x: 6.5, y: 6.5, z: 0}
   m_Children:
   - {fileID: 1839256583456357018}
   m_Father: {fileID: 0}
@@ -161,6 +161,9 @@ MonoBehaviour:
   invincible: 0
   animator: {fileID: 1839256583456357023}
   animator2: {fileID: 1839256583410803112}
+  slashSound: {fileID: 8300000, guid: afd761b20157e8f40ba6f44d79ec7cc3, type: 3}
+  hitSound: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
+  deathSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
 --- !u!95 &1839256583410803112
 Animator:
   serializedVersion: 3
@@ -192,7 +195,7 @@ GameObject:
   - component: {fileID: 1839256583456357017}
   - component: {fileID: 1839256583456357016}
   - component: {fileID: 1839256583456357023}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyAttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
