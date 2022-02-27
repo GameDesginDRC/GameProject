@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private bool canJump = false;
     private int ClickCountD = 0;
     private int ClickCountA = 0;
+    private float jumpWait = 0;
 
     public bool Invincible = false;
     public int InvincibilityTime = 2;
@@ -80,7 +81,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Time before can jump again
+        jumpWait = 0;
         // audio
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
 
@@ -137,6 +139,7 @@ public class Player : MonoBehaviour
         HandleInput();
         //ProcessStatusEffects();
 
+        jumpWait += Time.deltaTime;
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         if (hp <= 0 && sceneName != "Shop 1" && sceneName != "Shop 2" && sceneName != "Shop 3" && sceneName != "Shop 4" && sceneName != "Shop 5" && sceneName != "Shop 6" && sceneName != "HUB")

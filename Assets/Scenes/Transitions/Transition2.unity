@@ -868,7 +868,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Time Limit: 60 seconds'
+  m_Text: 'Time Limit: 90 seconds'
 --- !u!222 &1558582636
 CanvasRenderer:
   m_ObjectHideFlags: 0
