@@ -8202,6 +8202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
+  shootSound: {fileID: 8300000, guid: fc776bb38118f2844883a0bc3cd02e61, type: 3}
 --- !u!114 &1699017358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8217,7 +8218,7 @@ MonoBehaviour:
   swordHitbox: {fileID: 725519386}
   coolingDown: 0
   animator: {fileID: 725519390}
-  slashSound: {fileID: 0}
+  slashSound: {fileID: 8300000, guid: b391f10b4a12527468db3835a0813c85, type: 3}
 --- !u!114 &1699017392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8233,7 +8234,7 @@ MonoBehaviour:
   Explosives: {fileID: 6747721031796723297, guid: 7fb5c4f2639544eb998bf6b8e3209927, type: 3}
   Code: {fileID: 3692583819261792361}
   Firepoint: {fileID: 200508930}
-  ShootTimer: 0.5
+  deploySound: {fileID: 8300000, guid: 46ce3525954e3f441acf4d3053f64504, type: 3}
 --- !u!114 &1699017395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8249,21 +8250,7 @@ MonoBehaviour:
   Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   Code: {fileID: 3692583819261792361}
   Firepoint: {fileID: 456704296}
---- !u!114 &1699017398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4402328447202902140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c5242917dfdc3468d60634fc73c650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lanceHitbox: {fileID: 0}
-  coolingDown: 0
-  animator: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: b9d72ad8f710ff641b02c6d89dbc8167, type: 3}
 --- !u!114 &1699017399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8280,6 +8267,7 @@ MonoBehaviour:
   coolingDown: 0
   Interval: 5
   ShotPoint: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 7c492248bd895d74a9d4b6f0c0ec5248, type: 3}
 --- !u!1 &1700433137
 GameObject:
   m_ObjectHideFlags: 0
@@ -9678,8 +9666,8 @@ MonoBehaviour:
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
-  hitSound: {fileID: 0}
-  dashSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 14968b8ac936e714b9380a7e1f34048d, type: 3}
+  dashSound: {fileID: 8300000, guid: c7774a2f9dcb1bc4987f8d1947ecefef, type: 3}
 --- !u!61 &3856412259445075539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9724,7 +9712,6 @@ GameObject:
   - component: {fileID: 1699017358}
   - component: {fileID: 1699017395}
   - component: {fileID: 1699017392}
-  - component: {fileID: 1699017398}
   - component: {fileID: 1699017399}
   - component: {fileID: 4402328447202902141}
   m_Layer: 0

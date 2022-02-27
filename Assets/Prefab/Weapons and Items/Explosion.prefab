@@ -139,6 +139,7 @@ MonoBehaviour:
   ExplosionLongevity: 0.5
   rbBullet: {fileID: 0}
   DeathEffect: {fileID: 0}
+  explodeSound: {fileID: 8300000, guid: 15fdc832ff749e14aa21405123634358, type: 3}
 --- !u!95 &4461517482370111598
 Animator:
   serializedVersion: 3

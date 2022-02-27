@@ -16,6 +16,17 @@ public class RegularGun : MonoBehaviour
     private Transform ShotPoint;
     private GameObject temp;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip shootSound;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+    }
 
     void Update()
     {
@@ -33,6 +44,7 @@ public class RegularGun : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && CanShoot == true)
         //if (Input.GetButtonDown("Fire1") && CanShoot == true) //When player can shoot
         {
+            aSource.PlayOneShot(shootSound);
             Instantiate(Bullet, ShotPoint.position, ShotPoint.rotation); //Spawns bullet
             TimeLeft = Time.time;
             TimeLeft += Interval;

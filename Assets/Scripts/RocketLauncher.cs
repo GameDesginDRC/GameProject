@@ -18,7 +18,16 @@ public class RocketLauncher : MonoBehaviour
     private Transform ShotPoint;
     private GameObject temp;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip shootSound;
 
+    void Start()
+    {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+    }
     void Update()
     {
         temp = GameObject.Find("ShootPoint");
@@ -34,6 +43,7 @@ public class RocketLauncher : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && CanShoot == true)
         {
+            aSource.PlayOneShot(shootSound);
             GameObject aRocket = Instantiate(rocket, ShotPoint.position, ShotPoint.rotation); //Spawns rocket
             aRocket.GetComponent<Rigidbody2D>().velocity = 20 * transform.right;
             TimeLeft = Time.time;

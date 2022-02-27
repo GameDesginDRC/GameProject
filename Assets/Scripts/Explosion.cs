@@ -9,7 +9,15 @@ public class Explosion : MonoBehaviour
 
     public Rigidbody2D rbBullet; //Rigidbody of Bullet
     public GameObject DeathEffect; //Gameobject DeathEffect
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip explodeSound;
 
+    void Start()
+    {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+    }
 
     void Update()
     {
