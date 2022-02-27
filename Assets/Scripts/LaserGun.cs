@@ -10,7 +10,7 @@ public class LaserGun : MonoBehaviour
 
     private double Interval = 5;
     private double TimeLeft = 0;
-    public static bool CanShoot = true;
+    public static bool CanShoot = false;
 
 
     void Update()
