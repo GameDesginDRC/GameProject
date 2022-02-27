@@ -7339,7 +7339,7 @@ GameObject:
   - component: {fileID: 1173583850}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9666,8 +9666,8 @@ MonoBehaviour:
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
-  hitSound: {fileID: 8300000, guid: 14968b8ac936e714b9380a7e1f34048d, type: 3}
-  dashSound: {fileID: 8300000, guid: c7774a2f9dcb1bc4987f8d1947ecefef, type: 3}
+  hitSound: {fileID: 8300000, guid: c7774a2f9dcb1bc4987f8d1947ecefef, type: 3}
+  dashSound: {fileID: 8300000, guid: 14968b8ac936e714b9380a7e1f34048d, type: 3}
 --- !u!61 &3856412259445075539
 BoxCollider2D:
   m_ObjectHideFlags: 0

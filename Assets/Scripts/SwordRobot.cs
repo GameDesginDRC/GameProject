@@ -86,11 +86,14 @@ public class SwordRobot : MonoBehaviour
     }
 
     void Attack() {
-        theAttack.tag = "Enemy";
-        aSource.PlayOneShot(slashSound);
-        animator.SetBool("Attacking", true);
-        animator2.SetBool("Attacking", false);
-        Invoke("Wait", .3f);
+        if (!dying)
+        {
+            theAttack.tag = "Enemy";
+            aSource.PlayOneShot(slashSound);
+            animator.SetBool("Attacking", true);
+            animator2.SetBool("Attacking", false);
+            Invoke("Wait", .3f);
+        }
     }
 
     void InvokeFlip() {

@@ -97,23 +97,25 @@ public class GunRobot : MonoBehaviour
 
     void Shoot()
     {
-        aSource.PlayOneShot(shootSound);
-        Vector3 shootLoc = castPoint.position;
-
-        if (movingRight)
+        if (!dying)
         {
-            GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
-            newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
-        }
-        else
-        {
-            GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
-            newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
-        }
+            aSource.PlayOneShot(shootSound);
+            Vector3 shootLoc = castPoint.position;
 
-        animator.SetBool("Attacking", false);
-        Invoke("turnFlipTimerOn", 0.5f);
+            if (movingRight)
+            {
+                GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
+                newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
+            }
+            else
+            {
+                GameObject newBullet = Instantiate(bullet, shootLoc + (-transform.right), bullet.transform.rotation);
+                newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * -transform.right;
+            }
 
+            animator.SetBool("Attacking", false);
+            Invoke("turnFlipTimerOn", 0.5f);
+        }
     }
     void RemoveFromGame()
     {
@@ -131,6 +133,7 @@ public class GunRobot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        nextShootTime = nextShootTime - Time.deltaTime;
 
         if (Time.time > nextFlip)
         {
@@ -146,12 +149,12 @@ public class GunRobot : MonoBehaviour
         if (PlayerInSight(aggroRange) && !dying)
         {
             // shoot at the player
-            if (Time.time > nextShootTime)
+            if (nextShootTime < 0)
             {
                 flipTimerOn = false;
                 animator.SetBool("Attacking", true);
                 Invoke("Shoot", 1f);
-                nextShootTime = Time.time + shootevery;
+                nextShootTime = shootevery;
             }
 
             Debug.Log("Player spotted");
