@@ -127,6 +127,7 @@ MonoBehaviour:
   itemDisplay: {fileID: 101994690927932795, guid: d821332d2cbf84b8db71ed139695cd38, type: 3}
   count: 0
   price: 20
+  buySound: {fileID: 0}
 --- !u!114 &-1591041249315052327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b37c819f5ef40fe8694b86660a486c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 8419805078854897690, guid: 6dfb7116756f14a93a0e7793ffb13f69, type: 3}
+  FloatingTextPrefab: {fileID: 617941769787497510, guid: 68cb98dfe02e32f42abdb5755d830c4f, type: 3}
 --- !u!114 &3229511275146107505
 MonoBehaviour:
   m_ObjectHideFlags: 0
