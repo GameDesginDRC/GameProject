@@ -61,6 +61,7 @@ public class Shield_Gen : MonoBehaviour
         //Debug.Log(usednum);
         if (shield_count == 1)
         {
+            shield_count--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             DecrConsume(usednum);

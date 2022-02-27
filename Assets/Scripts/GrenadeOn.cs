@@ -61,6 +61,7 @@ public class GrenadeOn : MonoBehaviour
         {
             
             DecrConsume(usednum);
+            GrenadeCount--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             GameObject temp = GameObject.Find("Player");

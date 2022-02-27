@@ -46,7 +46,9 @@ public class PickUp : MonoBehaviour
         }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(RandomWeapon.listofitems.Count);
+        //Debug.Log(RandomWeapon.listofitems.Count);
+        Debug.Log(Inventory._full[0]);
+        Debug.Log(Inventory._full[1]);
         if (collision.CompareTag("Player"))
         {
             // This is switching out equpiment
@@ -80,6 +82,8 @@ public class PickUp : MonoBehaviour
                     ScoreKeeper.gold -= price;
                     ScoreKeeper.AddToGold(0);
                     // Disabling old replaced item
+                    Debug.Log(InvTracker.invcount);
+                    Debug.Log("asd");
                     if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
                     {
                         RegularGun.CanShoot = false;
@@ -135,11 +139,10 @@ public class PickUp : MonoBehaviour
                 }
                 // }
             }
-
             else if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold >= price)
             {
 
-                if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
+               /* if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
                 //if (Inventory._full[2])
                 {
                     if (count == 0)
@@ -155,8 +158,8 @@ public class PickUp : MonoBehaviour
                         //   Destroy(gameObject);
                     }
 
-                }
-                else if (Inventory._full[2] && Inventory.items[2].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
+                }*/
+                if (Inventory._full[2] && Inventory.items[2].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
                 {
                     if (count == 0)
                     {
@@ -172,23 +175,24 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                else if (Inventory._full[2] && Inventory.items[2].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        //ScoreKeeper.SubToGold(price);
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        GrenadeOn.GrenadeCount += 1;
-                        IncrConsume(2);
-                        aSource.PlayOneShot(buySound);
-                        //   Destroy(gameObject);
-                    }
+                /* else if (Inventory._full[2] && Inventory.items[2].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
+                 {
+                     if (count == 0)
+                     {
+                         waitT = 0;
+                         count = 1;
+                         //ScoreKeeper.SubToGold(price);
+                         ScoreKeeper.gold -= price;
+                         ScoreKeeper.AddToGold(0);
+                         GrenadeOn.GrenadeCount += 1;
+                         IncrConsume(2);
+                         aSource.PlayOneShot(buySound);
+                         //   Destroy(gameObject);
+                     }
 
-                }
+                 }*/
                 // Check if second consumable is full and is a shield
+                //else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
                 else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
                 {
                     if (count == 0)
@@ -205,7 +209,7 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                else if (Inventory._full[3] && Inventory.items[3].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
+               /* else if (Inventory._full[3] && Inventory.items[3].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
                 {
                     if (count == 0)
                     {
@@ -235,8 +239,8 @@ public class PickUp : MonoBehaviour
                         // Destroy(gameObject);
                     }
 
-                }
-                else if (Inventory._full[4] && Inventory.items[4].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
+                }*/
+               /* else if (Inventory._full[4] && Inventory.items[4].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
                 {
                     if (count == 0)
                     {
@@ -266,7 +270,7 @@ public class PickUp : MonoBehaviour
                         // Destroy(gameObject);
                     }
 
-                }
+                }*/
                 else if (Inventory._full[4] && Inventory.items[4].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
                 {
                     if (count == 0)
@@ -312,8 +316,12 @@ public class PickUp : MonoBehaviour
                                 Inventory.items[0] = itemDisplay;
                                 Inventory.pos_objs[0] = itemDisplay;
                             }
-                                else if (Inventory._full[1] == false)
-                                {
+                            else if (Inventory._full[1] == false)
+                            {
+                                    ScoreKeeper.gold -= price;
+                                    ScoreKeeper.AddToGold(0);
+                                    count = 1;
+                                    Inventory._full[1] = true;
                                     Inventory.spots[1].GetComponent<DestroyItem>().dst = true;
                                     //Inventory.items[1] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                     Instantiate(itemDisplay, Inventory.spots[1].transform, false);
