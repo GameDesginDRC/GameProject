@@ -12,7 +12,7 @@ public class RocketLauncher : MonoBehaviour
     [SerializeField]
     private double Interval = 5;
     private double TimeLeft = 0;
-    public static bool CanShoot = false;
+    public static bool CanShoot = true;
     [SerializeField]
 
     private Transform ShotPoint;
