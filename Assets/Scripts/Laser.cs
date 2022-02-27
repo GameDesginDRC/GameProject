@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    private float BulletSpeed = 30f; //Bullet Speed
+    private float BulletSpeed = 40f; //Bullet Speed
     public float BulletLongevity = 0.5f; //Bullet longevity
 
     public Rigidbody2D rbBullet; //Rigidbody of Bullet
@@ -17,7 +17,7 @@ public class Laser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject.tag==("Ground")) //When bullet hits Enemy or Ground
+        if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Wall")) //When bullet hits Enemy or Ground
         {
             Destroy(gameObject);
         }
@@ -25,8 +25,7 @@ public class Laser : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        enabled = false; 
-        Destroy(gameObject, BulletLongevity); //Bullet destroys itself after a period of time
+        Destroy(gameObject);
     } 
 
 }

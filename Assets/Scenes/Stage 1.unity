@@ -231,9 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d187f5d1ee48b4c55a4317187c488b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
-  Code: {fileID: 3692583817730630380}
-  Firepoint: {fileID: 2122068909}
+  Laser: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
   shootSound: {fileID: 8300000, guid: b9d72ad8f710ff641b02c6d89dbc8167, type: 3}
 --- !u!1 &83322832
 GameObject:
@@ -2674,7 +2672,7 @@ GameObject:
   - component: {fileID: 1316650651}
   - component: {fileID: 1316650656}
   - component: {fileID: 1316650657}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4136,7 +4134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857516679}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -4365,7 +4363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122068910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.011, y: 0.059, z: -3.5417168}
+  m_LocalPosition: {x: 0.5, y: 0, z: -3.5417168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1462000694713598343}
@@ -4472,33 +4470,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordRobot
       objectReference: {fileID: 0}
-    - target: {fileID: 1839256583410803113, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: hitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
-    - target: {fileID: 1839256583410803113, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: deathSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
-    - target: {fileID: 1839256583410803113, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: slashSound
-      value: 
-      objectReference: {fileID: 8300000, guid: afd761b20157e8f40ba6f44d79ec7cc3, type: 3}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_LocalPosition.x

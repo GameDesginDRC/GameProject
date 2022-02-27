@@ -9799,8 +9799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
-  ShootTimer: 0.5
-  _Tracker: 0
+  Interval: 5
+  ShotPoint: {fileID: 0}
+  shootSound: {fileID: 0}
 --- !u!114 &1151000744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9831,7 +9832,7 @@ MonoBehaviour:
   Explosives: {fileID: 6747721031796723297, guid: 7fb5c4f2639544eb998bf6b8e3209927, type: 3}
   Code: {fileID: 1151000750}
   Firepoint: {fileID: 1900371051}
-  ShootTimer: 0.5
+  deploySound: {fileID: 0}
 --- !u!114 &1151000746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9844,9 +9845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d187f5d1ee48b4c55a4317187c488b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
-  Code: {fileID: 1151000750}
-  Firepoint: {fileID: 1968643223}
+  Laser: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
+  shootSound: {fileID: 8300000, guid: b9d72ad8f710ff641b02c6d89dbc8167, type: 3}
 --- !u!114 &1151000747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9876,7 +9876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
-  ShootTimer: 0.5
+  shootSound: {fileID: 0}
 --- !u!114 &1151000749
 MonoBehaviour:
   m_ObjectHideFlags: 0
