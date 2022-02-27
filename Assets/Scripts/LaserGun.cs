@@ -12,7 +12,16 @@ public class LaserGun : MonoBehaviour
     private double TimeLeft = 0;
     public static bool CanShoot = false;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip shootSound;
 
+    void Start()
+    {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+    }
     void Update()
     {
         if (Time.time > TimeLeft) {
@@ -25,6 +34,7 @@ public class LaserGun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && CanShoot == true)
         {
+            aSource.PlayOneShot(shootSound);
             Instantiate(Bullet, Firepoint.position, Firepoint.rotation); //Spawns rocket
             TimeLeft = Time.time;
             TimeLeft += Interval;

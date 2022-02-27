@@ -12,6 +12,15 @@ public class Bomb : MonoBehaviour
     private double Interval = 0.5;
     private double TimeLeft = 0;
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip deploySound;
+    void Start()
+    {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+    }
 
     void Update()
     {
@@ -24,6 +33,7 @@ public class Bomb : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && CanShoot == true) //When player can shoot
         {
+            aSource.PlayOneShot(deploySound);
             Instantiate(Explosives, Firepoint.position, Firepoint.rotation); //Spawns bullet
             TimeLeft = Time.time;
             TimeLeft += Interval;

@@ -26,6 +26,21 @@ TextureImporter:
   - first:
       213: 5743732803811194420
     second: teleport slam_7
+  - first:
+      213: 229566978140798431
+    second: teleport slam_8
+  - first:
+      213: -5401220440376694008
+    second: teleport slam_12
+  - first:
+      213: 1973997275880828104
+    second: teleport slam_20
+  - first:
+      213: 2465879666492173983
+    second: teleport slam_27
+  - first:
+      213: 5936221943505034490
+    second: teleport slam_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -134,8 +149,8 @@ TextureImporter:
         y: 856
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,6 +163,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: teleport slam_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 142
+        height: 107
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c6dae26f81fd1d0800000000000000
+      internalID: -3323910554351997882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: teleport slam_1
       rect:
         serializedVersion: 2
@@ -155,8 +191,8 @@ TextureImporter:
         y: 749
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,8 +212,8 @@ TextureImporter:
         y: 642
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,27 +226,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teleport slam_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 428
-        width: 142
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64c6dae26f81fd1d0800000000000000
-      internalID: -3323910554351997882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: teleport slam_4
       rect:
         serializedVersion: 2
@@ -218,8 +233,8 @@ TextureImporter:
         y: 321
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,8 +254,8 @@ TextureImporter:
         y: 214
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,8 +275,8 @@ TextureImporter:
         y: 107
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,8 +296,8 @@ TextureImporter:
         y: 0
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

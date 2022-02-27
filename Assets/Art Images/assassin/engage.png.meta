@@ -29,6 +29,48 @@ TextureImporter:
   - first:
       213: -1968512542701147025
     second: idle first frame and run_8
+  - first:
+      213: -8796078495731242776
+    second: idle first frame and run_10
+  - first:
+      213: -717403145992078806
+    second: idle first frame and run_12
+  - first:
+      213: 7609826639389989616
+    second: idle first frame and run_15
+  - first:
+      213: 8963654893557868269
+    second: idle first frame and run_17
+  - first:
+      213: 957499746732588570
+    second: idle first frame and run_19
+  - first:
+      213: -3127401591272192619
+    second: engage_0
+  - first:
+      213: 3612188862535541125
+    second: engage_1
+  - first:
+      213: -7070393884216152670
+    second: engage_2
+  - first:
+      213: 4173723713529141027
+    second: engage_3
+  - first:
+      213: -7893270443817867113
+    second: engage_4
+  - first:
+      213: 4602092170256465484
+    second: engage_5
+  - first:
+      213: 6606723177516394602
+    second: engage_6
+  - first:
+      213: 4031361241317423894
+    second: engage_7
+  - first:
+      213: 3578546675489944240
+    second: engage_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,190 +172,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle first frame and run_0
+      name: engage_0
       rect:
         serializedVersion: 2
         x: 0
         y: 856
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 191fc57cb7d7097a0800000000000000
-      internalID: -6372455502150045295
+      spriteID: 595ca3a82dc3994d0800000000000000
+      internalID: -3127401591272192619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_1
+      name: engage_1
       rect:
         serializedVersion: 2
         x: 0
         y: 749
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec0f980f19acf850800000000000000
-      internalID: 6412185920222465248
+      spriteID: 581ad0dd1a2112230800000000000000
+      internalID: 3612188862535541125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_2
+      name: engage_2
       rect:
         serializedVersion: 2
         x: 0
         y: 642
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40339ff77e7ad4990800000000000000
-      internalID: -7400073999973534972
+      spriteID: 2ada33d093ae0ed90800000000000000
+      internalID: -7070393884216152670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_3
+      name: engage_3
       rect:
         serializedVersion: 2
         x: 0
         y: 535
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 971e017bf3be54cb0800000000000000
-      internalID: -4880235962299260551
+      spriteID: 3275787aa9b0ce930800000000000000
+      internalID: 4173723713529141027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_4
+      name: engage_4
       rect:
         serializedVersion: 2
         x: 0
         y: 428
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c921909ac5534bc30800000000000000
-      internalID: 4374179810172801692
+      spriteID: 79865280a58757290800000000000000
+      internalID: -7893270443817867113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_5
+      name: engage_5
       rect:
         serializedVersion: 2
         x: 0
         y: 321
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27e84aee539cef780800000000000000
-      internalID: -8647253001030562190
+      spriteID: c4e3eb7227aeddf30800000000000000
+      internalID: 4602092170256465484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_6
+      name: engage_6
       rect:
         serializedVersion: 2
         x: 0
         y: 214
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 470a9536883a9fbe0800000000000000
-      internalID: -1442942399417835404
+      spriteID: a68643dd9bbcfab50800000000000000
+      internalID: 6606723177516394602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_7
+      name: engage_7
       rect:
         serializedVersion: 2
         x: 0
         y: 107
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21ded66a5bfb6f6a0800000000000000
-      internalID: -6415729832240485102
+      spriteID: 61bb00e90b542f730800000000000000
+      internalID: 4031361241317423894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle first frame and run_8
+      name: engage_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 142
         height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ca564a5407ea4e0800000000000000
-      internalID: -1968512542701147025
+      spriteID: 0b2bbbccd3d89a130800000000000000
+      internalID: 3578546675489944240
       vertices: []
       indices: 
       edges: []

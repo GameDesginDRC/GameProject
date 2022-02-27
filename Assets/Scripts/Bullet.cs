@@ -5,13 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float BulletSpeed = 20f; //Bullet Speed
-    public float BulletLongevity = 0.5f; //Bullet longevity
+    public float BulletLongevity = 0.3f; //Bullet longevity
 
     public Rigidbody2D rbBullet; //Rigidbody of Bullet
     public GameObject DeathEffect; //Gameobject DeathEffect
+
+    private Animator anim;
     
     void Start()
     {
+        anim = GetComponent<Animator>();
         rbBullet.velocity = transform.right * BulletSpeed;
     }
 
@@ -28,8 +31,9 @@ public class Bullet : MonoBehaviour
             //Enemy takes damage
         }
 
-        if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Enemy")) //When bullet hits Enemy or Ground
+        if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Enemy") || hitInfo.gameObject.tag == ("Wall"))
         {
+            anim.SetBool("Disappear", true);
             //Instantiate(DeathEffect, transform.position, transform.rotation); //animation for bullet
             Invoke("ExplodeAndDie", .1f);
         }
@@ -37,7 +41,8 @@ public class Bullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        enabled = false; 
+        enabled = false;
+        anim.SetBool("Disappear", true);
         Destroy(gameObject, BulletLongevity); //Bullet destroys itself after a period of time
     }
 }
