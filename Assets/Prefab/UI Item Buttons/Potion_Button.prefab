@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b71516de321942a794962952a4b7029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  empty1: {fileID: 0}
+  empty1: {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
   usednum: 2

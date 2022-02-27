@@ -26,6 +26,11 @@ public class ConsumeCountText : MonoBehaviour
     {
         
     }
+    public static void NewConsume(int points)
+    {
+        Consume1 = points;
+        UpdateTextConsume1();
+    }
     public static void ChangeConsume(int points)
     {
         Consume1 += points;

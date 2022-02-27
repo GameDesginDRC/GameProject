@@ -59,6 +59,7 @@ public class HP_Pot : MonoBehaviour
         if (HPpot_count == 1)
         {
             DecrConsume(usednum);
+            HPpot_count--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
             Player.hp += 35;
