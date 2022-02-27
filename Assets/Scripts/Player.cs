@@ -135,6 +135,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene("Shop 3");
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            SceneManager.LoadScene("Shop 4");
+        }
+
         HandleInvincible();
         HandleInput();
         //ProcessStatusEffects();
