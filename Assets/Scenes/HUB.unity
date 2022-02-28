@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 131575435}
   - component: {fileID: 131575434}
   - component: {fileID: 131575433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392131557
 GameObject:
@@ -370,15 +370,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.97
+      value: -13.03
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.15
+      value: -3.96
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -415,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 4402328447230336302, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402328447230336302, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
@@ -542,9 +546,9 @@ GameObject:
   - component: {fileID: 1021546604}
   - component: {fileID: 1021546603}
   - component: {fileID: 1021546602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1095,9 +1099,9 @@ GameObject:
   - component: {fileID: 1797090219}
   - component: {fileID: 1797090218}
   - component: {fileID: 1797090217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

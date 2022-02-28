@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec7d41b318cc248ae857b382be236664, type: 3}
+  - {fileID: 2100000, guid: e8fdeaddae7f644c0bc57652bfe5621d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ TextMesh:
   m_GameObject: {fileID: 7056965635353708283}
   m_Text: "Regular Gun. Press B to \nbuy and press Z to shoot.\n"
   m_OffsetZ: 0
-  m_CharacterSize: 0.29
+  m_CharacterSize: 0.21
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -91,7 +91,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: ec7d41b318cc248ae857b382be236664, type: 3}
+  m_Font: {fileID: 12800000, guid: e8fdeaddae7f644c0bc57652bfe5621d, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295

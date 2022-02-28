@@ -14,6 +14,9 @@ public class Informant : MonoBehaviour
     public GameObject FloatingTextPrefab;
     public GameObject FloatingTextPrefab2;
     public GameObject FloatingTextPrefab3;
+    public GameObject FloatingTextPrefab4;
+    public GameObject FloatingTextPrefab5;
+    public GameObject FloatingTextPrefab6;
     private Vector3 newvec;
     private GameObject obj;
     private int first;
@@ -21,7 +24,7 @@ public class Informant : MonoBehaviour
     void Start()
     {
         first = 0;
-        newvec = new Vector3(-1.0f, 10.0f, 0);
+        newvec = new Vector3(-1.0f, 9.0f, 0);
         bought_shield = false;
     }
 
@@ -62,7 +65,42 @@ public class Informant : MonoBehaviour
                 first++;
                 Destroy(obj, 5);
            }
+        if (bought_RL)
+        {
+            if (first != 0)
+            {
+                Destroy(obj);
+            }
+            bought_RL = false;
+            obj = Instantiate(FloatingTextPrefab4, transform.position + newvec, Quaternion.identity, transform);
+            first++;
+            Destroy(obj, 5);
         }
+            if (bought_LaserGun)
+            {
+                if (first != 0)
+                {
+                    Destroy(obj);
+                }
+                bought_LaserGun = false;
+                obj = Instantiate(FloatingTextPrefab5, transform.position + newvec, Quaternion.identity, transform);
+                first++;
+                Destroy(obj, 5);
+            }
+
+            if (bought_grenade)
+            {
+                if (first != 0)
+                {
+                    Destroy(obj);
+                }
+                bought_grenade = false;
+                obj = Instantiate(FloatingTextPrefab6, transform.position + newvec, Quaternion.identity, transform);
+                first++;
+                Destroy(obj, 5);
+            }
+        }
+    
   /*  private void DestLater(GameObject obj1)
        {
 

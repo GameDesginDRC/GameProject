@@ -22,6 +22,7 @@ public class PickUp : MonoBehaviour
 
     void Start()
     {
+        
         waitT = .2f;
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
 
