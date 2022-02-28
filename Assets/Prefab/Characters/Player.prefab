@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122450082}
   - component: {fileID: 122450083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserPoint
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168893264}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 719065420}
   - component: {fileID: 1169903749}
   - component: {fileID: 1169903750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 2021255991}
   - component: {fileID: 2021255992}
   - component: {fileID: 2021255993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LanceHitbox
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 1688629218}
   - component: {fileID: 1688629220}
   - component: {fileID: 1688629221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -641,6 +641,7 @@ MonoBehaviour:
   GNBar: {fileID: 0}
   coolingDown: 0
   castPoint: {fileID: 168893264}
+  shieldPrefab: {fileID: 4176445416224093463, guid: 85b098bd40b07454cb9f2aa26e1e4b9d, type: 3}
   jumpDuration: 0.1
   jumpTimer: 0.1
   hasLaser: 0
@@ -688,8 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d187f5d1ee48b4c55a4317187c488b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Firepoint: {fileID: 168893264}
-  linerender: {fileID: 0}
+  Laser: {fileID: 0}
   shootSound: {fileID: 0}
 --- !u!114 &1688629218
 MonoBehaviour:

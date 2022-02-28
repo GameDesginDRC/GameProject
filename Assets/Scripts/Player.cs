@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D myRB;
     private SpriteRenderer myRenderer;
-    public enum StatusEffect { None, TookDamage };
+    public enum StatusEffect { None, Shield };
     private StatusEffect statusEffect;
     private float statusEffectTimeout;
     public static bool circleFill_ = false;
@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     Transform castPoint;
 
-
+    public GameObject shieldPrefab;
+    private SpriteRenderer ShieldRenderer;
     // handling jumps
     private bool jumping = false;
     private bool releaseJump = false;
@@ -112,9 +113,27 @@ public class Player : MonoBehaviour
         }
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
+
+        ShieldRenderer = Instantiate(shieldPrefab, transform).GetComponent<SpriteRenderer>();
     }
 
+    private Color GetShieldColor() {
+        switch (statusEffect) {
+            case StatusEffect.Shield:
+                return Color.green;
+        }
+        return Color.clear;
+    }
+    
+    private void ApplyStatusEffect(StatusEffect e, float duration) {
+        statusEffect = e;
+        statusEffectTimeout = duration + Time.time;
+        ShieldRenderer.color = GetShieldColor();
+    }
 
+    //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); to get rid of shield
+    //ApplyStatusEffect(StatusEffect.Shield, 5f); Shield timer with 5 seconds
+    
     void HandleInvincible() {
         if (Invincible)
         {
@@ -305,32 +324,7 @@ public class Player : MonoBehaviour
         canJump = false;
     }
 
-    /*
-    // for the invincibility blink effect
-    private void DamageBlink() {
-        if (statusEffect == StatusEffect.TookDamage) {
-            myRenderer.enabled = !myRenderer.enabled;
-            StartCoroutine(DamageBlinkTimer());
-        }
-    }
-    private IEnumerator DamageBlinkTimer() {
-        yield return new WaitForSeconds(0.25f);
-        DamageBlink();
-    }
 
-    private void ApplyStatusEffect(StatusEffect e, float duration) {
-        statusEffect = e;
-        statusEffectTimeout = duration + Time.time;
-        myRenderer.enabled = true;
-        if (e == StatusEffect.TookDamage) { DamageBlink(); }
-    }
-
-    private void ProcessStatusEffects() {
-        if (statusEffectTimeout < Time.time) {
-            ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
-        }
-    }
-    */
     void Recolor()
     {
         Color transparentColor = spriteColor;
