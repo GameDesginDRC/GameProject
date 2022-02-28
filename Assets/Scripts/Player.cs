@@ -154,6 +154,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); //GET RID OF FOR FINAL BUILD
         if (Input.GetKeyDown(KeyCode.K))
         {
             SceneManager.LoadScene("Shop 3");

@@ -10,7 +10,7 @@ public class RocketLauncher : MonoBehaviour
     private bool coolingDown = false;
 
     [SerializeField]
-    private double Interval = 5;
+    private double Interval = 3;
     private double TimeLeft = 0;
     public static bool CanShoot = false;
     [SerializeField]

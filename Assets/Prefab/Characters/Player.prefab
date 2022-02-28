@@ -736,6 +736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
-  Interval: 5
+  Interval: 3
   ShotPoint: {fileID: 0}
   shootSound: {fileID: 0}
