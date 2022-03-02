@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour
     public GameObject Explosives; //Bullet Gameobject
     public Player Code; //Code
     public Transform Firepoint; //Firepoint
-    public static bool CanShoot = false;
+    public static bool CanShoot = true;
 
     private double Interval = 0.5;
     private double TimeLeft = 0;

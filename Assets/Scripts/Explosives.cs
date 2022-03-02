@@ -13,12 +13,10 @@ public class Explosives : MonoBehaviour
     void Start()
     {
         rbBomb.velocity = transform.right * BombSpeed;
-    }
-
-    void Update()
-    {
         StartCoroutine(ExplosionTimer());
     }
+
+    
 
     IEnumerator ExplosionTimer()
     {

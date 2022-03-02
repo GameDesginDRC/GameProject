@@ -450,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959471863228598627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.266, y: 0.196, z: -0.0710522}
+  m_LocalPosition: {x: 0.658, y: 0.101, z: -0.0710522}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_Children: []
   m_Father: {fileID: 1462000694102928976}
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosives: {fileID: 6747721031796723297, guid: 7fb5c4f2639544eb998bf6b8e3209927, type: 3}
   Code: {fileID: 3692583819280829755}
-  ShotPoint: {fileID: 3427272852328808596}
+  Firepoint: {fileID: 3427272852328808596}
   deploySound: {fileID: 0}
 --- !u!114 &1688629220
 MonoBehaviour:

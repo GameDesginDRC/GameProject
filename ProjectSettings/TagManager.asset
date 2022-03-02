@@ -16,6 +16,8 @@ TagManager:
   - Bullet
   - RL
   - Laser
+  - Damage
+  - Bomb
   layers:
   - Default
   - TransparentFX
