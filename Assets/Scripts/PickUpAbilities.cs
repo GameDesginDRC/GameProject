@@ -13,7 +13,6 @@ public class PickUpAbilities : MonoBehaviour
     void Start()
     {
         player_code = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        pattack = GameObject.FindGameObjectWithTag("Damage").GetComponent<PAttack>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -24,7 +23,7 @@ public class PickUpAbilities : MonoBehaviour
             { 
                 if (gameObject.name == "Damage+(Clone)")
                 {
-                    pattack.Damage_Increased(Damage_Increase);
+                    player_code.DamageIncrease(Damage_Increase);
                     Destroy(gameObject); 
                 }
                 else if (gameObject.name == "Shield+(Clone)")

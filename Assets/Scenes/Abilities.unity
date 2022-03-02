@@ -966,6 +966,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846667636}
   m_CullTransparentMesh: 1
+--- !u!4 &959157499 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 168893264, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+  m_PrefabInstance: {fileID: 1500221916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1016905097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1688629218, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: Firepoint
+      value: 
+      objectReference: {fileID: 959157499}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_RootOrder
       value: 11

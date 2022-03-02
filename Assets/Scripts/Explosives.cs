@@ -20,7 +20,6 @@ public class Explosives : MonoBehaviour
 
     IEnumerator ExplosionTimer()
     {
-
         yield return new WaitForSeconds(1);
         Instantiate(Explosion, transform.position, transform.rotation);  //Size of Explosion
         Destroy(gameObject); //Destroy Bullet

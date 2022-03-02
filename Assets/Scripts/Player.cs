@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
     public int max_hp = 100;
     public int max_shield = 100;
-
+    public int max_atk = 0;
 
     // for attacks
     [SerializeField]
@@ -299,6 +299,10 @@ public class Player : MonoBehaviour
         startJumpTimer = true;
     }
 
+    public void DamageIncrease(int x)
+    {
+        max_atk += x;
+    }
 
     public void HealthIncrease(int x)
     {
