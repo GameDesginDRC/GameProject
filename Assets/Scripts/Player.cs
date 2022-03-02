@@ -170,9 +170,9 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Shop 3");
         }
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            SceneManager.LoadScene("Shop 4");
+            SceneManager.LoadScene("Final Stage");
         }
 
         HandleInvincible();

@@ -15,8 +15,6 @@ public class Inventory : MonoBehaviour
     public static GameObject[] spots;
     public static GameObject[] pos_objs;
     public static GameObject[] items;
-    [SerializeField]
-    public GameObject itemdis;
     // Start is called before the first frame update
     // ISSUE: put items in public array and assign values later
     private void Awake()

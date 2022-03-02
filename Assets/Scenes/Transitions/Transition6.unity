@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1444f532b014e0092febd61ba51572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: Stage 6
+  next: Final Stage
 --- !u!114 &784817270
 MonoBehaviour:
   m_ObjectHideFlags: 0
