@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 178170532}
   - component: {fileID: 178170531}
   - component: {fileID: 178170534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neon Wall 1
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 770484021}
   - component: {fileID: 770484020}
   - component: {fileID: 770484023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neon Wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3739,7 +3739,7 @@ GameObject:
   - component: {fileID: 1596167279}
   - component: {fileID: 1596167278}
   - component: {fileID: 1596167277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neon Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3982,7 +3982,7 @@ GameObject:
   - component: {fileID: 1833204915}
   - component: {fileID: 1833204916}
   - component: {fileID: 1833204917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neon Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4301,7 +4301,7 @@ GameObject:
   - component: {fileID: 1959868492}
   - component: {fileID: 1959868493}
   - component: {fileID: 1959868494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neon Platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4656,7 +4656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 2.46
       objectReference: {fileID: 0}
     - target: {fileID: 1839256583410803115, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4912,7 +4912,7 @@ GameObject:
   - component: {fileID: 54}
   - component: {fileID: 53}
   - component: {fileID: 50}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

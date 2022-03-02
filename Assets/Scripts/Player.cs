@@ -375,15 +375,9 @@ public class Player : MonoBehaviour
 
         }
 
-        if (collision.GetComponent("Gun") != null & Input.GetKey(KeyCode.B))
-        {
-            //hasGun = true;
-            //Destroy(collision.gameObject);
-            //Able to buy gun
-        }
     }
 
-    void Damage(int dmg)
+    public void Damage(int dmg)
     {
         if (GenBar.shield)
         {

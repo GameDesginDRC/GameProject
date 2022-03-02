@@ -6,11 +6,13 @@ public class Assasin_Controller : MonoBehaviour
 {
     public Animator animator;
     public Transform player;
+    private Player player_code;
     public Rigidbody2D rb;
 
     public float speed = 6f;
-    public int Health = 100; //Health of Enemy
-    public int ContactDamage = 20; //Damage dealth when Player contacts Enemy
+    [SerializeField]
+    float health = 30;
+
 
     public Transform WallCheck; //Checks Front
     public Vector2 WallChecksize; //FrontCheck Size
@@ -39,23 +41,46 @@ public class Assasin_Controller : MonoBehaviour
     Vector3 idleA;
     Vector3 idleB;
 
+    [SerializeField]
+    float invincibleTime = 1f;
+    [SerializeField]
+    bool invincible = false;
+    bool dying = false;
+
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip slashSound;
+    [SerializeField]
+    AudioClip hitSound;
+    [SerializeField]
+    AudioClip deathSound;
+
+
     void Start()
     {
         idleA = new Vector3(transform.position.x-0.5f, transform.position.y, 0);
         idleB = new Vector3(transform.position.x+2, transform.position.y, 0);
+        player_code = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     void Update()
     {
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         EnemyMovement(); //Controls Enemy Movement
         DetectPlayer(); //Dectects if Player is in range
+        TakeDamage();
     }
 
     public void Attack()
     {
         if (AttackBoxBool() || TeleportAttackBoxBool())
         {
-            print("attacked");
-            //Player takes damage
+            aSource.PlayOneShot(hitSound);
+            player_code.Damage(10);
+            player_code.Invincible = true;
+            player_code.TimeSinceInvStarted = Time.time;
+            player_code.Invoke("Recolor", .05f);
         }
     }
 
@@ -150,27 +175,57 @@ public class Assasin_Controller : MonoBehaviour
     }
 
 
-    public void TakeDamage(int Damage) //Enemy takes damage
+    public void TakeDamage() //Enemy takes damage
     {
-        Health -= Damage; //Health is reduced
-
-        if (Health <= 0) //When Health reaches zero
+        if (health <= 0 && !dying)
         {
-            Die(); //Enemy is erased
+            dying = true;
+            gameObject.tag = "Untagged";
+            Die();
         }
     }
 
     void Die() //Enemy erasure
     {
-        animator.SetBool("Death", true);
-        Invoke("RemoveFromGame", .8f);
+        aSource.PlayOneShot(deathSound);
+        animator.SetTrigger("Death");
+        Invoke("RemoveFromGame", 0.6f);
     }
 
     void RemoveFromGame()
     {
         LevelManager.DecreaseEnemyNum();
+        ScoreKeeper.gold += 10;
+        ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     } 
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerAttack")&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") )
+        {
+            // decrease HP and pause
+            if (!invincible && !dying)
+            {
+                aSource.PlayOneShot(hitSound);
+                float attackVal = collision.GetComponent<PAttack>().AttackValue;
+                health -= attackVal;
+                invincible = true;
+                if (health > 0){
+                    animator.SetTrigger("Hit");
+                }
+                
+                Invoke("invinCooldown", invincibleTime);
+            }
+        }
+    }
+
+    void invinCooldown()
+    {
+        invincible = false;
+    }
+
+
 
     private void OnDrawGizmosSelected() //Draws boxes to show trigger
     {

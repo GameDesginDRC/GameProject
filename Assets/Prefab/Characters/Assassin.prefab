@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4218859591178484086}
   m_Layer: 0
   m_Name: Assassin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,14 +172,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6583284764674680403}
   player: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+  player_code: {fileID: 0}
   rb: {fileID: 6763180214302907463}
   speed: 2.5
-  Health: 100
-  ContactDamage: 20
+  health: 10
   WallCheck: {fileID: 8573005448792379933}
   WallChecksize: {x: 0.27, y: 2}
   TargetCheck: {fileID: 9221349438249244049}
-  TargetChecksize: {x: 35, y: 100}
+  TargetChecksize: {x: 17, y: 20}
   GroundCheck: {fileID: 4707209884433682054}
   GroundChecksize: {x: 1.11, y: 0.41}
   AttackCheck: {fileID: 2097200822998358779}
@@ -188,6 +188,11 @@ MonoBehaviour:
   AttackBoxsize: {x: 4.69, y: 3.07}
   TeleportAttackBox: {fileID: 1949613843086477131}
   TeleportAttackBoxsize: {x: 6.89, y: 4.45}
+  invincibleTime: 0.3
+  invincible: 0
+  slashSound: {fileID: 8300000, guid: afd761b20157e8f40ba6f44d79ec7cc3, type: 3}
+  hitSound: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
+  deathSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
 --- !u!1 &3507628254879251005
 GameObject:
   m_ObjectHideFlags: 0
