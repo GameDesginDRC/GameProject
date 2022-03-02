@@ -31,7 +31,7 @@ public class Explosives : MonoBehaviour
     private void OnBecameInvisible()
     {
         enabled = false;
-        Destroy(gameObject); //Bullet destroys itself after a period of time
+        Destroy(gameObject, BombLongevity); //Bullet destroys itself after a period of time
     }
 }
 
