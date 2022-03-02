@@ -8,6 +8,7 @@ public class GenBar : MonoBehaviour
     public Slider hpvalue;
     public static bool shield;
     public static bool start1;
+
     // Start is called before the first frame update
     void Start()
     {

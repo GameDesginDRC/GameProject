@@ -81,8 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686379894594434199}
-  m_Text: "You just bought a laser\ngun! HIgher damage, but \nslower fire rate Press
-    Z \nto shoot it!"
+  m_Text: "You just bought a sword! \nDidn't you already buy that?\nPress Z to slash!"
   m_OffsetZ: 0
   m_CharacterSize: 0.11
   m_LineSpacing: 1

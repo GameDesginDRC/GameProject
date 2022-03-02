@@ -81,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541489200487054578}
-  m_Text: "You just bought a grenade!\nPress Y to throw it! It has \na bounce and
+  m_Text: "You just bought a grenade!\nPress D to throw it! It has \na bounce and
     a delay before\ndetonation!"
   m_OffsetZ: 0
   m_CharacterSize: 0.11

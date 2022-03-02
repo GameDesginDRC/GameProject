@@ -55,7 +55,7 @@ public class ScoreKeeper : MonoBehaviour
 
     private static void UpdateText()
     {
-        scoreText.text = String.Format("Gold: {0}", gold);
+        scoreText.text = String.Format("{0}", gold);
     }
 }
 

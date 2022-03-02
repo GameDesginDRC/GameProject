@@ -83,7 +83,10 @@ TextMesh:
   m_GameObject: {fileID: 7523103740559462323}
   m_Text: 'You just bought a gun!
 
-    Press Z to shoot it.'
+    Reliable and has nice firing rate.
+
+    Press
+    Z to shoot it.'
   m_OffsetZ: 0
   m_CharacterSize: 0.11
   m_LineSpacing: 1

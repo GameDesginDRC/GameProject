@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     public static int hp;
 
+    public int max_hp = 100;
+    public int max_shield = 100;
+
+
     // for attacks
     [SerializeField]
     private bool coolingDown;
@@ -106,11 +110,11 @@ public class Player : MonoBehaviour
         }
         if (sceneName == "Stage 1")
         {
-            hp = 100;
+            hp = max_hp;
         }
         if (sceneName == "TUTORIAL")
         {
-            hp = 100;
+            hp = max_hp;
         }
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
@@ -293,6 +297,17 @@ public class Player : MonoBehaviour
         myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         
         startJumpTimer = true;
+    }
+
+
+    public void HealthIncrease(int x)
+    {
+        max_hp += x;
+    }
+
+    public void ShieldIncrease(int x)
+    {
+        max_shield += x;
     }
 
     private void StopJump()

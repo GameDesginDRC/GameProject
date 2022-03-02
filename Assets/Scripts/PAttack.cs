@@ -7,15 +7,10 @@ public class PAttack : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     public float AttackValue;
+ 
 
-    void Start()
-    {
-        
-    }
+    public void Damage_Increased(int x){
+        AttackValue += x;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

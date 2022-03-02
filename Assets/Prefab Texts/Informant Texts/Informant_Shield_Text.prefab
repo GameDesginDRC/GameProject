@@ -81,12 +81,12 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6760289862264935830}
-  m_Text: 'You just bought a shield generator!
+  m_Text: 'You just bought a shield!
 
-    Press T to use it. It will provide
-    you
+    Press S to use it. It will provide you
 
-    with a shield that lasts several
+    with
+    a shield that lasts several
 
     seconds.'
   m_OffsetZ: 0

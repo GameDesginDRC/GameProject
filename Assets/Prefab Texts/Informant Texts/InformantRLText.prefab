@@ -81,12 +81,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8841505849695639864}
-  m_Text: 'You just bought a laser
-
-    gun! It has AOE Damage!
-
-    Press Z to shoot
-    it!'
+  m_Text: "You just bought a rocket launcher! \nIt has AOE Damage!\nPress Z to shoot
+    it!"
   m_OffsetZ: 0
   m_CharacterSize: 0.11
   m_LineSpacing: 1
