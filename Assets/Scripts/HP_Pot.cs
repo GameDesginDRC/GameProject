@@ -26,7 +26,7 @@ public class HP_Pot : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (Input.GetKeyDown(KeyCode.U) && sceneName != "Shop 1" && waitTime <= 0)
+        if (Input.GetKeyDown(KeyCode.A) && sceneName != "Shop 1" && waitTime <= 0)
         {
             waitTime = .2f;
             UseHPPot();

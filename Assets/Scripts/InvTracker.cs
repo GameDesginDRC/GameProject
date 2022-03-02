@@ -14,6 +14,13 @@ public class InvTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invcount == 0 && Inventory._full[0] && Inventory._full[1])
+        {
+            ActiveWeapon.globalind = 0;
+        } else if (invcount == 1 && Inventory._full[0] && Inventory._full[1])
+        {
+            ActiveWeapon.globalind = 1;
+        }
         // Determining which weapon is on
         if (Input.GetKeyDown(KeyCode.X))
         {

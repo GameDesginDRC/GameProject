@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private bool facingRight;
     [SerializeField] string gameOver;
 
+    public static bool shieldon = false;
     public float JumpForce = .5f;
     public float DamageInvincibilityPeriod = 5f;
     public float DoubleClickTimerD = .3f;
@@ -98,7 +99,7 @@ public class Player : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName != "HUB" && sceneName != "Stage 1")
+        if (sceneName != "HUB" && sceneName != "Stage 1" && sceneName != "TUTORIAL")
         {
             Damage(0);
             //   }
@@ -154,7 +155,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); //GET RID OF FOR FINAL BUILD
+        if (shieldon)
+        {
+            ApplyStatusEffect(StatusEffect.Shield, 10);
+        } else
+        {
+            //ApplyStatusEffect(StatusEffect.Shield, 10);
+            ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
+        }
+        //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); to get rid of shield
+        //ApplyStatusEffect(StatusEffect.Shield, 5f); Shield timer with 5 seconds
+        //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); //GET RID OF FOR FINAL BUILD
         if (Input.GetKeyDown(KeyCode.K))
         {
             SceneManager.LoadScene("Shop 3");

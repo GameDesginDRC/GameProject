@@ -48,8 +48,6 @@ public class PickUp : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log(RandomWeapon.listofitems.Count);
-        Debug.Log(Inventory._full[0]);
-        Debug.Log(Inventory._full[1]);
         if (collision.CompareTag("Player"))
         {
             // This is switching out equpiment
@@ -321,6 +319,7 @@ public class PickUp : MonoBehaviour
                             {
                                     ScoreKeeper.gold -= price;
                                     ScoreKeeper.AddToGold(0);
+                                    Debug.Log("Bought");
                                     count = 1;
                                     Inventory._full[1] = true;
                                     Inventory.spots[1].GetComponent<DestroyItem>().dst = true;

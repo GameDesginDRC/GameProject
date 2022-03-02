@@ -86,7 +86,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2559738642899221881}
-  m_Text: "Press B to buy. \nPress U to consume.\nPrice: 50 Gold"
+  m_Text: "Press B to buy. \nPress A to consume.\nPrice: 40 Gold"
   m_OffsetZ: 0
   m_CharacterSize: 0.14
   m_LineSpacing: 1

@@ -12,7 +12,7 @@ public class RandomWeapon : MonoBehaviour
     public static List<int> listofitems = new List<int> {1, 2, 3, 4};
     void Start()
     {
-        Vector3 displx = new Vector3(-10f, .5f, 0);
+        Vector3 displx = new Vector3(-15f, .5f, 0);
         Vector3 disply = new Vector3(-5f, .5f, 0);
         int xindex = Random.Range(0, listofitems.Count);
         int xcount = listofitems[xindex];

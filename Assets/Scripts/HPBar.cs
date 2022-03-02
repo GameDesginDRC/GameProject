@@ -13,7 +13,7 @@ public class HPBar : MonoBehaviour
       //  Debug.Log(hpvalue.value);
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName == "Stage 1")
+        if (sceneName == "Stage 1" || sceneName == "TUTORIAL")
         {
             hpvalue.value = 100;
         } else

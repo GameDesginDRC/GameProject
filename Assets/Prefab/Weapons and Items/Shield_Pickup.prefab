@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 5757506720592358010, guid: b99c16a007ce34aee919b534aaa5e348, type: 3}
   count: 0
-  price: 35
+  price: 30
   buySound: {fileID: 8300000, guid: 1f5a709abf242b946936eca0884b8b48, type: 3}
 --- !u!60 &210619231094515057
 PolygonCollider2D:

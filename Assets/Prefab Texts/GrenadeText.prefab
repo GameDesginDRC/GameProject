@@ -86,7 +86,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617941769787497510}
-  m_Text: "A grenade. Press B \nto buy. Price: 10 Gold"
+  m_Text: "A grenade. Press B \nto buy. Price: 15 Gold"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1

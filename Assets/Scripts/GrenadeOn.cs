@@ -26,7 +26,7 @@ public class GrenadeOn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y) && sceneName != "Shop 1" && waitTime <= 0)
+        if (Input.GetKeyDown(KeyCode.D) && sceneName != "Shop 1" && waitTime <= 0)
         {
             waitTime = .5f;
             UseGrenade();

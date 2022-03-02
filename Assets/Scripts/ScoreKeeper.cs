@@ -16,6 +16,10 @@ public class ScoreKeeper : MonoBehaviour
         string sceneName = currentScene.name;
         if (sceneName == "Stage 1")
         {
+            gold = 1500;
+        }
+        else if (sceneName == "TUTORIAL")
+        {
             gold = 3000;
         }
         scoreText = GetComponent<Text>();

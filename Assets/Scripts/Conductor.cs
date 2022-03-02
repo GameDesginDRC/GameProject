@@ -104,6 +104,8 @@ public class Conductor : MonoBehaviour
     void Die()
     {
         LevelManager.DecreaseEnemyNum();
+        ScoreKeeper.gold += 15;
+        ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     }
     void Death()

@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
     public static GameObject[] spots;
     public static GameObject[] pos_objs;
     public static GameObject[] items;
+    [SerializeField]
+    public GameObject itemdis;
     // Start is called before the first frame update
     // ISSUE: put items in public array and assign values later
     private void Awake()
@@ -56,13 +58,14 @@ public class Inventory : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         spots = spots1;
-        if (sceneName == "Stage 1")
+        if (sceneName == "Stage 1" || sceneName == "TUTORIAL")
            {
                 pos_objs = posobjs1;
                 _full = _full1;
                 spots = spots1;
                 items = items1;
                 Instantiate(startingWeapon, Inventory.spots[0].transform, false);
+                Instantiate(pos_objs[1], spots[1].transform, false);
                 items[0] = startingWeapon;
                 pos_objs[0] = startingWeapon;
                 _full[0] = true;
@@ -78,6 +81,15 @@ public class Inventory : MonoBehaviour
                 GrenadeOn.GrenadeCount = 0;
                 HP_Pot.HPpot_count = 0;
         }
+     /*   if (sceneName == "TUTORIAL")
+        {
+            Inventory._full[1] = true;
+            Inventory.spots[1].GetComponent<DestroyItem>().dst = true;
+            //Inventory.items[1] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
+            Instantiate(itemdis, Inventory.spots[1].transform, false);
+            Inventory.items[1] = itemdis;
+            Inventory.pos_objs[1] = itemdis;
+        }*/
         else if (sceneName != "HUB" || sceneName != "Abilities")
         {
             for (int i = 0; i < pos_objs.Length; i++)

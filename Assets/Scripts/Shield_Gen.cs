@@ -29,7 +29,7 @@ public class Shield_Gen : MonoBehaviour
       //  {
       //      Inventory.pos_objs[usednum] = null;
       //  }
-        if(Input.GetKeyDown(KeyCode.T) && sceneName != "Shop 1" && waitTime <= 0)
+        if(Input.GetKeyDown(KeyCode.S) && sceneName != "Shop 1" && waitTime <= 0)
         {
             UseShieldGen();
         } else

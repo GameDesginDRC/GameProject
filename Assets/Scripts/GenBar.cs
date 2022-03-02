@@ -20,15 +20,18 @@ public class GenBar : MonoBehaviour
     {
         if (start1)
         {
+            Player.shieldon = true;
             start1 = false;
             hpvalue.value = 100;
         }
         if (shield)
         {
+            
             hpvalue.value -= .25f;
             if (hpvalue.value == 0)
             {
                 shield = false;
+                Player.shieldon = false;
             }
 
         }

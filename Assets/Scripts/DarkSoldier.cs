@@ -80,6 +80,8 @@ public class DarkSoldier : MonoBehaviour
     void Die()
     {
         LevelManager.DecreaseEnemyNum();
+        ScoreKeeper.gold += 20;
+        ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     }
     void Death()
