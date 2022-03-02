@@ -10,6 +10,7 @@ public class PlatformGoUnder : MonoBehaviour
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
+        waitTime = 0;
     }
 
     // Update is called once per frame
@@ -18,17 +19,23 @@ public class PlatformGoUnder : MonoBehaviour
         //if (Input.GetKeyUp(KeyCode.DownArrow)) {
         //   waitTime = .001f;
         //}
-        if(Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.Space))
-        {
-        //   if (waitTime <= 0)
-         //   {
+            if (Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.Space) && waitTime <= 0)
+            {
+                //   if (waitTime <= 0)
+                //   {
                 effector.rotationalOffset = 180f;
                 StartCoroutine(Blink());
-        //        waitTime = .001f;
-         //   } else
-          //  {
-          //     waitTime -= Time.deltaTime;
-          //  }
+            waitTime = .28f;
+            //        waitTime = .001f;
+            //   } else
+            //  {
+            //     waitTime -= Time.deltaTime;
+            //  }
+          }
+            
+         else
+        {
+            waitTime -= Time.deltaTime;
         }
 
    //     if(Input.GetKey(KeyCode.Space))
