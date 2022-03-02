@@ -26,16 +26,12 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
 
-        if (hitInfo.gameObject.tag == ("Enemy")) //When Enemy is there
-        {
-            //Enemy takes damage
-        }
 
         if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Enemy") || hitInfo.gameObject.tag == ("Wall"))
         {
             anim.SetBool("Disappear", true);
             //Instantiate(DeathEffect, transform.position, transform.rotation); //animation for bullet
-            Invoke("ExplodeAndDie", .1f);
+            Invoke("ExplodeAndDie", .05f);
         }
     }   
 
