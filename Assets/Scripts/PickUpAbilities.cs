@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PickUpAbilities : MonoBehaviour
 {
-    public int Health_Increase = 50;
-    public int Shield_Increase = 200;
-    public int Damage_Increase = 5;
+    private int Health_Increase = 50;
+    private int Shield_Increase = 200;
+    private int Damage_Increase = 500;
     private Player player_code;
-    private PAttack pattack;
 
     void Start()
     {
@@ -23,7 +22,7 @@ public class PickUpAbilities : MonoBehaviour
             { 
                 if (gameObject.name == "Damage+(Clone)")
                 {
-                    player_code.DamageIncrease(Damage_Increase);
+                    PAttack.IncreaseAttack(Damage_Increase);
                     Destroy(gameObject); 
                 }
                 else if (gameObject.name == "Shield+(Clone)")

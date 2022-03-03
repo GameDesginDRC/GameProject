@@ -7,11 +7,23 @@ public class PAttack : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     public float AttackValue;
-    private Player player_code;
 
-    void Start(){
-        player_code = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        AttackValue += player_code.max_atk;
+    [SerializeField]
+    public static int AttackMod;
+
+    public static bool changed = false;
+
+    void update(){
+        if (changed){
+            AttackValue += AttackMod;
+            changed = false;
+        }
     }
-
+    
+    public static void IncreaseAttack(int atk)
+    {
+        AttackMod = atk;
+        changed = true;
+        Increased(atk);
+    }
 }

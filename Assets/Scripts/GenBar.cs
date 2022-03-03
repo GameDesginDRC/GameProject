@@ -8,6 +8,7 @@ public class GenBar : MonoBehaviour
     public Slider hpvalue;
     public static bool shield;
     public static bool start1;
+    private Player player_code;
 
     // Start is called before the first frame update
     void Start()
@@ -16,19 +17,20 @@ public class GenBar : MonoBehaviour
         start1 = false;
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    void FixedUpdate()
     {
         if (start1)
         {
             Player.shieldon = true;
             start1 = false;
-            hpvalue.value = 100;
+            hpvalue.value =  Player.max_shield;
         }
         if (shield)
         {
             
-            hpvalue.value -= .25f;
+            hpvalue.value -= .2f;
             if (hpvalue.value == 0)
             {
                 shield = false;

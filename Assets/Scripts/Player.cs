@@ -41,9 +41,22 @@ public class Player : MonoBehaviour
     [SerializeField]
     public static int hp;
 
-    public int max_hp = 100;
-    public int max_shield = 100;
-    public int max_atk = 0;
+    [SerializeField]
+    public static int max_hp = 100;
+    [SerializeField]
+    public static int max_shield = 100;
+
+
+    // [SerializeField]
+    // public static int sword_atk = 5;
+    // [SerializeField]
+    // public static int rocket_atk = 10;
+    // [SerializeField]
+    // public static int laser_atk = 5;
+    // [SerializeField]
+    // public static int gernade_atk = 10;
+    // [SerializeField]
+    // public static int gun_atk = 7;
 
     // for attacks
     [SerializeField]
@@ -295,11 +308,6 @@ public class Player : MonoBehaviour
         myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         
         startJumpTimer = true;
-    }
-
-    public void DamageIncrease(int x)
-    {
-        max_atk += x;
     }
 
     public void HealthIncrease(int x)

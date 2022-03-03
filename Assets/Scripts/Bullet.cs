@@ -26,7 +26,6 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
 
-
         if (hitInfo.gameObject.tag==("Ground") || hitInfo.gameObject.tag == ("Enemy") || hitInfo.gameObject.tag == ("Wall"))
         {
             anim.SetBool("Disappear", true);
