@@ -24,6 +24,6 @@ public class PAttack : MonoBehaviour
     {
         AttackMod = atk;
         changed = true;
-        Increased(atk);
+
     }
 }
