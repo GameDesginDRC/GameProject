@@ -45,18 +45,9 @@ public class Player : MonoBehaviour
     public static int max_hp = 100;
     [SerializeField]
     public static int max_shield = 100;
+    [SerializeField]
+    public static int attack_mod;
 
-
-    // [SerializeField]
-    // public static int sword_atk = 5;
-    // [SerializeField]
-    // public static int rocket_atk = 10;
-    // [SerializeField]
-    // public static int laser_atk = 5;
-    // [SerializeField]
-    // public static int gernade_atk = 10;
-    // [SerializeField]
-    // public static int gun_atk = 7;
 
     // for attacks
     [SerializeField]

@@ -6,7 +6,7 @@ public class PickUpAbilities : MonoBehaviour
 {
     private int Health_Increase = 50;
     private int Shield_Increase = 200;
-    private int Damage_Increase = 500;
+    private int Damage_Increase = 1;
     private Player player_code;
 
     void Start()
@@ -22,7 +22,7 @@ public class PickUpAbilities : MonoBehaviour
             { 
                 if (gameObject.name == "Damage+(Clone)")
                 {
-                    PAttack.IncreaseAttack(Damage_Increase);
+                    Player.attack_mod += Damage_Increase;
                     Destroy(gameObject); 
                 }
                 else if (gameObject.name == "Shield+(Clone)")

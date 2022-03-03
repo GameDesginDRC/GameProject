@@ -9,21 +9,19 @@ public class PAttack : MonoBehaviour
     public float AttackValue;
 
     [SerializeField]
-    public static int AttackMod;
+    public int AttackMod;
 
-    public static bool changed = false;
+    private void Start()
+    {
+        AttackMod = Player.attack_mod;
+        Debug.Log("Attack Mod Val = " + AttackMod.ToString());
+        AttackValue += AttackMod;
+    }
 
-    void update(){
-        if (changed){
-            AttackValue += AttackMod;
-            changed = false;
-        }
+    void Update(){
     }
     
     public static void IncreaseAttack(int atk)
     {
-        AttackMod = atk;
-        changed = true;
-
     }
 }

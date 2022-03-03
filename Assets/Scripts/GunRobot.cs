@@ -226,6 +226,7 @@ public class GunRobot : MonoBehaviour
                 aSource.PlayOneShot(hitSound);
 
                 float attackVal = collision.GetComponent<PAttack>().AttackValue;
+                Debug.Log(attackVal);
                 health -= attackVal;
                 isPaused = true;
                 invincible = true;
