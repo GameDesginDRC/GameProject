@@ -36,7 +36,7 @@ public class InvTracker : MonoBehaviour
         // Weapon 1 is active
         if (Inventory._full[0] && Inventory._full[1] && invcount == 0)
         {
-            Debug.Log(invcount);
+            // Debug.Log(invcount);
             //Make whatever is in 0th index active
             if(Inventory.pos_objs[0].GetComponent<GunOn>() != null)
             {

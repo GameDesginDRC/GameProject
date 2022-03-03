@@ -354,4 +354,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b37c819f5ef40fe8694b86660a486c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 6615168947580284989, guid: 759e85823fef44c35bce9deddbe0cbb5, type: 3}
+  FloatingTextPrefab: {fileID: 7295036945818243171, guid: 99a51333999bc4440a39f1038310b872, type: 3}

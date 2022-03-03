@@ -187,7 +187,7 @@ public class SwordRobot : MonoBehaviour
 
         if (collision.CompareTag("Wall") || collision.CompareTag("InvisWall"))
         {
-            Debug.Log("Flip");
+            // Debug.Log("Flip");
             InvokeFlip();
         }
     }

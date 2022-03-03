@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RegularSword : MonoBehaviour
 {
@@ -45,8 +46,9 @@ public class RegularSword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Z) && hasSword && !coolingDown)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetKeyDown(KeyCode.Z) && hasSword && !coolingDown && sceneName != "Shop 1")
         {
             SwordAttack();
         }

@@ -9,10 +9,12 @@ public class Text_disp : MonoBehaviour
     private Vector3 newvec;
     private GameObject obj;
     private int counter;
+    public int x;
+    public int y;
     // Start is called before the first frame update
     void Start()
     {
-        newvec = new Vector3(-2.0f, 3.0f, 0);
+        newvec = new Vector3(x,y, 0);
         counter = 0;
     }
 

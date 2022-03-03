@@ -6,7 +6,7 @@ public class PickUpAbilities : MonoBehaviour
 {
     private int Health_Increase = 50;
     private int Shield_Increase = 200;
-    private int Damage_Increase = 1;
+    private int Damage_Increase = 3;
     private Player player_code;
 
     void Start()

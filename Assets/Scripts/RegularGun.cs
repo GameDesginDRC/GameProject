@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RegularGun : MonoBehaviour
 {
@@ -21,9 +22,12 @@ public class RegularGun : MonoBehaviour
     [SerializeField]
     AudioClip shootSound;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
+        
         // audio
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
     }
@@ -38,7 +42,9 @@ public class RegularGun : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire2") && CanShoot == true)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetButtonDown("Fire2") && CanShoot == true && sceneName != "Shop 1") 
         //if (Input.GetButtonDown("Fire1") && CanShoot == true) //When player can shoot
         {
             aSource.PlayOneShot(shootSound);

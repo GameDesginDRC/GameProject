@@ -11,9 +11,11 @@ public class Door : MonoBehaviour
     private Vector3 newvec;
     private int first;
     // Start is called before the first frame update
+    public int x;
+    public int y;
     void Start()
     {
-        newvec = new Vector3(-1.0f, 3.0f, 0);
+        newvec = new Vector3(x, y, 0);
         first = 0;
     }
 
@@ -31,7 +33,7 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (first == 0)
+        if (first == 0 && collision.CompareTag("Player"))
         {
             first = 1;
             obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
@@ -39,7 +41,7 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (first == 1)
+        if (first == 1 && collision.CompareTag("Player"))
         {
             first = 0;
             Destroy(obj);

@@ -6193,7 +6193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b37c819f5ef40fe8694b86660a486c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 6615168947580284989, guid: 759e85823fef44c35bce9deddbe0cbb5, type: 3}
+  FloatingTextPrefab: {fileID: 7295036945818243171, guid: 99a51333999bc4440a39f1038310b872, type: 3}
+  x: 3
+  y: 3
 --- !u!1 &464615205
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,7 +6252,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -344835925
   m_SortingLayer: -5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 30210613f1c554e8db0dfe56312c6462, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6764,11 +6766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.06
+      value: -6.47
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.58
+      value: -4.89
       objectReference: {fileID: 0}
     - target: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7479,7 +7481,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -344835925
   m_SortingLayer: -5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 30210613f1c554e8db0dfe56312c6462, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9042,8 +9044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6170dc9f4969f4d4192803ed6c025564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 3644578496862393292, guid: 7deff58f528334200ad2f3dcefe56298, type: 3}
+  FloatingTextPrefab: {fileID: 1704487388747670564, guid: 21a16d3853646444194c9049df26de5e, type: 3}
   next: Transition2
+  x: 4
+  y: 4
 --- !u!212 &910896770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9103,7 +9107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910896768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.9, y: -4.69, z: 1}
+  m_LocalPosition: {x: 14.91, y: -4.66, z: 1}
   m_LocalScale: {x: 0.4554, y: 0.3983, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9225,9 +9229,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1591041249315052327, guid: fd0150a52f76f4eafb7db34899a7d5f6, type: 3}
+      propertyPath: x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1591041249315052327, guid: fd0150a52f76f4eafb7db34899a7d5f6, type: 3}
+      propertyPath: y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1591041249315052327, guid: fd0150a52f76f4eafb7db34899a7d5f6, type: 3}
       propertyPath: FloatingTextPrefab
       value: 
-      objectReference: {fileID: 617941769787497510, guid: 68cb98dfe02e32f42abdb5755d830c4f, type: 3}
+      objectReference: {fileID: 2544124601763482958, guid: 6d247422769be4d1b875b553c193e088, type: 3}
     - target: {fileID: 4557205977492479751, guid: fd0150a52f76f4eafb7db34899a7d5f6, type: 3}
       propertyPath: buySound
       value: 
@@ -11319,7 +11331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -344835925
   m_SortingLayer: -5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 30210613f1c554e8db0dfe56312c6462, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11352,6 +11364,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5953105412863448644, guid: 889a19d7b326c4ee9bbaed83cd7250ba, type: 3}
+      propertyPath: x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5953105412863448644, guid: 889a19d7b326c4ee9bbaed83cd7250ba, type: 3}
+      propertyPath: y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5953105412863448645, guid: 889a19d7b326c4ee9bbaed83cd7250ba, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11736,12 +11756,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521308727176e464a872192debe4bfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 6760289862264935830, guid: 7a1593e1348ee4c02ae5126556fee5e0, type: 3}
-  FloatingTextPrefab2: {fileID: 7523103740559462323, guid: f51f42747cd5a443590b276d4fef90b5, type: 3}
-  FloatingTextPrefab3: {fileID: 3886098813770839326, guid: c4345e266609349e58f9126a973e7b90, type: 3}
-  FloatingTextPrefab4: {fileID: 8841505849695639864, guid: 5e97c59db56634a1aa2838793a1cd2d9, type: 3}
-  FloatingTextPrefab5: {fileID: 5338014838874633440, guid: 5487725ccb8f2485c967d39319399d8b, type: 3}
-  FloatingTextPrefab6: {fileID: 4541489200487054578, guid: 707ef1d96b9054eeeaee419e04d93a8c, type: 3}
+  Shield: {fileID: 5718982304570073263, guid: 4a2c01956dabb4f169e3f5e4eaafd4e7, type: 3}
+  Gun: {fileID: 8636728745630683667, guid: 386b33534ff494f28942fbbbe547675f, type: 3}
+  Health: {fileID: 3945509049695536987, guid: 2147d95d3270f42f7bc749c095fab1cd, type: 3}
+  Rocket: {fileID: 3841113221546864765, guid: ad32ae95f8b75477699d19232c57fe48, type: 3}
+  Laser: {fileID: 3134176712474039060, guid: ca050ab63a476489fb9071f75d582f0d, type: 3}
+  Grenade: {fileID: 2835440294561438187, guid: f73be98c021894ede8386823c597c5b6, type: 3}
+  Sword: {fileID: 5008235337687416590, guid: 4b5dcbd8609174eb4940277b85143bb0, type: 3}
+  intro: {fileID: 1437462467095722511, guid: 8bfa5d9ea42fe4f21bc30698d0ab9ef6, type: 3}
+  x: 2
+  y: 8
 --- !u!212 &1903364285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11779,9 +11803,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1351060379
-  m_SortingLayer: -2
-  m_SortingOrder: 0
+  m_SortingLayerID: -344835925
+  m_SortingLayer: -5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7cfa898f91a874e48bff925721e6c8b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

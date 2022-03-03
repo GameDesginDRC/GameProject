@@ -18,10 +18,5 @@ public class PAttack : MonoBehaviour
         AttackValue += AttackMod;
     }
 
-    void Update(){
-    }
-    
-    public static void IncreaseAttack(int atk)
-    {
-    }
 }
+

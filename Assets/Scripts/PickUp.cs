@@ -51,7 +51,7 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // This is switching out equpiment
-            if (Inventory._full[0] && Inventory._full[1] && Input.GetKey(KeyCode.B) && gameObject.GetComponent<Equipment>() != null && ScoreKeeper.gold >= price)
+            if (Inventory._full[0] && Inventory._full[1] && Input.GetKey(KeyCode.Z) && gameObject.GetComponent<Equipment>() != null && ScoreKeeper.gold >= price)
             {
                 // To switch out first weapon
 
@@ -138,7 +138,7 @@ public class PickUp : MonoBehaviour
                 }
                 // }
             }
-            else if (Input.GetKey(KeyCode.B) && ScoreKeeper.gold >= price)
+            else if (Input.GetKey(KeyCode.Z) && ScoreKeeper.gold >= price)
             {
 
                /* if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)

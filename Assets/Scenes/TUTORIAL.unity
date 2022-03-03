@@ -904,6 +904,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 6679701986999073186, guid: eac379328725d401fbe1f37496e62a38, type: 3}
+  x: 0
+  y: 0
 --- !u!114 &237840375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12932,7 +12934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press B to pick up items.
+  m_text: 'Press Z to pick up items.
 
     To switch weapons, press X.'
   m_isRightToLeft: 0
@@ -14228,6 +14230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 6679701986999073186, guid: eac379328725d401fbe1f37496e62a38, type: 3}
+  x: 0
+  y: 0
 --- !u!114 &1922926540347541188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14269,6 +14273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 6679701986999073186, guid: eac379328725d401fbe1f37496e62a38, type: 3}
+  x: 0
+  y: 0
 --- !u!4 &1922926540347541191
 Transform:
   m_ObjectHideFlags: 0
@@ -14495,6 +14501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 6679701986999073186, guid: eac379328725d401fbe1f37496e62a38, type: 3}
+  x: 0
+  y: 0
 --- !u!212 &7137651682264666016
 SpriteRenderer:
   m_ObjectHideFlags: 0

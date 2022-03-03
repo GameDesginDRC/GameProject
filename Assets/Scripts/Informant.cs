@@ -11,21 +11,26 @@ public class Informant : MonoBehaviour
     public static bool bought_RL;
     public static bool bought_LaserGun;
     public static bool bought_grenade;
-    public GameObject FloatingTextPrefab;
-    public GameObject FloatingTextPrefab2;
-    public GameObject FloatingTextPrefab3;
-    public GameObject FloatingTextPrefab4;
-    public GameObject FloatingTextPrefab5;
-    public GameObject FloatingTextPrefab6;
+    public GameObject Shield;
+    public GameObject Gun;
+    public GameObject Health;
+    public GameObject Rocket;
+    public GameObject Laser;
+    public GameObject Grenade;
+    public GameObject Sword;
+    public GameObject intro;
     private Vector3 newvec;
     private GameObject obj;
     private int first;
+    public float x;
+    public float y;
     // Start is called before the first frame update
     void Start()
     {
         first = 0;
-        newvec = new Vector3(-1.0f, 9.0f, 0);
+        newvec = new Vector3(x, y, 0);
         bought_shield = false;
+        obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
     }
 
     // Update is called once per frame
@@ -34,75 +39,87 @@ public class Informant : MonoBehaviour
     {
         if (bought_shield)
         {
-            if (first != 0)
-            {
-                Destroy(obj);
-            }
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
             bought_shield = false;
-            obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
+            obj = Instantiate(Shield, transform.position + newvec, Quaternion.identity, transform);
             first++;
-            Destroy(obj, 5);
         }
         if (bought_gun)
         {
-            if (first != 0)
-            {
-                Destroy(obj);
-            }
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
             bought_gun = false;
-            obj = Instantiate(FloatingTextPrefab2, transform.position + newvec, Quaternion.identity, transform);
+            obj = Instantiate(Gun, transform.position + newvec, Quaternion.identity, transform);
             first++;
-            Destroy(obj, 5);
            }  
         if (bought_pot)
          {
-               if (first != 0)
-               {
-                    Destroy(obj);
-               }
-               bought_pot = false;
-               obj = Instantiate(FloatingTextPrefab3, transform.position + newvec, Quaternion.identity, transform);
-                first++;
-                Destroy(obj, 5);
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
+            bought_pot = false;
+            obj = Instantiate(Health, transform.position + newvec, Quaternion.identity, transform);
+            first++;
+
            }
         if (bought_RL)
         {
-            if (first != 0)
-            {
-                Destroy(obj);
-            }
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
             bought_RL = false;
-            obj = Instantiate(FloatingTextPrefab4, transform.position + newvec, Quaternion.identity, transform);
+            obj = Instantiate(Rocket, transform.position + newvec, Quaternion.identity, transform);
             first++;
-            Destroy(obj, 5);
         }
-            if (bought_LaserGun)
+        if (bought_LaserGun)
             {
-                if (first != 0)
-                {
-                    Destroy(obj);
-                }
-                bought_LaserGun = false;
-                obj = Instantiate(FloatingTextPrefab5, transform.position + newvec, Quaternion.identity, transform);
-                first++;
-                Destroy(obj, 5);
-            }
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
+            bought_LaserGun = false;
+            obj = Instantiate(Laser, transform.position + newvec, Quaternion.identity, transform);
+            first++;
+        }
 
-            if (bought_grenade)
-            {
-                if (first != 0)
-                {
-                    Destroy(obj);
-                }
-                bought_grenade = false;
-                obj = Instantiate(FloatingTextPrefab6, transform.position + newvec, Quaternion.identity, transform);
-                first++;
-                Destroy(obj, 5);
+        if (bought_grenade)
+        {
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
+            bought_grenade = false;
+            obj = Instantiate(Grenade, transform.position + newvec, Quaternion.identity, transform);
+            first++;
             }
+        if (bought_sword)
+        {
+            // if (first != 0)
+            // {
+            //     Destroy(obj);
+            // }
+            Destroy(obj);
+            bought_sword = false;
+            obj = Instantiate(Sword, transform.position + newvec, Quaternion.identity, transform);
+            first++;            
         }
+    }
     
   /*  private void DestLater(GameObject obj1)
        {
 
        }*/
-    }
+ }

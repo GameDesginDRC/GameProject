@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RocketLauncher : MonoBehaviour
 {
@@ -41,7 +42,9 @@ public class RocketLauncher : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire2") && CanShoot == true)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetButtonDown("Fire2") && CanShoot == true && sceneName != "Shop 1")
         {
             aSource.PlayOneShot(shootSound);
             GameObject aRocket = Instantiate(rocket, ShotPoint.position, ShotPoint.rotation); //Spawns rocket
