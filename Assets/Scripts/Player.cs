@@ -48,8 +48,6 @@ public class Player : MonoBehaviour
     // for attacks
     [SerializeField]
     private bool coolingDown;
-    [SerializeField]
-    Transform castPoint;
 
     public GameObject shieldPrefab;
     private SpriteRenderer ShieldRenderer;

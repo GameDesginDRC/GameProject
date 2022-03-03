@@ -46,6 +46,7 @@ public class Assasin_Controller : MonoBehaviour
     [SerializeField]
     bool invincible = false;
     bool dying = false;
+    SpriteRenderer sprite;
 
     // for audio
     AudioSource aSource;
@@ -59,12 +60,15 @@ public class Assasin_Controller : MonoBehaviour
 
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         idleA = new Vector3(transform.position.x-0.5f, transform.position.y, 0);
         idleB = new Vector3(transform.position.x+2, transform.position.y, 0);
         player_code = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     void Update()
     {
+        
+        sprite.color = new Color (1, 0, 0, 1); 
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
 
         EnemyMovement(); //Controls Enemy Movement

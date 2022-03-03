@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Explosives : MonoBehaviour
 {
-    public float BombSpeed = 6f; //Bullet Speed
-    public float BombLongevity = 1f; //Bullet longevity
-
+    public float BombSpeed = 5f; //Bullet Speed
+    public float BombLongevity = 4f; //Bullet longevity
     public Rigidbody2D rbBomb; //Rigidbody of Bullet
     public GameObject Explosion; //Gameobject DeathEffect
 
@@ -17,13 +16,22 @@ public class Explosives : MonoBehaviour
     }
 
     
-
     IEnumerator ExplosionTimer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(BombLongevity);
         Instantiate(Explosion, transform.position, transform.rotation);  //Size of Explosion
-        Destroy(gameObject); //Destroy Bullet
+        Destroy(gameObject); 
     }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.gameObject.tag==("Enemy"))
+            {
+                Instantiate(Explosion, transform.position, transform.rotation);  //Size of Explosion
+                Destroy(gameObject); 
+            }
+    }
+
 
     private void OnBecameInvisible()
     {

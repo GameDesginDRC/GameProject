@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BombSpeed: 5
-  BombLongevity: 4
+  BombLongevity: 2
   rbBomb: {fileID: -5370831893205644859}
   Explosion: {fileID: 1090894406680360994, guid: 8e9cb35269c704a3eb083c712871b2ef, type: 3}
 --- !u!70 &7242110438864315741

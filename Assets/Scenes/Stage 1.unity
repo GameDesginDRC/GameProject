@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
+  ShootPoint: {fileID: 0}
   shootSound: {fileID: 8300000, guid: b9d72ad8f710ff641b02c6d89dbc8167, type: 3}
 --- !u!1 &17139976
 GameObject:
@@ -5548,6 +5549,9 @@ MonoBehaviour:
   TimeSinceDashInv: 0
   healthbar: {fileID: 1098767707}
   GNBar: {fileID: 569800681}
+  max_hp: 100
+  max_shield: 100
+  max_atk: 0
   coolingDown: 0
   castPoint: {fileID: 1857516679}
   shieldPrefab: {fileID: 4176445416224093463, guid: 85b098bd40b07454cb9f2aa26e1e4b9d, type: 3}

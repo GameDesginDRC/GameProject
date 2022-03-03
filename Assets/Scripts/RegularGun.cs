@@ -13,7 +13,7 @@ public class RegularGun : MonoBehaviour
     public static bool CanShoot = false;
 
 
-    private Transform ShotPoint;
+    public Transform ShootPoint;
     private GameObject temp;
 
     // for audio
@@ -30,9 +30,6 @@ public class RegularGun : MonoBehaviour
 
     void Update()
     {
-        temp = GameObject.Find("ShootPoint");
-        ShotPoint = temp.GetComponent<Transform>();
-
         if (Time.time > TimeLeft) {
             Shoot(); //shoots
         }
@@ -45,7 +42,7 @@ public class RegularGun : MonoBehaviour
         //if (Input.GetButtonDown("Fire1") && CanShoot == true) //When player can shoot
         {
             aSource.PlayOneShot(shootSound);
-            Instantiate(Bullet, ShotPoint.position, ShotPoint.rotation); //Spawns bullet
+            Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation); //Spawns bullet
             TimeLeft = Time.time;
             TimeLeft += Interval;
         }
