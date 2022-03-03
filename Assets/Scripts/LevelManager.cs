@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //Debug.Log(SceneManager.(SceneManager.GetActiveScene().buildIndex + 1).name);
         }
-        if (numOfAbilities == 2) {
+        else if (numOfAbilities == 2 && scene.name == "Abilities") {
             // was 2
             // go to the next stage
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

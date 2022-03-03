@@ -14,6 +14,8 @@ public class GrenadeOn : MonoBehaviour
     public static int hpIncr = 0;
     private float waitTime = 0;
     public GameObject gren;
+    private Transform ShootPoint;
+    private GameObject temp;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class GrenadeOn : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         Informant.bought_grenade = true;
+        temp = GameObject.Find("ShootPoint");
+        ShootPoint = temp.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -64,18 +68,14 @@ public class GrenadeOn : MonoBehaviour
             GrenadeCount--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
-            GameObject temp = GameObject.Find("Player");
-            Transform temptrans = temp.GetComponent<Transform>();
-            Instantiate(gren, temptrans.position, Quaternion.identity);
+            Instantiate(gren, ShootPoint.position, ShootPoint.rotation); //Spawns bullet
             Destroy(gameObject);
         }
         else
         {
             GrenadeCount--;
             DecrConsume(usednum);
-            GameObject temp = GameObject.Find("Player");
-            Transform temptrans = temp.GetComponent<Transform>();
-            Instantiate(gren, temptrans.position, Quaternion.identity);
+            Instantiate(gren, ShootPoint.position, ShootPoint.rotation); //Spawns bullet
             hpIncr = 1;
         }
     }

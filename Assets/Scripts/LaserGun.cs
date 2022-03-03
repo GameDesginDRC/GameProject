@@ -10,7 +10,7 @@ public class LaserGun : MonoBehaviour
     public static bool CanShoot = false;
 
 
-    private Transform ShotPoint;
+    public Transform ShootPoint;
     private GameObject temp;
 
     // for audio
@@ -27,9 +27,6 @@ public class LaserGun : MonoBehaviour
 
     void Update()
     {
-        temp = GameObject.Find("ShootPoint");
-        ShotPoint = temp.GetComponent<Transform>();
-
         TimeLeft = TimeLeft - Time.deltaTime;
 
         if (TimeLeft < 0)
@@ -44,7 +41,7 @@ public class LaserGun : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && CanShoot == true)
         {
             aSource.PlayOneShot(shootSound);
-            Instantiate(Laser, ShotPoint.position, ShotPoint.rotation); //Spawns bullet
+            Instantiate(Laser, ShootPoint.position, ShootPoint.rotation); //Spawns bullet
             TimeLeft = Interval;
         }
     }
