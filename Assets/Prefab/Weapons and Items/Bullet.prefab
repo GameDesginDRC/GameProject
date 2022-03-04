@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d696a9826279e64a8d316f9aa4f0736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackValue: 3
+  AttackValue: 4
+  AttackMod: 0
 --- !u!95 &8932401178448256263
 Animator:
   serializedVersion: 3
