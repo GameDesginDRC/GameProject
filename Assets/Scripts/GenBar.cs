@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GenBar : MonoBehaviour
 {
     public Slider hpvalue;
     public static bool shield;
     public static bool start1;
+    public static int maxSh;
+    public static bool Sabill;
     private Player player_code;
 
     // Start is called before the first frame update
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "TUTORIAL" || sceneName == "Stage 1") {
+            maxSh = 100;
+        }
+        if (Sabill)
+        {
+            maxSh += 100;
+            Sabill = false;
+        }
+        hpvalue.maxValue = maxSh;
         shield = false;
         start1 = false;
     }
@@ -25,7 +40,7 @@ public class GenBar : MonoBehaviour
         {
             Player.shieldon = true;
             start1 = false;
-            hpvalue.value =  Player.max_shield;
+            hpvalue.value =  maxSh;
         }
         if (shield)
         {

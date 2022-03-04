@@ -304,6 +304,7 @@ public class Player : MonoBehaviour
     public void HealthIncrease(int x)
     {
         max_hp += x;
+        hp += x;
     }
 
     public void ShieldIncrease(int x)
