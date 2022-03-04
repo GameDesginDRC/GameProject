@@ -112,10 +112,15 @@ public class Player : MonoBehaviour
         }
         if (sceneName == "Stage 1")
         {
+            attack_mod = 0;
+            max_hp = 100;
             hp = max_hp;
+            
         }
         if (sceneName == "TUTORIAL")
         {
+            attack_mod = 0;
+            max_hp = 100;
             hp = max_hp;
         }
         myRB = GetComponent<Rigidbody2D>();

@@ -131,6 +131,7 @@
     <Compile Include="Assets/Scripts/EndButton.cs" />
     <Compile Include="Assets/Scripts/HealthShieldText.cs" />
     <Compile Include="Assets/Scripts/StageName.cs" />
+    <Compile Include="Assets/Scripts/ShopDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

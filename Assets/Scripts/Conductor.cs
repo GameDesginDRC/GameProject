@@ -106,12 +106,17 @@ public class Conductor : MonoBehaviour
         LevelManager.DecreaseEnemyNum();
         ScoreKeeper.gold += 15;
         ScoreKeeper.AddToGold(0);
+      //  Vector3 newvec1 = new Vector3(-1, -1, 0);
+      //  transform.position += newvec1;
         Destroy(gameObject);
     }
     void Death()
     {
+        GameObject child = transform.GetChild(0).gameObject;
+        Destroy(child);
         aSource.PlayOneShot(deathSound);
         animA.SetBool("dead", true);
+        // transform.position += newvec1;
         Invoke("Die", .8f);
     }
     void Unpause()

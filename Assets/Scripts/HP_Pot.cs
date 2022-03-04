@@ -62,10 +62,10 @@ public class HP_Pot : MonoBehaviour
             HPpot_count--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
-            Player.hp += 35;
-            if (Player.hp > 100)
+            Player.hp += 30;
+            if (Player.hp > HPBar.maxVal)
             {
-                Player.hp = 100;
+                Player.hp = HPBar.maxVal;
             }
             hpIncr = 1;
             Destroy(gameObject);
@@ -74,10 +74,10 @@ public class HP_Pot : MonoBehaviour
         {
             DecrConsume(usednum);
             HPpot_count--;
-            Player.hp += 15;
-            if (Player.hp > 100)
+            Player.hp += 30;
+            if (Player.hp > HPBar.maxVal)
             {
-                Player.hp = 100;
+                Player.hp = HPBar.maxVal;
             }
             hpIncr = 1;
         }

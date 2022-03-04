@@ -9023,8 +9023,8 @@ GameObject:
   m_Component:
   - component: {fileID: 910896771}
   - component: {fileID: 910896770}
-  - component: {fileID: 910896769}
   - component: {fileID: 910896772}
+  - component: {fileID: 910896769}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -9041,11 +9041,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 910896768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6170dc9f4969f4d4192803ed6c025564, type: 3}
+  m_Script: {fileID: 11500000, guid: af28105679065444ba57eb9b478f7c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 1704487388747670564, guid: 21a16d3853646444194c9049df26de5e, type: 3}
-  next: Transition2
   x: 4
   y: 4
 --- !u!212 &910896770
@@ -9895,7 +9894,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4775276, g: 0.5596421, b: 0.6886792, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

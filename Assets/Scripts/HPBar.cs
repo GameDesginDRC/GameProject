@@ -21,6 +21,8 @@ public class HPBar : MonoBehaviour
         if (sceneName == "TUTORIAL" || sceneName == "Stage 1")
         {
             maxVal = 100;
+            ShopDoor.doorcnt = 0;
+
         }
         int waitE = 0;
         if (abill && waitE == 0)
@@ -32,7 +34,11 @@ public class HPBar : MonoBehaviour
         }
         hpvalue.maxValue = maxVal;
         hpvalue.value = Player.hp;
+        if (sceneName == "TUTORIAL" || sceneName == "Stage 1")
+        {
+            hpvalue.value = 100;
 
+        }
     }
 
     // Update is called once per frame

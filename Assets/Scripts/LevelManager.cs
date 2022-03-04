@@ -42,15 +42,20 @@ public class LevelManager : MonoBehaviour
         }*/
             // if all enemies are dead
         Scene scene = SceneManager.GetActiveScene();
-        if (numOfEnemies == 0 && scene.name != "Abilities" && scene.name != "TUTORIAL") {
+
+        if (numOfEnemies == 0 && scene.name != "Abilities" && scene.name != "TUTORIAL" && scene.name == "Stage 1")
+        {
+            SceneManager.LoadScene("Abilities");
+        }
+        else if (numOfEnemies == 0 && scene.name != "Abilities" && scene.name != "TUTORIAL") {
             // go to the next stage
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Shop 1");
             //Debug.Log(SceneManager.(SceneManager.GetActiveScene().buildIndex + 1).name);
         }
         else if (numOfAbilities == 2 && scene.name == "Abilities") {
             // was 2
             // go to the next stage
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Shop 1");
         }
     }
 }

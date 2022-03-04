@@ -7,6 +7,7 @@ public class ConductorCircle : MonoBehaviour
     private SpriteRenderer spr;
     private Color tmp;
     private bool ready_;
+    private float rotatespdz = 12f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class ConductorCircle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(0, 0, rotatespdz);
         if (ready_ && tmp.a <= .97f)
         {
             tmp.a += .004f;
