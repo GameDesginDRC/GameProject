@@ -30,39 +30,43 @@ public class Informant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        clean = true;
-        start = true;
-        // first = 0;
-        newvec = new Vector3(x, y, 0);
         bought_shield = false;
         bought_gun = false;
         bought_pot = false;
         bought_sword = false;
         bought_LaserGun = false;
         bought_RL = false;
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+             Destroy(GetComponent<Transform>().GetChild(i).gameObject); 
+        }
+        clean = true;
+        start = true;
+        // first = 0;
+        newvec = new Vector3(x, y, 0);
 
-            
+
     }
 
     // Update is called once per frame
     // Make sure first works fine wouldn't objects not be destroyed if first != 0
     void Update()
     {
-        if (clean == true && ShopDoor.doorcnt!=1){
-            oldtext = GameObject.FindGameObjectWithTag("Text");
-            Destroy(oldtext);
-            clean = false;
-        }
+ //       if (clean == true && ShopDoor.doorcnt!=1){
+ //           oldtext = GameObject.FindGameObjectWithTag("Text");
+ //           Destroy(oldtext);
+ //           clean = false;
+ //       }
         if (start == true)
         {
-            if (ShopDoor.doorcnt==1){
-                obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
-            }
-            else if (ShopDoor.doorcnt==2)
-            {
+      //      if (ShopDoor.doorcnt==1){
+       //         obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
+    //        }
+  //          else if (ShopDoor.doorcnt==2)
+//            {
                 obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
 
-            }
+         //   }
             start = false;
 
         }
@@ -78,6 +82,7 @@ public class Informant : MonoBehaviour
             bought_shield = false;
             obj = Instantiate(Shield, transform.position + newvec, Quaternion.identity, transform);
             // first++;
+            //start = true;
         }
         if (bought_gun)
         {

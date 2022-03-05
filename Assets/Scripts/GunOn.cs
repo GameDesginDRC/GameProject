@@ -7,7 +7,7 @@ public class GunOn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Informant.bought_gun = true;
+      //  Informant.bought_gun = true;
     }
 
     // Update is called once per frame

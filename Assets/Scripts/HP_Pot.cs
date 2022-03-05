@@ -20,7 +20,7 @@ public class HP_Pot : MonoBehaviour
         hpIncr = 0;
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        Informant.bought_pot = true;
+        //Informant.bought_pot = true;
     }
 
     // Update is called once per frame

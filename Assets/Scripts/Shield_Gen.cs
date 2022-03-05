@@ -19,7 +19,7 @@ public class Shield_Gen : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         
-        Informant.bought_shield = true;
+   //     Informant.bought_shield = true;
     }
 
     // Update is called once per frame
