@@ -19,24 +19,55 @@ public class Informant : MonoBehaviour
     public GameObject Grenade;
     public GameObject Sword;
     public GameObject intro;
-    private Vector3 newvec;
+    private GameObject oldtext;
     private GameObject obj;
+    private Vector3 newvec;
+    public bool clean;
+    public bool start;
     private int first;
     public float x;
     public float y;
     // Start is called before the first frame update
     void Start()
     {
-        first = 0;
+        clean = true;
+        start = true;
+        // first = 0;
         newvec = new Vector3(x, y, 0);
         bought_shield = false;
-        obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
+        bought_gun = false;
+        bought_pot = false;
+        bought_sword = false;
+        bought_LaserGun = false;
+        bought_RL = false;
+
+            
     }
 
     // Update is called once per frame
     // Make sure first works fine wouldn't objects not be destroyed if first != 0
     void Update()
     {
+        if (clean == true && ShopDoor.doorcnt!=1){
+            oldtext = GameObject.FindGameObjectWithTag("Text");
+            Destroy(oldtext);
+            clean = false;
+        }
+        if (start == true)
+        {
+            if (ShopDoor.doorcnt==1){
+                obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
+            }
+            else if (ShopDoor.doorcnt==2)
+            {
+                obj = Instantiate(intro, transform.position + newvec, Quaternion.identity, transform);
+
+            }
+            start = false;
+
+        }
+        
+        
         if (bought_shield)
         {
             // if (first != 0)
@@ -46,7 +77,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_shield = false;
             obj = Instantiate(Shield, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
         }
         if (bought_gun)
         {
@@ -57,7 +88,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_gun = false;
             obj = Instantiate(Gun, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
            }  
         if (bought_pot)
          {
@@ -68,7 +99,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_pot = false;
             obj = Instantiate(Health, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
 
            }
         if (bought_RL)
@@ -80,7 +111,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_RL = false;
             obj = Instantiate(Rocket, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
         }
         if (bought_LaserGun)
             {
@@ -91,7 +122,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_LaserGun = false;
             obj = Instantiate(Laser, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
         }
 
         if (bought_grenade)
@@ -103,7 +134,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_grenade = false;
             obj = Instantiate(Grenade, transform.position + newvec, Quaternion.identity, transform);
-            first++;
+            // first++;
             }
         if (bought_sword)
         {
@@ -114,7 +145,7 @@ public class Informant : MonoBehaviour
             Destroy(obj);
             bought_sword = false;
             obj = Instantiate(Sword, transform.position + newvec, Quaternion.identity, transform);
-            first++;            
+            // first++;            
         }
     }
     

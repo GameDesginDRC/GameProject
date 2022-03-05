@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3493004387885635282}
   - component: {fileID: 8997444861964584787}
-  - component: {fileID: 2784291683305790568}
   - component: {fileID: 44152884142347951}
   m_Layer: 5
   m_Name: RLtext
@@ -79,14 +78,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &2784291683305790568
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5268916926810145087}
-  m_CullTransparentMesh: 1
 --- !u!114 &44152884142347951
 MonoBehaviour:
   m_ObjectHideFlags: 0

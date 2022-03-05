@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4302995787657729228}
   - component: {fileID: -4058115135709267636}
-  - component: {fileID: 2650227561258888921}
   - component: {fileID: 7227680840266443118}
   m_Layer: 5
   m_Name: HPPot_text
@@ -79,14 +78,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &2650227561258888921
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2559738642899221881}
-  m_CullTransparentMesh: 1
 --- !u!114 &7227680840266443118
 MonoBehaviour:
   m_ObjectHideFlags: 0

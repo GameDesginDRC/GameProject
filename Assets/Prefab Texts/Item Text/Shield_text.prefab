@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6007446298683387755}
   - component: {fileID: 4452531590903189510}
-  - component: {fileID: 6175459354801844938}
   - component: {fileID: 5128782096842643543}
   m_Layer: 5
   m_Name: Shield_text
@@ -79,14 +78,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &6175459354801844938
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7295036945818243171}
-  m_CullTransparentMesh: 1
 --- !u!114 &5128782096842643543
 MonoBehaviour:
   m_ObjectHideFlags: 0

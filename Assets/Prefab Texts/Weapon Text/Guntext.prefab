@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 367049037099672521}
   - component: {fileID: 7972983592995395614}
-  - component: {fileID: 6479394183926385068}
   - component: {fileID: 5152968189675132767}
   m_Layer: 5
   m_Name: Guntext
@@ -79,14 +78,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &6479394183926385068
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4732733258245470563}
-  m_CullTransparentMesh: 1
 --- !u!114 &5152968189675132767
 MonoBehaviour:
   m_ObjectHideFlags: 0
