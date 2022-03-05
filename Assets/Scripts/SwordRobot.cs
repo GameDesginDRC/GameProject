@@ -19,7 +19,7 @@ public class SwordRobot : MonoBehaviour
     [SerializeField]
     bool isPaused = false;
     [SerializeField]
-    bool movingRight = true;
+    bool movingRight;
 
     // for line of sight
     [SerializeField]
@@ -67,6 +67,7 @@ public class SwordRobot : MonoBehaviour
     {
         // audio
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+        movingRight = true;
 
         sprite = GetComponent<SpriteRenderer>();
         spriteColor = sprite.color;
@@ -96,18 +97,17 @@ public class SwordRobot : MonoBehaviour
         }
     }
 
-    void InvokeFlip() {
+    void Flip() {
         if (movingRight)
         {
             // flip left
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            movingRight = false;
         }
         else {
             // flip right
             transform.rotation = Quaternion.Euler(0, 180f, 0);
-            movingRight = true;
         }
+        movingRight = !movingRight;
     }
 
     void RemoveFromGame()
@@ -187,10 +187,10 @@ public class SwordRobot : MonoBehaviour
 
         if (collision.CompareTag("Wall") || collision.CompareTag("InvisWall"))
         {
-            // Debug.Log("Flip");
-            InvokeFlip();
+            Flip();
         }
     }
+
 
     void Recolor() {
         Color transparentColor = spriteColor;
@@ -226,13 +226,11 @@ public class SwordRobot : MonoBehaviour
             Invoke("Unpause", .5f);
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Flip");
-            InvokeFlip();
+            Flip();
         }
     }
 }

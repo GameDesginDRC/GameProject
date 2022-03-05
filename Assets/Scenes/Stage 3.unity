@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackValue: 5
+  AttackMod: 0
 --- !u!1001 &88867790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9329,6 +9330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 23672155052907113, guid: a1dcb4f0a958740e287d1336343af3c5, type: 3}
+  ShootPoint: {fileID: 0}
   shootSound: {fileID: 8300000, guid: b9d72ad8f710ff641b02c6d89dbc8167, type: 3}
 --- !u!114 &1263623746
 MonoBehaviour:
@@ -9344,7 +9346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosives: {fileID: 6747721031796723297, guid: 7fb5c4f2639544eb998bf6b8e3209927, type: 3}
   Code: {fileID: 3692583818891492507}
-  Firepoint: {fileID: 635841264}
+  ShootPoint: {fileID: 0}
   deploySound: {fileID: 8300000, guid: 46ce3525954e3f441acf4d3053f64504, type: 3}
 --- !u!114 &1263623749
 MonoBehaviour:
@@ -9361,7 +9363,7 @@ MonoBehaviour:
   rocket: {fileID: 8473539608308313663, guid: 6a283bd6adb53a14792f95ba00294c62, type: 3}
   coolingDown: 0
   Interval: 5
-  ShotPoint: {fileID: 0}
+  ShotPoint: {fileID: 635841264}
   shootSound: {fileID: 8300000, guid: 7c492248bd895d74a9d4b6f0c0ec5248, type: 3}
 --- !u!114 &1263623802
 MonoBehaviour:
@@ -9376,6 +9378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7294797876969474354, guid: 867e6545bca7142f0ad8925dcc5e4ef2, type: 3}
+  ShootPoint: {fileID: 635841264}
   shootSound: {fileID: 8300000, guid: fc776bb38118f2844883a0bc3cd02e61, type: 3}
 --- !u!114 &1263623804
 MonoBehaviour:
@@ -11129,11 +11132,7 @@ MonoBehaviour:
   TimeSinceDashInv: 0
   healthbar: {fileID: 882145609}
   GNBar: {fileID: 1317889392}
-  max_hp: 100
-  max_shield: 100
-  max_atk: 0
   coolingDown: 0
-  castPoint: {fileID: 635841264}
   shieldPrefab: {fileID: 4176445416224093463, guid: 85b098bd40b07454cb9f2aa26e1e4b9d, type: 3}
   jumpDuration: 0.1
   jumpTimer: 0.1
