@@ -105,6 +105,7 @@ public class FlyingRobot : MonoBehaviour
 
     void Die()
     {
+        dying = true;
         aSource.PlayOneShot(deathSound);
         animator.SetBool("Dead", true);
         Invoke("RemoveFromGame", .8f);
@@ -113,7 +114,7 @@ public class FlyingRobot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0) Die();
+        if (health <= 0 && !dying) Die();
 
         // always face the player
         if (facingRight) {
