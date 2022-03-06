@@ -81,15 +81,16 @@ public class PickUp : MonoBehaviour
                     ScoreKeeper.gold -= price;
                     ScoreKeeper.AddToGold(0);
                     // Disabling old replaced item
+                    aSource.PlayOneShot(buySound);
                     Debug.Log(InvTracker.invcount);
-                    Debug.Log("asd");
+     
                     if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
                     {
                         Informant.bought_gun = false;
                         RegularGun.CanShoot = false;
                         //Destroy(FindObjectOfType<GunOn>());
                         RandomWeapon.listofitems.Add(2);
-                        Debug.Log("Works!"); 
+                     
                     }
                     else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<RLOn>() != null)
                     {
@@ -148,24 +149,6 @@ public class PickUp : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Z) && ScoreKeeper.gold >= price)
             {
-
-               /* if (Inventory._full[2] && Inventory.items[2].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
-                //if (Inventory._full[2])
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        //ScoreKeeper.SubToGold(price);
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        Shield_Gen.shield_count += 1;
-                        IncrConsume(2);
-                        aSource.PlayOneShot(buySound);
-                        //   Destroy(gameObject);
-                    }
-
-                }*/
                 if (Inventory._full[2] && Inventory.items[2].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
                 {
                     if (count == 0)
@@ -183,22 +166,6 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-                /* else if (Inventory._full[2] && Inventory.items[2].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
-                 {
-                     if (count == 0)
-                     {
-                         waitT = 0;
-                         count = 1;
-                         //ScoreKeeper.SubToGold(price);
-                         ScoreKeeper.gold -= price;
-                         ScoreKeeper.AddToGold(0);
-                         GrenadeOn.GrenadeCount += 1;
-                         IncrConsume(2);
-                         aSource.PlayOneShot(buySound);
-                         //   Destroy(gameObject);
-                     }
-
-                 }*/
                 // Check if second consumable is full and is a shield
                 //else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
                 else if (Inventory._full[3] && Inventory.items[3].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
@@ -218,68 +185,7 @@ public class PickUp : MonoBehaviour
                     }
 
                 }
-               /* else if (Inventory._full[3] && Inventory.items[3].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        HP_Pot.HPpot_count += 1;
-                        IncrConsume(3);
-                        aSource.PlayOneShot(buySound);
-                        //  Destroy(gameObject);
-                    }
 
-                }
-                else if (Inventory._full[3] && Inventory.items[3].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        //ScoreKeeper.SubToGold(price);
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        GrenadeOn.GrenadeCount += 1;
-                        IncrConsume(3);
-                        aSource.PlayOneShot(buySound);
-                        // Destroy(gameObject);
-                    }
-
-                }*/
-               /* else if (Inventory._full[4] && Inventory.items[4].GetComponent<Shield_Gen>() != null && itemDisplay.GetComponent<Shield_Gen>() != null && Shield_Gen.shield_count <= 2)
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        //ScoreKeeper.SubToGold(price);
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        Shield_Gen.shield_count += 1;
-                        IncrConsume(4);
-                        aSource.PlayOneShot(buySound);
-                        // Destroy(gameObject);
-                    }
-
-                }
-                else if (Inventory._full[4] && Inventory.items[4].GetComponent<HP_Pot>() != null && itemDisplay.GetComponent<HP_Pot>() != null && HP_Pot.HPpot_count <= 2)
-                {
-                    if (count == 0)
-                    {
-                        waitT = 0;
-                        count = 1;
-                        ScoreKeeper.gold -= price;
-                        ScoreKeeper.AddToGold(0);
-                        HP_Pot.HPpot_count += 1;
-                        IncrConsume(4);
-                        aSource.PlayOneShot(buySound);
-                        // Destroy(gameObject);
-                    }
-
-                }*/
                 else if (Inventory._full[4] && Inventory.items[4].GetComponent<GrenadeOn>() != null && itemDisplay.GetComponent<GrenadeOn>() != null && GrenadeOn.GrenadeCount <= 2)
                 {
                     if (count == 0)
@@ -311,15 +217,11 @@ public class PickUp : MonoBehaviour
                             if (Inventory._full[0] == false)
                             {
 
-
-                                //Debug.Log(ScoreKeeper.gold);
-                                //ScoreKeeper.SubToGold(price);
-                                ScoreKeeper.gold -= price;
+                            aSource.PlayOneShot(buySound);
+                            ScoreKeeper.gold -= price;
                                 ScoreKeeper.AddToGold(0);
                                 count = 1;
                                 Inventory._full[0] = true;
-                             //   if (i == 0)
-                             //   {
                                 Inventory.spots[0].GetComponent<DestroyItem>().dst = true;
                                     //Inventory.items[0] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                                 Instantiate(itemDisplay, Inventory.spots[0].transform, false);
@@ -330,7 +232,7 @@ public class PickUp : MonoBehaviour
                             {
                                     ScoreKeeper.gold -= price;
                                     ScoreKeeper.AddToGold(0);
-                                    Debug.Log("Bought");
+                                    aSource.PlayOneShot(buySound);
                                     count = 1;
                                     Inventory._full[1] = true;
                                     Inventory.spots[1].GetComponent<DestroyItem>().dst = true;
@@ -404,6 +306,7 @@ public class PickUp : MonoBehaviour
                             count = 1;
                             //     StartCoroutine(Wait());
                             // CAN PICKUP
+                            aSource.PlayOneShot(buySound);
                             Inventory._full[2] = true;
                             IncrConsume(2);
                             Informant.bought_pot = true;
@@ -421,13 +324,10 @@ public class PickUp : MonoBehaviour
 
                         else if (Inventory._full[3] == false && itemDisplay.GetComponent<Shield_Gen>() != null)
                         {
-                            //Debug.Log(ScoreKeeper.gold);
-                            //ScoreKeeper.SubToGold(price);
                             ScoreKeeper.gold -= price;
                             ScoreKeeper.AddToGold(0);
                             count = 1;
-                            //     StartCoroutine(Wait());
-                            // CAN PICKUP
+                            aSource.PlayOneShot(buySound);
                             Inventory._full[3] = true;
                             IncrConsume(3);
                             Informant.bought_shield = true;
@@ -444,13 +344,10 @@ public class PickUp : MonoBehaviour
                         }
                         else if (Inventory._full[4] == false && itemDisplay.GetComponent<GrenadeOn>() != null)
                         {
-                            //Debug.Log(ScoreKeeper.gold);
-                            //ScoreKeeper.SubToGold(price);
                             ScoreKeeper.gold -= price;
                             ScoreKeeper.AddToGold(0);
                             count = 1;
-                            //     StartCoroutine(Wait());
-                            // CAN PICKUP
+                            aSource.PlayOneShot(buySound);
                             Inventory._full[4] = true;
                             IncrConsume(4);
                             Informant.bought_grenade = true;
