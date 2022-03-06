@@ -18,6 +18,7 @@ TagManager:
   - Laser
   - Damage
   - Bomb
+  - Text
   layers:
   - Default
   - TransparentFX
@@ -54,6 +55,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3950131371
+    locked: 0
+  - name: Behind Terrain
+    uniqueID: 3850609595
     locked: 0
   - name: Terrain
     uniqueID: 2115205735
