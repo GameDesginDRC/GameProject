@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a588c11f8e96d9342856937876423992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 15
   invincibleTime: 0.3
   invincible: 0
   bullet: {fileID: 3229235574447301640, guid: a37f82303640e7541b828893a13db669, type: 3}
@@ -153,6 +153,10 @@ MonoBehaviour:
   shootRange: 5
   bulletShootPoint: {fileID: 5251506443898631573}
   playerInRange: 0
+  animator: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 2202bc1c4ca4bf2498050c5cefd8a7bf, type: 3}
+  hitSound: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
+  deathSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
 --- !u!1 &5251506443898631572
 GameObject:
   m_ObjectHideFlags: 0

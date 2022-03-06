@@ -20,28 +20,42 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
+    bool isPaused = false;
+    [SerializeField]
+    private float pauseTimeAmt;
+    // control how fast it moves
+    [SerializeField]
+    private float pauseTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         moveTimer = moveTimeAmt;
     }
 
+    void Unpause()
+    {
+        isPaused = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        moveTimer -= Time.deltaTime;
+        if (!isPaused) moveTimer -= Time.deltaTime;
 
-        if (moveTimer <= 0) { 
+        if (moveTimer <= 0) {
+            isPaused = true;
             moveOtherDir *= -1;
             moveTimer = moveTimeAmt;
+            Invoke("Unpause", 1f);
         }
 
-        if (movingHors)
+        if (movingHors && !isPaused)
         {
             Vector3 HorzVector = new Vector3(moveOtherDir * moveSpeed, 0.0f, 0.0f);
             transform.Translate(HorzVector * Time.deltaTime);
         }
-        else if (movingVer) {
+        else if (movingVer && !isPaused) {
             Vector3 VertVector = new Vector3(0.0f, moveOtherDir * moveSpeed, 0.0f);
             transform.Translate(VertVector * Time.deltaTime);
         }

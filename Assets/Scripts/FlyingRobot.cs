@@ -7,6 +7,7 @@ public class FlyingRobot : MonoBehaviour
     // health
     [SerializeField]
     private float health = 10;
+    private bool dying = false;
     // invincibility when attacked
     [SerializeField]
     private float invincibleTime = .3f;
@@ -31,6 +32,10 @@ public class FlyingRobot : MonoBehaviour
     [SerializeField]
     private bool playerInRange = false;
 
+    // for animations
+    [SerializeField]
+    private Animator animator;
+
     // for floating
     private float floatEvery = .5f;
     private float floatTimer;
@@ -38,11 +43,29 @@ public class FlyingRobot : MonoBehaviour
 
     private Transform playerTransform;
 
+    SpriteRenderer sprite;
+    Color spriteColor;
+
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip shootSound;
+    [SerializeField]
+    AudioClip hitSound;
+    [SerializeField]
+    AudioClip deathSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
+        sprite = GetComponent<SpriteRenderer>();
+        spriteColor = sprite.color;
+        animator = gameObject.GetComponent<Animator>();
+
         playerTransform = FindObjectOfType<Player>().transform;
         shootTimer = shootEvery;
         floatTimer = floatEvery;
@@ -61,31 +84,36 @@ public class FlyingRobot : MonoBehaviour
         if (facingRight)
         {
             // flip left
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            facingRight = false;
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
         }
         else
         {
             // flip right
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
-            facingRight = true;
+            transform.rotation = Quaternion.Euler(0, 360f, 0);
         }
+
+        facingRight = !facingRight;
+
+    }
+    void RemoveFromGame()
+    {
+        LevelManager.DecreaseEnemyNum();
+        ScoreKeeper.gold += 10;
+        ScoreKeeper.AddToGold(0);
+        Destroy(gameObject);
     }
 
     void Die()
     {
-        LevelManager.DecreaseEnemyNum();
-        ScoreKeeper.gold += 15;
-        ScoreKeeper.AddToGold(0);
-        Destroy(gameObject);
+        aSource.PlayOneShot(deathSound);
+        animator.SetBool("Dead", true);
+        Invoke("RemoveFromGame", .8f);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (health <= 0) Die();
-
-        if (invincible) { StartCoroutine(Blink()); }
 
         // always face the player
         if (facingRight) {
@@ -111,7 +139,7 @@ public class FlyingRobot : MonoBehaviour
 
 
         // shoot every 3 seconds
-        if (playerInRange)
+        if (playerInRange && !dying)
         {
             shootTimer -= Time.deltaTime;
             if (shootTimer <= 0)
@@ -123,70 +151,33 @@ public class FlyingRobot : MonoBehaviour
     }
 
     // dealing with damage
-    void invinCooldown() { invincible = false; }
-    IEnumerator Blink()
+    void invinCooldown()
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds((float)0.2);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds((float)0.2);
+        invincible = false;
+        sprite.color = spriteColor;
     }
-    /* private void OnTriggerStay2D(Collider2D collision)
-     {
-         if (collision.CompareTag("PlayerAttack"))
-         {
-             // decrease HP and pause
-             if (!invincible)
-             {
-                 health -= 1;
-                 invincible = true;
-                 Invoke("invinCooldown", invincibleTime);
-             }
-         }
-     }*/
+    void Recolor()
+    {
+        Color transparentColor = spriteColor;
+        transparentColor.a = .50f;
+        sprite.color = transparentColor;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
         {
             // decrease HP and pause
-            if (!invincible)
+            if (!invincible && !dying)
             {
-                health -= 5;
-               // isPaused = true;
+                aSource.PlayOneShot(hitSound);
+
+                float attackVal = collision.GetComponent<PAttack>().AttackValue;
+                Debug.Log(attackVal);
+                health -= attackVal;
                 invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Laser"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
-              //  isPaused = true;
-                invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("RL"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 4;
-             //   isPaused = true;
-                invincible = true;
-                Invoke("invinCooldown", invincibleTime);
-            }
-        }
-        else if (collision.CompareTag("Bullet"))
-        {
-            // decrease HP and pause
-            if (!invincible)
-            {
-                health -= 3;
-              //  isPaused = true;
-                invincible = true;
+                sprite.color = Color.red;
+                Invoke("Recolor", .05f);
                 Invoke("invinCooldown", invincibleTime);
             }
         }
