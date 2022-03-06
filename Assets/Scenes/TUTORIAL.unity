@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 237840374}
   m_Layer: 0
   m_Name: Shield_Pickup (4)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54802,7 +54802,7 @@ GameObject:
   - component: {fileID: 6470483855330344184}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55037,7 +55037,7 @@ GameObject:
   - component: {fileID: 4581027997589255958}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55152,7 +55152,7 @@ GameObject:
   - component: {fileID: 2727598850836446018}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

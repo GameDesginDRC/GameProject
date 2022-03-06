@@ -22,7 +22,7 @@ public class RegularGun : MonoBehaviour
     [SerializeField]
     AudioClip shootSound;
 
-  
+    private bool getItem = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class RegularGun : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (Input.GetButtonDown("Fire2") && CanShoot == true && sceneName != "Shop 1") 
+        if (!getItem && Input.GetButtonDown("Fire2") && CanShoot == true && sceneName != "Shop 1") 
         //if (Input.GetButtonDown("Fire1") && CanShoot == true) //When player can shoot
         {
             aSource.PlayOneShot(shootSound);
@@ -52,5 +52,18 @@ public class RegularGun : MonoBehaviour
             TimeLeft = Time.time;
             TimeLeft += Interval;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
+        {
+            getItem = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        getItem = false;
     }
 }

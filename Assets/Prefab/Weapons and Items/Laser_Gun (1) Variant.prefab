@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser_Gun (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1154380192169945634, guid: 97d50b8bc22624084ac00933853250f1, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 3347376150066463165, guid: 97d50b8bc22624084ac00933853250f1, type: 3}
       propertyPath: m_RootOrder
       value: 0

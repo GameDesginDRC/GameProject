@@ -14,13 +14,13 @@ public class CanJump : MonoBehaviour
         if (collision.CompareTag("Wall") || collision.CompareTag("MovPlatform"))
         {
             canJump = true;
-            print("true");
+       
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         canJump = false;
-        print("false");
+  
     }
 }

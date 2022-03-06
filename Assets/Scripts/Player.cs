@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
 
     private float movement = 0f;
     private bool canMove = true;
+    private bool locked = false;
 
     public Transform ItemHold;
     public Transform ShieldPos;
@@ -274,6 +275,7 @@ public class Player : MonoBehaviour
         string sceneName = currentScene.name;
         if (Teleport.canTeleport && Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false && sceneName != "Shop 1" && sceneName != "Abilities")
         {
+            locked = true;
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
             dashInvincible = true;
@@ -282,6 +284,7 @@ public class Player : MonoBehaviour
         }
         if (Teleport.canTeleport && Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true && sceneName != "Shop 1" && sceneName != "Abilities")
         {
+            locked = true;
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
             dashInvincible = true;
@@ -291,12 +294,12 @@ public class Player : MonoBehaviour
 
 
         // flipping the player sprite
-        if ((Input.GetKeyDown(KeyCode.RightArrow) && switched == true))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && switched == true && !locked)
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = false;
         }
-        else if ((Input.GetKeyDown(KeyCode.LeftArrow) && switched == false))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && switched == false && !locked)
         {
             transform.Rotate(0f, 180f, 0f); //Player sprite flips
             switched = true;
@@ -308,12 +311,14 @@ public class Player : MonoBehaviour
     {
         if (switched == false)
         {
+            
             transform.position += new Vector3(6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
         }
         else
         {
+            
             transform.position += new Vector3(-6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
@@ -323,6 +328,7 @@ public class Player : MonoBehaviour
     public void canMoves()
     {
         canMove = true;
+        locked = false;
         this.GetComponent<Rigidbody2D>().gravityScale = 1f;
     }
 
@@ -393,8 +399,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+       myRB.velocity = new Vector2(0.0f, myRB.velocity.y);
         
-        myRB.velocity = new Vector2(0.0f, myRB.velocity.y);
+        
     }
 
 

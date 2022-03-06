@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2668435372244468504, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 2668435372244468507, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
       propertyPath: m_SortingLayer
       value: -2

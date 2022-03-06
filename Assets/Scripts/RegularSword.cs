@@ -14,6 +14,7 @@ public class RegularSword : MonoBehaviour
     AudioSource aSource;
     [SerializeField]
     AudioClip slashSound;
+    private bool getItem = false;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class RegularSword : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (Input.GetKeyDown(KeyCode.Z) && Player.hasSword && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainAttack") && sceneName != "Shop 1"&& sceneName != "Abilities")
+        if (!getItem &&Input.GetKeyDown(KeyCode.Z) && Player.hasSword && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainAttack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && sceneName != "Shop 1"&& sceneName != "Abilities")
         {
             if (aSource) aSource.PlayOneShot(slashSound);
             // animator.SetBool("Attack", true);
@@ -47,6 +48,19 @@ public class RegularSword : MonoBehaviour
     public void ResetAttack()
     {
         swordHitbox.tag = "Untagged";
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
+        {
+            getItem = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        getItem = false;
     }
     // Start is called before the first frame update
     

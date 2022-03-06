@@ -8,36 +8,31 @@ public class Text_disp : MonoBehaviour
    // private float DestroyTime = .0001f;
     private Vector3 newvec;
     private GameObject obj;
-    private int counter;
+    private bool created;
     public int x;
     public int y;
     // Start is called before the first frame update
     void Start()
     {
         newvec = new Vector3(x,y, 0);
-        counter = 0;
+        created = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Player>() != null & counter == 0)
+        if (collision.CompareTag("Player") && created == false)
         {
             obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
-            counter++;
+            created = true;
            // Destroy(obj, .0001f);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (counter == 1)
+        if (created == true)
         {
-            counter--;
+            created= false;
             Destroy(obj);
         }
     }
