@@ -21,6 +21,7 @@ TagManager:
   - Text
   - Weapon
   - Item
+  - Shield
   layers:
   - Default
   - TransparentFX

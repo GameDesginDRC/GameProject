@@ -13,6 +13,9 @@ public class Assasin_Controller : MonoBehaviour
     [SerializeField]
     float health = 30;
 
+    public GameObject shieldPrefab;
+    private GameObject obje;
+    public Transform ShieldPos;
 
     public Transform WallCheck; //Checks Front
     public Vector2 WallChecksize; //FrontCheck Size
@@ -96,6 +99,14 @@ public class Assasin_Controller : MonoBehaviour
         animator.SetTrigger("Teleport");
     }
 
+    public void Shielding()
+    {
+        obje = Instantiate(shieldPrefab, ShieldPos);
+        Destroy(obje, 1.3f);
+    }
+
+   
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
@@ -133,7 +144,8 @@ public class Assasin_Controller : MonoBehaviour
         
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") 
         || animator.GetCurrentAnimatorStateInfo(0).IsName("Teleport")
-        || animator.GetCurrentAnimatorStateInfo(0).IsName("Intro"))
+        || animator.GetCurrentAnimatorStateInfo(0).IsName("Intro")
+        || animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
         {
             _CanMove = false;
         }

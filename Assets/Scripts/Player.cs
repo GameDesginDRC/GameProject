@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         // Time before can jump again
         jumpWait = 0;
         // audio
@@ -139,6 +140,8 @@ public class Player : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
 
         ShieldRenderer = Instantiate(shieldPrefab, ShieldPos).GetComponent<SpriteRenderer>();
+        //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
+        //Destroy(GameObject.FindWithTag("Shield"));
     }
 
     private Color GetShieldColor() {
@@ -226,6 +229,21 @@ public class Player : MonoBehaviour
             HP_Pot.hpIncr = 0;
             Damage(0);
         }
+
+        if (sceneName == "Stage 1" || sceneName == "Stage 2" || sceneName == "Stage 3" || sceneName == "Stage 4" || sceneName == "Stage 5" || sceneName == "Stage 6")
+        {
+            int numOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (numOfEnemies == 0)
+            {
+                ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
+            }
+        }
+        if (sceneName == "Shop 1")
+        {
+                ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
+           
+        }
+
     }
     private void HandleWeapon()
     {
@@ -311,9 +329,9 @@ public class Player : MonoBehaviour
     {
         if (switched == false)
         {
-            
             transform.position += new Vector3(6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            myRB.velocity = new Vector2(0.0f, 0.0f);
 
         }
         else
@@ -321,6 +339,7 @@ public class Player : MonoBehaviour
             
             transform.position += new Vector3(-6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            myRB.velocity = new Vector2(0.0f, 0.0f);
 
         }
     }
