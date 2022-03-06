@@ -396,6 +396,7 @@ public class Player : MonoBehaviour
     {
         
         canJump = false;
+        myRB.velocity = new Vector2(0.0f, myRB.velocity.y);
     }
 
 
@@ -450,6 +451,7 @@ public class Player : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         canJump = true;
+        
     }
 
     
