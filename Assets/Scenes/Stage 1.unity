@@ -5135,32 +5135,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597513741}
   m_CullTransparentMesh: 1
---- !u!1 &660785884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1839256583456357019, guid: 11c3e3614a8b604449bab955546d4f21, type: 3}
-  m_PrefabInstance: {fileID: 1839256583040061363}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &660785889
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660785884}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &698881963
 GameObject:
   m_ObjectHideFlags: 0
