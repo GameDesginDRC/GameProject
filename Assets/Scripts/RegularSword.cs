@@ -32,7 +32,7 @@ public class RegularSword : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (Input.GetKeyDown(KeyCode.Z) && Player.hasSword && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainAttack") && sceneName != "Shop 1")
+        if (Input.GetKeyDown(KeyCode.Z) && Player.hasSword && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainAttack") && sceneName != "Shop 1"&& sceneName != "Abilities")
         {
             if (aSource) aSource.PlayOneShot(slashSound);
             // animator.SetBool("Attack", true);

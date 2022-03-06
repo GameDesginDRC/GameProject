@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     public static bool shieldon = false;
     public float JumpForce = .5f;
     public float DamageInvincibilityPeriod = 5f;
-    private bool canJump = false;
     private float jumpWait = 0;
 
     public bool Invincible = false;
@@ -91,6 +90,7 @@ public class Player : MonoBehaviour
 
     public Transform ItemHold;
     public Transform ShieldPos;
+    public Transform Jump;
     public GameObject RL;
     public GameObject Gun;
     public GameObject LG;
@@ -253,7 +253,7 @@ public class Player : MonoBehaviour
     private void HandleInput()
     {
         // for jumps
-        if ((Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow)) && canJump) {
+        if ((Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow)) && CanJump.canJump) {
             jumping = true;
         };
         if (Input.GetKeyUp("space") || Input.GetKeyUp(KeyCode.UpArrow)) { releaseJump = true; }
@@ -386,7 +386,6 @@ public class Player : MonoBehaviour
     {
         if (falling && collision.gameObject.tag != "Bomb")
         {
-            canJump = true;
             falling = false;
         }
 
@@ -395,7 +394,6 @@ public class Player : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         
-        canJump = false;
         myRB.velocity = new Vector2(0.0f, myRB.velocity.y);
     }
 
@@ -448,11 +446,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        canJump = true;
-        
-    }
 
     
 }
