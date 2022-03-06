@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
     public static bool hasSword = true;
 
     private float movement = 0f;
+    private bool canMove = true;
 
 
     // Start is called before the first frame update
@@ -240,21 +241,22 @@ public class Player : MonoBehaviour
         // arrow key control scheme
         if (Input.GetKeyDown(KeyCode.DownArrow)) { movingDown = true; }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false)
+        
+        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false)
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
             dashInvincible = true;
             TimeSinceDashInv = dashInvicTime;
-            transform.position += new Vector3(2f, 0f, 0f);
+            canMove = false;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true)
+        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true)
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
             dashInvincible = true;
             TimeSinceDashInv = dashInvicTime;
-            transform.position += new Vector3(-2f, 0f, 0f);
+            canMove = false;
         }
 
 
@@ -270,6 +272,28 @@ public class Player : MonoBehaviour
             switched = true;
         }
 
+    }
+
+    public void teleporting()
+    {
+        if (switched == false)
+        {
+            transform.position += new Vector3(6f, 0f, 0f);
+            this.GetComponent<Rigidbody2D>().gravityScale = 0f;
+
+        }
+        else
+        {
+            transform.position += new Vector3(-6f, 0f, 0f);
+            this.GetComponent<Rigidbody2D>().gravityScale = 0f;
+
+        }
+    }
+
+    public void canMoves()
+    {
+        canMove = true;
+        this.GetComponent<Rigidbody2D>().gravityScale = 1f;
     }
 
     // for handling jumps
@@ -312,9 +336,12 @@ public class Player : MonoBehaviour
         if (jumping) { StartJump(); }
         if (releaseJump) { StopJump(); }
         if (movingDown) { MoveDown(); }
-
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
-        transform.position += movement * Time.deltaTime * Speed;
+        if(canMove)
+        {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); //Player can move
+            transform.position += movement * Time.deltaTime * Speed;
+        }
+        
 
     }
 
@@ -348,6 +375,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
+                animator.SetTrigger("Hit");
                 aSource.PlayOneShot(hitSound);
                 Damage(10);
                 Invincible = true;
@@ -356,6 +384,7 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Lightning")
             {
+                animator.SetTrigger("Hit");
                 aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
@@ -364,6 +393,7 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Ring" && circleFill_)
             {
+                animator.SetTrigger("Hit");
                 aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
