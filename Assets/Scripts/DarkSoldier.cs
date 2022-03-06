@@ -125,8 +125,8 @@ public class DarkSoldier : MonoBehaviour
         while (rightshot <= 20)
         {
             yield return new WaitForSeconds(.5f);
-            displ1 = new Vector3(rightshot, .22f, 0);
-            displ2 = new Vector3(leftshot, .22f, 0);
+            displ1 = new Vector3(rightshot, .34f, 0);
+            displ2 = new Vector3(leftshot, .34f, 0);
             Instantiate(darklaser_, transform.position + displ1, Quaternion.identity, transform);
             Instantiate(darklaser_, transform.position + displ2, Quaternion.identity, transform);
             rightshot++;

@@ -65,11 +65,11 @@ public class Conductor : MonoBehaviour
             float rand2 = Random.Range(minAttack, maxAttack);
             float rand3 = Random.Range(minAttack, maxAttack);
 
-            displ1 = new Vector3(rand1, 15, 0);
+            displ1 = new Vector3(rand1, 25, 0);
             Vector3 warndisp1 = new Vector3(displ1.x, -1.75f, 0);
-            displ2 = new Vector3(rand2, 15, 0);
+            displ2 = new Vector3(rand2, 25, 0);
             Vector3 warndisp2 = new Vector3(displ2.x, -1.75f, 0);
-            displ3 = new Vector3(rand3, 15, 0);
+            displ3 = new Vector3(rand3, 25, 0);
             Vector3 warndisp3 = new Vector3(displ3.x, -1.75f, 0);
 
 

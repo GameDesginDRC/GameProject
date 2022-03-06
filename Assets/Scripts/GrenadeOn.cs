@@ -22,7 +22,7 @@ public class GrenadeOn : MonoBehaviour
         waitTime = .2f;
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        Informant.bought_grenade = true;
+       // Informant.bought_grenade = true;
         temp = GameObject.Find("ShootPoint");
         ShootPoint = temp.GetComponent<Transform>();
     }

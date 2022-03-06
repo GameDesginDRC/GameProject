@@ -85,6 +85,7 @@ public class PickUp : MonoBehaviour
                     Debug.Log("asd");
                     if (Inventory.pos_objs[InvTracker.invcount].GetComponent<GunOn>() != null)
                     {
+                        Informant.bought_gun = false;
                         RegularGun.CanShoot = false;
                         //Destroy(FindObjectOfType<GunOn>());
                         RandomWeapon.listofitems.Add(2);
@@ -92,12 +93,14 @@ public class PickUp : MonoBehaviour
                     }
                     else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<RLOn>() != null)
                     {
+                        Informant.bought_RL = false;
                         RocketLauncher.CanShoot = false;
                         //Destroy(FindObjectOfType<RLOn>());
                         RandomWeapon.listofitems.Add(4);
                     }
                     else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<LaserGunOn>() != null)
                     {
+                        Informant.bought_LaserGun = false;
                         LaserGun.CanShoot = false;
                         //Destroy(FindObjectOfType<GunOn>());
                         RandomWeapon.listofitems.Add(3);
@@ -105,6 +108,7 @@ public class PickUp : MonoBehaviour
                     else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<SwordOn>() != null)
                     {
                         Player.hasSword = false;
+                        Informant.bought_sword = false;
                         RandomWeapon.listofitems.Add(1);
                         //Destroy(FindObjectOfType<GunOn>());
                     }
@@ -113,17 +117,20 @@ public class PickUp : MonoBehaviour
                     Inventory.pos_objs[InvTracker.invcount] = itemDisplay;
                     if (itemDisplay.GetComponent<GunOn>() != null)
                     {
+                        Informant.bought_gun = true;
                         RegularGun.CanShoot = true;
                         RandomWeapon.listofitems.Remove(2);
                     }
                     else if (itemDisplay.GetComponent<RLOn>() != null)
                     {
+                        Informant.bought_RL = true;
                         RocketLauncher.CanShoot = true;
                         RandomWeapon.listofitems.Remove(4);
                         //Destroy(FindObjectOfType<GunOn>());
                     }
                     else if (itemDisplay.GetComponent<LaserGunOn>() != null)
                     {
+                        Informant.bought_LaserGun = true;
                         LaserGun.CanShoot = true;
                         RandomWeapon.listofitems.Remove(3);
                         //Destroy(FindObjectOfType<GunOn>());
@@ -131,6 +138,7 @@ public class PickUp : MonoBehaviour
                     else if (itemDisplay.GetComponent<SwordOn>() != null)
                     {
                         Player.hasSword = true;
+                        Informant.bought_sword = true;
                         RandomWeapon.listofitems.Remove(1);
                         //Destroy(FindObjectOfType<GunOn>());
                     }
@@ -162,6 +170,7 @@ public class PickUp : MonoBehaviour
                 {
                     if (count == 0)
                     {
+                        Informant.bought_pot = true;
                         waitT = 0;
                         count = 1;
                         //ScoreKeeper.SubToGold(price);
@@ -196,6 +205,7 @@ public class PickUp : MonoBehaviour
                 {
                     if (count == 0)
                     {
+                        Informant.bought_shield = true;
                         waitT = 0;
                         count = 1;
                         //ScoreKeeper.SubToGold(price);
@@ -274,6 +284,7 @@ public class PickUp : MonoBehaviour
                 {
                     if (count == 0)
                     {
+                        Informant.bought_grenade = true;
                         waitT = 0;
                         count = 1;
                         //ScoreKeeper.SubToGold(price);
@@ -330,17 +341,20 @@ public class PickUp : MonoBehaviour
 
                             if (itemDisplay.GetComponent<GunOn>() != null)
                             {
+                                Informant.bought_gun = true;
                                 RegularGun.CanShoot = true;
                                 RandomWeapon.listofitems.Remove(2);
                             }
                             else if (itemDisplay.GetComponent<RLOn>() != null)
                             {
+                                Informant.bought_RL = true;
                                 RocketLauncher.CanShoot = true;
                                 RandomWeapon.listofitems.Remove(4);
                                 //Destroy(FindObjectOfType<GunOn>());
                             }
                             else if (itemDisplay.GetComponent<LaserGunOn>() != null)
                             {
+                                Informant.bought_LaserGun = true;
                                 LaserGun.CanShoot = true;
                                 RandomWeapon.listofitems.Remove(3);
                                 //Destroy(FindObjectOfType<GunOn>());
@@ -348,6 +362,7 @@ public class PickUp : MonoBehaviour
                             else if (itemDisplay.GetComponent<SwordOn>() != null)
                             {
                                 Player.hasSword = true;
+                                Informant.bought_sword = true;
                                 RandomWeapon.listofitems.Remove(1);
                                 //Destroy(FindObjectOfType<GunOn>());
                             }
@@ -391,7 +406,7 @@ public class PickUp : MonoBehaviour
                             // CAN PICKUP
                             Inventory._full[2] = true;
                             IncrConsume(2);
-
+                            Informant.bought_pot = true;
                             //Inventory.items[2] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                             Instantiate(itemDisplay, Inventory.spots[2].transform, false);
                             Inventory.items[2] = itemDisplay;
@@ -415,7 +430,7 @@ public class PickUp : MonoBehaviour
                             // CAN PICKUP
                             Inventory._full[3] = true;
                             IncrConsume(3);
-
+                            Informant.bought_shield = true;
                             //Inventory.items[3] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                             Instantiate(itemDisplay, Inventory.spots[3].transform, false);
                             Inventory.items[3] = itemDisplay;
@@ -438,7 +453,7 @@ public class PickUp : MonoBehaviour
                             // CAN PICKUP
                             Inventory._full[4] = true;
                             IncrConsume(4);
-
+                            Informant.bought_grenade = true;
                             //Inventory.items[3] = Instantiate(itemDisplay, Inventory.spots[i].transform, false);
                             Instantiate(itemDisplay, Inventory.spots[4].transform, false);
                             Inventory.items[4] = itemDisplay;
