@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2668435372244468504, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
       propertyPath: m_TagString
-      value: Weapon
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2668435372244468507, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
       propertyPath: m_SortingLayer
@@ -79,5 +79,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2668435372244468506, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+    - {fileID: 2668435372244468505, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+    - {fileID: -5129773799048687008, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
+    - {fileID: -1027053892184493359, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 010efbe0ada3c4920a3898c0e7510aab, type: 3}

@@ -77,7 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8693592497542874899, guid: 704462786db5949aca505d296b0c7876, type: 3}
       propertyPath: m_TagString
-      value: Weapon
+      value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8862138955883596782, guid: 704462786db5949aca505d296b0c7876, type: 3}
+    - {fileID: 1812175720154925195, guid: 704462786db5949aca505d296b0c7876, type: 3}
+    - {fileID: 9064664422886529370, guid: 704462786db5949aca505d296b0c7876, type: 3}
+    - {fileID: 683030737649764244, guid: 704462786db5949aca505d296b0c7876, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 704462786db5949aca505d296b0c7876, type: 3}

@@ -91,7 +91,6 @@ public class Player : MonoBehaviour
 
     public Transform ItemHold;
     public Transform ShieldPos;
-    public Transform Jump;
     public GameObject RL;
     public GameObject Gun;
     public GameObject LG;

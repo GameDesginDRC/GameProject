@@ -21,7 +21,7 @@ public class Text_disp : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && created == false)
+        if ((collision.CompareTag("Weapon") || collision.CompareTag("Player")) && created == false)
         {
             obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
             created = true;
