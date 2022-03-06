@@ -243,7 +243,7 @@ public class Player : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false && sceneName != "Shop 1" && sceneName != "Abilities")
+        if (Teleport.canTeleport && Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false && sceneName != "Shop 1" && sceneName != "Abilities")
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
@@ -251,7 +251,7 @@ public class Player : MonoBehaviour
             TimeSinceDashInv = dashInvicTime;
             canMove = false;
         }
-        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true && sceneName != "Shop 1" && sceneName != "Abilities")
+        if (Teleport.canTeleport && Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true && sceneName != "Shop 1" && sceneName != "Abilities")
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
@@ -376,7 +376,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-                animator.SetTrigger("Hit");
+               
                 aSource.PlayOneShot(hitSound);
                 Damage(10);
                 Invincible = true;
@@ -385,7 +385,6 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Lightning")
             {
-                animator.SetTrigger("Hit");
                 aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
@@ -394,7 +393,7 @@ public class Player : MonoBehaviour
             }
             if (collision.gameObject.tag == "Ring" && circleFill_)
             {
-                animator.SetTrigger("Hit");
+              
                 aSource.PlayOneShot(hitSound);
                 Damage(15);
                 Invincible = true;
