@@ -71,8 +71,8 @@ GameObject:
   - component: {fileID: 3971099743801611745}
   - component: {fileID: 5893875312970002816}
   - component: {fileID: 4178194665086190119}
-  - component: {fileID: 2723685964445099764}
   - component: {fileID: 6577859702440307695}
+  - component: {fileID: 2156863559284020125}
   m_Layer: 0
   m_Name: JumpHitbox
   m_TagString: Untagged
@@ -166,22 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2723685964445099764
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3221235133161992303}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.141034, y: -0.26}
-  serializedVersion: 2
-  m_Radius: 0.18
 --- !u!114 &6577859702440307695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +178,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1b7224e7dd645599830d030123cc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &2156863559284020125
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221235133161992303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15848623, y: -0.34157068}
+  m_Size: {x: 0.50704956, y: 0.16189606}
+  m_Direction: 1
 --- !u!1 &4402328447230336302
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +206,6 @@ GameObject:
   - component: {fileID: 8146567759178236227}
   - component: {fileID: -5366959777432866047}
   - component: {fileID: 2657389116580683977}
-  - component: {fileID: 5197882267354306471}
   - component: {fileID: 3692583819280829755}
   - component: {fileID: 1688629210}
   - component: {fileID: 1688629217}
@@ -216,6 +215,8 @@ GameObject:
   - component: {fileID: -4170946771702764470}
   - component: {fileID: 519985673479067874}
   - component: {fileID: 4037017778838014602}
+  - component: {fileID: 5853927685583630304}
+  - component: {fileID: 4347585130276490884}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -341,22 +342,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5197882267354306471
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4402328447230336302}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.14103419, y: -0.78237104}
-  serializedVersion: 2
-  m_Radius: 0.36745703
 --- !u!114 &3692583819280829755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,9 +524,51 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16297483, y: -0.0006940365}
-  m_Size: {x: 0.97291946, y: 2.0516057}
+  m_Offset: {x: -0.16297482, y: -0.042957067}
+  m_Size: {x: 0.97291946, y: 2.1361325}
   m_Direction: 0
+--- !u!70 &5853927685583630304
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402328447230336302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.032492764, y: -0.8509492}
+  m_Size: {x: 0.5827743, y: 0.6109497}
+  m_Direction: 0
+--- !u!61 &4347585130276490884
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402328447230336302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1901838, y: -1.0600989}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.37, y: 0.17}
+    oldSize: {x: 8.875, y: 6.6875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.408317, y: 0.17587012}
+  m_EdgeRadius: 0
 --- !u!1 &7507997191511027072
 GameObject:
   m_ObjectHideFlags: 0
