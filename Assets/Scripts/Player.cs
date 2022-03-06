@@ -89,6 +89,14 @@ public class Player : MonoBehaviour
     private float movement = 0f;
     private bool canMove = true;
 
+    public Transform ItemHold;
+    public Transform ShieldPos;
+    public GameObject RL;
+    public GameObject Gun;
+    public GameObject LG;
+
+    private GameObject obj;
+
 
     // Start is called before the first frame update
     void Start()
@@ -130,7 +138,7 @@ public class Player : MonoBehaviour
         myRB = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
 
-        ShieldRenderer = Instantiate(shieldPrefab, transform).GetComponent<SpriteRenderer>();
+        ShieldRenderer = Instantiate(shieldPrefab, ShieldPos).GetComponent<SpriteRenderer>();
     }
 
     private Color GetShieldColor() {
@@ -170,7 +178,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HandleWeapon();
         movement = Input.GetAxisRaw("Horizontal")*40f;
         animator.SetFloat("Speed", Mathf.Abs(movement));
         if (hasSword)
@@ -218,7 +226,28 @@ public class Player : MonoBehaviour
             Damage(0);
         }
     }
-
+    private void HandleWeapon()
+    {
+        if (RegularGun.CanShoot == true)
+        {
+            Destroy(obj);
+            obj = Instantiate(Gun, ItemHold);
+        }
+        else if (hasSword == true)
+        {
+            Destroy(obj);
+        }
+        else if (RocketLauncher.CanShoot ==true)
+        {
+            Destroy(obj);
+            obj = Instantiate(RL, ItemHold);
+        }
+        else if (LaserGun.CanShoot == true)
+        {
+            Destroy(obj);
+            obj = Instantiate (LG, ItemHold);
+        }
+    }
     
 
     private void HandleInput()

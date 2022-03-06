@@ -48,7 +48,7 @@ public class RocketLauncher : MonoBehaviour
         {
             aSource.PlayOneShot(shootSound);
             GameObject aRocket = Instantiate(rocket, ShotPoint.position, ShotPoint.rotation); //Spawns rocket
-            aRocket.GetComponent<Rigidbody2D>().velocity = 20 * transform.right;
+            aRocket.GetComponent<Rigidbody2D>().velocity = 25 * transform.right;
             TimeLeft = Time.time;
             TimeLeft += Interval;
         }

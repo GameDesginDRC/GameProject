@@ -22,7 +22,7 @@ public class Rocket : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Wall") || collision.CompareTag("Enemy")) {
-            Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(explosion, transform.position+ transform.right, transform.rotation);
             Destroy(gameObject);
         }
     }
