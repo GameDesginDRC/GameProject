@@ -10,10 +10,18 @@ public class Mine : MonoBehaviour
     [SerializeField]
     private GameObject Explosion; //Gameobject DeathEffect
 
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip beepSound;
+    [SerializeField]
+    AudioClip explodeSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
     }
 
     // Update is called once per frame
@@ -24,6 +32,7 @@ public class Mine : MonoBehaviour
 
     void ExplosionTimer()
     {
+        aSource.PlayOneShot(explodeSound);
         GameObject anExplosion = Instantiate(Explosion, transform.position, transform.rotation);
         anExplosion.tag = "Enemy";
         Destroy(gameObject); //Destroy Bullet
@@ -33,6 +42,7 @@ public class Mine : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            aSource.PlayOneShot(beepSound);
             animator.SetBool("PlayerContact", true);
             Invoke("ExplosionTimer", 1f);
         }

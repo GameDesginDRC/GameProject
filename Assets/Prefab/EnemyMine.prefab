@@ -166,3 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1486523500903134264}
   Explosion: {fileID: 1090894406680360994, guid: 8e9cb35269c704a3eb083c712871b2ef, type: 3}
+  beepSound: {fileID: 8300000, guid: 7ea8a2cd58dbe4b4eb1a68c9d1b99950, type: 3}
+  explodeSound: {fileID: 8300000, guid: dd51aa20eaefde246a24cc9abfeef421, type: 3}

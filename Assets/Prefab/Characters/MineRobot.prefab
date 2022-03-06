@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2177740965842769467}
   m_Layer: 0
   m_Name: MineRobot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +142,10 @@ MonoBehaviour:
   mine: {fileID: 1486523500903134263, guid: b19c6de4f439ba549ba8f12dd3b1fd94, type: 3}
   nextDropTime: 0
   dropEvery: 2
+  animator: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
+  hitSound: {fileID: 8300000, guid: 1d0dbb7f5bbfdca42bcf52df5a66dcb1, type: 3}
+  deathSound: {fileID: 8300000, guid: 67d6dbd905a6678459c760f2d595e822, type: 3}
 --- !u!95 &2177740965842769466
 Animator:
   serializedVersion: 3
@@ -171,7 +175,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
