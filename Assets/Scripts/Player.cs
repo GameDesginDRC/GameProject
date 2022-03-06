@@ -241,8 +241,9 @@ public class Player : MonoBehaviour
         // arrow key control scheme
         if (Input.GetKeyDown(KeyCode.DownArrow)) { movingDown = true; }
 
-        
-        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false && sceneName != "Shop 1" && sceneName != "Abilities")
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
@@ -250,7 +251,7 @@ public class Player : MonoBehaviour
             TimeSinceDashInv = dashInvicTime;
             canMove = false;
         }
-        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true)
+        if (Input.GetKeyDown(KeyCode.C) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true && sceneName != "Shop 1" && sceneName != "Abilities")
         {
             animator.SetTrigger("Teleported");
             aSource.PlayOneShot(dashSound);
