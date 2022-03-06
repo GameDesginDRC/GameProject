@@ -80,6 +80,7 @@ public class Assasin_Controller : MonoBehaviour
     {
         if (AttackBoxBool() || TeleportAttackBoxBool())
         {
+            print("attacked");
             aSource.PlayOneShot(hitSound);
             player_code.Damage(10);
             player_code.Invincible = true;

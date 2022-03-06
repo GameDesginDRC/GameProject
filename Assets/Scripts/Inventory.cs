@@ -74,7 +74,7 @@ public class Inventory : MonoBehaviour
                 RegularGun.CanShoot = false;
                 RocketLauncher.CanShoot = false;
                 LaserGun.CanShoot = false;
-                RegularSword.hasSword = true;
+                Player.hasSword = true;
                 Shield_Gen.shield_count = 0;
                 GrenadeOn.GrenadeCount = 0;
                 HP_Pot.HPpot_count = 0;

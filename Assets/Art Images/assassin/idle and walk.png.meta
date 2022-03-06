@@ -1,40 +1,28 @@
 fileFormatVersion: 2
-guid: fd727f857d9ca4153824a23840369f3b
+guid: ca3abd0b762bd42b3b58346a7d93e548
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -545683406015245985
-    second: idle and walk_0
+      213: -3880781505281869081
+    second: idle and walk 1_0
   - first:
-      213: -5031363946081417593
-    second: idle and walk_1
+      213: 1204327994226892926
+    second: idle and walk 1_1
   - first:
-      213: -5324522442797451734
-    second: idle and walk_2
+      213: -2723147497170901965
+    second: idle and walk 1_2
   - first:
-      213: -1898987530105486901
-    second: idle and walk_3
+      213: 5969354478959778817
+    second: idle and walk 1_3
   - first:
-      213: 7707550617561855559
-    second: idle and walk_4
+      213: 6876140267293522913
+    second: idle and walk 1_4
   - first:
-      213: 8006656007967756130
-    second: idle and walk_5
+      213: 716784374903961102
+    second: idle and walk 1_5
   - first:
-      213: 7513511046222666863
-    second: idle and walk_6
-  - first:
-      213: -548574793780511719
-    second: idle and walk_7
-  - first:
-      213: 1190298300997981340
-    second: idle and walk_9
-  - first:
-      213: -4637406876352610116
-    second: idle and walk_11
-  - first:
-      213: 6301455718490626636
-    second: idle and walk_13
+      213: -4419804528716096838
+    second: idle and walk 1_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,70 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle and walk_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 535
-        width: 142
-        height: 107
-      alignment: 9
-      pivot: {x: 0.36, y: 0.17}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7860c1af5210d2ab0800000000000000
-      internalID: -5031363946081417593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle and walk_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 321
-        width: 142
-        height: 107
-      alignment: 9
-      pivot: {x: 0.36, y: 0.17}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc18a2317e075a5e0800000000000000
-      internalID: -1898987530105486901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle and walk_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 107
-        width: 142
-        height: 107
-      alignment: 9
-      pivot: {x: 0.36, y: 0.17}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26f4aa9d73b5d1f60800000000000000
-      internalID: 8006656007967756130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle and walk_0
+      name: idle and walk 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -207,20 +132,41 @@ TextureImporter:
         width: 142
         height: 107
       alignment: 9
-      pivot: {x: 0.36, y: 0.17}
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f51d2a855d75d68f0800000000000000
-      internalID: -545683406015245985
+      spriteID: 7eab4ce38c1b42ac0800000000000000
+      internalID: -3880781505281869081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle and walk_2
+      name: idle and walk 1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 535
+        width: 142
+        height: 107
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70e3f01ee1a6b010800000000000000
+      internalID: 1204327994226892926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle and walk 1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -228,20 +174,41 @@ TextureImporter:
         width: 142
         height: 107
       alignment: 9
-      pivot: {x: 0.36, y: 0.17}
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a26767e7c0f7b16b0800000000000000
-      internalID: -5324522442797451734
+      spriteID: 334622877cf653ad0800000000000000
+      internalID: -2723147497170901965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle and walk_4
+      name: idle and walk 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 321
+        width: 142
+        height: 107
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cd8c8854867d250800000000000000
+      internalID: 5969354478959778817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle and walk 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -249,20 +216,41 @@ TextureImporter:
         width: 142
         height: 107
       alignment: 9
-      pivot: {x: 0.36, y: 0.17}
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 746fd184378b6fa60800000000000000
-      internalID: 7707550617561855559
+      spriteID: 1eb3ac94425fc6f50800000000000000
+      internalID: 6876140267293522913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle and walk_6
+      name: idle and walk 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 107
+        width: 142
+        height: 107
+      alignment: 9
+      pivot: {x: 0.37, y: 0.17}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0673be579782f900800000000000000
+      internalID: 716784374903961102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle and walk 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -270,14 +258,14 @@ TextureImporter:
         width: 142
         height: 107
       alignment: 9
-      pivot: {x: 0.36, y: 0.17}
+      pivot: {x: 0.37, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c531efc7a554860800000000000000
-      internalID: 7513511046222666863
+      spriteID: abad631c233b9a2c0800000000000000
+      internalID: -4419804528716096838
       vertices: []
       indices: 
       edges: []

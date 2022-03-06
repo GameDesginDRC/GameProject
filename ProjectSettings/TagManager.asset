@@ -18,6 +18,7 @@ TagManager:
   - Laser
   - Damage
   - Bomb
+  - Text
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
     private Rigidbody2D myRB;
     private SpriteRenderer myRenderer;
     public enum StatusEffect { None, Shield };
@@ -20,11 +21,7 @@ public class Player : MonoBehaviour
     public static bool shieldon = false;
     public float JumpForce = .5f;
     public float DamageInvincibilityPeriod = 5f;
-    public float DoubleClickTimerD = .3f;
-    public float DoubleClickTimerA = .3f;
     private bool canJump = false;
-    private int ClickCountD = 0;
-    private int ClickCountA = 0;
     private float jumpWait = 0;
 
     public bool Invincible = false;
@@ -85,6 +82,12 @@ public class Player : MonoBehaviour
     AudioClip hitSound;
     [SerializeField]
     AudioClip dashSound;
+
+    [SerializeField]
+    public static bool hasSword = true;
+
+    private float movement = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -166,6 +169,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        movement = Input.GetAxisRaw("Horizontal")*40f;
+        animator.SetFloat("Speed", Mathf.Abs(movement));
+        if (hasSword)
+        {
+            animator.SetBool("WithWea", true);
+        }
+        else{
+            animator.SetBool("WithWea", false);
+        }   
         if (shieldon)
         {
             ApplyStatusEffect(StatusEffect.Shield, 10);
@@ -205,6 +218,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    
+
     private void HandleInput()
     {
         // for jumps
@@ -225,64 +240,23 @@ public class Player : MonoBehaviour
         // arrow key control scheme
         if (Input.GetKeyDown(KeyCode.DownArrow)) { movingDown = true; }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == false)
         {
-            if (ClickCountD == 1 && DoubleClickTimerD > 0)
-            {
-                //play dash sound
-                aSource.PlayOneShot(dashSound);
-
-                // add i-frames
-                dashInvincible = true;
-                TimeSinceDashInv = dashInvicTime;
-
-                transform.position += new Vector3(2f, 0f, 0f);
-                ClickCountD = 0;
-            }
-            else
-            {
-                ClickCountA = 0;
-                ClickCountD += 1;
-                DoubleClickTimerD = .2f;
-            }
+            animator.SetTrigger("Teleported");
+            aSource.PlayOneShot(dashSound);
+            dashInvincible = true;
+            TimeSinceDashInv = dashInvicTime;
+            transform.position += new Vector3(2f, 0f, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainTeleport") && switched == true)
         {
-            if (ClickCountA == 1 && DoubleClickTimerA > 0)
-            {
-                aSource.PlayOneShot(dashSound);
-
-                // add i-frames
-                dashInvincible = true;
-                TimeSinceDashInv = dashInvicTime;
-
-                transform.position += new Vector3(-2f, 0f, 0f);
-                ClickCountA = 0;
-            }
-            else
-            {
-                ClickCountD = 0;
-                ClickCountA += 1;
-                DoubleClickTimerA = .2f;
-            }
+            animator.SetTrigger("Teleported");
+            aSource.PlayOneShot(dashSound);
+            dashInvincible = true;
+            TimeSinceDashInv = dashInvicTime;
+            transform.position += new Vector3(-2f, 0f, 0f);
         }
 
-        if (DoubleClickTimerD > 0)
-        {
-            DoubleClickTimerD -= 1 * Time.deltaTime;
-        }
-        else
-        {
-            ClickCountD = 0;
-        }
-        if (DoubleClickTimerA > 0)
-        {
-            DoubleClickTimerA -= 1 * Time.deltaTime;
-        }
-        else
-        {
-            ClickCountA = 0;
-        }
 
         // flipping the player sprite
         if ((Input.GetKeyDown(KeyCode.RightArrow) && switched == true))
@@ -301,6 +275,7 @@ public class Player : MonoBehaviour
     // for handling jumps
     private void StartJump() {
         myRB.gravityScale = 0;
+
         myRB.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         
         startJumpTimer = true;

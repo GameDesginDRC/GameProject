@@ -8,10 +8,6 @@ public class RegularSword : MonoBehaviour
     [SerializeField]
     private GameObject swordHitbox;
     [SerializeField]
-    public static bool hasSword = true;
-    [SerializeField]
-    private bool coolingDown = false;
-    [SerializeField]
     private Animator animator;
 
     // for audio
@@ -19,23 +15,6 @@ public class RegularSword : MonoBehaviour
     [SerializeField]
     AudioClip slashSound;
 
-    void SwordCooldown()
-    {
-        animator.SetBool("Attacking", false);
-        coolingDown = false;
-        swordHitbox.tag = "Untagged";
-    }
-
-    void SwordAttack()
-    {
-        if (aSource) aSource.PlayOneShot(slashSound);
-        animator.SetBool("Attacking", true);
-        coolingDown = true;
-        swordHitbox.tag = "PlayerAttack";
-        Invoke("SwordCooldown", .3f);
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
         // audio
@@ -46,11 +25,29 @@ public class RegularSword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Attack();
+    }
+
+    private void Attack()
+    {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (Input.GetKeyDown(KeyCode.Z) && hasSword && !coolingDown && sceneName != "Shop 1")
+        if (Input.GetKeyDown(KeyCode.Z) && Player.hasSword && !animator.GetCurrentAnimatorStateInfo(0).IsName("MainAttack") && sceneName != "Shop 1")
         {
-            SwordAttack();
+            if (aSource) aSource.PlayOneShot(slashSound);
+            // animator.SetBool("Attack", true);
+            animator.SetTrigger("Attack");
         }
     }
+    public void SwordAttack()
+    {
+        swordHitbox.tag = "PlayerAttack";
+    }
+
+    public void ResetAttack()
+    {
+        swordHitbox.tag = "Untagged";
+    }
+    // Start is called before the first frame update
+    
 }

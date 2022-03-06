@@ -44,7 +44,7 @@ public class InvTracker : MonoBehaviour
             }
             else if (Inventory.pos_objs[0].GetComponent<SwordOn>() != null)
             {
-                RegularSword.hasSword = true;
+                Player.hasSword = true;
             }
             else if (Inventory.pos_objs[0].GetComponent<RLOn>() != null)
             {
@@ -62,7 +62,7 @@ public class InvTracker : MonoBehaviour
             }
             else if (Inventory.pos_objs[1].GetComponent<SwordOn>() != null)
             {
-                RegularSword.hasSword = false;
+                Player.hasSword = false;
             }
             else if (Inventory.pos_objs[1].GetComponent<RLOn>() != null)
             {
@@ -84,7 +84,7 @@ public class InvTracker : MonoBehaviour
             }
             else if (Inventory.pos_objs[1].GetComponent<SwordOn>() != null)
             {
-                RegularSword.hasSword = true;
+                Player.hasSword = true;
             }
             else if (Inventory.pos_objs[1].GetComponent<RLOn>() != null)
             {
@@ -118,7 +118,7 @@ public class InvTracker : MonoBehaviour
             }
             else if (Inventory.pos_objs[0].GetComponent<SwordOn>() != null)
             {
-                RegularSword.hasSword = false;
+                Player.hasSword = false;
             }
             else if (Inventory.pos_objs[0].GetComponent<RLOn>() != null)
             {

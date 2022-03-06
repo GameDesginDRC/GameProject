@@ -104,7 +104,7 @@ public class PickUp : MonoBehaviour
                     }
                     else if (Inventory.pos_objs[InvTracker.invcount].GetComponent<SwordOn>() != null)
                     {
-                        RegularSword.hasSword = false;
+                        Player.hasSword = false;
                         RandomWeapon.listofitems.Add(1);
                         //Destroy(FindObjectOfType<GunOn>());
                     }
@@ -130,7 +130,7 @@ public class PickUp : MonoBehaviour
                     }
                     else if (itemDisplay.GetComponent<SwordOn>() != null)
                     {
-                        RegularSword.hasSword = true;
+                        Player.hasSword = true;
                         RandomWeapon.listofitems.Remove(1);
                         //Destroy(FindObjectOfType<GunOn>());
                     }
@@ -347,7 +347,7 @@ public class PickUp : MonoBehaviour
                             }
                             else if (itemDisplay.GetComponent<SwordOn>() != null)
                             {
-                                RegularSword.hasSword = true;
+                                Player.hasSword = true;
                                 RandomWeapon.listofitems.Remove(1);
                                 //Destroy(FindObjectOfType<GunOn>());
                             }
@@ -497,7 +497,7 @@ public class PickUp : MonoBehaviour
         }
         else if (itemDisplay.GetComponent<SwordOn>() != null)
         {
-            RegularSword.hasSword = true;
+            Player.hasSword = true;
             RandomWeapon.listofitems.Remove(1);
         }
     }
