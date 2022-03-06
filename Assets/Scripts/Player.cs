@@ -346,6 +346,13 @@ public class Player : MonoBehaviour
 
     }
 
+    void Recolor()
+    {
+        Color transparentColor = spriteColor;
+        transparentColor.a = .50f;
+        sprite.color = transparentColor;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (falling && collision.gameObject.tag != "Bomb")
@@ -362,13 +369,6 @@ public class Player : MonoBehaviour
         canJump = false;
     }
 
-
-    void Recolor()
-    {
-        Color transparentColor = spriteColor;
-        transparentColor.a = .50f;
-        sprite.color = transparentColor;
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
