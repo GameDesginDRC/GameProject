@@ -33,7 +33,7 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (first == 0 && collision.CompareTag("Player"))
+        if (first == 0 && collision.CompareTag("Player") && FloatingTextPrefab.name != "Null")
         {
             first = 1;
             obj = Instantiate(FloatingTextPrefab, transform.position + newvec, Quaternion.identity, transform);
@@ -41,7 +41,7 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (first == 1 && collision.CompareTag("Player"))
+        if (first == 1 && collision.CompareTag("Player") && FloatingTextPrefab.name != "Null")
         {
             first = 0;
             Destroy(obj);

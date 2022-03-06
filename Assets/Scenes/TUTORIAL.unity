@@ -54457,7 +54457,7 @@ PrefabInstance:
     - target: {fileID: 1762951695659556775, guid: ae0fc7f20fb4bdb48be43d156be923f3, type: 3}
       propertyPath: FloatingTextPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3041935040681017772, guid: 6866e6dfbd5874182acd299dda828de5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0fc7f20fb4bdb48be43d156be923f3, type: 3}
 --- !u!1 &2075291053
