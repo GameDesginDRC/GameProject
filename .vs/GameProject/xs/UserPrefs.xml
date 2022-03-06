@@ -63,8 +63,8 @@
       <File FileName="Assets/Scripts/LevelManager.cs" NotebookId="1" />
       <File FileName="Assets/Scripts/GunRobot.cs" NotebookId="1" />
       <File FileName="Assets/Scripts/Informant.cs" NotebookId="1" />
-      <File FileName="Assets/Scripts/PauseMenu.cs" Line="35" Column="72" NotebookId="1" />
-      <File FileName="Assets/Scripts/HoverButton.cs" Line="21" Column="33" NotebookId="1" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" Line="41" Column="10" NotebookId="1" />
+      <File FileName="Assets/Scripts/HoverButton.cs" Line="18" Column="31" NotebookId="1" />
       <File FileName="Assets/Scripts/Button.cs" Line="5" Column="21" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
