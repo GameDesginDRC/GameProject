@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Assasin_Controller : MonoBehaviour
+public class AssaultRobotController : MonoBehaviour
 {
     public Animator animator;
-    public Transform player;
-    private Player player_code;
     public Rigidbody2D rb;
+    public Transform player;
 
     private float speed;
+    private float shootSpeed = 10f;
     [SerializeField]
     float health = 30;
 
-    public GameObject shieldPrefab;
-    private GameObject obje;
-    public Transform ShieldPos;
-
     public Transform WallCheck; //Checks Front
     public Vector2 WallChecksize; //FrontCheck Size
+
+    public Transform BackWallCheck; //Checks Back
+    public Vector2 BackWallChecksize; //BackCheck Size
 
     public Transform TargetCheck; //Checks availability of Target
     public Vector2 TargetChecksize; //TargetCheck Size
@@ -26,58 +25,49 @@ public class Assasin_Controller : MonoBehaviour
     public Transform GroundCheck; //Checks if Target is in Range of Enemy
     public Vector2 GroundChecksize; //RangeCheck Size
 
-    public Transform AttackCheck; //Checks if Target is in Range of Enemy
-    public Vector2 AttackChecksize; //RangeCheck Size
+    public Transform AttackCheckH; //Checks if Target is in Range of Enemy
+    public Vector2 AttackCheckHsize; //RangeCheck Size
 
-    public Transform AttackBox; //Checks if Target is in Range of Enemy
-    public Vector2 AttackBoxsize; //RangeCheck Size
-
-    public Transform TeleportAttackBox; //Checks if Target is in Range of Enemy
-    public Vector2 TeleportAttackBoxsize; //RangeCheck Size
-
-    public Transform TeleportBox; //Checks if Target is in Range of Enemy
-    public Vector2 TeleportBoxsize; //RangeCheck Size
+    public Transform AttackCheckL; //Checks if Target is in Range of Enemy
+    public Vector2 AttackCheckLsize; //RangeCheck Size
 
     private bool _CanMove = false; //Enemy can move
     private bool _IsFlipped = false; //Enemy is flipped
-    private bool _PlayerSpotted = false; //Player has been spotted
     // private bool _PlayerFollow = false; //Stops following Player
 
     private float idlespeed = .19f;
-    Vector3 idleA;
-    Vector3 idleB;
 
-    [SerializeField]
-    float invincibleTime = 1f;
+    private float invincibleTime = 1f;
     [SerializeField]
     bool invincible = false;
     bool dying = false;
+    private bool flee = false;
     SpriteRenderer sprite;
 
     // for audio
     AudioSource aSource;
     [SerializeField]
-    AudioClip slashSound;
+    AudioClip shootSound;
     [SerializeField]
     AudioClip hitSound;
     [SerializeField]
     AudioClip deathSound;
 
+    public Transform CastPointH;
+    public Transform CastPointL;
+    public GameObject bullet;
+
+
 
     void Start()
     {
-        speed= Random.Range(2.5f, 4f);
+        speed= 5f;
         sprite = GetComponent<SpriteRenderer>();
-        idleA = new Vector3(transform.position.x-0.5f, transform.position.y, 0);
-        idleB = new Vector3(transform.position.x+2, transform.position.y, 0);
-        player_code = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
+
     void Update()
     {
-        
-        sprite.color = new Color (1, 0, 0, 1); 
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
-
         EnemyMovement(); //Controls Enemy Movement
         DetectPlayer(); //Dectects if Player is in range
         TakeDamage();
@@ -85,34 +75,44 @@ public class Assasin_Controller : MonoBehaviour
 
     public void Attack()
     {
-        if ((AttackBoxBool() || TeleportAttackBoxBool()) && player_code.Invincible == false)
+        animator.SetBool("Attack", true);  
+    }
+
+    public void AttackHigh()
+    {
+        aSource.PlayOneShot(shootSound);
+        if (_IsFlipped)
+            {
+                GameObject newBullet = Instantiate(bullet, CastPointH.position, bullet.transform.rotation);
+                newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * transform.right;
+            }
+        else
+            {
+                GameObject newBullet = Instantiate(bullet, CastPointH.position, bullet.transform.rotation);
+                newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * transform.right;
+            }
+    }
+    
+    public void AttackLow()
+    {
+        aSource.PlayOneShot(shootSound);
+        if (_IsFlipped)
         {
-            print("attacked");
-            aSource.PlayOneShot(hitSound);
-            player_code.Damage(10);
-            player_code.Invincible = true;
-            player_code.TimeSinceInvStarted = Time.time;
-            player_code.Invoke("Recolor", .05f);
+            GameObject newBullet = Instantiate(bullet, CastPointL.position, bullet.transform.rotation);
+            newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * transform.right;
+        }
+        else
+        {
+            GameObject newBullet = Instantiate(bullet, CastPointL.position, bullet.transform.rotation);
+            newBullet.GetComponent<Rigidbody2D>().velocity = shootSpeed * transform.right;
         }
     }
 
-    void Teleport()
-    {
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        rb.MovePosition(target);
-        animator.SetTrigger("Teleport");
-    }
-
-    public void Shielding()
-    {
-        obje = Instantiate(shieldPrefab, ShieldPos);
-        Destroy(obje, 1.3f);
-    }
-
-   
-
     public void LookAtPlayer()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = animator.GetComponent<Rigidbody2D>();
+
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
@@ -132,46 +132,37 @@ public class Assasin_Controller : MonoBehaviour
     
     private void DetectPlayer()
     {
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
-        {
-            Vector3 flipped = transform.localScale;
-            flipped.z *= -1f;
-            float time = Mathf.PingPong(Time.time * idlespeed, 1);
-            transform.position = Vector3.Lerp(idleA, idleB, time);
-        }
-
-        if (TargetCheckBool())
-        { 
-            _PlayerSpotted = true; //Player has been spotted
-        }
-        
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") 
-        || animator.GetCurrentAnimatorStateInfo(0).IsName("Teleport")
-        || animator.GetCurrentAnimatorStateInfo(0).IsName("Intro")
-        || animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk") && !flee && !TargetCheckBool())
         {
             _CanMove = false;
+            animator.SetBool("Walk", true);
+            animator.SetBool("Attack", false); 
         }
-        else if (TeleportBoxBool() && !AttackCheckBool()) //If Player is in Enemy range
+        else if (!AttackCheckHBool() && !AttackCheckLBool() && !flee && TargetCheckBool()) //If Player is in Enemy range
         {
             _CanMove = true;
-            animator.SetBool("Engage", true);
+            animator.SetBool("Walk", true);
+            animator.SetBool("Attack", false); 
             LookAtPlayer();
         }
-        else if (AttackCheckBool())
+        else if (AttackCheckLBool() && !flee)
         {
-            animator.SetTrigger("Attack");
+            _CanMove = false;
+            animator.SetBool("Walk", false);
+            animator.SetBool("High", false);
+            Attack();
         }
-        else if (!TeleportBoxBool() && _PlayerSpotted)
+        else if (AttackCheckHBool() && !flee)
         {
-            Teleport();
+            _CanMove = false;
+            animator.SetBool("Walk", false);
+            animator.SetBool("High", true);
+            Attack();
         }
-        else if (!WallCheckBool() && GroundCheckBool() && !_PlayerSpotted)
+        else if (!WallCheckBool() && GroundCheckBool() && !TargetCheckBool())
         //When Enemy is not next to a wall, is grounded, and Player has not been spotted
         {
             _CanMove = false; //Enemy moves
-            animator.SetBool("Engage", false);
         }
  
     }
@@ -188,8 +179,13 @@ public class Assasin_Controller : MonoBehaviour
             target = new Vector2(rb.position.x, player.position.y);
             rb.MovePosition(target);
         }
-        else if (_CanMove && TargetCheckBool() && !AttackCheckBool() && GroundCheckBool()) //If Enemy can move
+        else if (!flee && _CanMove && TargetCheckBool() && !AttackCheckHBool() && !AttackCheckLBool() && GroundCheckBool()) //If Enemy can move
         {
+            rb.MovePosition(newPos);
+        }
+        else if (flee && !BackWallCheckBool() && !WallCheckBool())
+        {
+            newPos = Vector2.MoveTowards(rb.position, target, -1* 8f * Time.fixedDeltaTime); 
             rb.MovePosition(newPos);
         }
         
@@ -210,18 +206,17 @@ public class Assasin_Controller : MonoBehaviour
     {
         aSource.PlayOneShot(deathSound);
         animator.SetTrigger("Death");
-        Invoke("RemoveFromGame", 0.6f);
+        Invoke("RemoveFromGame", 0.4f);
     }
 
     void RemoveFromGame()
     {
-        BlockadeController.DecreaseFinEnemyNum();
         Destroy(gameObject);
     } 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerAttack")&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") )
+        if (collision.CompareTag("PlayerAttack"))
         {
             // decrease HP and pause
             if (!invincible && !dying)
@@ -234,32 +229,53 @@ public class Assasin_Controller : MonoBehaviour
                     animator.SetTrigger("Hit");
                 }
                 
-                Invoke("invinCooldown", invincibleTime);
+                if(!BackWallCheckBool())
+                {
+                    LookAtPlayer();
+                    animator.SetBool("Walk", true);
+                    animator.SetBool("Attack", false); 
+                    _CanMove = true;
+                    flee= true;
+                    transform.Rotate(0f, 180f, 0f);
+                    Invoke("invinCooldown", invincibleTime);
+                }
+                Invoke("invinCooldown2", invincibleTime);
+
             }
         }
     }
 
     void invinCooldown()
     {
+        transform.Rotate(0f, 180f, 0f);
         invincible = false;
+        flee=false;
     }
 
+    void invinCooldown2()
+    {
+        invincible = false;
+    }
 
 
     private void OnDrawGizmosSelected() //Draws boxes to show trigger
     {
         Gizmos.DrawWireCube(GroundCheck.position, GroundChecksize);
         Gizmos.DrawWireCube(WallCheck.position, WallChecksize);
+        Gizmos.DrawWireCube(BackWallCheck.position, BackWallChecksize);
         Gizmos.DrawWireCube(TargetCheck.position, TargetChecksize);
-        Gizmos.DrawWireCube(AttackCheck.position, AttackChecksize);
-        Gizmos.DrawWireCube(AttackBox.position, AttackBoxsize);
-        Gizmos.DrawWireCube(TeleportAttackBox.position, TeleportAttackBoxsize);
-        Gizmos.DrawWireCube(TeleportBox.position, TeleportBoxsize);
+        Gizmos.DrawWireCube(AttackCheckH.position, AttackCheckHsize);
+        Gizmos.DrawWireCube(AttackCheckL.position, AttackCheckLsize);
     }
 
     private bool GroundCheckBool() //Ground Check
     {
         return Physics2D.OverlapBox(GroundCheck.position, GroundChecksize, 0, LayerMask.GetMask("Wall"));
+    }
+
+    private bool BackWallCheckBool() //Wall Check
+    {
+        return Physics2D.OverlapBox(BackWallCheck.position, BackWallChecksize, 0, LayerMask.GetMask("Wall"));
     }
 
     private bool WallCheckBool() //Wall Check
@@ -272,24 +288,14 @@ public class Assasin_Controller : MonoBehaviour
         return Physics2D.OverlapBox(TargetCheck.position, TargetChecksize, 0, LayerMask.GetMask("Player"));
     }
 
-    private bool AttackCheckBool() //When Player is in range of Enemy
+    private bool AttackCheckHBool() //When Player is in range of Enemy
     {
-        return Physics2D.OverlapBox(AttackCheck.position, AttackChecksize, 0, LayerMask.GetMask("Player"));
+        return Physics2D.OverlapBox(AttackCheckH.position, AttackCheckHsize, 0, LayerMask.GetMask("Player"));
     }
 
-    private bool AttackBoxBool() //When Player is in range of Enemy
+    private bool AttackCheckLBool() //When Player is in range of Enemy
     {
-        return Physics2D.OverlapBox(AttackBox.position, AttackBoxsize, 0, LayerMask.GetMask("Player"));
+        return Physics2D.OverlapBox(AttackCheckL.position, AttackCheckLsize, 0, LayerMask.GetMask("Player"));
     }
 
-    private bool TeleportAttackBoxBool() //When Player is in range of Enemy
-    {
-        return Physics2D.OverlapBox(TeleportAttackBox.position, TeleportAttackBoxsize, 0, LayerMask.GetMask("Player"));
-    }
-
-    private bool TeleportBoxBool() //When Player is in range of Enemy
-    {
-        return Physics2D.OverlapBox(TeleportBox.position, TeleportBoxsize, 0, LayerMask.GetMask("Player"));
-    }
 }
-
