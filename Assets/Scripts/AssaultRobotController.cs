@@ -68,15 +68,11 @@ public class AssaultRobotController : MonoBehaviour
     void Update()
     {
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
-        EnemyMovement(); //Controls Enemy Movement
         DetectPlayer(); //Dectects if Player is in range
+        EnemyMovement(); //Controls Enemy Movement
         TakeDamage();
     }
 
-    public void Attack()
-    {
-        animator.SetBool("Attack", true);  
-    }
 
     public void AttackHigh()
     {
@@ -132,37 +128,39 @@ public class AssaultRobotController : MonoBehaviour
     
     private void DetectPlayer()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk") && !flee && !TargetCheckBool())
+        if (!flee && !TargetCheckBool())
         {
             _CanMove = false;
             animator.SetBool("Walk", true);
             animator.SetBool("Attack", false); 
         }
-        else if (!AttackCheckHBool() && !AttackCheckLBool() && !flee && TargetCheckBool()) //If Player is in Enemy range
+        else if (!AttackCheckHBool() && !AttackCheckLBool() && !flee && TargetCheckBool() && !WallCheckBool()) //If Player is in Enemy range
         {
             _CanMove = true;
             animator.SetBool("Walk", true);
             animator.SetBool("Attack", false); 
             LookAtPlayer();
         }
-        else if (AttackCheckLBool() && !flee)
+        else if (AttackCheckLBool() && !flee && !WallCheckBool())
         {
             _CanMove = false;
             animator.SetBool("Walk", false);
             animator.SetBool("High", false);
-            Attack();
+            animator.SetBool("Attack", true);  
         }
         else if (AttackCheckHBool() && !flee)
         {
             _CanMove = false;
             animator.SetBool("Walk", false);
             animator.SetBool("High", true);
-            Attack();
+            animator.SetBool("Attack", true);  
         }
-        else if (!WallCheckBool() && GroundCheckBool() && !TargetCheckBool())
+        else if (GroundCheckBool() && TargetCheckBool())
         //When Enemy is not next to a wall, is grounded, and Player has not been spotted
         {
             _CanMove = false; //Enemy moves
+            animator.SetBool("Walk", true);
+            animator.SetBool("Attack", false); 
         }
  
     }
@@ -173,7 +171,12 @@ public class AssaultRobotController : MonoBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime); 
-        if (!GroundCheckBool() && CanJump.canJump)
+        if (WallCheckBool() && !TargetCheckBool())
+        {
+            _CanMove = false;
+            LookAtPlayer();
+        }
+        else if (!GroundCheckBool() && CanJump.canJump)
         //When Enemy is not grounded
         {
             target = new Vector2(rb.position.x, player.position.y);
@@ -183,7 +186,7 @@ public class AssaultRobotController : MonoBehaviour
         {
             rb.MovePosition(newPos);
         }
-        else if (flee && !BackWallCheckBool() && !WallCheckBool())
+        else if (flee && !WallCheckBool() && _CanMove)
         {
             newPos = Vector2.MoveTowards(rb.position, target, -1* 8f * Time.fixedDeltaTime); 
             rb.MovePosition(newPos);
@@ -198,6 +201,7 @@ public class AssaultRobotController : MonoBehaviour
         {
             dying = true;
             gameObject.tag = "Untagged";
+            _CanMove=false;
             Die();
         }
     }
