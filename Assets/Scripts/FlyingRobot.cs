@@ -14,6 +14,7 @@ public class FlyingRobot : MonoBehaviour
     [SerializeField]
     private bool invincible = false;
 
+    [SerializeField]
     private bool facingRight = true;
 
     // for attacking
@@ -72,6 +73,7 @@ public class FlyingRobot : MonoBehaviour
     }
     void Shoot() {
         // shoots at the player
+        aSource.PlayOneShot(shootSound);
         Vector2 bulletShootSpot = transform.right;
         Vector3 whereToShoot = (playerTransform.position - transform.position).normalized;
 
@@ -83,13 +85,11 @@ public class FlyingRobot : MonoBehaviour
     {
         if (facingRight)
         {
-            // flip left
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
+            transform.rotation = Quaternion.Euler(0, 0f, 0);
         }
         else
         {
-            // flip right
-            transform.rotation = Quaternion.Euler(0, 360f, 0);
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
         }
 
         facingRight = !facingRight;

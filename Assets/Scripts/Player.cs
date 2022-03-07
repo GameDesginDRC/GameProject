@@ -445,6 +445,14 @@ public class Player : MonoBehaviour
                 TimeSinceInvStarted = Time.time;
                 Invoke("Recolor", .05f);
             }
+            if (collision.gameObject.tag == "Trap")
+            {
+                aSource.PlayOneShot(hitSound);
+                Damage(5);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+                Invoke("Recolor", .05f);
+            }
             if (collision.gameObject.tag == "Ring" && circleFill_)
             {
               
