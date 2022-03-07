@@ -127,6 +127,7 @@ public class FlyingRobot : MonoBehaviour
 
         float distanceFromPlayer = Vector3.Distance(playerTransform.position, transform.position);
         if (distanceFromPlayer <= shootRange) { playerInRange = true; }
+        else { playerInRange = false; }
 
         // float down and up
         floatTimer -= Time.deltaTime;
