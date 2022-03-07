@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57ef36a2026f45a899c05374180e5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: HUB
+  next: Transition1
 --- !u!50 &1823254847
 Rigidbody2D:
   serializedVersion: 4

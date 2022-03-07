@@ -80,7 +80,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void restart()
     {
-        SceneManager.LoadScene("HUB");
+        SceneManager.LoadScene("Transition1");
     }
     /*   public void Hoveringon()
        {
