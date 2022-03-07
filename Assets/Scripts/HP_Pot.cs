@@ -13,9 +13,17 @@ public class HP_Pot : MonoBehaviour
     public static int HPpot_count = 0;
     public static int hpIncr = 0;
     private float waitTime = 0;
+
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip useHPPotSound;
     // Start is called before the first frame update
     void Start()
     {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         waitTime = .2f;
         hpIncr = 0;
         currentScene = SceneManager.GetActiveScene();

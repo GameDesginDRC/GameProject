@@ -130,12 +130,12 @@ public class MineRobot : MonoBehaviour
         if (movingRight)
         {
             // flip left
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
+            transform.rotation = Quaternion.Euler(0, 360f, 0);
         }
         else
         {
             // flip right
-            transform.rotation = Quaternion.Euler(0, 360f, 0);
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
         }
 
         movingRight = !movingRight;

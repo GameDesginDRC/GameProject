@@ -13,8 +13,17 @@ public class Shield_Gen : MonoBehaviour
     string sceneName;
     public static int shield_count = 0;
     private float waitTime;
+
+    // for audio
+    AudioSource aSource;
+    [SerializeField]
+    AudioClip useShieldSound;
+
     void Start()
     {
+        // audio
+        aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+
         waitTime = .2f;
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;

@@ -3,7 +3,9 @@ guid: 4b71516de321942a794962952a4b7029
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - empty1: {instanceID: 0}
+  - useHPPotSound: {fileID: 8300000, guid: 9f466eb0f9292ff47b62314a3cf602c4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

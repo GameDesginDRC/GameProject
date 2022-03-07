@@ -22,6 +22,7 @@ TagManager:
   - Weapon
   - Item
   - Shield
+  - Trap
   layers:
   - Default
   - TransparentFX

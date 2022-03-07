@@ -1247,7 +1247,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Find and destroy all \nenemies within the \ngiven time frame."
+  m_Text: 'Find the door to the
+
+    next stage!'
 --- !u!222 &2143513332
 CanvasRenderer:
   m_ObjectHideFlags: 0

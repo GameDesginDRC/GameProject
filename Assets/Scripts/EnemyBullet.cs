@@ -24,12 +24,12 @@ public class EnemyBullet : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Player") Invoke("ExplodeAndDie", .1f);
+        if(col.tag == "Player" || col.tag == "Wall") Invoke("ExplodeAndDie", .1f);
     }
 
-    public void OnColliderEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Invoke("ExplodeAndDie", .1f);
+        Invoke("ExplodeAndDie", .01f);
     }
 
 }
