@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2c026660216b141ab9aaaa7e02b057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 15
   invincibleTime: 0.3
   invincible: 0
   castPoint: {fileID: 2177740964664526536}

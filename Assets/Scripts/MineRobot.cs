@@ -99,7 +99,7 @@ public class MineRobot : MonoBehaviour
     void RemoveFromGame()
     {
         LevelManager.DecreaseEnemyNum();
-        ScoreKeeper.gold += 10;
+        ScoreKeeper.gold += 6;
         ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     }
