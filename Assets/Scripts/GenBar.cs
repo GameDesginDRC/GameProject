@@ -20,11 +20,11 @@ public class GenBar : MonoBehaviour
         string sceneName = currentScene.name;
 
         if (sceneName == "TUTORIAL" || sceneName == "Stage 1") {
-            maxSh = 100;
+            maxSh = 50;
         }
         if (Sabill)
         {
-            maxSh += 100;
+            maxSh += 50;
             Sabill = false;
         }
         hpvalue.maxValue = maxSh;

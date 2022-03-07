@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplay: {fileID: 7817379894699539008, guid: 08412d6c14d564fd488807dfd6211ff1, type: 3}
   count: 0
-  price: 180
+  price: 120
   buySound: {fileID: 8300000, guid: 1f5a709abf242b946936eca0884b8b48, type: 3}
 --- !u!114 &9064664422886529370
 MonoBehaviour:
