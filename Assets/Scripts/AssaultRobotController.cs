@@ -186,7 +186,7 @@ public class AssaultRobotController : MonoBehaviour
         {
             rb.MovePosition(newPos);
         }
-        else if (flee && !WallCheckBool())
+        else if (flee && !WallCheckBool() && _CanMove)
         {
             newPos = Vector2.MoveTowards(rb.position, target, -1* 8f * Time.fixedDeltaTime); 
             rb.MovePosition(newPos);
@@ -201,6 +201,7 @@ public class AssaultRobotController : MonoBehaviour
         {
             dying = true;
             gameObject.tag = "Untagged";
+            _CanMove=false;
             Die();
         }
     }

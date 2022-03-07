@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d696a9826279e64a8d316f9aa4f0736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackValue: 15
+  AttackValue: 20
   AttackMod: 0
