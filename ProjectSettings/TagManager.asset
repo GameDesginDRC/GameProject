@@ -8,7 +8,6 @@ TagManager:
   - EnemyAttack
   - Wall
   - PlayerAttack
-  - Abilities
   - Lightning
   - Ring
   - InvisWall
@@ -23,6 +22,7 @@ TagManager:
   - Item
   - Shield
   - Trap
+  - Abilities
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class Assasin_Controller : MonoBehaviour
     private Player player_code;
     public Rigidbody2D rb;
 
-    public float speed = 6f;
+    private float speed;
     [SerializeField]
     float health = 30;
 
@@ -34,6 +34,9 @@ public class Assasin_Controller : MonoBehaviour
 
     public Transform TeleportAttackBox; //Checks if Target is in Range of Enemy
     public Vector2 TeleportAttackBoxsize; //RangeCheck Size
+
+    public Transform TeleportBox; //Checks if Target is in Range of Enemy
+    public Vector2 TeleportBoxsize; //RangeCheck Size
 
     private bool _CanMove = false; //Enemy can move
     private bool _IsFlipped = false; //Enemy is flipped
@@ -63,6 +66,7 @@ public class Assasin_Controller : MonoBehaviour
 
     void Start()
     {
+        speed= Random.Range(2.5f, 4f);
         sprite = GetComponent<SpriteRenderer>();
         idleA = new Vector3(transform.position.x-0.5f, transform.position.y, 0);
         idleB = new Vector3(transform.position.x+2, transform.position.y, 0);
@@ -149,7 +153,7 @@ public class Assasin_Controller : MonoBehaviour
         {
             _CanMove = false;
         }
-        else if (TargetCheckBool() && !AttackCheckBool()) //If Player is in Enemy range
+        else if (TeleportBoxBool() && !AttackCheckBool()) //If Player is in Enemy range
         {
             _CanMove = true;
             animator.SetBool("Engage", true);
@@ -159,7 +163,7 @@ public class Assasin_Controller : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
-        else if (!TargetCheckBool() && _PlayerSpotted)
+        else if (!TeleportBoxBool() && _PlayerSpotted)
         {
             Teleport();
         }
@@ -250,6 +254,7 @@ public class Assasin_Controller : MonoBehaviour
         Gizmos.DrawWireCube(AttackCheck.position, AttackChecksize);
         Gizmos.DrawWireCube(AttackBox.position, AttackBoxsize);
         Gizmos.DrawWireCube(TeleportAttackBox.position, TeleportAttackBoxsize);
+        Gizmos.DrawWireCube(TeleportBox.position, TeleportBoxsize);
     }
 
     private bool GroundCheckBool() //Ground Check
@@ -280,6 +285,11 @@ public class Assasin_Controller : MonoBehaviour
     private bool TeleportAttackBoxBool() //When Player is in range of Enemy
     {
         return Physics2D.OverlapBox(TeleportAttackBox.position, TeleportAttackBoxsize, 0, LayerMask.GetMask("Player"));
+    }
+
+    private bool TeleportBoxBool() //When Player is in range of Enemy
+    {
+        return Physics2D.OverlapBox(TeleportBox.position, TeleportBoxsize, 0, LayerMask.GetMask("Player"));
     }
 }
 

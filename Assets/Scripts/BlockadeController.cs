@@ -40,7 +40,7 @@ public class BlockadeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numOfEnemies == 6 && phase == 0)
+        if (numOfEnemies == 1 && phase == 0)
         {
             foreach(DestroyWall wall in wallsArray1)
             {
@@ -49,28 +49,29 @@ public class BlockadeController : MonoBehaviour
             phase +=1;
         }
 
-        if (numOfEnemies == 5 && phase == 1)
+        if (numOfEnemies == 0 && phase == 1)
         {
-            E1.gameObject.transform.position = new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f);
-            E2.gameObject.transform.position = new Vector3(pos3.position.x+0.05f, pos1.position.y +0.4f, 0f);
+            
+            Instantiate(E1, new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f), Quaternion.identity);
+            Instantiate(E2, new Vector3(pos3.position.x+0.05f, pos3.position.y +0.4f, 0f), Quaternion.identity);
+            // E1.gameObject.transform.position = new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f);
+            // E2.gameObject.transform.position = new Vector3(pos3.position.x+0.05f, pos1.position.y +0.4f, 0f);
             phase +=1;
         }
 
-        if (numOfEnemies == 3 && phase == 2)
+        if (numOfEnemies == 0 && phase == 2)
         {
-            E3.gameObject.transform.position = new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f);
-            E4.gameObject.transform.position = new Vector3(pos2.position.x+0.05f, pos1.position.y +0.4f, 0f);
-            E5.gameObject.transform.position = new Vector3(pos3.position.x+0.05f, pos1.position.y +0.4f, 0f);
+            Instantiate(E3, new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f), Quaternion.identity);
+            Instantiate(E4, new Vector3(pos3.position.x+0.05f, pos2.position.y +0.4f, 0f), Quaternion.identity);
+            Instantiate(E5, new Vector3(pos3.position.x+0.05f, pos3.position.y +0.4f, 0f), Quaternion.identity);
             phase +=1;
         }
-
-        if (numOfEnemies == 0 && phase == 3)
+        else if (numOfEnemies == 0 && phase == 3)
         {
             foreach(DestroyWall wall in wallsArray2)
             {
                 wall.DestroyableWall(); //Destroys platform linked to pickup
             }
-            phase +=1;
         }
     }
 }

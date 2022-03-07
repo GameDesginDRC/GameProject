@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &744659479392023653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5859639616531086480}
+  m_Layer: 0
+  m_Name: TeleportCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5859639616531086480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744659479392023653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.14, y: 0.14, z: -1.2102304}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2964108333489681700}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2964108333489681707
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2964108333489681707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: -1.18, z: 0}
+  m_LocalPosition: {x: 168.55, y: 2.9, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4707209884433682054}
@@ -39,6 +69,7 @@ Transform:
   - {fileID: 1074700853014611879}
   - {fileID: 1949613843086477131}
   - {fileID: 6235372613347740554}
+  - {fileID: 5859639616531086480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -174,14 +205,13 @@ MonoBehaviour:
   animator: {fileID: 6583284764674680403}
   player: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
   rb: {fileID: 6763180214302907463}
-  speed: 2.5
   health: 30
   shieldPrefab: {fileID: 9138958953444873857, guid: f7ccd9d55218d4f5fbfb89635a9399ca, type: 3}
   ShieldPos: {fileID: 6235372613347740554}
   WallCheck: {fileID: 8573005448792379933}
   WallChecksize: {x: 0.27, y: 2}
   TargetCheck: {fileID: 9221349438249244049}
-  TargetChecksize: {x: 17, y: 20}
+  TargetChecksize: {x: 50.9, y: 20}
   GroundCheck: {fileID: 4707209884433682054}
   GroundChecksize: {x: 0.99, y: 0.2}
   AttackCheck: {fileID: 2097200822998358779}
@@ -190,6 +220,8 @@ MonoBehaviour:
   AttackBoxsize: {x: 3.95, y: 2.09}
   TeleportAttackBox: {fileID: 1949613843086477131}
   TeleportAttackBoxsize: {x: 6.05, y: 3.65}
+  TeleportBox: {fileID: 5859639616531086480}
+  TeleportBoxsize: {x: 17.74, y: 19.5}
   invincibleTime: 0.3
   invincible: 0
   slashSound: {fileID: 8300000, guid: afd761b20157e8f40ba6f44d79ec7cc3, type: 3}
