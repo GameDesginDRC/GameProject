@@ -70,7 +70,8 @@ public class HP_Pot : MonoBehaviour
             HPpot_count--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
-            Player.hp += 30;
+            int healAmt = (int)(HPBar.maxVal * .40);
+            Player.hp += healAmt;
             if (Player.hp > HPBar.maxVal)
             {
                 Player.hp = HPBar.maxVal;
@@ -82,7 +83,8 @@ public class HP_Pot : MonoBehaviour
         {
             DecrConsume(usednum);
             HPpot_count--;
-            Player.hp += 30;
+            int healAmt = (int)(HPBar.maxVal * .40);
+            Player.hp += healAmt;
             if (Player.hp > HPBar.maxVal)
             {
                 Player.hp = HPBar.maxVal;

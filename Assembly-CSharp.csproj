@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\Assasin_Engage.cs" />
     <Compile Include="Assets\Scripts\DestroyWall.cs" />
@@ -72,15 +75,15 @@
     <Compile Include="Assets\Scripts\SwordRobot.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Assasin_Controller.cs" />
-    <Compile Include="Assets\CanJump.cs" />
+    <Compile Include="Assets\Scripts\CanJump.cs" />
     <Compile Include="Assets\Scripts\PAttack.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\GameOverNew.cs" />
-    <Compile Include="Assets\BlockadeController.cs" />
+    <Compile Include="Assets\Scripts\BlockadeController.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Compile Include="Assets\Scripts\Ground.cs" />
     <Compile Include="Assets\Scripts\GunRobot.cs" />
-    <Compile Include="Assets\But3.cs" />
+    <Compile Include="Assets\Scripts\But3.cs" />
     <Compile Include="Assets\Scripts\ConsumeText2.cs" />
     <Compile Include="Assets\Scripts\LaserGun.cs" />
     <Compile Include="Assets\Scripts\HP_Pot.cs" />
@@ -98,11 +101,11 @@
     <Compile Include="Assets\Scripts\Lance.cs" />
     <Compile Include="Assets\Scripts\GunOn.cs" />
     <Compile Include="Assets\Scripts\Explosives.cs" />
-    <Compile Include="Assets\But1.cs" />
+    <Compile Include="Assets\Scripts\But1.cs" />
     <Compile Include="Assets\Scripts\RandomAbilities.cs" />
     <Compile Include="Assets\Scripts\HoverButton.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\But2.cs" />
+    <Compile Include="Assets\Scripts\But2.cs" />
     <Compile Include="Assets\Scripts\ShopDoor.cs" />
     <Compile Include="Assets\Scripts\DestroyItem.cs" />
     <Compile Include="Assets\Scripts\LvlTracker.cs" />
@@ -142,6 +145,7 @@
     <Compile Include="Assets\Scripts\Progressor.cs" />
     <Compile Include="Assets\Scripts\RegularSword.cs" />
     <Compile Include="Assets\Scripts\Credit.cs" />
+    <Compile Include="Assets\Scripts\TrapHit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
