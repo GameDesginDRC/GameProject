@@ -175,7 +175,7 @@ MonoBehaviour:
   player: {fileID: 1462000694102928976, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
   rb: {fileID: 6763180214302907463}
   speed: 2.5
-  health: 10
+  health: 30
   shieldPrefab: {fileID: 9138958953444873857, guid: f7ccd9d55218d4f5fbfb89635a9399ca, type: 3}
   ShieldPos: {fileID: 6235372613347740554}
   WallCheck: {fileID: 8573005448792379933}
