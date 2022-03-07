@@ -128,7 +128,7 @@
      <Compile Include="Assets\Scripts\BoxInvUIText.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
      <Compile Include="Assets\Scripts\Inv_Box.cs" />
-     <Compile Include="Assets\Scenes\AssaultRobotController.cs" />
+     <Compile Include="Assets\Scripts\AssaultRobotController.cs" />
      <Compile Include="Assets\Scripts\EndButton.cs" />
      <Compile Include="Assets\Scripts\StageName.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
