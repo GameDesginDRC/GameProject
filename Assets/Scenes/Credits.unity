@@ -445,10 +445,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Congratulations! You have cleared the game!\n\nThank you for playing and
-    joining us in this \nwonderful experience.\n\n\n\nCredits\n\n\nGame Developers\nCindy
-    Chen\nRobert Yang\nDavid Kim\n\nReferences for Artwork and Sprites\narcadeisland.itch.io\nmtk.itch.io\nvladpenn\nretrocademedia.itch.io\nJack
-    Tolmachoff Design, Unity Asset Store\nnusha777\ndavidbaptistechirot.blogspot\n\n\nThank
-    you for playing!"
+    joining us in this \nwonderful experience.\n\n\n\nCredits\n\n\nGame Developers:\nCindy
+    Chen\nRobert Yang\nDavid Kim\n\nReferences for Artwork and Sprites:\narcadeisland\nmtk\nvladpenn\nretrocademedia\nJack
+    Tolmachoff\nnusha777\ndavidbaptistechirot\n\n\nThank you for playing!"
 --- !u!222 &1333155541
 CanvasRenderer:
   m_ObjectHideFlags: 0
