@@ -66,9 +66,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Shops/Shop 5.unity
     guid: f370e23a61f1646b7900556ff8cc4c4e
   - enabled: 1
-    path: Assets/Scenes/Transitions/Transition6.unity
-    guid: 09a8fb9a4e561425998d432a8ae11abf
-  - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: f02672885c7a74f7cb7ad209c01e1c4f
   - enabled: 1
@@ -86,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Transitions/Transition4.unity
     guid: ec6ff3cba8d874c43ababb79660fe99f
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Transition6.unity
+    guid: 09a8fb9a4e561425998d432a8ae11abf
   - enabled: 1
     path: Assets/Scenes/Transitions/GameOver.unity
     guid: 830b6e6024ccb4bafac618a21b283a1d
