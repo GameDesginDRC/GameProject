@@ -120,7 +120,7 @@ public class GunRobot : MonoBehaviour
     void RemoveFromGame()
     {
         LevelManager.DecreaseEnemyNum();
-        ScoreKeeper.gold += 10;
+        ScoreKeeper.gold += 7;
         ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     }

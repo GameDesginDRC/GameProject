@@ -98,7 +98,7 @@ public class FlyingRobot : MonoBehaviour
     void RemoveFromGame()
     {
         LevelManager.DecreaseEnemyNum();
-        ScoreKeeper.gold += 10;
+        ScoreKeeper.gold += 5;
         ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
     }
