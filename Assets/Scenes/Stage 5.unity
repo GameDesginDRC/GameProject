@@ -18986,6 +18986,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8917470824549177519, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: spots1.Array.data[0]
+      value: 
+      objectReference: {fileID: 1063596965}
+    - target: {fileID: 8917470824549177519, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: spots1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1720293750}
+    - target: {fileID: 8917470824549177519, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: spots1.Array.data[2]
+      value: 
+      objectReference: {fileID: 126333133}
+    - target: {fileID: 8917470824549177519, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: spots1.Array.data[3]
+      value: 
+      objectReference: {fileID: 2030522779}
+    - target: {fileID: 8917470824549177519, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
+      propertyPath: spots1.Array.data[4]
+      value: 
+      objectReference: {fileID: 2133333864}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9d8c56b52f4c43a6536d03e4f51dc, type: 3}
 --- !u!1001 &1855578444
