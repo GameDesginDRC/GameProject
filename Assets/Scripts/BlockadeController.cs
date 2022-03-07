@@ -40,7 +40,7 @@ public class BlockadeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numOfEnemies == 1 && phase == 0)
+        if (numOfEnemies == 6 && phase == 0)
         {
             foreach(DestroyWall wall in wallsArray1)
             {
@@ -49,7 +49,7 @@ public class BlockadeController : MonoBehaviour
             phase +=1;
         }
 
-        if (numOfEnemies == 0 && phase == 1)
+        if (numOfEnemies == 5 && phase == 1)
         {
             
             Instantiate(E1, new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f), Quaternion.identity);
@@ -59,7 +59,7 @@ public class BlockadeController : MonoBehaviour
             phase +=1;
         }
 
-        if (numOfEnemies == 0 && phase == 2)
+        if (numOfEnemies == 3 && phase == 2)
         {
             Instantiate(E3, new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f), Quaternion.identity);
             Instantiate(E4, new Vector3(pos3.position.x+0.05f, pos2.position.y +0.4f, 0f), Quaternion.identity);

@@ -16,8 +16,8 @@ public class Credit : MonoBehaviour
     void Update()
     {
         untilnext += Time.deltaTime;
-        transform.position += new Vector3(0, .8f, 0);
-        if (untilnext >= 15)
+        if(transform.position.y < 3260) transform.position += new Vector3(0, .2f, 0);
+        if (untilnext >= 105)
         {
             SceneManager.LoadScene("TITLESCREEN");
         }
