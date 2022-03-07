@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            SceneManager.LoadScene("Final Stage");
+            SceneManager.LoadScene("Final");
         }
 
         HandleInvincible();
@@ -325,6 +325,12 @@ public class Player : MonoBehaviour
 
     }
 
+    public void preparing()
+    {
+        
+        myRB.velocity = new Vector2(0.0f, 0.0f);
+    }
+
     public void teleporting()
     {
         if (switched == false)
@@ -332,15 +338,12 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
             myRB.velocity = new Vector2(0.0f, 0.0f);
-
         }
         else
-        {
-            
+        {         
             transform.position += new Vector3(-6f, 0f, 0f);
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
             myRB.velocity = new Vector2(0.0f, 0.0f);
-
         }
     }
 

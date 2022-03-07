@@ -23,6 +23,8 @@ public class Shield_Gen : MonoBehaviour
     {
         // audio
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+        AudioSource HPPotSound = GameObject.Find("ShieldSound").GetComponent<AudioSource>();
+        if (HPPotSound) useShieldSound = HPPotSound.clip;
 
         waitTime = .2f;
         currentScene = SceneManager.GetActiveScene();
@@ -70,6 +72,7 @@ public class Shield_Gen : MonoBehaviour
         //Debug.Log(usednum);
         if (shield_count == 1)
         {
+            aSource.PlayOneShot(useShieldSound);
             shield_count--;
             Inventory.pos_objs[usednum] = empty1;
             Inventory._full[usednum] = false;
@@ -79,6 +82,7 @@ public class Shield_Gen : MonoBehaviour
             Destroy(gameObject);
         } else
         {
+            aSource.PlayOneShot(useShieldSound);
             DecrConsume(usednum);
             shield_count--;
             GenBar.shield = true;

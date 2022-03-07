@@ -23,6 +23,8 @@ public class HP_Pot : MonoBehaviour
     {
         // audio
         aSource = (AudioSource)FindObjectOfType(typeof(AudioSource));
+        AudioSource HPPotSound = GameObject.Find("HPPotSound").GetComponent<AudioSource>();
+        if (HPPotSound) useHPPotSound = HPPotSound.clip;
 
         waitTime = .2f;
         hpIncr = 0;
@@ -66,6 +68,7 @@ public class HP_Pot : MonoBehaviour
         // look at this code, should be when == 1???
         if (HPpot_count == 1)
         {
+            aSource.PlayOneShot(useHPPotSound);
             DecrConsume(usednum);
             HPpot_count--;
             Inventory.pos_objs[usednum] = empty1;
@@ -81,6 +84,7 @@ public class HP_Pot : MonoBehaviour
         }
         else
         {
+            aSource.PlayOneShot(useHPPotSound);
             DecrConsume(usednum);
             HPpot_count--;
             int healAmt = (int)(HPBar.maxVal * .40);
