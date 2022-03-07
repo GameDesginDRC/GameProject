@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PickUpAbilities : MonoBehaviour
 {
-    private int Health_Increase = 50;
-    private int Shield_Increase = 200;
-    private int Damage_Increase = 3;
+    private int Health_Increase = 25;
+    private int Shield_Increase = 50;
+    private int Damage_Increase = 2;
     private Player player_code;
     private float waitE = 0;
 

@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a588c11f8e96d9342856937876423992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 9
   invincibleTime: 0.3
   invincible: 0
+  facingRight: 0
   bullet: {fileID: 3229235574447301640, guid: a37f82303640e7541b828893a13db669, type: 3}
   shootSpeed: 7
   shootEvery: 3
