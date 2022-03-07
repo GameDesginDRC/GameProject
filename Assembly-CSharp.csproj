@@ -141,6 +141,7 @@
     <Compile Include="Assets/But2.cs" />
     <Compile Include="Assets/But3.cs" />
     <Compile Include="Assets/BlockadeController.cs" />
+    <Compile Include="Assets/Scripts/Credit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
