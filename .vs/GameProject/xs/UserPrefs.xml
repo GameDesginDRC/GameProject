@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{83BE2866-0A53-71D6-C680-423D67BBAD46}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DarkSoldier.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
       <File FileName="Assets/Scripts/GenBar.cs" Line="29" Column="10" IsPinned="True" />
       <File FileName="Assets/Scripts/HPBar.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/Player.cs" Line="240" Column="10" />
+      <File FileName="Assets/Scripts/Player.cs" Line="239" Column="14" />
       <File FileName="Assets/Scripts/ScoreKeeper.cs" />
       <File FileName="Assets/Scripts/PickUp.cs" Line="245" Column="30" />
       <File FileName="Assets/Scripts/Inv_Box.cs" />
@@ -34,13 +34,13 @@
       <File FileName="Assets/Scripts/NextStage.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Explosives.cs" />
       <File FileName="Assets/Scripts/RandomAbilities.cs" />
-      <File FileName="Assets/Scripts/Conductor.cs" />
+      <File FileName="Assets/Scripts/Conductor.cs" Line="46" Column="1" />
       <File FileName="Assets/Scripts/SwordOn.cs" />
       <File FileName="Assets/Scripts/ShopDoor.cs" />
       <File FileName="Assets/Scripts/PAttack.cs" />
       <File FileName="Assets/Scripts/DestroyTxt.cs" Line="10" Column="30" />
       <File FileName="Assets/Scripts/Credits.cs" Line="19" Column="48" />
-      <File FileName="Assets/Scripts/DarkSoldier.cs" Line="41" Column="24" />
+      <File FileName="Assets/Scripts/DarkSoldier.cs" Line="113" Column="47" />
       <File FileName="Assets/Scripts/SwordRobot.cs" Line="117" Column="34" NotebookId="1" />
       <File FileName="Assets/Scripts/GunOn.cs" NotebookId="1" />
       <File FileName="Assets/Scripts/LaserGunOn.cs" NotebookId="1" />
@@ -62,9 +62,9 @@
       <File FileName="Assets/Scripts/ActiveWeapon.cs" NotebookId="1" />
       <File FileName="Assets/Scripts/PickUpAbilities.cs" NotebookId="1" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="46" Column="144" NotebookId="1" />
-      <File FileName="Assets/Scripts/GunRobot.cs" Line="226" Column="17" NotebookId="1" />
+      <File FileName="Assets/Scripts/GunRobot.cs" Line="55" Column="5" NotebookId="1" />
       <File FileName="Assets/Scripts/Informant.cs" NotebookId="1" />
-      <File FileName="Assets/Scripts/PauseMenu.cs" Line="41" Column="10" NotebookId="1" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" Line="52" Column="35" NotebookId="1" />
       <File FileName="Assets/Scripts/HoverButton.cs" Line="18" Column="31" NotebookId="1" />
       <File FileName="Assets/Scripts/Button.cs" Line="5" Column="21" NotebookId="1" />
     </Files>
