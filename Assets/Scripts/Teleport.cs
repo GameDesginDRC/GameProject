@@ -22,7 +22,7 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Wall") || collision.CompareTag("Item"))
         {
             canTeleport = false;
         }

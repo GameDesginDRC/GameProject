@@ -211,7 +211,7 @@ public class Assasin_Controller : MonoBehaviour
 
     void RemoveFromGame()
     {
-        LevelManager.DecreaseEnemyNum();
+        BlockadeController.DecreaseFinEnemyNum();
         ScoreKeeper.gold += 10;
         ScoreKeeper.AddToGold(0);
         Destroy(gameObject);
