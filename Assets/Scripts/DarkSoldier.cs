@@ -37,6 +37,8 @@ public class DarkSoldier : MonoBehaviour
     AudioSource aSource;
     [SerializeField]
     AudioClip deathSound;
+    [SerializeField]
+    AudioClip hitSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,7 +110,7 @@ public class DarkSoldier : MonoBehaviour
             if (!invincible && !dying)
             {
                 //aSource.PlayOneShot(hitSound);
-
+                aSource.PlayOneShot(hitSound);
                 float attackVal = collision.GetComponent<PAttack>().AttackValue;
                 health -= attackVal;
                 isPaused = true;
