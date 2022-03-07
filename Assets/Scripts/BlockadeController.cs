@@ -62,16 +62,18 @@ public class BlockadeController : MonoBehaviour
         if (numOfEnemies == 3 && phase == 2)
         {
             Instantiate(E3, new Vector3(pos1.position.x+0.05f, pos1.position.y +0.4f, 0f), Quaternion.identity);
-            Instantiate(E4, new Vector3(pos3.position.x+0.05f, pos2.position.y +0.4f, 0f), Quaternion.identity);
+            Instantiate(E4, new Vector3(pos2.position.x+0.05f, pos2.position.y +0.4f, 0f), Quaternion.identity);
             Instantiate(E5, new Vector3(pos3.position.x+0.05f, pos3.position.y +0.4f, 0f), Quaternion.identity);
             phase +=1;
         }
-        else if (numOfEnemies == 0 && phase == 3)
+        
+        if (numOfEnemies == 0 && phase == 3)
         {
             foreach(DestroyWall wall in wallsArray2)
             {
                 wall.DestroyableWall(); //Destroys platform linked to pickup
             }
+            phase +=1;
         }
     }
 }
