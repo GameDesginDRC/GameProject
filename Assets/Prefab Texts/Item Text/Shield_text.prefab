@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Shield Generator \n(25 Bolts / 50 Shielding)\nPress Z to buy"
+  m_text: "Shield Generator \n(50 Bolts / 50 Shielding)\nPress Z to buy"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a8ef174091219fd41ac5460521daeba9, type: 2}
   m_sharedMaterial: {fileID: 4485013338015086812, guid: a8ef174091219fd41ac5460521daeba9, type: 2}
