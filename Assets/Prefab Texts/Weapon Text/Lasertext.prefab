@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Laser Gun (80 Bolts)
+  m_text: 'Laser Gun (140 Bolts)
 
     Press Z to buy'
   m_isRightToLeft: 0

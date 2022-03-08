@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Rocket Launcher (120 Bolts)
+  m_text: 'Rocket Launcher (200 Bolts)
 
     Press Z to buy'
   m_isRightToLeft: 0
