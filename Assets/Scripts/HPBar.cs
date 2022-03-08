@@ -44,10 +44,7 @@ public class HPBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SceneManager.LoadScene("Shop 1");
-        }
+
     }
 
     public void ChangeHealth(int hp)

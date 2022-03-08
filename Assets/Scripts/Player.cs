@@ -203,14 +203,6 @@ public class Player : MonoBehaviour
         //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); to get rid of shield
         //ApplyStatusEffect(StatusEffect.Shield, 5f); Shield timer with 5 seconds
         //ApplyStatusEffect(StatusEffect.None, Mathf.Infinity); //GET RID OF FOR FINAL BUILD
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SceneManager.LoadScene("Shop 3");
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SceneManager.LoadScene("Final");
-        }
 
         HandleInvincible();
         HandleInput();
