@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
 
     void LoadLevel1()
     {
-        SceneManager.LoadScene("Transition1");
+        SceneManager.LoadScene("IntroCutscene");
     }
     void LoadTutorial()
     {
