@@ -108,7 +108,7 @@ public class FlyingRobot : MonoBehaviour
         dying = true;
         aSource.PlayOneShot(deathSound);
         animator.SetBool("Dead", true);
-        Invoke("RemoveFromGame", .8f);
+        Invoke("RemoveFromGame", .5f);
     }
 
     // Update is called once per frame
