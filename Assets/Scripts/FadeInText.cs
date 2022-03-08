@@ -11,7 +11,7 @@ public class FadeInText : MonoBehaviour
     bool fadedin = false;
     [SerializeField]
     bool fadedout = false;
-
+    bool pressedZ = false;
     [SerializeField]
     private float untilnext;
 
@@ -24,8 +24,9 @@ public class FadeInText : MonoBehaviour
     // can ignore the update, it's just to make the coroutines get called for example
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && !pressedZ)
         {
+            pressedZ = true;
             StartCoroutine(FadeTextToZeroAlpha(1f, GetComponent<Text>()));
             Invoke("LoadTransition1", 2f);
         }
