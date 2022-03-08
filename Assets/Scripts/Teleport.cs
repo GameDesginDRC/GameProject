@@ -24,7 +24,7 @@ public class Teleport : MonoBehaviour
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Wall") || collision.CompareTag("Item"))
         {
-            canTeleport = false;
+            canTeleport = false;   
         }
     }
 
