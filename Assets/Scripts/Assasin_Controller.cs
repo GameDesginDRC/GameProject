@@ -85,11 +85,11 @@ public class Assasin_Controller : MonoBehaviour
 
     public void Attack()
     {
-        if ((AttackBoxBool() || TeleportAttackBoxBool()))
+        if ((AttackBoxBool() || TeleportAttackBoxBool()) && player_code.Invincible == false)
         {
             print("attacked");
             aSource.PlayOneShot(hitSound);
-            player_code.Damage(10);
+            player_code.Damage(15);
             player_code.Invincible = true;
             player_code.TimeSinceInvStarted = Time.time;
             player_code.Invoke("Recolor", .05f);
