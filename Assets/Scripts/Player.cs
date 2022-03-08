@@ -341,6 +341,7 @@ public class Player : MonoBehaviour
             this.GetComponent<Rigidbody2D>().gravityScale = 0f;
             myRB.velocity = new Vector2(0.0f, 0.0f);
             locked = false;
+            
         }
         else
         {         
@@ -355,6 +356,14 @@ public class Player : MonoBehaviour
     {
         canMove = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 1f;
+        if (Input.GetKeyDown(KeyCode.RightArrow) && switched == true)
+        {
+            transform.Rotate(0f, 180f, 0f); //Player sprite flips
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && switched == false)
+        {
+            transform.Rotate(0f, 180f, 0f); //Player sprite flips
+        }
     }
 
     // for handling jumps
