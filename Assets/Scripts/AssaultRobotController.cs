@@ -188,7 +188,7 @@ public class AssaultRobotController : MonoBehaviour
         }
         else if (flee && !WallCheckBool() && _CanMove)
         {
-            newPos = Vector2.MoveTowards(rb.position, target, -1* 8f * Time.fixedDeltaTime); 
+            newPos = Vector2.MoveTowards(rb.position, target, -1* 7f * Time.fixedDeltaTime); 
             rb.MovePosition(newPos);
         }
         
