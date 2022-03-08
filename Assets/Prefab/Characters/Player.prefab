@@ -340,7 +340,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3692583819280829755
 MonoBehaviour:
@@ -377,7 +377,6 @@ MonoBehaviour:
   dashSound: {fileID: 8300000, guid: 14968b8ac936e714b9380a7e1f34048d, type: 3}
   ItemHold: {fileID: 227390115912535955}
   ShieldPos: {fileID: 8763813556000738603}
-  Jump: {fileID: 3971099743801611745}
   RL: {fileID: 6502542169536943375, guid: 5d49d0e3ef0c248ce9d9f9a43c5b71ee, type: 3}
   Gun: {fileID: 4161699308106294051, guid: 75f9b647fbcb24cdc9171eebc34d6b70, type: 3}
   LG: {fileID: 6489199453728399234, guid: 72f44892ad81047d18518ed320a7db4f, type: 3}
