@@ -151,7 +151,7 @@ MonoBehaviour:
   shootSpeed: 7
   shootEvery: 3
   shootTimer: 0
-  shootRange: 5
+  shootRange: 10
   bulletShootPoint: {fileID: 5251506443898631573}
   playerInRange: 0
   animator: {fileID: 0}
