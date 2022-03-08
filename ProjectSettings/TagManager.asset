@@ -23,6 +23,7 @@ TagManager:
   - Shield
   - Trap
   - Abilities
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
