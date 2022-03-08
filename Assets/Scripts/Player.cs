@@ -436,7 +436,6 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-               
                 aSource.PlayOneShot(hitSound);
                 Damage(10);
                 Invincible = true;
