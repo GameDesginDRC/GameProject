@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Med Kit \n(20 Bolts / 40% HP)\nPress Z to buy"
+  m_text: "Med Kit \n(20 Bolts / 40% Energy)\nPress Z to buy"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a8ef174091219fd41ac5460521daeba9, type: 2}
   m_sharedMaterial: {fileID: 4485013338015086812, guid: a8ef174091219fd41ac5460521daeba9, type: 2}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 1.5102029, w: -0.1951524}
+  m_margin: {x: 0, y: 0, z: 0.60066736, w: -0.1951524}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -434,6 +434,14 @@ public class Player : MonoBehaviour
     {
         if (!Invincible)
         {
+            if (collision.gameObject.tag == "EnemyBullet")
+            {
+                aSource.PlayOneShot(hitSound);
+                Damage(10);
+                Invincible = true;
+                TimeSinceInvStarted = Time.time;
+                Invoke("Recolor", .05f);
+            }
             if (collision.gameObject.tag == "Enemy")
             {
                 aSource.PlayOneShot(hitSound);
