@@ -85,7 +85,7 @@ public class Assasin_Controller : MonoBehaviour
 
     public void Attack()
     {
-        if ((AttackBoxBool() || TeleportAttackBoxBool()) && player_code.Invincible == false)
+        if ((AttackBoxBool() || TeleportAttackBoxBool()))
         {
             print("attacked");
             aSource.PlayOneShot(hitSound);
