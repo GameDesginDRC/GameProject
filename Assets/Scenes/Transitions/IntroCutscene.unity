@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 1595208225}
   - component: {fileID: 1595208227}
   - component: {fileID: 1595208226}
+  - component: {fileID: 1595208228}
   m_Layer: 5
   m_Name: Desc
   m_TagString: Untagged
@@ -346,7 +347,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2cf35a2c9817ede48bdcb306288ef397, type: 3}
-    m_FontSize: 42
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -382,9 +383,11 @@ MonoBehaviour:
     middle
     of nowhere, and given a single sword.
 
+    Fight, survive, and reclaim your freedom!
 
-    Fight, survive, and reclaim your
-    freedom!'
+
+    Press
+    Z to continue to the first level...'
 --- !u!222 &1595208227
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -393,6 +396,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595208224}
   m_CullTransparentMesh: 1
+--- !u!114 &1595208228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595208224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6089b46ac48c3e42970cc905901fce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadedin: 0
+  fadedout: 0
+  untilnext: 0
 --- !u!1 &2135194814
 GameObject:
   m_ObjectHideFlags: 0
