@@ -494,6 +494,7 @@ public class Player : MonoBehaviour
         if (GenBar.shield)
         {
             GNBar.DecreaseHealth(dmg);
+            healthbar.ChangeHealth(hp);
         }
         else
         {
