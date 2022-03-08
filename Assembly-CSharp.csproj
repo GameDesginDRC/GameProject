@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\PlatformGoUnder.cs" />
      <Compile Include="Assets\Scripts\RocketLauncher.cs" />
      <Compile Include="Assets\Scripts\FlyingRobot.cs" />
+     <Compile Include="Assets\Scripts\FadeInText.cs" />
      <Compile Include="Assets\Scripts\Lance.cs" />
      <Compile Include="Assets\Scripts\GunOn.cs" />
      <Compile Include="Assets\Scripts\Explosives.cs" />

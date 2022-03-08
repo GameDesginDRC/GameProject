@@ -155,7 +155,7 @@ public class AssaultRobotController : MonoBehaviour
             animator.SetBool("High", true);
             animator.SetBool("Attack", true);  
         }
-        else if (GroundCheckBool() && TargetCheckBool())
+        else if (GroundCheckBool() && TargetCheckBool()&& !flee)
         //When Enemy is not next to a wall, is grounded, and Player has not been spotted
         {
             _CanMove = false; //Enemy moves
@@ -235,7 +235,6 @@ public class AssaultRobotController : MonoBehaviour
                 
                 if(!BackWallCheckBool())
                 {
-                    LookAtPlayer();
                     animator.SetBool("Walk", true);
                     animator.SetBool("Attack", false); 
                     _CanMove = true;
@@ -243,7 +242,10 @@ public class AssaultRobotController : MonoBehaviour
                     transform.Rotate(0f, 180f, 0f);
                     Invoke("invinCooldown", invincibleTime);
                 }
-                Invoke("invinCooldown2", invincibleTime);
+                else{
+                    Invoke("invinCooldown2", invincibleTime);
+                }
+                
 
             }
         }

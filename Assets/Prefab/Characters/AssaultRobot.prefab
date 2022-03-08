@@ -179,7 +179,7 @@ MonoBehaviour:
   WallCheck: {fileID: 3991376577987158361}
   WallChecksize: {x: 0.33, y: 0.4}
   BackWallCheck: {fileID: 3349678002783178642}
-  BackWallChecksize: {x: 0.33, y: 0.35}
+  BackWallChecksize: {x: 0.76, y: 0.35}
   TargetCheck: {fileID: 7954717162532092655}
   TargetChecksize: {x: 19.63, y: 4.62}
   GroundCheck: {fileID: 2253231646188429176}
@@ -399,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8388942044866425838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7, y: -0.16, z: -0}
+  m_LocalPosition: {x: -1.366, y: -0.16, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 7370479425176170738}
