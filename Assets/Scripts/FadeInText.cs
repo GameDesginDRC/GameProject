@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FadeInText : MonoBehaviour
 {
     Text the_text;
+    [SerializeField]
     bool fadedin = false;
+    [SerializeField]
     bool fadedout = false;
 
+    [SerializeField]
     private float untilnext;
 
     private void Start()
@@ -20,22 +24,18 @@ public class FadeInText : MonoBehaviour
     // can ignore the update, it's just to make the coroutines get called for example
     void Update()
     {
-        untilnext += Time.deltaTime;
-
-        if (untilnext > 1.5 && !fadedout)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            fadedin = true;
-            FadeTextToFullAlpha(1f, the_text);
-        }
-
-        if (untilnext > 9.0)
-        {
-            fadedout = false;
-            FadeTextToZeroAlpha(1f, the_text);
+            StartCoroutine(FadeTextToZeroAlpha(1f, GetComponent<Text>()));
+            Invoke("LoadTransition1", 2f);
         }
     }
 
 
+    void LoadTransition1()
+    {
+        SceneManager.LoadScene("Transition1");
+    }
 
     public IEnumerator FadeTextToFullAlpha(float t, Text i)
     {
