@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class NextStage : MonoBehaviour
 {
-    [SerializeField] string next;
+    [SerializeField]
+    string next;
     // Start is called before the first frame update
+    [SerializeField]
+    float WaitForXSeconds = 5;
     void Start()
     {
         StartCoroutine(NextLvl());
@@ -19,7 +22,7 @@ public class NextStage : MonoBehaviour
     }
     IEnumerator NextLvl()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(WaitForXSeconds);
         SceneManager.LoadScene(next);
     }
 }
