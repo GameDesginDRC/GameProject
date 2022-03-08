@@ -30,6 +30,7 @@ public class GenBar : MonoBehaviour
         hpvalue.maxValue = maxSh;
         shield = false;
         start1 = false;
+        Player.shieldon = false;
     }
 
 

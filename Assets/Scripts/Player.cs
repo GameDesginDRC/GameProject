@@ -230,7 +230,7 @@ public class Player : MonoBehaviour
             HP_Pot.hpIncr = 0;
             Damage(0);
         }
-
+        /*
         if (sceneName == "Stage 1" || sceneName == "Stage 2" || sceneName == "Stage 3" || sceneName == "Stage 4" || sceneName == "Stage 5" || sceneName == "Stage 6")
         {
             int numOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
@@ -243,7 +243,7 @@ public class Player : MonoBehaviour
         {
                 ApplyStatusEffect(StatusEffect.None, Mathf.Infinity);
            
-        }
+        }*/
 
     }
     private void HandleWeapon()
@@ -452,7 +452,7 @@ public class Player : MonoBehaviour
             if (collision.gameObject.tag == "Lightning")
             {
                 aSource.PlayOneShot(hitSound);
-                Damage(15);
+                Damage(10);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
                 Invoke("Recolor", .05f);
@@ -469,7 +469,7 @@ public class Player : MonoBehaviour
             {
               
                 aSource.PlayOneShot(hitSound);
-                Damage(15);
+                Damage(10);
                 Invincible = true;
                 TimeSinceInvStarted = Time.time;
                 Invoke("Recolor", .05f);
